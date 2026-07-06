@@ -1,0 +1,7 @@
+exit_code=0
+duration_seconds=0.9537
+[stdout]
+{"step_id": "step_01", "operation": "reproject_vector", "input_crs": "EPSG:4326", "output_crs": "EPSG:3857", "output_path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-143-geoagent_143-try01\\steps\\step_01\\country_3857.shp", "status": "success"}
+
+[stderr]
+

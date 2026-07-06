@@ -1,0 +1,40 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Compute self-intersection of the circles layer to extract geometries representing overlapping regions between distinct polygons.",
+      "inputs": [
+        "circles"
+      ],
+      "expected_outputs": [
+        "overlap_areas.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "input_output_comparison",
+      "notes": "Perform an overlay intersection of the layer with itself. Retain only geometries that result from the intersection of two or more distinct source polygons. Preserve the original Krasovsky_1940_Transverse_Mercator CRS."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Spatially join the extracted overlap geometries with the original circles layer to attach source attributes and comprehensively describe each overlapping region.",
+      "inputs": [
+        "overlap_areas.shp",
+        "circles"
+      ],
+      "expected_outputs": [
+        "overlap_details.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Use spatial intersection or containment as the join predicate to attach the ID and other characteristics from the original circles polygons to each overlap feature. Ensure the final output retains attributes from all contributing source polygons and maintains the original CRS."
+    }
+  ],
+  "current_step_index": 2,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "all_visualizable"
+}

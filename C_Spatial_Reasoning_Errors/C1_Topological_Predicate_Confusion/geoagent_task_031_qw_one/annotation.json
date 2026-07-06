@@ -1,0 +1,32 @@
+{
+  "sample_id": "geoagent_task_031_qw_one",
+  "source": "GeoAgent Task 31",
+  "task_id": 31,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "qwen3.6-plus",
+    "provider": "dashscope",
+    "reasoning": "thinking 开关未单列记录",
+    "visual_review": "至少审查一项可视化成果"
+  },
+  "primary_label": "C1. Topological Predicate Confusion",
+  "secondary_labels": [],
+  "error_summary": "generated_polygon 因与县界相交而被整体删除，最终结果只剩 67 个县；正确差集结果还应包含 1 个剩余多边形，共 68 个要素。",
+  "result_previews": [
+    {
+      "source_artifact": "steps/step_02/merged_polygon.shp",
+      "stage": "最终成果",
+      "preview_file": "previews/merged_polygon.png",
+      "description": "下图是该实验最终合并结果。它只显示 Pennsylvania 的 67 个县，任务要求保留的 generated_polygon 非重叠部分已经消失。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "同任务正确运行或依据原任务输入和 GIS 规则计算",
+  "evidence_metrics": {
+    "observed_features": 67,
+    "expected_features": 68,
+    "wrong_predicate": "disjoint",
+    "required_operation": "difference"
+  }
+}

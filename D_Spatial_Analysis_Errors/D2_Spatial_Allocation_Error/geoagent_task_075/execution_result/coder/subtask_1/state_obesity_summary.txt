@@ -1,0 +1,54 @@
+===== State-Level Obesity Aggregation =====
+
+               State  Total_Population  Total_Obese_Population  County_Count  Avg_Obesity_Pct
+             Alabama            244952                   93906            67            38.74
+             Arizona             58116                   18733            15            33.51
+            Arkansas            291478                  108176            75            37.57
+          California            277244                   78868            58            28.73
+            Colorado            219225                   59081            64            26.92
+         Connecticut             31102                    8697             8            29.10
+            Delaware             10643                    3872             3            36.77
+District of Columbia              5973                    1672             1            28.00
+             Florida            292423                   97999            67            32.93
+             Georgia            717129                  258979           159            36.64
+               Idaho            192500                   60914            44            31.78
+            Illinois            381828                  135486           102            36.22
+             Indiana            384961                  137337            92            36.17
+                Iowa            345596                  121755            99            35.61
+              Kansas            339492                  123471           105            36.51
+            Kentucky            456424                  179167           120            39.41
+           Louisiana            280103                  108762            64            39.09
+               Maine             54345                   17225            16            32.46
+            Maryland            105131                   37036            24            35.22
+       Massachusetts             61274                   16624            14            26.86
+            Michigan            283275                  106309            83            37.55
+           Minnesota            326257                  106320            87            33.26
+         Mississippi            361099                  151066            82            42.51
+            Missouri            483185                  178073           115            37.20
+             Montana            153348                   47772            56            31.59
+            Nebraska            268223                   99614            93            37.12
+              Nevada             56211                   18995            17            33.59
+       New Hampshire             51153                   15523            10            30.56
+          New Mexico            121097                   40069            33            32.89
+            New York            229343                   74791            62            32.51
+      North Carolina            430679                  156185           100            36.06
+        North Dakota            133307                   49657            53            37.41
+                Ohio            403600                  151087            88            37.85
+            Oklahoma            275155                  105735            77            38.69
+              Oregon            154860                   48674            36            31.33
+        Pennsylvania            241693                   85084            67            35.49
+        Rhode Island             19494                    5882             5            29.66
+      South Carolina            199555                   75120            46            37.60
+        South Dakota            199059                   66658            66            33.77
+           Tennessee            378007                  146044            95            38.75
+               Texas            993426                  372543           254            37.53
+                Utah            123994                   40059            29            31.92
+             Vermont             50406                   14155            14            28.36
+            Virginia            591964                  203346           133            34.73
+          Washington            148142                   46960            39            31.65
+       West Virginia            226866                   92429            55            40.97
+           Wisconsin            270194                   95439            72            35.74
+             Wyoming             94990                   27997            23            29.85
+
+Total states: 48
+Total counties processed: 3087

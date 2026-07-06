@@ -1,0 +1,7 @@
+exit_code=0
+duration_seconds=0.6631
+[stdout]
+{"status": "success", "output": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260423T184016Z-6344b54d-031-geoagent_031-try01\\steps\\step_02\\merged_polygon.shp", "feature_count": 67}
+
+[stderr]
+

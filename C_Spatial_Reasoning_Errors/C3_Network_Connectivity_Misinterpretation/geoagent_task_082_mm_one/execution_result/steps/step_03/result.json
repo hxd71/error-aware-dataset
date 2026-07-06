@@ -1,0 +1,17 @@
+{
+  "step_id": "step_03",
+  "success": true,
+  "artifacts": [
+    {
+      "name": "street_paths.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260423T184016Z-95a56beb-082-geoagent_082-try01\\steps\\step_03\\street_paths.shp",
+      "artifact_type": "vector",
+      "description": ""
+    }
+  ],
+  "logs": "exit_code=0\nduration_seconds=0.7790\n[stdout]\n{\"step_id\": \"step_03\", \"output_features\": 5073, \"geometry_types\": [\"LineString\"], \"crs\": \"EPSG:4326\", \"output_path\": \"[EXTERNAL_PATH]"}\n\n[stderr]\n[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260423T184016Z-95a56beb-082-geoagent_082-try01\\steps\\step_03\\run_step.py:29: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.\n  gdf.to_file(output_path, driver=\"ESRI Shapefile\")\n[SECONDARY_RUN_WORKSPACE]\\.venv\\Lib\\site-packages\\pyogrio\\raw.py:733: RuntimeWarning: Normalized/laundered field name: 'street_name' to 'street_nam'\n  ogr_write(\n\n",
+  "summary": "Step executed successfully. summary_keys=['crs', 'geometry_types', 'output_features', 'output_path', 'step_id']; artifacts=['street_paths.shp']",
+  "error_type": null,
+  "recoverable": false,
+  "validation_messages": []
+}

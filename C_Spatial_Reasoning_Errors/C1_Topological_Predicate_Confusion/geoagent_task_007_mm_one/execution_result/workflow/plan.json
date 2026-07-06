@@ -1,0 +1,40 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Perform spatial join to identify damaged house points located within San Andreas Special Studies Zone polygons",
+      "inputs": [
+        "damagedhouses",
+        "saf_specialstudyzone"
+      ],
+      "expected_outputs": [
+        "houses_in_saf_zone.geojson"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Use spatial predicate 'within' or 'intersects' to find points falling inside the SAF Special Study Zone polygons. Both datasets use EPSG:26710."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Count damaged houses within the San Andreas Special Studies Zone and export to CSV",
+      "inputs": [
+        "houses_in_saf_zone.geojson"
+      ],
+      "expected_outputs": [
+        "damaged_houses_saf_zone_count.csv"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Count the features from the spatial join result and write the count to a CSV with a single row containing the count value."
+    }
+  ],
+  "current_step_index": 2,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "at_least_one"
+}

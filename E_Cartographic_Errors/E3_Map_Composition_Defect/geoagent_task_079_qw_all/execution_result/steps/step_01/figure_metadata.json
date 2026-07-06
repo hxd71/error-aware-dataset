@@ -1,0 +1,204 @@
+{
+  "title": "Evidence for step_01",
+  "template_name": "input_output_comparison",
+  "add_basemap": false,
+  "layer_count": 2,
+  "highlight_layers": [
+    "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T172139Z-88a9e18e-079-geoagent_079-try01\\steps\\step_01\\street_image_year.geojson"
+  ],
+  "output_path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T172139Z-88a9e18e-079-geoagent_079-try01\\steps\\step_01\\figure.png",
+  "rendered_layers": [
+    "subject",
+    "street_image_year.geojson"
+  ],
+  "comparison_left_labels": [
+    "subject"
+  ],
+  "comparison_right_labels": [
+    "street_image_year.geojson"
+  ],
+  "shared_extent": [
+    -81.01085594896888,
+    33.97913492079225,
+    -80.98747947168117,
+    34.00084698505906
+  ],
+  "padded_extent": [
+    -81.01225853760614,
+    33.97783219693624,
+    -80.9860768830439,
+    34.00214970891507
+  ],
+  "applied_view_focus": "result_extent",
+  "applied_extent": [
+    -81.01225853760614,
+    33.97783219693624,
+    -80.9860768830439,
+    34.00214970891507
+  ],
+  "extent_padding_ratio": 0.06,
+  "max_extent_aspect_ratio": 2.0,
+  "aspect_ratio_guard_applied": false,
+  "shared_extent_aspect_ratio": 1.0766584420736671,
+  "padded_extent_aspect_ratio": 1.076658442073784,
+  "applied_extent_aspect_ratio": 1.076658442073784,
+  "legend_placement": "panel_top",
+  "note": null,
+  "input_panel_is_alpha_composite": false,
+  "input_panel_layers": [
+    {
+      "label": "subject",
+      "layer_type": "vector",
+      "alpha": 0.45
+    }
+  ],
+  "panel_colorbars": {
+    "inputs": {
+      "present": false,
+      "mode": null,
+      "source_layer": null,
+      "source_layers": [],
+      "vmin": null,
+      "vmax": null
+    },
+    "outputs": {
+      "present": false,
+      "mode": null,
+      "source_layer": null,
+      "source_layers": [],
+      "vmin": null,
+      "vmax": null
+    }
+  },
+  "comparison_uses_shared_raster_limits": false,
+  "comparison_raster_limits": null,
+  "map_boundary_box_visible": true,
+  "map_boundary_box_style": {
+    "color": "#6B7280",
+    "linewidth": 0.8
+  },
+  "scale_bar_visible": true,
+  "scale_bar_position": "below_panel",
+  "scale_bar_panels": [
+    {
+      "panel": "inputs",
+      "visible": true,
+      "length_meters": 500.0,
+      "display_label": "500 m",
+      "estimated": true,
+      "crs": "EPSG:4326",
+      "width_fraction": 0.20669098351229925,
+      "reason": null
+    },
+    {
+      "panel": "outputs",
+      "visible": true,
+      "length_meters": 500.0,
+      "display_label": "500 m",
+      "estimated": true,
+      "crs": "EPSG:4326",
+      "width_fraction": 0.20669098351229925,
+      "reason": null
+    }
+  ],
+  "crs": "EPSG:4326",
+  "display_crs": "EPSG:4326",
+  "layer_details": [
+    {
+      "label": "subject",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Street_view_image\\street_image\\street_image.shp",
+      "layer_type": "vector",
+      "source_crs": "EPSG:4326",
+      "display_crs": "EPSG:4326",
+      "alpha": 0.45,
+      "color": "#4C78A8",
+      "fill": true,
+      "fill_alpha": 0.45,
+      "linewidth": 0.6,
+      "zorder": 2,
+      "display_vmin": null,
+      "display_vmax": null
+    },
+    {
+      "label": "street_image_year.geojson",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T172139Z-88a9e18e-079-geoagent_079-try01\\steps\\step_01\\street_image_year.geojson",
+      "layer_type": "vector",
+      "source_crs": "EPSG:4326",
+      "display_crs": "EPSG:4326",
+      "alpha": 0.8,
+      "color": "#4C78A8",
+      "fill": true,
+      "fill_alpha": 0.8,
+      "linewidth": 0.8,
+      "zorder": 1,
+      "display_vmin": null,
+      "display_vmax": null
+    }
+  ],
+  "applied_layer_styles": [
+    {
+      "label": "subject",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Street_view_image\\street_image\\street_image.shp",
+      "color": "#4C78A8",
+      "fill": true,
+      "fill_alpha": 0.45,
+      "linewidth": 0.6,
+      "zorder": 2
+    },
+    {
+      "label": "street_image_year.geojson",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T172139Z-88a9e18e-079-geoagent_079-try01\\steps\\step_01\\street_image_year.geojson",
+      "color": "#4C78A8",
+      "fill": true,
+      "fill_alpha": 0.8,
+      "linewidth": 0.8,
+      "zorder": 1
+    }
+  ],
+  "renderer": "matplotlib",
+  "candidate_layer_count": 2,
+  "candidate_layer_ids": [
+    "layer_01",
+    "layer_02"
+  ],
+  "selected_layer_ids": [
+    "layer_02",
+    "layer_01"
+  ],
+  "selected_layer_labels": [
+    "street_image_year.geojson",
+    "subject"
+  ],
+  "excluded_layer_ids": [],
+  "highlight_layer_ids": [
+    "layer_02"
+  ],
+  "selection_source": "llm",
+  "selector_attempt_count": 2,
+  "selector_repair_attempts": 1,
+  "selector_invalid_reason": null,
+  "view_focus": "result_extent",
+  "final_template_name": "input_output_comparison",
+  "template_decision_reason": "forced_input_output_comparison",
+  "selection_plan": {
+    "selected_layer_ids": [
+      "layer_02",
+      "layer_01"
+    ],
+    "highlight_layer_ids": [
+      "layer_02"
+    ],
+    "excluded_layer_ids": [],
+    "layer_roles": {
+      "layer_02": "result",
+      "layer_01": "subject"
+    },
+    "layer_styles": {},
+    "render_priority": {
+      "layer_02": 1,
+      "layer_01": 2
+    },
+    "view_focus": "result_extent",
+    "rationale": "This step performs an attribute extraction and format conversion on the street view points. Both the input (layer_01) and the output (layer_02) are necessary to verify that the point geometry was preserved and the year attribute was correctly parsed from the image_date column. The output layer is highlighted as the primary result for downstream thematic mapping."
+  }
+}

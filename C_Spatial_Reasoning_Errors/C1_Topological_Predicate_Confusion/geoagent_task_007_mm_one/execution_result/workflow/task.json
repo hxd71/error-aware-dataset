@@ -1,0 +1,206 @@
+{
+  "user_query": "How many damaged houses were located within the San Andreas Special Studies Zones?",
+  "task_context": {
+    "case_id": "geoagent_007",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "damagedhouses",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\SpatialQueryData\\DamagedHouses\\DamagedHouses.shp",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path SpatialQueryData/DamagedHouses.",
+        "format": "shp",
+        "crs": "EPSG:26710",
+        "metadata": {
+          "feature_count": 1615,
+          "columns": [
+            "OBJECTID",
+            "AREA",
+            "PERIMETER",
+            "LPDAMAGE_",
+            "LPDAMAGE_I",
+            "SN",
+            "DAMAGE_ID",
+            "GEO",
+            "HO",
+            "ZIP",
+            "REQ",
+            "ADDRESS",
+            "POLYGONID",
+            "SCALE",
+            "ANGLE"
+          ],
+          "geometry_types": [
+            "Point"
+          ],
+          "field_types": {
+            "OBJECTID": "float64",
+            "AREA": "float64",
+            "PERIMETER": "float64",
+            "LPDAMAGE_": "int64",
+            "LPDAMAGE_I": "int64",
+            "SN": "int64",
+            "DAMAGE_ID": "int64",
+            "GEO": "int64",
+            "HO": "int64",
+            "ZIP": "str",
+            "REQ": "int64",
+            "ADDRESS": "str",
+            "POLYGONID": "int64",
+            "SCALE": "float64",
+            "ANGLE": "float64"
+          },
+          "sample_rows": [
+            {
+              "OBJECTID": 1.0,
+              "AREA": 0.0,
+              "PERIMETER": 0.0,
+              "LPDAMAGE_": 1,
+              "LPDAMAGE_I": 1,
+              "SN": 0,
+              "DAMAGE_ID": 1,
+              "GEO": 1,
+              "HO": 0,
+              "ZIP": "95008",
+              "REQ": 0,
+              "ADDRESS": "233 Rose Ct",
+              "POLYGONID": 0,
+              "SCALE": 1.0,
+              "ANGLE": 0.0
+            },
+            {
+              "OBJECTID": 2.0,
+              "AREA": 0.0,
+              "PERIMETER": 0.0,
+              "LPDAMAGE_": 2,
+              "LPDAMAGE_I": 2,
+              "SN": 0,
+              "DAMAGE_ID": 5,
+              "GEO": 1,
+              "HO": 0,
+              "ZIP": "95008",
+              "REQ": 1,
+              "ADDRESS": "1674 Las Piedras Ct",
+              "POLYGONID": 0,
+              "SCALE": 1.0,
+              "ANGLE": 0.0
+            },
+            {
+              "OBJECTID": 3.0,
+              "AREA": 0.0,
+              "PERIMETER": 0.0,
+              "LPDAMAGE_": 3,
+              "LPDAMAGE_I": 3,
+              "SN": 0,
+              "DAMAGE_ID": 6,
+              "GEO": 1,
+              "HO": 0,
+              "ZIP": "95008",
+              "REQ": 0,
+              "ADDRESS": "166 Sunnyside Av",
+              "POLYGONID": 0,
+              "SCALE": 1.0,
+              "ANGLE": 0.0
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            572968.3125,
+            4092093.0,
+            631435.375,
+            4145653.0
+          ]
+        }
+      },
+      {
+        "asset_id": "saf_specialstudyzone",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\SpatialQueryData\\SAF_SpecialStudyZone\\SAF_SpecialStudyZone.shp",
+        "role": "reference",
+        "description": "GeoAgent source asset from data_path SpatialQueryData/SAF_SpecialStudyZone.",
+        "format": "shp",
+        "crs": "EPSG:26710",
+        "metadata": {
+          "feature_count": 4,
+          "columns": [
+            "OBJECTID",
+            "AREA",
+            "PERIMETER",
+            "SSZS_",
+            "SSZS_ID",
+            "ZONE_",
+            "ZONE_NAME",
+            "Shape_Leng",
+            "Shape_Area"
+          ],
+          "geometry_types": [
+            "Polygon"
+          ],
+          "field_types": {
+            "OBJECTID": "float64",
+            "AREA": "float64",
+            "PERIMETER": "float64",
+            "SSZS_": "float64",
+            "SSZS_ID": "float64",
+            "ZONE_": "int64",
+            "ZONE_NAME": "str",
+            "Shape_Leng": "float64",
+            "Shape_Area": "float64"
+          },
+          "sample_rows": [
+            {
+              "OBJECTID": 1.0,
+              "AREA": 105934800.0,
+              "PERIMETER": 269775.0,
+              "SSZS_": 3.0,
+              "SSZS_ID": 2.0,
+              "ZONE_": 9,
+              "ZONE_NAME": "San Andreas",
+              "Shape_Leng": 269777.61643183936,
+              "Shape_Area": 105931048.71875
+            },
+            {
+              "OBJECTID": 2.0,
+              "AREA": 14484430.0,
+              "PERIMETER": 64249.191,
+              "SSZS_": 11.0,
+              "SSZS_ID": 14.0,
+              "ZONE_": 9,
+              "ZONE_NAME": "San Andreas",
+              "Shape_Leng": 64251.15752799095,
+              "Shape_Area": 14482536.09375
+            },
+            {
+              "OBJECTID": 3.0,
+              "AREA": 323668.188,
+              "PERIMETER": 3053.96,
+              "SSZS_": 12.0,
+              "SSZS_ID": 15.0,
+              "ZONE_": 9,
+              "ZONE_NAME": "San Andreas",
+              "Shape_Leng": 3053.93749050447,
+              "Shape_Area": 323840.40625
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            544222.8125,
+            4081753.0,
+            640047.1875,
+            4170208.0
+          ]
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": true,
+    "visual_review_policy": "at_least_one",
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Erase overlapping areas of PACounties from generated_polygon to produce a non-overlapping difference layer.",
+      "inputs": [
+        "generated_polygon",
+        "pacounties"
+      ],
+      "expected_outputs": [
+        "generated_polygon_diff.shp"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Both inputs use EPSG:4269. Perform a vector difference/erase operation where generated_polygon is the input layer and pacounties is the erase layer. Retain original id field."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Merge the erased polygon layer with the PACounties layer into a single unified Shapefile.",
+      "inputs": [
+        "generated_polygon_diff.shp",
+        "pacounties"
+      ],
+      "expected_outputs": [
+        "merged_polygon.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Combine features from both inputs into one Shapefile. Handle differing attribute schemas by preserving all columns and filling missing values with nulls. Ensure valid geometry types."
+    }
+  ],
+  "current_step_index": 2,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "at_least_one"
+}

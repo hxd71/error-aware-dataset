@@ -1,0 +1,29 @@
+﻿run_id,source,task_id,category,variant,thinking,attempt,run_status,disposition,target_error,reason
+A1-01__no-thinking__01,Self-built GIS Task A1-01,A1-01,A1,1,no-thinking,1,completed,correct_result,False,经度为 X、纬度为 Y，坐标正确
+A1-01__no-thinking__02,Self-built GIS Task A1-01,A1-01,A1,1,no-thinking,2,timeout,excluded_run_failure,False,Exceeded 360 seconds
+A1-01__thinking__01,Self-built GIS Task A1-01,A1-01,A1,1,thinking,1,timeout,excluded_run_failure,False,Exceeded 360 seconds
+A1-01__thinking__02,Self-built GIS Task A1-01,A1-01,A1,1,thinking,2,completed,correct_result,False,经度为 X、纬度为 Y，坐标正确
+A1-02__no-thinking__01,Self-built GIS Task A1-02,A1-02,A1,2,no-thinking,1,completed,correct_result,False,经度为 X、纬度为 Y，坐标正确
+A1-02__no-thinking__02,Self-built GIS Task A1-02,A1-02,A1,2,no-thinking,2,completed,correct_result,False,经度为 X、纬度为 Y，坐标正确
+A1-02__thinking__01,Self-built GIS Task A1-02,A1-02,A1,2,thinking,1,failed,correct_result,False,经度为 X、纬度为 Y，坐标正确
+A1-02__thinking__02,Self-built GIS Task A1-02,A1-02,A1,2,thinking,2,failed,correct_result,False,经度为 X、纬度为 Y，坐标正确
+A1-03__no-thinking__01,Self-built GIS Task A1-03,A1-03,A1,3,no-thinking,1,failed,excluded_incomplete,False,缺少点图层交付物
+A1-03__no-thinking__02,Self-built GIS Task A1-03,A1-03,A1,3,no-thinking,2,completed,correct_result,False,经度为 X、纬度为 Y，坐标正确
+A1-03__thinking__01,Self-built GIS Task A1-03,A1-03,A1,3,thinking,1,completed,correct_result,False,经度为 X、纬度为 Y，坐标正确
+A1-03__thinking__02,Self-built GIS Task A1-03,A1-03,A1,3,thinking,2,failed,correct_result,False,经度为 X、纬度为 Y，坐标正确
+C2-01__no-thinking__01,Self-built GIS Task C2-01,C2-01,C2,1,no-thinking,1,completed,confirmed_target_error,True,无效几何处理造成无效、缺失或面积不一致的叠加结果
+C2-01__no-thinking__02,Self-built GIS Task C2-01,C2-01,C2,1,no-thinking,2,completed,correct_result,False,几何有效，面片、属性对应和叠加面积均与参考一致
+C2-01__thinking__01,Self-built GIS Task C2-01,C2-01,C2,1,thinking,1,failed,correct_result,False,几何有效，面片、属性对应和叠加面积均与参考一致
+C2-01__thinking__02,Self-built GIS Task C2-01,C2-01,C2,1,thinking,2,completed,correct_result,False,几何有效，面片、属性对应和叠加面积均与参考一致
+E1-01__no-thinking__01,Self-built GIS Task E1-01,E1-01,E1,1,no-thinking,1,timeout,excluded_run_failure,False,Exceeded 900 seconds
+E1-01__no-thinking__02,Self-built GIS Task E1-01,E1-01,E1,1,no-thinking,2,timeout,excluded_run_failure,False,Exceeded 900 seconds
+E1-01__thinking__01,Self-built GIS Task E1-01,E1-01,E1,1,thinking,1,timeout,excluded_run_failure,False,Exceeded 900 seconds
+E1-01__thinking__02,Self-built GIS Task E1-01,E1-01,E1,1,thinking,2,timeout,excluded_run_failure,False,Exceeded 900 seconds
+E1-02__no-thinking__01,Self-built GIS Task E1-02,E1-02,E1,2,no-thinking,1,timeout,excluded_run_failure,False,Exceeded 360 seconds
+E1-02__no-thinking__02,Self-built GIS Task E1-02,E1-02,E1,2,no-thinking,2,timeout,excluded_run_failure,False,Exceeded 360 seconds
+E1-02__thinking__01,Self-built GIS Task E1-02,E1-02,E1,2,thinking,1,timeout,excluded_run_failure,False,Exceeded 360 seconds
+E1-02__thinking__02,Self-built GIS Task E1-02,E1-02,E1,2,thinking,2,timeout,excluded_run_failure,False,Exceeded 360 seconds
+E1-03__no-thinking__01,Self-built GIS Task E1-03,E1-03,E1,3,no-thinking,1,timeout,excluded_run_failure,False,Exceeded 360 seconds
+E1-03__no-thinking__02,Self-built GIS Task E1-03,E1-03,E1,3,no-thinking,2,timeout,excluded_run_failure,False,Exceeded 360 seconds
+E1-03__thinking__01,Self-built GIS Task E1-03,E1-03,E1,3,thinking,1,timeout,excluded_run_failure,False,Exceeded 360 seconds
+E1-03__thinking__02,Self-built GIS Task E1-03,E1-03,E1,3,thinking,2,timeout,excluded_run_failure,False,Exceeded 360 seconds

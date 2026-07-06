@@ -1,0 +1,10 @@
+{
+  "step_id": "step_03",
+  "description": "Count of road features where Length < 100 meters",
+  "filter_field": "METERS",
+  "filter_threshold": 100,
+  "filter_unit": "meters",
+  "short_roads_count": 32634,
+  "total_roads": 54113,
+  "percentage_short": 60.31
+}

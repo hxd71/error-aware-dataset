@@ -1,0 +1,94 @@
+{
+  "user_query": "Add new fields for latitude and longitude to the fast food restaurants layer, then extract the elevation values from the DEM layer and save the results in a new layer.",
+  "task_context": {
+    "case_id": "geoagent_066",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "pa_fastfoods",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Pennsylvania\\PA_Fastfoods\\PA_Fastfoods.shp",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path Pennsylvania/PA_Fastfoods.",
+        "format": "shp",
+        "crs": "EPSG:4326",
+        "metadata": {
+          "feature_count": 2437,
+          "columns": [
+            "name",
+            "osm_id",
+            "type"
+          ],
+          "geometry_types": [
+            "Point"
+          ],
+          "field_types": {
+            "name": "str",
+            "osm_id": "int64",
+            "type": "str"
+          },
+          "sample_rows": [
+            {
+              "name": "McDonald's",
+              "osm_id": 35314235,
+              "type": "node"
+            },
+            {
+              "name": "Domino's",
+              "osm_id": 35314742,
+              "type": "node"
+            },
+            {
+              "name": "McDonald's",
+              "osm_id": 61367536,
+              "type": "node"
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            -80.4732721,
+            39.7422982,
+            -74.722287,
+            42.2317542
+          ]
+        }
+      },
+      {
+        "asset_id": "pa_dem",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Pennsylvania\\PA_DEM.tif",
+        "role": "reference",
+        "description": "GeoAgent source asset from data_path Pennsylvania/PA_DEM.tif.",
+        "format": "tif",
+        "crs": "EPSG:4326",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Pennsylvania\\PA_DEM.tif",
+          "width": 6998,
+          "height": 3354,
+          "count": 1,
+          "dtype": "int16",
+          "nodata": 0.0,
+          "pixel_size": [
+            0.000833333333333144,
+            0.000833333333333144
+          ],
+          "bounds": [
+            -80.5212500000226,
+            39.72041666667128,
+            -74.68958333335726,
+            42.51541666667064
+          ],
+          "band_names": []
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": true,
+    "visual_review_policy": "all_visualizable",
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

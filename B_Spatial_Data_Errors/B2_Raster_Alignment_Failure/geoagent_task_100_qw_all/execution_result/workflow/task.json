@@ -1,0 +1,324 @@
+{
+  "user_query": "I want you to calculate NVDI index based on these two bands.",
+  "task_context": {
+    "case_id": "geoagent_100",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "lc08_l1tp_190055_20200214_20200823_02_t1_b1",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B1.TIF",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path LC08_L1TP_190055_20200214_20200823_02_T1.",
+        "format": "tif",
+        "crs": "EPSG:32631",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B1.TIF",
+          "width": 7561,
+          "height": 7731,
+          "count": 1,
+          "dtype": "uint16",
+          "nodata": 0.0,
+          "pixel_size": [
+            30.0,
+            30.0
+          ],
+          "bounds": [
+            603285.0,
+            683385.0,
+            830115.0,
+            915315.0
+          ],
+          "band_names": []
+        }
+      },
+      {
+        "asset_id": "lc08_l1tp_190055_20200214_20200823_02_t1_b10",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B10.TIF",
+        "role": "reference",
+        "description": "GeoAgent source asset from data_path LC08_L1TP_190055_20200214_20200823_02_T1.",
+        "format": "tif",
+        "crs": "EPSG:32631",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B10.TIF",
+          "width": 7561,
+          "height": 7731,
+          "count": 1,
+          "dtype": "uint16",
+          "nodata": 0.0,
+          "pixel_size": [
+            30.0,
+            30.0
+          ],
+          "bounds": [
+            603285.0,
+            683385.0,
+            830115.0,
+            915315.0
+          ],
+          "band_names": []
+        }
+      },
+      {
+        "asset_id": "lc08_l1tp_190055_20200214_20200823_02_t1_b11",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B11.TIF",
+        "role": "asset_03",
+        "description": "GeoAgent source asset from data_path LC08_L1TP_190055_20200214_20200823_02_T1.",
+        "format": "tif",
+        "crs": "EPSG:32631",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B11.TIF",
+          "width": 7561,
+          "height": 7731,
+          "count": 1,
+          "dtype": "uint16",
+          "nodata": 0.0,
+          "pixel_size": [
+            30.0,
+            30.0
+          ],
+          "bounds": [
+            603285.0,
+            683385.0,
+            830115.0,
+            915315.0
+          ],
+          "band_names": []
+        }
+      },
+      {
+        "asset_id": "lc08_l1tp_190055_20200214_20200823_02_t1_b2",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B2.TIF",
+        "role": "asset_04",
+        "description": "GeoAgent source asset from data_path LC08_L1TP_190055_20200214_20200823_02_T1.",
+        "format": "tif",
+        "crs": "EPSG:32631",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B2.TIF",
+          "width": 7561,
+          "height": 7731,
+          "count": 1,
+          "dtype": "uint16",
+          "nodata": 0.0,
+          "pixel_size": [
+            30.0,
+            30.0
+          ],
+          "bounds": [
+            603285.0,
+            683385.0,
+            830115.0,
+            915315.0
+          ],
+          "band_names": []
+        }
+      },
+      {
+        "asset_id": "lc08_l1tp_190055_20200214_20200823_02_t1_b3",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B3.TIF",
+        "role": "asset_05",
+        "description": "GeoAgent source asset from data_path LC08_L1TP_190055_20200214_20200823_02_T1.",
+        "format": "tif",
+        "crs": "EPSG:32631",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B3.TIF",
+          "width": 7561,
+          "height": 7731,
+          "count": 1,
+          "dtype": "uint16",
+          "nodata": 0.0,
+          "pixel_size": [
+            30.0,
+            30.0
+          ],
+          "bounds": [
+            603285.0,
+            683385.0,
+            830115.0,
+            915315.0
+          ],
+          "band_names": []
+        }
+      },
+      {
+        "asset_id": "lc08_l1tp_190055_20200214_20200823_02_t1_b4",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B4.TIF",
+        "role": "asset_06",
+        "description": "GeoAgent source asset from data_path LC08_L1TP_190055_20200214_20200823_02_T1.",
+        "format": "tif",
+        "crs": "EPSG:32631",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B4.TIF",
+          "width": 7561,
+          "height": 7731,
+          "count": 1,
+          "dtype": "uint16",
+          "nodata": 0.0,
+          "pixel_size": [
+            30.0,
+            30.0
+          ],
+          "bounds": [
+            603285.0,
+            683385.0,
+            830115.0,
+            915315.0
+          ],
+          "band_names": []
+        }
+      },
+      {
+        "asset_id": "lc08_l1tp_190055_20200214_20200823_02_t1_b5",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B5.TIF",
+        "role": "asset_07",
+        "description": "GeoAgent source asset from data_path LC08_L1TP_190055_20200214_20200823_02_T1.",
+        "format": "tif",
+        "crs": "EPSG:32631",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B5.TIF",
+          "width": 7561,
+          "height": 7731,
+          "count": 1,
+          "dtype": "uint16",
+          "nodata": 0.0,
+          "pixel_size": [
+            30.0,
+            30.0
+          ],
+          "bounds": [
+            603285.0,
+            683385.0,
+            830115.0,
+            915315.0
+          ],
+          "band_names": []
+        }
+      },
+      {
+        "asset_id": "lc08_l1tp_190055_20200214_20200823_02_t1_b6",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B6.TIF",
+        "role": "asset_08",
+        "description": "GeoAgent source asset from data_path LC08_L1TP_190055_20200214_20200823_02_T1.",
+        "format": "tif",
+        "crs": "EPSG:32631",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B6.TIF",
+          "width": 7561,
+          "height": 7731,
+          "count": 1,
+          "dtype": "uint16",
+          "nodata": 0.0,
+          "pixel_size": [
+            30.0,
+            30.0
+          ],
+          "bounds": [
+            603285.0,
+            683385.0,
+            830115.0,
+            915315.0
+          ],
+          "band_names": []
+        }
+      },
+      {
+        "asset_id": "lc08_l1tp_190055_20200214_20200823_02_t1_b7",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B7.TIF",
+        "role": "asset_09",
+        "description": "GeoAgent source asset from data_path LC08_L1TP_190055_20200214_20200823_02_T1.",
+        "format": "tif",
+        "crs": "EPSG:32631",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B7.TIF",
+          "width": 7561,
+          "height": 7731,
+          "count": 1,
+          "dtype": "uint16",
+          "nodata": 0.0,
+          "pixel_size": [
+            30.0,
+            30.0
+          ],
+          "bounds": [
+            603285.0,
+            683385.0,
+            830115.0,
+            915315.0
+          ],
+          "band_names": []
+        }
+      },
+      {
+        "asset_id": "lc08_l1tp_190055_20200214_20200823_02_t1_b8",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B8.TIF",
+        "role": "asset_10",
+        "description": "GeoAgent source asset from data_path LC08_L1TP_190055_20200214_20200823_02_T1.",
+        "format": "tif",
+        "crs": "EPSG:32631",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B8.TIF",
+          "width": 15121,
+          "height": 15461,
+          "count": 1,
+          "dtype": "uint16",
+          "nodata": 0.0,
+          "pixel_size": [
+            15.0,
+            15.0
+          ],
+          "bounds": [
+            603292.5,
+            683392.5,
+            830107.5,
+            915307.5
+          ],
+          "band_names": []
+        }
+      },
+      {
+        "asset_id": "lc08_l1tp_190055_20200214_20200823_02_t1_b9",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B9.TIF",
+        "role": "asset_11",
+        "description": "GeoAgent source asset from data_path LC08_L1TP_190055_20200214_20200823_02_T1.",
+        "format": "tif",
+        "crs": "EPSG:32631",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\LC08_L1TP_190055_20200214_20200823_02_T1\\LC08_L1TP_190055_20200214_20200823_02_T1_B9.TIF",
+          "width": 7561,
+          "height": 7731,
+          "count": 1,
+          "dtype": "uint16",
+          "nodata": 0.0,
+          "pixel_size": [
+            30.0,
+            30.0
+          ],
+          "bounds": [
+            603285.0,
+            683385.0,
+            830115.0,
+            915315.0
+          ],
+          "band_names": []
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": true,
+    "visual_review_policy": "all_visualizable",
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

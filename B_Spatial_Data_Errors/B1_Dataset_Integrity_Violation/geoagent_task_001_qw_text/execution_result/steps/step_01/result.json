@@ -1,0 +1,17 @@
+{
+  "step_id": "step_01",
+  "success": true,
+  "artifacts": [
+    {
+      "name": "columbia_residential_roads.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260422T115149Z-1e0672b1-001-geoagent_001-try01\\steps\\step_01\\columbia_residential_roads.shp",
+      "artifact_type": "vector",
+      "description": ""
+    }
+  ],
+  "logs": "exit_code=0\nduration_seconds=0.7239\n[stdout]\n{\"step\": \"step_01\", \"status\": \"success\", \"input_features\": 1349, \"output_features\": 397, \"output_path\": \"[EXTERNAL_PATH]"}\n\n[stderr]\n\n",
+  "summary": "Step executed successfully. summary_keys=['input_features', 'output_features', 'output_path', 'status', 'step']; artifacts=['columbia_residential_roads.shp']",
+  "error_type": null,
+  "recoverable": false,
+  "validation_messages": []
+}

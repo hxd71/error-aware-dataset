@@ -1,0 +1,27 @@
+{
+  "sample_id": "geoagent_task_002",
+  "source": "GeoAgent Task 2",
+  "task_id": 2,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "DeepSeek V4 Pro",
+    "provider": "DeepSeek",
+    "reasoning": "thinking 已关闭",
+    "visual_review_model": "Qwen3-VL",
+    "visual_review_reasoning": "thinking 已关闭"
+  },
+  "primary_label": "D2. Spatial Allocation Error",
+  "secondary_labels": [],
+  "error_summary": "图表对县级肥胖率进行州内简单平均，未按县人口加权，导致州级总体肥胖率及其排序发生偏差。",
+  "result_previews": [
+    {
+      "source_artifact": "coder/subtask_1/obesity_prevalence_barchart.png",
+      "stage": "最终图表成果",
+      "preview_file": "previews/obesity_prevalence_barchart.png",
+      "description": "LLM 生成的州级肥胖率柱状图原图。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "依据原任务输入和 GIS 规则计算参考结果"
+}

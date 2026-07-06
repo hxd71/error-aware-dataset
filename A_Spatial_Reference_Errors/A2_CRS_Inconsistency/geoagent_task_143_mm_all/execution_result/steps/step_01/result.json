@@ -1,0 +1,17 @@
+{
+  "step_id": "step_01",
+  "success": true,
+  "artifacts": [
+    {
+      "name": "country_3857.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-143-geoagent_143-try01\\steps\\step_01\\country_3857.shp",
+      "artifact_type": "vector",
+      "description": ""
+    }
+  ],
+  "logs": "exit_code=0\nduration_seconds=0.9537\n[stdout]\n{\"step_id\": \"step_01\", \"operation\": \"reproject_vector\", \"input_crs\": \"EPSG:4326\", \"output_crs\": \"EPSG:3857\", \"output_path\": \"[EXTERNAL_PATH]", \"status\": \"success\"}\n\n[stderr]\n\n",
+  "summary": "Step executed successfully. summary_keys=['input_crs', 'operation', 'output_crs', 'output_path', 'status', 'step_id']; artifacts=['country_3857.shp']",
+  "error_type": null,
+  "recoverable": false,
+  "validation_messages": []
+}

@@ -1,0 +1,7 @@
+exit_code=0
+duration_seconds=1.1102
+[stdout]
+{"status": "success", "output": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T172139Z-88a9e18e-079-geoagent_079-try01\\steps\\step_01\\street_image_year.geojson", "features": 7959}
+
+[stderr]
+

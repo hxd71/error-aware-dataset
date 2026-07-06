@@ -1,0 +1,11 @@
+exit_code=0
+duration_seconds=1.3755
+[stdout]
+Reading input: [SECONDARY_RUN_WORKSPACE]\data\from_geo_agent\datasets\Street_tree\Richland_downtown_street_view_image_location_EPSG6569\Richland_downtown_street_view_image_location_EPSG6569.shp
+Total features loaded: 19257
+Filtered features (year >= 2013): 18849
+Output written: [SECONDARY_RUN_WORKSPACE]\outputs\evaluations\from_geo_agent\eval-from-geo-agent-20260420T112719Z-2446843a\runs\eval-from-geo-agent-20260420T112719Z-2446843a-088-geoagent_088-try01\steps\step_01\filtered_points_2013_onward.shp
+{"step_id": "step_01", "input_features": 19257, "output_features": 18849, "filter_rule": "image_date year >= 2013", "output_path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260420T112719Z-2446843a\\runs\\eval-from-geo-agent-20260420T112719Z-2446843a-088-geoagent_088-try01\\steps\\step_01\\filtered_points_2013_onward.shp"}
+
+[stderr]
+

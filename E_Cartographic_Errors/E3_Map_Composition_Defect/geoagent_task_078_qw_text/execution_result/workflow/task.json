@@ -1,0 +1,105 @@
+{
+  "user_query": "Generate centroids for each building feature and save the result in a Shapefile, extract the elevation values from the DEM at each building centroid, and export the elevation data to draw a histogram with 50 bins using Seaborn.",
+  "task_context": {
+    "case_id": "geoagent_078",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "penn_state_buildings",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Pennsylvania\\Penn_State_Buildings\\Penn_State_Buildings.shp",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path Pennsylvania/Penn_State_Buildings.",
+        "format": "shp",
+        "crs": "EPSG:4326",
+        "metadata": {
+          "feature_count": 719,
+          "columns": [
+            "type",
+            "id",
+            "bounds",
+            "nodes",
+            "tags"
+          ],
+          "geometry_types": [
+            "Polygon"
+          ],
+          "field_types": {
+            "type": "str",
+            "id": "str",
+            "bounds": "str",
+            "nodes": "str",
+            "tags": "str"
+          },
+          "sample_rows": [
+            {
+              "type": "way",
+              "id": "35026793",
+              "bounds": "{'minlat': 40.7961425, 'minlon': -77.8632501, 'maxlat': 40.796786, 'maxlon': -77.8623896}",
+              "nodes": "410825244, 589321425, 418993517, 418993515, 4315824703, 4315824702, 4304801871, 410825245, 3906678905, 3906678930, 4749974560, 410825246, 4315824707, 410825247, 3906678989, 4749974559, 3906678965, 410825248, 4304801898, 4315824706, 418993516, 418993518,",
+              "tags": "{'addr:city': 'University Park', 'addr:postcode': '16802', 'addr:state': 'PA', 'building': 'university', 'building:levels': '6', 'building:use': 'administrative office building', 'name': 'Old Main', 'note': 'outline', 'short_name': 'OMN', 'start_date': '"
+            },
+            {
+              "type": "way",
+              "id": "35837055",
+              "bounds": "{'minlat': 40.7988123, 'minlon': -77.8645965, 'maxlat': 40.7992493, 'maxlon': -77.8640211}",
+              "nodes": "4311636288, 2742433268, 4311636264, 4311636253, 4311636247, 4311636265, 4311636271, 4316091987, 4311636277, 6937744098, 4311636288",
+              "tags": "{'addr:city': 'University Park', 'addr:postcode': '16802', 'addr:state': 'PA', 'alt_name': 'Mueller', 'building': 'university', 'building:levels': '8', 'name': 'Mueller Laboratory', 'official_name': 'Erwin W. Mueller', 'operator': 'Eberly College of Scie"
+            },
+            {
+              "type": "way",
+              "id": "35837071",
+              "bounds": "{'minlat': 40.7978389, 'minlon': -77.8646263, 'maxlat': 40.7985567, 'maxlon': -77.8637914}",
+              "nodes": "4311636216, 4311636208, 4311636194, 4311636193, 4311636187, 4311636188, 701659749, 4316091975, 4311636170, 4311636169, 2701278741, 4311636168, 4311636167, 4311636148, 4311636129, 4316091972, 4311636135, 4311636116, 4311636065, 4316091971, 4311636100, 431",
+              "tags": "{'addr:city': 'University Park', 'addr:postcode': '16802', 'addr:state': 'PA', 'alt_name': 'Pond', 'building': 'university', 'building:levels': '4', 'name': 'Pond Laboratory', 'official_name': 'George Gilbert Pond Laboratories', 'operator': 'The College"
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            -77.8850294,
+            40.7820258,
+            -77.8346222,
+            40.8252898
+          ]
+        }
+      },
+      {
+        "asset_id": "psu_dem",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Pennsylvania\\PSU_DEM.tif",
+        "role": "reference",
+        "description": "GeoAgent source asset from data_path Pennsylvania/PSU_DEM.tif.",
+        "format": "tif",
+        "crs": "EPSG:4326",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Pennsylvania\\PSU_DEM.tif",
+          "width": 75,
+          "height": 55,
+          "count": 1,
+          "dtype": "int16",
+          "nodata": 0.0,
+          "pixel_size": [
+            0.000833333333333144,
+            0.000833333333333144
+          ],
+          "bounds": [
+            -77.89208333335654,
+            40.779583333337705,
+            -77.82958333335655,
+            40.825416666671025
+          ],
+          "band_names": []
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": false,
+    "visual_review_policy": "none",
+    "force_no_visual_review": true,
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

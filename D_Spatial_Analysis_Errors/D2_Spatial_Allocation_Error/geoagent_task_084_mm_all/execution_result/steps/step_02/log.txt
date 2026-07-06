@@ -1,0 +1,18 @@
+exit_code=0
+duration_seconds=1.0158
+[stdout]
+Buildings cbfips sample: ['291618910003033', '291618910003073', '291618910003041']
+BG GEOID sample: N/A
+BG columns: ['cbfips', 'total_population']
+Output written: [SECONDARY_RUN_WORKSPACE]\outputs\evaluations\from_geo_agent\eval-from-geo-agent-20260419T165504Z-57ef3a68\runs\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\steps\step_02\buildings_with_bg_totals.shp
+Features: 6909
+CRS: EPSG:4269
+Columns: ['Join_Count', 'TARGET_FID', 'release', 'capture_da', 'GEOID', 'NAME', 'fd_id', 'bid', 'cbfips', 'st_damcat', 'occtype', 'bldgtype', 'num_story', 'sqft', 'found_type', 'found_ht', 'med_yr_blt', 'val_struct', 'val_cont', 'val_vehic', 'ftprntid', 'ftprntsrc', 'source', 'students', 'pop2amu65', 'pop2amo65', 'pop2pmu65', 'pop2pmo65', 'o65disable', 'u65disable', 'x', 'y', 'firmzone', 'grnd_elv_m', 'ground_elv', 'prediction', 'probabilit', 'id', 'DS', 'height', 'geometry', 'bldg_area', 'bg_total_area']
+{"step_id": "step_02", "operation": "join_population_to_buildings", "input_features": 6909, "output_features": 6909, "output_crs": "EPSG:4269", "output_path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260419T165504Z-57ef3a68\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\\steps\\step_02\\buildings_with_bg_totals.shp"}
+
+[stderr]
+[SECONDARY_RUN_WORKSPACE]\outputs\evaluations\from_geo_agent\eval-from-geo-agent-20260419T165504Z-57ef3a68\runs\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\steps\step_02\run_step.py:54: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  buildings_geo.to_file(output_path, driver="ESRI Shapefile")
+[SECONDARY_RUN_WORKSPACE]\.venv\Lib\site-packages\pyogrio\raw.py:733: RuntimeWarning: Normalized/laundered field name: 'bg_total_area' to 'bg_total_a'
+  ogr_write(
+

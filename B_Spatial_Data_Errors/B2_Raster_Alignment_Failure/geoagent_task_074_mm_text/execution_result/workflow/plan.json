@@ -1,0 +1,66 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Rasterize San Francisco census tracts to a binary mask using 100m resolution",
+      "inputs": [
+        "sanfrancisco_tracts_central"
+      ],
+      "expected_outputs": [
+        "tracts_mask_100m.tif"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Use the full extent of sanfrancisco_tracts_central for the raster extent. Burn value 1 for tract polygons. Output resolution: 100m. CRS: EPSG:26710 (matches source data)."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Compute Euclidean distance raster from hospital point locations",
+      "inputs": [
+        "sanfranciscohospitals"
+      ],
+      "expected_outputs": [
+        "distance_to_hospitals.tif"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Compute distance in meters from each 100m cell to the nearest hospital point. Use same 100m resolution and EPSG:26710 CRS as the census tract mask. Distance values represent distance to nearest hospital for every cell."
+    },
+    {
+      "step_id": "step_03",
+      "goal": "Mask the distance raster to census tract boundaries",
+      "inputs": [
+        "distance_to_hospitals.tif",
+        "tracts_mask_100m.tif"
+      ],
+      "expected_outputs": [
+        "tracts_hospital_distances.tif"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Apply the census tract mask so output only contains distance values within census tract areas. Multiply or use conditional masking to keep only cells where tracts_mask = 1."
+    },
+    {
+      "step_id": "step_04",
+      "goal": "Finalize and verify the output distance raster",
+      "inputs": [
+        "tracts_hospital_distances.tif"
+      ],
+      "expected_outputs": [
+        "sf_hospital_accessibility.tif"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Rename and validate final output. Ensure output covers sanfrancisco_tracts_central bounds and maintains 100m cell size in EPSG:26710. Units are meters representing distance from census tract cells to nearest hospital."
+    }
+  ],
+  "current_step_index": 4,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": false,
+  "force_no_visual_review": true,
+  "visual_review_policy": "none"
+}

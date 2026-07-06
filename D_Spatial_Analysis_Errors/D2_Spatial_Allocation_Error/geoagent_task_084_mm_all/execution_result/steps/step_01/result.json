@@ -1,0 +1,17 @@
+{
+  "step_id": "step_01",
+  "success": true,
+  "artifacts": [
+    {
+      "name": "bg_population_totals.csv",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260419T165504Z-57ef3a68\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\\steps\\step_01\\bg_population_totals.csv",
+      "artifact_type": "table",
+      "description": ""
+    }
+  ],
+  "logs": "exit_code=0\nduration_seconds=0.7579\n[stdout]\n{\"step_id\": \"step_01\", \"status\": \"success\", \"block_groups_processed\": 504, \"total_population_sum\": 40602, \"population_fields\": [\"pop2amu65\", \"pop2amo65\", \"pop2pmu65\", \"pop2pmo65\"], \"output_path\": \"[EXTERNAL_PATH]"}\n\n[stderr]\n\n",
+  "summary": "Step executed successfully. summary_keys=['block_groups_processed', 'output_path', 'population_fields', 'status', 'step_id', 'total_population_sum']; artifacts=['bg_population_totals.csv']",
+  "error_type": null,
+  "recoverable": false,
+  "validation_messages": []
+}

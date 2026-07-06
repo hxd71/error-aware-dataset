@@ -1,0 +1,17 @@
+{
+  "step_id": "step_02",
+  "success": true,
+  "artifacts": [
+    {
+      "name": "pa_counties_filtered_lt10.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T172139Z-88a9e18e-092-geoagent_092-try01\\steps\\step_02\\pa_counties_filtered_lt10.shp",
+      "artifact_type": "vector",
+      "description": ""
+    }
+  ],
+  "logs": "exit_code=0\nduration_seconds=0.6836\n[stdout]\n{\"step\": \"step_02\", \"status\": \"success\", \"input\": \"[EXTERNAL_PATH]", \"output\": \"[EXTERNAL_PATH]", \"filter_rule\": \"COUNTYFP < 10\", \"features_kept\": 5}\n\n[stderr]\n\n",
+  "summary": "Step executed successfully. summary_keys=['features_kept', 'filter_rule', 'input', 'output', 'status', 'step']; artifacts=['pa_counties_filtered_lt10.shp']",
+  "error_type": null,
+  "recoverable": false,
+  "validation_messages": []
+}

@@ -1,0 +1,26 @@
+{
+  "sample_id": "geoagent_task_063_mm_one",
+  "source": "GeoAgent Task 63",
+  "task_id": 63,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "MiniMax-M2.7-highspeed",
+    "provider": "minimax",
+    "reasoning": "thinking 开关未单列记录",
+    "visual_review": "至少审查一项可视化成果"
+  },
+  "primary_label": "A3. Unit Misinterpretation",
+  "secondary_labels": [],
+  "error_summary": "以平方英尺计算的面积被标注为平方米",
+  "result_previews": [
+    {
+      "source_artifact": "artifacts/building_area_report.html",
+      "stage": "最终成果",
+      "preview_file": "previews/building_area_report.png",
+      "description": "由错误运行写出的 `building_area_report.html` 生成。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "同一任务的 qwen3.6-plus 正确运行"
+}

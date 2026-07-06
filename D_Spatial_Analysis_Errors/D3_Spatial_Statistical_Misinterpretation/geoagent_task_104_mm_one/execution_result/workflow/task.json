@@ -1,0 +1,112 @@
+{
+  "user_query": "Use the given checkpoint locations, extract the values of the two DEM files, and then compute the RMSE.",
+  "task_context": {
+    "case_id": "geoagent_104",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "checkpoints_columbia",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Street_tree\\Checkpoints_Columbia\\Checkpoints_Columbia.shp",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path Street_tree/Checkpoints_Columbia.",
+        "format": "shp",
+        "crs": "EPSG:6569",
+        "metadata": {
+          "feature_count": 369,
+          "columns": [
+            "id"
+          ],
+          "geometry_types": [
+            "Point"
+          ],
+          "field_types": {
+            "id": "float64"
+          },
+          "sample_rows": [
+            {
+              "id": 0.0
+            },
+            {
+              "id": 1.0
+            },
+            {
+              "id": 2.0
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            607338.0512791864,
+            238074.11440637405,
+            611232.3199458618,
+            240613.43758798935
+          ]
+        }
+      },
+      {
+        "asset_id": "idw_output",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Street_tree\\idw_output.tif",
+        "role": "reference",
+        "description": "GeoAgent source asset from data_path Street_tree/idw_output.tif.",
+        "format": "tif",
+        "crs": "EPSG:6569",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Street_tree\\idw_output.tif",
+          "width": 1000,
+          "height": 1000,
+          "count": 1,
+          "dtype": "float32",
+          "nodata": null,
+          "pixel_size": [
+            4.57566680639342,
+            2.8796517364702012
+          ],
+          "bounds": [
+            607111.3516507,
+            237963.2003492626,
+            611687.0184570934,
+            240842.8520857328
+          ],
+          "band_names": []
+        }
+      },
+      {
+        "asset_id": "richland_dem_epsg_6569",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Street_view_image\\Richland_DEM_EPSG_6569.tif",
+        "role": "asset_03",
+        "description": "GeoAgent source asset from data_path Street_view_image/Richland_DEM_EPSG_6569.tif.",
+        "format": "tif",
+        "crs": "EPSG:6569",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Street_view_image\\Richland_DEM_EPSG_6569.tif",
+          "width": 2313,
+          "height": 1945,
+          "count": 1,
+          "dtype": "int16",
+          "nodata": -32768.0,
+          "pixel_size": [
+            30.0,
+            30.000000000000014
+          ],
+          "bounds": [
+            577599.7872,
+            211834.3461,
+            646989.7872,
+            270184.3461
+          ],
+          "band_names": []
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": true,
+    "visual_review_policy": "at_least_one",
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

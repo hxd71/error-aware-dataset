@@ -1,0 +1,61 @@
+﻿sample_id,source,task_id,sample_origin,primary_label,secondary_labels,llm_model,provider,reasoning,error_summary
+geoagent_task_112,GeoAgent Task 112,112,observed_run,A3. Unit Misinterpretation,B1. Dataset Integrity Violation,DeepSeek V4 Pro,DeepSeek,thinking 已开启,程序在输入图层没有坐标参考系定义的情况下直接执行 `buffer(500)`，数值 500 的空间单位无法确定，因此不能证明输出满足指定距离缓冲的要求。
+geoagent_task_034,GeoAgent Task 34,34,observed_run,B1. Dataset Integrity Violation,A2. CRS Inconsistency,DeepSeek V4 Pro,DeepSeek,thinking 已开启,生成的 Laramie County Shapefile 缺少 `.prj`，无法携带坐标参考系；完整县级数据可提供 EPSG:4326 作为派生参考。
+geoagent_task_094,GeoAgent Task 94,94,observed_run,C1. Topological Predicate Confusion,,DeepSeek V4 Pro,DeepSeek,thinking 已开启,代码将任务要求的穿越关系实现为 `intersects`，把接触和重叠等非穿越关系一并纳入结果，构成拓扑谓词混淆。
+geoagent_task_075,GeoAgent Task 75,75,observed_run,D2. Spatial Allocation Error,,DeepSeek V4 Pro,DeepSeek,thinking 已开启,脚本以县为等权单位计算州级肥胖率，忽略各县人口规模差异，使强度型指标的州级聚合结果产生系统偏差。
+geoagent_task_079,GeoAgent Task 79,79,observed_run,E2. Symbolization Error,,DeepSeek V4 Pro,DeepSeek,thinking 已开启,实际专题图对多个年份类别使用重复或过于接近的颜色，且高频点严重遮盖低频类别，削弱了年份辨识度。
+geoagent_task_002,GeoAgent Task 2,2,observed_run,D2. Spatial Allocation Error,,DeepSeek V4 Pro,DeepSeek,thinking 已关闭,图表对县级肥胖率进行州内简单平均，未按县人口加权，导致州级总体肥胖率及其排序发生偏差。
+geoagent_task_107,GeoAgent Task 107,107,observed_run,B1. Dataset Integrity Violation,A2. CRS Inconsistency,DeepSeek V4 Pro,DeepSeek,thinking 已开启,输入与裁剪输出均缺少 `.prj`，代码仍执行空间裁剪并写出没有权威 CRS 的不完整 Shapefile。
+geoagent_task_105,GeoAgent Task 105,105,observed_run,B3. Missing Data Misinterpretation,,DeepSeek V4 Pro,DeepSeek,thinking 已开启,输出把有效的不适宜像元编码为 0，同时又把 0 声明为 NoData，导致有效负类在 GIS 软件中被当作缺失值屏蔽。
+geoagent_task_116,GeoAgent Task 116,116,observed_run,A3. Unit Misinterpretation,B1. Dataset Integrity Violation,DeepSeek V4 Pro,DeepSeek,thinking 已开启,任务明确要求 100、200、300、400 米缓冲，但代码在两个输入均无 CRS 时直接使用这些数值，无法保证结果单位为米。
+geoagent_task_126,GeoAgent Task 126,126,observed_run,B1. Dataset Integrity Violation,A2. CRS Inconsistency,DeepSeek V4 Pro,DeepSeek,thinking 已开启,Voronoi 与叠加结果继承了输入 Shapefile 缺少 `.prj` 的问题，输出空间参考仍未定义。
+geoagent_task_127,GeoAgent Task 127,127,observed_run,B1. Dataset Integrity Violation,A2. CRS Inconsistency,DeepSeek V4 Pro,DeepSeek,thinking 已开启,分割后的 Shapefile 与两个输入一样缺少 `.prj`，输出数据包未保存空间参考定义。
+geoagent_task_140,GeoAgent Task 140,140,observed_run,B1. Dataset Integrity Violation,A2. CRS Inconsistency,DeepSeek V4 Pro,DeepSeek,thinking 已开启,最近顶点结果及参与运算的输入均缺少 `.prj`，距离关系没有可核验的空间参考。
+geoagent_task_146,GeoAgent Task 146,146,observed_run,B1. Dataset Integrity Violation,A2. CRS Inconsistency,DeepSeek V4 Pro,DeepSeek,thinking 已开启,字段重命名输出与源 Shapefile 均缺少 `.prj`，生成的数据包仍然没有空间参考定义。
+geoagent_task_143_mm_all,GeoAgent Task 143,143,observed_run,A2. CRS Inconsistency,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,输出最小 Y 坐标达到 -242528680.94 米，质心相对正确重投影最大偏差为 111861150.77 米。数据虽然可以读取，却不能作为有效的 EPSG:3857 世界图层使用。
+geoagent_task_088_mm_text,GeoAgent Task 88,88,observed_run,A3. Unit Misinterpretation,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,输出实际是 10 英尺像元，约等于 3.048 米，而不是任务要求的 10 米；栅格尺寸、采样密度和后续地形分析尺度均随之改变。
+geoagent_task_001_qw_text,GeoAgent Task 1,1,observed_run,B1. Dataset Integrity Violation,,qwen3.6-plus,dashscope,thinking 开关未单列记录,应选出 607 条 residential 道路，实际只保留 397 条，共漏掉 210 条。空间数据被当作普通 JSON 文本处理，造成要素丢失。
+geoagent_task_031_qw_one,GeoAgent Task 31,31,observed_run,C1. Topological Predicate Confusion,,qwen3.6-plus,dashscope,thinking 开关未单列记录,generated_polygon 因与县界相交而被整体删除，最终结果只剩 67 个县；正确差集结果还应包含 1 个剩余多边形，共 68 个要素。
+geoagent_task_082_mm_one,GeoAgent Task 82,82,observed_run,C3. Network Connectivity Misinterpretation,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,输出覆盖率达到 1.0，但包含 290 条非法边。几何上看似连续的线并不代表测绘车辆的真实连接关系。
+geoagent_task_092_qw_all,GeoAgent Task 92,92,observed_run,D1. Aggregation Scope Confusion,,qwen3.6-plus,dashscope,thinking 开关未单列记录,筛选实际变成 `COUNTYFP < 10`，只得到 5 个县；按县内点数统计应得到 13 个县。
+geoagent_task_084_mm_all,GeoAgent Task 84,84,observed_run,D2. Spatial Allocation Error,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,输出形成 504 个伪街区组，而输入实际只有 14 个街区组；程序还选择了错误的人口字段，最终建筑人口分配失去街区组总量约束。
+geoagent_task_079_qw_all,GeoAgent Task 79,79,observed_run,E3. Map Composition Defect,,qwen3.6-plus,dashscope,thinking 开关未单列记录,输出只有带年份字段的矢量数据，缺少任务明确要求的专题地图。读者无法直接查看年份类别的空间分布和颜色对应关系。
+geoagent_task_004_mm_one,GeoAgent Task 4,4,observed_run,A3. Unit Misinterpretation,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,等高线间隔的数值单位与数据坐标单位不一致
+geoagent_task_007_mm_one,GeoAgent Task 7,7,observed_run,C1. Topological Predicate Confusion,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,空间连接保留了不应进入结果的左侧要素
+geoagent_task_012_qw_one,GeoAgent Task 12,12,observed_run,B3. Missing Data Misinterpretation,,qwen3.6-plus,dashscope,thinking 开关未单列记录,直方图统计未正确排除栅格 NoData
+geoagent_task_021_mm_text,GeoAgent Task 21,21,observed_run,B1. Dataset Integrity Violation,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,矢量属性写出时发生类型退化
+geoagent_task_022_mm_text,GeoAgent Task 22,22,observed_run,D1. Aggregation Scope Confusion,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,研究区域筛选遗漏了应纳入的行政区域
+geoagent_task_030_qw_text,GeoAgent Task 30,30,observed_run,C1. Topological Predicate Confusion,,qwen3.6-plus,dashscope,thinking 开关未单列记录,合并前错误地只保留相交要素
+geoagent_task_039_qw_one,GeoAgent Task 39,39,observed_run,A2. CRS Inconsistency,,qwen3.6-plus,dashscope,thinking 开关未单列记录,仅修改 CRS 标记而没有转换坐标
+geoagent_task_040_mm_one,GeoAgent Task 40,40,observed_run,D1. Aggregation Scope Confusion,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,点要素的县级空间计数范围错误
+geoagent_task_041_mm_one,GeoAgent Task 41,41,observed_run,C1. Topological Predicate Confusion,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,随机点生成结果没有全部满足面内约束
+geoagent_task_055_mm_one,GeoAgent Task 55,55,observed_run,B3. Missing Data Misinterpretation,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,二值化时误把有效掩膜值当作背景
+geoagent_task_056_qw_one,GeoAgent Task 56,56,observed_run,B3. Missing Data Misinterpretation,,qwen3.6-plus,dashscope,thinking 开关未单列记录,把 NoData 或掩膜外区域误识别为目标值 0，生成了不存在的目标面
+geoagent_task_057_mm_text,GeoAgent Task 57,57,observed_run,C1. Topological Predicate Confusion,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,Voronoi 结果未覆盖全部输入站点
+geoagent_task_063_mm_one,GeoAgent Task 63,63,observed_run,A3. Unit Misinterpretation,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,以平方英尺计算的面积被标注为平方米
+geoagent_task_064_mm_all,GeoAgent Task 64,64,observed_run,B1. Dataset Integrity Violation,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,阈值筛选使用了旧长度字段而非任务要求的新计算 Length 字段
+geoagent_task_065_mm_one,GeoAgent Task 65,65,observed_run,D1. Aggregation Scope Confusion,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,地形崎岖度的区域聚合口径错误
+geoagent_task_066_mm_all,GeoAgent Task 66,66,observed_run,B2. Raster Alignment Failure,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,点位与 DEM 网格没有正确对齐，提取高程发生偏移
+geoagent_task_067_mm_text,GeoAgent Task 67,67,observed_run,B2. Raster Alignment Failure,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,在地理坐标栅格上按错误尺度计算地形梯度
+geoagent_task_070_qw_one,GeoAgent Task 70,70,observed_run,B1. Dataset Integrity Violation,,qwen3.6-plus,dashscope,thinking 开关未单列记录,未筛选铁路要素而把全部道路写入结果
+geoagent_task_073_qw_one,GeoAgent Task 73,73,observed_run,A3. Unit Misinterpretation,,qwen3.6-plus,dashscope,thinking 开关未单列记录,直接在经纬度坐标系中计算质心
+geoagent_task_074_mm_text,GeoAgent Task 74,74,observed_run,B2. Raster Alignment Failure,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,距离栅格的网格或距离计算与参考结果不一致
+geoagent_task_076_qw_one,GeoAgent Task 76,76,observed_run,D1. Aggregation Scope Confusion,,qwen3.6-plus,dashscope,thinking 开关未单列记录,缓冲范围或汇总几何错误导致设施计数排名失真
+geoagent_task_077_mm_all,GeoAgent Task 77,77,observed_run,B2. Raster Alignment Failure,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,坡度栅格计算或质心采样与参考网格不一致
+geoagent_task_078_qw_text,GeoAgent Task 78,78,observed_run,E3. Map Composition Defect,,qwen3.6-plus,dashscope,thinking 开关未单列记录,工作流没有交付任务要求的高程直方图
+geoagent_task_081_mm_text,GeoAgent Task 81,81,observed_run,A3. Unit Misinterpretation,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,最近邻距离阈值使用了错误单位
+geoagent_task_083_qw_one,GeoAgent Task 83,83,observed_run,B1. Dataset Integrity Violation,,qwen3.6-plus,dashscope,thinking 开关未单列记录,FIPS 连接键补零错误造成属性连接缺失
+geoagent_task_089_mm_one,GeoAgent Task 89,89,observed_run,D1. Aggregation Scope Confusion,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,道路缓冲区内树木计数的范围或单位错误
+geoagent_task_093_mm_text,GeoAgent Task 93,93,observed_run,A3. Unit Misinterpretation,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,在度或英尺坐标系中计算后直接标为公里
+geoagent_task_095_mm_all,GeoAgent Task 95,95,observed_run,D1. Aggregation Scope Confusion,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,空间汇总遗漏部分行政单元或观测站
+geoagent_task_096_qw_all,GeoAgent Task 96,96,observed_run,A3. Unit Misinterpretation,,qwen3.6-plus,dashscope,thinking 开关未单列记录,英寸、英尺与米之间的阈值换算错误
+geoagent_task_100_qw_all,GeoAgent Task 100,100,observed_run,B2. Raster Alignment Failure,,qwen3.6-plus,dashscope,thinking 开关未单列记录,遥感栅格的比例因子或偏移量应用错误
+geoagent_task_102_qw_text,GeoAgent Task 102,102,observed_run,E3. Map Composition Defect,,qwen3.6-plus,dashscope,thinking 开关未单列记录,生成了空间数据但没有交付任务要求的地图
+geoagent_task_104_mm_one,GeoAgent Task 104,104,observed_run,D3. Spatial Statistical Misinterpretation,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,RMSE 计算没有采用正确的有效检查点集合
+geoagent_task_113_mm_one,GeoAgent Task 113,113,observed_run,C1. Topological Predicate Confusion,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,Voronoi 区域与输入点之间的对应关系不完整
+geoagent_task_119_mm_text,GeoAgent Task 119,119,observed_run,D3. Spatial Statistical Misinterpretation,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,标准差椭圆的主轴方向或轴长计算错误
+geoagent_task_124_qw_all,GeoAgent Task 124,124,observed_run,C1. Topological Predicate Confusion,,qwen3.6-plus,dashscope,thinking 开关未单列记录,重叠区域提取包含多余或非重叠几何
+geoagent_task_133_mm_text,GeoAgent Task 133,133,observed_run,D1. Aggregation Scope Confusion,,MiniMax-M2.7-highspeed,minimax,thinking 开关未单列记录,降水值与区域之间的空间汇总关系错误
+geoagent_task_066_axis_order,GeoAgent Task 66,66,research_supplement,A1. Coordinate Axis Misinterpretation,,qwen3.6-plus,dashscope,thinking 开关未单列记录,经度和纬度在构造点几何时按相反顺序写入，使所有点从原研究区移动到错误半球
+geoagent_task_079_classification,GeoAgent Task 79,79,research_supplement,E1. Classification Scheme Misuse,,qwen3.6-plus,dashscope,thinking 开关未单列记录,把 11 个离散年份合并为 5 个等距区间，改变了任务要求的年份类别
+self_built_gis_task_c2_01_no_think_01,Self-built GIS Task C2-01,C2-01,observed_run,C2. Invalid Geometry Handling,,DeepSeek V4 Pro,DeepSeek,thinking 已关闭,叠加流程未正确处理输入中的无效和多部件几何，导致最终几何、面片或面积与规范结果不一致。

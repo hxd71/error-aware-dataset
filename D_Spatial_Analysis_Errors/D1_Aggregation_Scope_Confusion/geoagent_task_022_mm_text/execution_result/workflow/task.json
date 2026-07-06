@@ -1,0 +1,118 @@
+{
+  "user_query": "I want you to only keep US contiguous counties from this input data.",
+  "task_context": {
+    "case_id": "geoagent_022",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "us_counties_data",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\US_Counties_Data\\US_Counties_Data\\US_Counties_Data.shp",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path US_Counties_Data/US_Counties_Data.",
+        "format": "shp",
+        "crs": "EPSG:4269",
+        "metadata": {
+          "feature_count": 3234,
+          "columns": [
+            "fid",
+            "STATEFP",
+            "COUNTYFP",
+            "COUNTYNS",
+            "AFFGEOID",
+            "GEOID",
+            "NAME",
+            "NAMELSAD",
+            "STUSPS",
+            "STATE_NAME",
+            "LSAD",
+            "ALAND",
+            "AWATER"
+          ],
+          "geometry_types": [
+            "MultiPolygon",
+            "Polygon"
+          ],
+          "field_types": {
+            "fid": "float64",
+            "STATEFP": "str",
+            "COUNTYFP": "str",
+            "COUNTYNS": "str",
+            "AFFGEOID": "str",
+            "GEOID": "str",
+            "NAME": "str",
+            "NAMELSAD": "str",
+            "STUSPS": "str",
+            "STATE_NAME": "str",
+            "LSAD": "str",
+            "ALAND": "float64",
+            "AWATER": "float64"
+          },
+          "sample_rows": [
+            {
+              "fid": 1.0,
+              "STATEFP": "20",
+              "COUNTYFP": "161",
+              "COUNTYNS": "00485044",
+              "AFFGEOID": "0500000US20161",
+              "GEOID": "20161",
+              "NAME": "Riley",
+              "NAMELSAD": "Riley County",
+              "STUSPS": "KS",
+              "STATE_NAME": "Kansas",
+              "LSAD": "06",
+              "ALAND": 1579077672.0,
+              "AWATER": 32047392.0
+            },
+            {
+              "fid": 2.0,
+              "STATEFP": "19",
+              "COUNTYFP": "159",
+              "COUNTYNS": "00465268",
+              "AFFGEOID": "0500000US19159",
+              "GEOID": "19159",
+              "NAME": "Ringgold",
+              "NAMELSAD": "Ringgold County",
+              "STUSPS": "IA",
+              "STATE_NAME": "Iowa",
+              "LSAD": "06",
+              "ALAND": 1386932347.0,
+              "AWATER": 8723135.0
+            },
+            {
+              "fid": 3.0,
+              "STATEFP": "30",
+              "COUNTYFP": "009",
+              "COUNTYNS": "01720111",
+              "AFFGEOID": "0500000US30009",
+              "GEOID": "30009",
+              "NAME": "Carbon",
+              "NAMELSAD": "Carbon County",
+              "STUSPS": "MT",
+              "STATE_NAME": "Montana",
+              "LSAD": "06",
+              "ALAND": 5303728455.0,
+              "AWATER": 35213028.0
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            -179.148909,
+            -14.548699,
+            179.77847,
+            71.365162
+          ]
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": false,
+    "visual_review_policy": "none",
+    "force_no_visual_review": true,
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

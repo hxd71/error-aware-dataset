@@ -1,0 +1,107 @@
+{
+  "user_query": "I would like to identify which counties in Pennsylvania are suitable for planting more trees, using annual rainfall as a key parameter. Counties receiving more than 2.5 inches of rain per year should be considered suitable for tree planting.  Based on your analysis, please answer the following: what percentage of Pennsylvania is suitable for planting more trees? How many counties meet the criteria for tree planting suitability?",
+  "task_context": {
+    "case_id": "geoagent_096",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "level3_30",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\level3_30\\level3_30.shp",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path level3_30.",
+        "format": "shp",
+        "crs": "EPSG:4269",
+        "metadata": {
+          "feature_count": 67,
+          "columns": [
+            "STATEFP",
+            "COUNTYFP",
+            "COUNTYNS",
+            "AFFGEOID",
+            "GEOID",
+            "NAME",
+            "LSAD",
+            "ALAND",
+            "AWATER",
+            "population",
+            "Rain"
+          ],
+          "geometry_types": [
+            "MultiPolygon",
+            "Polygon"
+          ],
+          "field_types": {
+            "STATEFP": "str",
+            "COUNTYFP": "str",
+            "COUNTYNS": "str",
+            "AFFGEOID": "str",
+            "GEOID": "str",
+            "NAME": "str",
+            "LSAD": "str",
+            "ALAND": "int64",
+            "AWATER": "int64",
+            "population": "int64",
+            "Rain": "float64"
+          },
+          "sample_rows": [
+            {
+              "STATEFP": "42",
+              "COUNTYFP": "105",
+              "COUNTYNS": "01213684",
+              "AFFGEOID": "0500000US42105",
+              "GEOID": "42105",
+              "NAME": "Potter",
+              "LSAD": "06",
+              "ALAND": 2800612694,
+              "AWATER": 559778,
+              "population": 560,
+              "Rain": 0.056
+            },
+            {
+              "STATEFP": "42",
+              "COUNTYFP": "113",
+              "COUNTYNS": "01213687",
+              "AFFGEOID": "0500000US42113",
+              "GEOID": "42113",
+              "NAME": "Sullivan",
+              "LSAD": "06",
+              "ALAND": 1165338428,
+              "AWATER": 6617028,
+              "population": 6617,
+              "Rain": 0.662
+            },
+            {
+              "STATEFP": "42",
+              "COUNTYFP": "077",
+              "COUNTYNS": "01209182",
+              "AFFGEOID": "0500000US42077",
+              "GEOID": "42077",
+              "NAME": "Lehigh",
+              "LSAD": "06",
+              "ALAND": 894071856,
+              "AWATER": 7809973,
+              "population": 7810,
+              "Rain": 0.781
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            -80.519891,
+            39.720062,
+            -74.689516,
+            42.26986
+          ]
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": true,
+    "visual_review_policy": "all_visualizable",
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "user_query": "Generate a raster map, showing the distances from San Francisco census tracts to the nearest hospitals. The map resolution is 100 m.",
+  "task_context": {
+    "case_id": "geoagent_074",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "sanfranciscohospitals",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\SanFrancisco\\SanFranciscoHospitals\\SanFranciscoHospitals.shp",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path SanFrancisco/SanFranciscoHospitals.",
+        "format": "shp",
+        "crs": "EPSG:26710",
+        "metadata": {
+          "feature_count": 22,
+          "columns": [
+            "OBJECTID",
+            "NAME",
+            "FCC"
+          ],
+          "geometry_types": [
+            "Point"
+          ],
+          "field_types": {
+            "OBJECTID": "float64",
+            "NAME": "str",
+            "FCC": "str"
+          },
+          "sample_rows": [
+            {
+              "OBJECTID": 1.0,
+              "NAME": "St Luke's Hospital",
+              "FCC": "D31"
+            },
+            {
+              "OBJECTID": 2.0,
+              "NAME": "Department of Veterans Affairs Medical Center",
+              "FCC": "D31"
+            },
+            {
+              "OBJECTID": 3.0,
+              "NAME": "St.Mary's Medical Center",
+              "FCC": "D31"
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            543691.8186672155,
+            4167917.4444722505,
+            567673.3769715342,
+            4190802.6808871143
+          ]
+        }
+      },
+      {
+        "asset_id": "sanfrancisco_tracts_central",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\SanFrancisco\\SanFrancisco_tracts_central\\SanFrancisco_tracts_central.shp",
+        "role": "reference",
+        "description": "GeoAgent source asset from data_path SanFrancisco/SanFrancisco_tracts_central.",
+        "format": "shp",
+        "crs": "EPSG:26710",
+        "metadata": {
+          "feature_count": 579,
+          "columns": [
+            "STATEFP",
+            "COUNTYFP",
+            "TRACTCE",
+            "AFFGEOID",
+            "GEOID",
+            "NAME",
+            "NAMELSAD",
+            "STUSPS",
+            "NAMELSADCO",
+            "STATE_NAME",
+            "LSAD",
+            "ALAND",
+            "AWATER"
+          ],
+          "geometry_types": [
+            "MultiPolygon",
+            "Polygon"
+          ],
+          "field_types": {
+            "STATEFP": "str",
+            "COUNTYFP": "str",
+            "TRACTCE": "str",
+            "AFFGEOID": "str",
+            "GEOID": "str",
+            "NAME": "str",
+            "NAMELSAD": "str",
+            "STUSPS": "str",
+            "NAMELSADCO": "str",
+            "STATE_NAME": "str",
+            "LSAD": "str",
+            "ALAND": "int64",
+            "AWATER": "int64"
+          },
+          "sample_rows": [
+            {
+              "STATEFP": "06",
+              "COUNTYFP": "075",
+              "TRACTCE": "017102",
+              "AFFGEOID": "1400000US06075017102",
+              "GEOID": "06075017102",
+              "NAME": "171.02",
+              "NAMELSAD": "Census Tract 171.02",
+              "STUSPS": "CA",
+              "NAMELSADCO": "San Francisco County",
+              "STATE_NAME": "California",
+              "LSAD": "CT",
+              "ALAND": 294894,
+              "AWATER": 0
+            },
+            {
+              "STATEFP": "06",
+              "COUNTYFP": "001",
+              "TRACTCE": "428301",
+              "AFFGEOID": "1400000US06001428301",
+              "GEOID": "06001428301",
+              "NAME": "4283.01",
+              "NAMELSAD": "Census Tract 4283.01",
+              "STUSPS": "CA",
+              "NAMELSADCO": "Alameda County",
+              "STATE_NAME": "California",
+              "LSAD": "CT",
+              "ALAND": 4300902,
+              "AWATER": 1597298
+            },
+            {
+              "STATEFP": "06",
+              "COUNTYFP": "075",
+              "TRACTCE": "061501",
+              "AFFGEOID": "1400000US06075061501",
+              "GEOID": "06075061501",
+              "NAME": "615.01",
+              "NAMELSAD": "Census Tract 615.01",
+              "STUSPS": "CA",
+              "NAMELSADCO": "San Francisco County",
+              "STATE_NAME": "California",
+              "LSAD": "CT",
+              "ALAND": 416352,
+              "AWATER": 0
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            523221.31202312454,
+            4146314.8895950876,
+            587808.8484534516,
+            4207741.988431644
+          ]
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": false,
+    "visual_review_policy": "none",
+    "force_no_visual_review": true,
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

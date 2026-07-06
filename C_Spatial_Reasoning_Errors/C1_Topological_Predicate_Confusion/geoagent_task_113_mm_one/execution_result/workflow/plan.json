@@ -1,0 +1,26 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Generate Thiessen (Voronoi) polygons from input point features using geovoronoi package, bounded by the convex hull to ensure no polygons are discarded",
+      "inputs": [
+        "points"
+      ],
+      "expected_outputs": [
+        "voronoi_polygons.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "input_output_comparison",
+      "notes": "Use geovoronoi's voronoi_polygons_from_points function with the convex hull of input points as the boundary region to guarantee all Voronoi cells are bounded polygons. The input points asset has 5 features with CRS Krasovsky_1940_Transverse_Mercator. Preserve all original attribute fields (名称, Distance) in the output. Output CRS should match the input CRS."
+    }
+  ],
+  "current_step_index": 1,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "at_least_one"
+}

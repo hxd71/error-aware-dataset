@@ -1,0 +1,17 @@
+{
+  "step_id": "step_02",
+  "success": true,
+  "artifacts": [
+    {
+      "name": "street_paths.geojson",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260423T184016Z-95a56beb-082-geoagent_082-try01\\steps\\step_02\\street_paths.geojson",
+      "artifact_type": "vector",
+      "description": ""
+    }
+  ],
+  "logs": "exit_code=0\nduration_seconds=1.1772\n[stdout]\nLoaded 7959 points from street_image\nBuilt graph with 7959 nodes\nProcessed 190 nodes, found 100 paths\nProcessed 340 nodes, found 200 paths\nProcessed 498 nodes, found 300 paths\nProcessed 643 nodes, found 400 paths\nProcessed 846 nodes, found 500 paths\nProcessed 1016 nodes, found 600 paths\nProcessed 1175 nodes, found 700 paths\nProcessed 1324 nodes, found 800 paths\nProcessed 1504 nodes, found 900 paths\nProcessed 1697 nodes, found 1000 paths\nProcessed 1821 nodes, found 1100 paths\nProcessed 1943 nodes, found 1200 paths\nProcessed 2088 nodes, found 1300 paths\nProcessed 2242 nodes, found 1400 paths\nProcessed 2384 nodes, found 1500 paths\nProcessed 2572 nodes, found 1600 paths\nProcessed 2760 nodes, found 1700 paths\nProcessed 2890 nodes, found 1800 paths\nProcessed 3084 nodes, found 1900 paths\nProcessed 3219 nodes, found 2000 paths\nProcessed 3342 nodes, found 2100 paths\nProcessed 3502 nodes, found 2200 paths\nProcessed 3697 nodes, found 2300 paths\nProcessed 3846 nodes, found 2400 paths\nProcessed 3972 nodes, found 2500 paths\nProcessed 4091 nodes, found 2600 paths\nProcessed 4240 nodes, found 2700 paths\nProcessed 4377 nodes, found 2800 paths\nProcessed 4538 nodes, found 2900 paths\nProcessed 4704 nodes, found 3000 paths\nProcessed 4891 nodes, found 3100 paths\nProcessed 5057 nodes, found 3200 paths\nProcessed 5221 nodes, found 3300 paths\nProcessed 5357 nodes, found 3400 paths\nProcessed 5505 nodes, found 3500 paths\nProcessed 5646 nodes, found 3600 paths\nProcessed 5844 nodes, found 3700 paths\nProcessed 5995 nodes, found 3800 paths\nProcessed 6150 nodes, found 3900 paths\nProcessed 6321 nodes, found 4000 paths\nProcessed 6483 nodes, found 4100 paths\nProcessed 6615 nodes, found 4200 paths\nProcessed 6771 nodes, found 4300 paths\nProcessed 6984 nodes, found 4400 paths\nProcessed 7130 nodes, found 4500 paths\nProcessed 7238 nodes, found 4600 paths\nProcessed 7396 nodes, found 4700 paths\nProcessed 7521 nodes, found 4800 paths\nProcessed 7670 nodes, found 4900 paths\nProcessed 7799 nodes, found 5000 paths\nFound 5073 connected paths from 7959 iterations\nWrote 5073 street paths to [SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260423T184016Z-95a56beb-082-geoagent_082-try01\\steps\\step_02\\street_paths.geojson\n{\"step_id\": \"step_02\", \"input_points\": 7959, \"graph_nodes\": 7959, \"paths_created\": 5073, \"total_iterations\": 7959, \"output_path\": \"[EXTERNAL_PATH]"}\n\n[stderr]\n\n",
+  "summary": "Step executed successfully. summary_keys=['graph_nodes', 'input_points', 'output_path', 'paths_created', 'step_id', 'total_iterations']; artifacts=['street_paths.geojson']",
+  "error_type": null,
+  "recoverable": false,
+  "validation_messages": []
+}

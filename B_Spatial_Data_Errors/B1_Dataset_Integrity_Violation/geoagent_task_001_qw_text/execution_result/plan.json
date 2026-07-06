@@ -1,0 +1,26 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Filter roads where the parsed 'highway' tag equals 'residential' and save the result as a new shapefile.",
+      "inputs": [
+        "columbia_roads"
+      ],
+      "expected_outputs": [
+        "columbia_residential_roads.shp"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "The 'tags' column contains stringified dictionary data. Parse the 'tags' field to extract the 'highway' key, then filter rows where the value equals 'residential'. Maintain the original EPSG:4326 CRS and LineString geometry."
+    }
+  ],
+  "current_step_index": 1,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": false,
+  "force_no_visual_review": true,
+  "visual_review_policy": "none"
+}

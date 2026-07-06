@@ -1,0 +1,73 @@
+{
+  "backend": "langgraph",
+  "run_id": "eval-from-geo-agent-20260419T165504Z-57ef3a68-064-geoagent_064-try01",
+  "task_completed": true,
+  "task_succeeded": true,
+  "control_signal": "finish",
+  "plan_length": 3,
+  "current_step_index": 3,
+  "current_step": null,
+  "history_entries": 16,
+  "replan_count": 0,
+  "step_retry_count": 1,
+  "current_step_retry_count": 0,
+  "case_id": "geoagent_064",
+  "case_manifest": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "all_visualizable",
+  "token_usage": {
+    "total_prompt_tokens": 46892,
+    "total_completion_tokens": 8026,
+    "total_tokens": 54918,
+    "llm_call_count": 12,
+    "max_single_llm_call_tokens": 8995,
+    "max_single_llm_call": {
+      "node": "coder",
+      "step_id": "step_02",
+      "request_type": "generation",
+      "attempt_index": 0,
+      "prompt_tokens": 8205,
+      "completion_tokens": 790,
+      "total_tokens": 8995
+    },
+    "max_single_step_tokens": 27829,
+    "max_single_step": {
+      "step_id": "step_02",
+      "prompt_tokens": 24464,
+      "completion_tokens": 3365,
+      "total_tokens": 27829,
+      "llm_call_count": 6
+    },
+    "steps": [
+      {
+        "step_id": null,
+        "prompt_tokens": 2875,
+        "completion_tokens": 901,
+        "total_tokens": 3776,
+        "llm_call_count": 1
+      },
+      {
+        "step_id": "step_01",
+        "prompt_tokens": 13925,
+        "completion_tokens": 2418,
+        "total_tokens": 16343,
+        "llm_call_count": 4
+      },
+      {
+        "step_id": "step_02",
+        "prompt_tokens": 24464,
+        "completion_tokens": 3365,
+        "total_tokens": 27829,
+        "llm_call_count": 6
+      },
+      {
+        "step_id": "step_03",
+        "prompt_tokens": 5628,
+        "completion_tokens": 1342,
+        "total_tokens": 6970,
+        "llm_call_count": 1
+      }
+    ]
+  }
+}

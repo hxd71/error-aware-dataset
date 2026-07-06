@@ -1,0 +1,32 @@
+{
+  "sample_id": "geoagent_task_088_mm_text",
+  "source": "GeoAgent Task 88",
+  "task_id": 88,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "MiniMax-M2.7-highspeed",
+    "provider": "minimax",
+    "reasoning": "thinking 开关未单列记录",
+    "visual_review": "未启用视觉审查"
+  },
+  "primary_label": "A3. Unit Misinterpretation",
+  "secondary_labels": [],
+  "error_summary": "输出实际是 10 英尺像元，约等于 3.048 米，而不是任务要求的 10 米；栅格尺寸、采样密度和后续地形分析尺度均随之改变。",
+  "result_previews": [
+    {
+      "source_artifact": "steps/step_02/dem_idw.tif",
+      "stage": "最终成果",
+      "preview_file": "previews/dem_idw.png",
+      "description": "下图是该实验生成的 IDW DEM。表面形态可以显示，但图像本身不会暴露像元单位；10 英尺与 10 米的差异由栅格元数据确认。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "同任务正确运行或依据原任务输入和 GIS 规则计算",
+  "evidence_metrics": {
+    "observed_crs": "EPSG:6569",
+    "observed_pixel_size": 10,
+    "observed_unit": "foot",
+    "required_resolution_m": 10
+  }
+}

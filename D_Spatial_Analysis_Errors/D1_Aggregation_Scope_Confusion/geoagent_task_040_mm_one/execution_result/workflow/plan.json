@@ -1,0 +1,40 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Perform spatial join to count fast food restaurants within each Pennsylvania county polygon",
+      "inputs": [
+        "pennsylvaniacounties",
+        "pa_fastfoods"
+      ],
+      "expected_outputs": [
+        "pa_county_fastfood_counts.geojson"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Join type is 'within'. Use predicate 'within' or 'contains' to count fast food point features that fall inside county polygon geometries. Preserve county NAME or COUNTY field for identification. The output should have one row per county with a count field representing the number of fast food restaurants."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Export the county fast food counts to a CSV table for easy review of numeric results",
+      "inputs": [
+        "pa_county_fastfood_counts.geojson"
+      ],
+      "expected_outputs": [
+        "pa_fastfood_by_county.csv"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Extract only the county name identifier and the fast food count field. Include all 67 Pennsylvania counties in the output."
+    }
+  ],
+  "current_step_index": 2,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "at_least_one"
+}

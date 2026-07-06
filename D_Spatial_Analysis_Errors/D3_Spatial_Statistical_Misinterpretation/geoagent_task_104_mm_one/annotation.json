@@ -1,0 +1,34 @@
+{
+  "sample_id": "geoagent_task_104_mm_one",
+  "source": "GeoAgent Task 104",
+  "task_id": 104,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "MiniMax-M2.7-highspeed",
+    "provider": "minimax",
+    "reasoning": "thinking 开关未单列记录",
+    "visual_review": "至少审查一项可视化成果"
+  },
+  "primary_label": "D3. Spatial Statistical Misinterpretation",
+  "secondary_labels": [],
+  "error_summary": "RMSE 计算没有采用正确的有效检查点集合",
+  "result_previews": [
+    {
+      "source_artifact": "artifacts/rmse_result.txt",
+      "stage": "最终成果",
+      "preview_file": "previews/rmse_result.png",
+      "description": "由错误运行写出的 `rmse_result.txt` 生成。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "同一任务的 MiniMax-M2.7-highspeed 正确运行",
+  "evidence_metrics": {
+    "actual_rmse": [
+      4.128375,
+      4.130826
+    ],
+    "expected_rmse": 4.228232,
+    "valid_checkpoints": 369
+  }
+}

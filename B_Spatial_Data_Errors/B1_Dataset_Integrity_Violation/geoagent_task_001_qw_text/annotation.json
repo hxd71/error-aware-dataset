@@ -1,0 +1,31 @@
+{
+  "sample_id": "geoagent_task_001_qw_text",
+  "source": "GeoAgent Task 1",
+  "task_id": 1,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "qwen3.6-plus",
+    "provider": "dashscope",
+    "reasoning": "thinking 开关未单列记录",
+    "visual_review": "未启用视觉审查"
+  },
+  "primary_label": "B1. Dataset Integrity Violation",
+  "secondary_labels": [],
+  "error_summary": "应选出 607 条 residential 道路，实际只保留 397 条，共漏掉 210 条。空间数据被当作普通 JSON 文本处理，造成要素丢失。",
+  "result_previews": [
+    {
+      "source_artifact": "steps/step_01/columbia_residential_roads.shp",
+      "stage": "最终成果",
+      "preview_file": "previews/columbia_residential_roads.png",
+      "description": "下图是该实验筛选出的 397 条 residential 道路。道路网络中出现的缺口来自字符串解析失败，而不是空间裁剪。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "同任务正确运行或依据原任务输入和 GIS 规则计算",
+  "evidence_metrics": {
+    "observed_features": 397,
+    "expected_features": 607,
+    "missing_features": 210
+  }
+}

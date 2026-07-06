@@ -1,0 +1,44 @@
+{
+  "user_query": "Can you show me the histogram for the DEM pixel values?",
+  "task_context": {
+    "case_id": "geoagent_012",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "sc_dem",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\SouthCarolinaData\\SC_DEM.tif",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path SouthCarolinaData/SC_DEM.tif.",
+        "format": "tif",
+        "crs": "EPSG:4326",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\SouthCarolinaData\\SC_DEM.tif",
+          "width": 5775,
+          "height": 3818,
+          "count": 1,
+          "dtype": "int16",
+          "nodata": 0.0,
+          "pixel_size": [
+            0.000833333333333144,
+            0.000833333333333144
+          ],
+          "bounds": [
+            -83.3545833333553,
+            32.03458333333968,
+            -78.54208333335639,
+            35.21625000000563
+          ],
+          "band_names": []
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": true,
+    "visual_review_policy": "at_least_one",
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

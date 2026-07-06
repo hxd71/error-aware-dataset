@@ -1,0 +1,251 @@
+{
+  "title": "Evidence for step_02",
+  "template_name": "input_output_comparison",
+  "add_basemap": false,
+  "layer_count": 3,
+  "highlight_layers": [
+    "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260423T184016Z-6344b54d-031-geoagent_031-try01\\steps\\step_02\\merged_polygon.shp"
+  ],
+  "output_path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260423T184016Z-6344b54d-031-geoagent_031-try01\\steps\\step_02\\figure.png",
+  "rendered_layers": [
+    "generated_polygon_diff.shp",
+    "reference",
+    "merged_polygon.shp"
+  ],
+  "comparison_left_labels": [
+    "generated_polygon_diff.shp",
+    "reference"
+  ],
+  "comparison_right_labels": [
+    "merged_polygon.shp"
+  ],
+  "shared_extent": [
+    -80.519891,
+    39.7198,
+    -74.689516,
+    42.26986
+  ],
+  "padded_extent": [
+    -80.8697135,
+    39.5667964,
+    -74.3396935,
+    42.4228636
+  ],
+  "applied_view_focus": "result_extent",
+  "applied_extent": [
+    -80.8697135,
+    39.362325,
+    -74.3396935,
+    42.627335
+  ],
+  "extent_padding_ratio": 0.06,
+  "max_extent_aspect_ratio": 2.0,
+  "aspect_ratio_guard_applied": true,
+  "shared_extent_aspect_ratio": 2.286367771738704,
+  "padded_extent_aspect_ratio": 2.2863677717387083,
+  "applied_extent_aspect_ratio": 2.0,
+  "legend_placement": "panel_top",
+  "note": null,
+  "input_panel_is_alpha_composite": false,
+  "input_panel_layers": [
+    {
+      "label": "generated_polygon_diff.shp",
+      "layer_type": "vector",
+      "alpha": 0.45
+    },
+    {
+      "label": "reference",
+      "layer_type": "vector",
+      "alpha": 0.45
+    }
+  ],
+  "panel_colorbars": {
+    "inputs": {
+      "present": false,
+      "mode": null,
+      "source_layer": null,
+      "source_layers": [],
+      "vmin": null,
+      "vmax": null
+    },
+    "outputs": {
+      "present": false,
+      "mode": null,
+      "source_layer": null,
+      "source_layers": [],
+      "vmin": null,
+      "vmax": null
+    }
+  },
+  "comparison_uses_shared_raster_limits": false,
+  "comparison_raster_limits": null,
+  "map_boundary_box_visible": true,
+  "map_boundary_box_style": {
+    "color": "#6B7280",
+    "linewidth": 0.8
+  },
+  "scale_bar_visible": true,
+  "scale_bar_position": "below_panel",
+  "scale_bar_panels": [
+    {
+      "panel": "inputs",
+      "visible": true,
+      "length_meters": 100000.0,
+      "display_label": "100 km",
+      "estimated": true,
+      "crs": "EPSG:4269",
+      "width_fraction": 0.18204347981310978,
+      "reason": null
+    },
+    {
+      "panel": "outputs",
+      "visible": true,
+      "length_meters": 100000.0,
+      "display_label": "100 km",
+      "estimated": true,
+      "crs": "EPSG:4269",
+      "width_fraction": 0.18204347981310978,
+      "reason": null
+    }
+  ],
+  "crs": "EPSG:4269",
+  "display_crs": "EPSG:4269",
+  "layer_details": [
+    {
+      "label": "generated_polygon_diff.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260423T184016Z-6344b54d-031-geoagent_031-try01\\steps\\step_01\\generated_polygon_diff.shp",
+      "layer_type": "vector",
+      "source_crs": "EPSG:4269",
+      "display_crs": "EPSG:4269",
+      "alpha": 0.45,
+      "color": "#F58518",
+      "fill": true,
+      "fill_alpha": 0.45,
+      "linewidth": 0.6,
+      "zorder": 2,
+      "display_vmin": null,
+      "display_vmax": null
+    },
+    {
+      "label": "reference",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Pennsylvania\\PACounties\\PACounties.shp",
+      "layer_type": "vector",
+      "source_crs": "EPSG:4269",
+      "display_crs": "EPSG:4269",
+      "alpha": 0.45,
+      "color": "#E45756",
+      "fill": true,
+      "fill_alpha": 0.18,
+      "linewidth": 0.6,
+      "zorder": 3,
+      "display_vmin": null,
+      "display_vmax": null
+    },
+    {
+      "label": "merged_polygon.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260423T184016Z-6344b54d-031-geoagent_031-try01\\steps\\step_02\\merged_polygon.shp",
+      "layer_type": "vector",
+      "source_crs": "EPSG:4269",
+      "display_crs": "EPSG:4269",
+      "alpha": 0.8,
+      "color": "#4C78A8",
+      "fill": true,
+      "fill_alpha": 0.8,
+      "linewidth": 0.8,
+      "zorder": 1,
+      "display_vmin": null,
+      "display_vmax": null
+    }
+  ],
+  "applied_layer_styles": [
+    {
+      "label": "generated_polygon_diff.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260423T184016Z-6344b54d-031-geoagent_031-try01\\steps\\step_01\\generated_polygon_diff.shp",
+      "color": "#F58518",
+      "fill": true,
+      "fill_alpha": 0.45,
+      "linewidth": 0.6,
+      "zorder": 2
+    },
+    {
+      "label": "reference",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Pennsylvania\\PACounties\\PACounties.shp",
+      "color": "#E45756",
+      "fill": true,
+      "fill_alpha": 0.18,
+      "linewidth": 0.6,
+      "zorder": 3
+    },
+    {
+      "label": "merged_polygon.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260423T184016Z-6344b54d-031-geoagent_031-try01\\steps\\step_02\\merged_polygon.shp",
+      "color": "#4C78A8",
+      "fill": true,
+      "fill_alpha": 0.8,
+      "linewidth": 0.8,
+      "zorder": 1
+    }
+  ],
+  "renderer": "matplotlib",
+  "candidate_layer_count": 3,
+  "candidate_layer_ids": [
+    "layer_01",
+    "layer_02",
+    "layer_03"
+  ],
+  "selected_layer_ids": [
+    "layer_03",
+    "layer_01",
+    "layer_02"
+  ],
+  "selected_layer_labels": [
+    "merged_polygon.shp",
+    "generated_polygon_diff.shp",
+    "reference"
+  ],
+  "excluded_layer_ids": [],
+  "highlight_layer_ids": [
+    "layer_03"
+  ],
+  "selection_source": "llm",
+  "selector_attempt_count": 2,
+  "selector_repair_attempts": 1,
+  "selector_invalid_reason": null,
+  "view_focus": "result_extent",
+  "final_template_name": "input_output_comparison",
+  "template_decision_reason": "forced_input_output_comparison",
+  "selection_plan": {
+    "selected_layer_ids": [
+      "layer_03",
+      "layer_01",
+      "layer_02"
+    ],
+    "highlight_layer_ids": [
+      "layer_03"
+    ],
+    "excluded_layer_ids": [],
+    "layer_roles": {
+      "layer_03": "result",
+      "layer_01": "subject",
+      "layer_02": "reference"
+    },
+    "layer_styles": {
+      "layer_03": {
+        "color": "#4C78A8"
+      },
+      "layer_01": {
+        "color": "#F58518"
+      },
+      "layer_02": {
+        "color": "#E45756"
+      }
+    },
+    "render_priority": {
+      "layer_03": 1,
+      "layer_01": 2,
+      "layer_02": 3
+    },
+    "view_focus": "result_extent",
+    "rationale": "The current step merges two input layers into a single unified shapefile. The result layer is highlighted as the primary evidence, while both current-step inputs are retained to verify that features from each source are correctly combined, spatially aligned, and fully represented in the merged output."
+  }
+}

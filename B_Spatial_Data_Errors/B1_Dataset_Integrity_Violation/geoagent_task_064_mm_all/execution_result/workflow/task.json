@@ -1,0 +1,136 @@
+{
+  "user_query": "Perform the following task: 1) Reproject this road vector layer to NAD27/ UTM Zone 10 . 2) Create a new field that contains the length of the road features. Let the name of the field be \"Length\". 3) Use the 'Length' column and find how many roads have length shorter 100-meters .",
+  "task_context": {
+    "case_id": "geoagent_064",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "roads",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\SanFrancisco\\Roads\\Roads.shp",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path SanFrancisco/Roads.",
+        "format": "shp",
+        "crs": "EPSG:4326",
+        "metadata": {
+          "feature_count": 54113,
+          "columns": [
+            "ID",
+            "FEATTYP",
+            "F_JNCTID",
+            "T_JNCTID",
+            "METERS",
+            "FRC",
+            "NAME",
+            "ONEWAY",
+            "KPH",
+            "MINUTES",
+            "LANES",
+            "SPEEDCAT",
+            "Shape_Leng",
+            "NAMEKEY",
+            "NAMESUFFIX",
+            "CountryReg",
+            "RD_Length"
+          ],
+          "geometry_types": [
+            "LineString"
+          ],
+          "field_types": {
+            "ID": "float64",
+            "FEATTYP": "int32",
+            "F_JNCTID": "float64",
+            "T_JNCTID": "float64",
+            "METERS": "float64",
+            "FRC": "int32",
+            "NAME": "str",
+            "ONEWAY": "str",
+            "KPH": "int32",
+            "MINUTES": "float64",
+            "LANES": "int32",
+            "SPEEDCAT": "int32",
+            "Shape_Leng": "float64",
+            "NAMEKEY": "str",
+            "NAMESUFFIX": "str",
+            "CountryReg": "str",
+            "RD_Length": "float64"
+          },
+          "sample_rows": [
+            {
+              "ID": 78400003854200.0,
+              "FEATTYP": 4110,
+              "F_JNCTID": 78400200031400.0,
+              "T_JNCTID": 78400200745700.0,
+              "METERS": 699.9,
+              "FRC": 1,
+              "NAME": NaN,
+              "ONEWAY": "FT",
+              "KPH": 72,
+              "MINUTES": 0.583,
+              "LANES": 2,
+              "SPEEDCAT": 4,
+              "Shape_Leng": 0.00646802689107,
+              "NAMEKEY": NaN,
+              "NAMESUFFIX": NaN,
+              "CountryReg": "US-CA",
+              "RD_Length": NaN
+            },
+            {
+              "ID": 78400002460700.0,
+              "FEATTYP": 4110,
+              "F_JNCTID": 78400200013800.0,
+              "T_JNCTID": 78400200747400.0,
+              "METERS": 1051.0,
+              "FRC": 6,
+              "NAME": "Shaw Rd",
+              "ONEWAY": NaN,
+              "KPH": 32,
+              "MINUTES": 1.972,
+              "LANES": 0,
+              "SPEEDCAT": 7,
+              "Shape_Leng": 0.0104958680606,
+              "NAMEKEY": "Shaw",
+              "NAMESUFFIX": "Rd",
+              "CountryReg": "US-CA",
+              "RD_Length": NaN
+            },
+            {
+              "ID": 78400002754300.0,
+              "FEATTYP": 4110,
+              "F_JNCTID": 78400200025000.0,
+              "T_JNCTID": 78400200741600.0,
+              "METERS": 2242.5,
+              "FRC": 7,
+              "NAME": "Goggnra Milargra Ridge Unit",
+              "ONEWAY": NaN,
+              "KPH": 24,
+              "MINUTES": 5.606,
+              "LANES": 0,
+              "SPEEDCAT": 7,
+              "Shape_Leng": 0.0232083209783,
+              "NAMEKEY": "Goggnra Milargra Ridge Unit",
+              "NAMESUFFIX": NaN,
+              "CountryReg": "US-CA",
+              "RD_Length": NaN
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            -122.67338699999993,
+            37.63513100000006,
+            -122.15740799999992,
+            37.91842600000007
+          ]
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": true,
+    "visual_review_policy": "all_visualizable",
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Filter Pennsylvania counties where annual rainfall exceeds 2.5 inches to identify areas suitable for tree planting.",
+      "inputs": [
+        "level3_30"
+      ],
+      "expected_outputs": [
+        "suitable_counties.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Apply attribute filter on Rain column. Threshold: > 2.5 inches. Verify units; if Rain is in meters (suggested by sample values ~0.05-0.78), convert threshold to 0.0635 meters. Preserve original CRS EPSG:4269."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Calculate the percentage of Pennsylvania's total land area that is suitable for tree planting and count the number of suitable counties.",
+      "inputs": [
+        "suitable_counties.shp",
+        "level3_30"
+      ],
+      "expected_outputs": [
+        "suitability_summary.csv"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Compute total area of PA from level3_30 (sum ALAND). Compute total area of suitable counties from suitable_counties.shp (sum ALAND). Calculate percentage = (suitable_area / total_area) * 100. Count features in suitable_counties.shp. Output CSV with fields: suitable_count, total_count, suitable_area, total_area, suitable_percentage."
+    }
+  ],
+  "current_step_index": 2,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "all_visualizable"
+}

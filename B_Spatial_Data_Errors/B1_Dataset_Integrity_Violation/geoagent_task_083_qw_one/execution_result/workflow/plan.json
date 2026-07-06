@@ -1,0 +1,40 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Create a full block group FIPS column in the population table by concatenating state_fips, county_fips, tract_fips, and block_group_fips.",
+      "inputs": [
+        "rolla_2021_population_block_group"
+      ],
+      "expected_outputs": [
+        "rolla_2021_population_block_group_with_fips.csv"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Zero-pad state_fips to 2 characters, county_fips to 3, tract_fips to 5, and block_group_fips to 1 before concatenation to match standard Census GEOID format used in the vector asset."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Join the processed population table to the block group boundaries vector using the full FIPS identifier.",
+      "inputs": [
+        "rolla_downtown_block_groups_2021",
+        "rolla_2021_population_block_group_with_fips.csv"
+      ],
+      "expected_outputs": [
+        "rolla_downtown_block_groups_2021_with_population.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Perform an attribute join matching the vector GEOID column to the newly created FIPS column in the table. Retain all geometry and population attributes."
+    }
+  ],
+  "current_step_index": 2,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "at_least_one"
+}

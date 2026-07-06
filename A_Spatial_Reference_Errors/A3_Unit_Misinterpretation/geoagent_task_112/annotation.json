@@ -1,0 +1,29 @@
+{
+  "sample_id": "geoagent_task_112",
+  "source": "GeoAgent Task 112",
+  "task_id": 112,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "DeepSeek V4 Pro",
+    "provider": "DeepSeek",
+    "reasoning": "thinking 已开启",
+    "visual_review_model": "Qwen3-VL",
+    "visual_review_reasoning": "thinking 已关闭"
+  },
+  "primary_label": "A3. Unit Misinterpretation",
+  "secondary_labels": [
+    "B1. Dataset Integrity Violation"
+  ],
+  "error_summary": "程序在输入图层没有坐标参考系定义的情况下直接执行 `buffer(500)`，数值 500 的空间单位无法确定，因此不能证明输出满足指定距离缓冲的要求。",
+  "result_previews": [
+    {
+      "source_artifact": "coder/subtask_1/area_buffer.shp",
+      "stage": "最终成果",
+      "preview_file": "previews/area_buffer.png",
+      "description": "`area_buffer.shp` 的缓冲面预览；颜色仅用于显示输出几何。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "在明确的米制坐标假设下计算参考结果"
+}

@@ -1,0 +1,17 @@
+{
+  "step_id": "step_02",
+  "success": true,
+  "artifacts": [
+    {
+      "name": "dem_idw.tif",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260420T112719Z-2446843a\\runs\\eval-from-geo-agent-20260420T112719Z-2446843a-088-geoagent_088-try01\\steps\\step_02\\dem_idw.tif",
+      "artifact_type": "raster",
+      "description": ""
+    }
+  ],
+  "logs": "exit_code=0\nduration_seconds=546.1831\n[stdout]\n{\"step_id\": \"step_02\", \"status\": \"success\", \"output_paths\": [\"[EXTERNAL_PATH]"], \"grid_shape\": [288, 458], \"cell_size\": 10.0, \"bounds\": [607111.3516507, 237963.2003492626, 611687.0184570934, 240842.8520857328], \"point_count\": 18849}\n\n[stderr]\n\n",
+  "summary": "Step executed successfully. summary_keys=['bounds', 'cell_size', 'grid_shape', 'output_paths', 'point_count', 'status', 'step_id']; artifacts=['dem_idw.tif']",
+  "error_type": null,
+  "recoverable": false,
+  "validation_messages": []
+}

@@ -1,0 +1,26 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Compute histogram of DEM pixel values",
+      "inputs": [
+        "sc_dem"
+      ],
+      "expected_outputs": [
+        "dem_histogram.csv"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Extract valid pixel values from the single band of SC_DEM.tif, ignoring nodata=0.0, calculate frequency distribution, and export bin ranges and counts to CSV."
+    }
+  ],
+  "current_step_index": 1,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "at_least_one"
+}

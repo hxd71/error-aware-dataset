@@ -1,0 +1,44 @@
+{
+  "user_query": "Generate contour lines from the DEM of Puerto Rico with a 50-meter interval",
+  "task_context": {
+    "case_id": "geoagent_004",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "puerto_dem",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Puerto Rico\\Puerto_DEM.tif",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path Puerto Rico/Puerto_DEM.tif.",
+        "format": "tif",
+        "crs": "EPSG:4326",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Puerto Rico\\Puerto_DEM.tif",
+          "width": 3601,
+          "height": 1123,
+          "count": 1,
+          "dtype": "int16",
+          "nodata": 0.0,
+          "pixel_size": [
+            0.000833333333333144,
+            0.000833333333333144
+          ],
+          "bounds": [
+            -68.11125000002542,
+            17.731250000009602,
+            -65.11041666669277,
+            18.667083333342724
+          ],
+          "band_names": []
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": true,
+    "visual_review_policy": "at_least_one",
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

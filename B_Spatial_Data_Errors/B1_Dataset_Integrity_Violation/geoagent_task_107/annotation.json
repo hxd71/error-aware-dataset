@@ -1,0 +1,29 @@
+{
+  "sample_id": "geoagent_task_107",
+  "source": "GeoAgent Task 107",
+  "task_id": 107,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "DeepSeek V4 Pro",
+    "provider": "DeepSeek",
+    "reasoning": "thinking 已开启",
+    "visual_review_model": "Qwen3-VL",
+    "visual_review_reasoning": "thinking 已关闭"
+  },
+  "primary_label": "B1. Dataset Integrity Violation",
+  "secondary_labels": [
+    "A2. CRS Inconsistency"
+  ],
+  "error_summary": "输入与裁剪输出均缺少 `.prj`，代码仍执行空间裁剪并写出没有权威 CRS 的不完整 Shapefile。",
+  "result_previews": [
+    {
+      "source_artifact": "coder/subtask_1/road_clipped.shp",
+      "stage": "最终成果",
+      "preview_file": "previews/road_clipped.png",
+      "description": "`road_clipped.shp` 中裁剪后的道路几何预览。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "在明确的米制坐标假设下计算参考结果"
+}

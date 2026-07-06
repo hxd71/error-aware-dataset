@@ -1,0 +1,26 @@
+{
+  "sample_id": "geoagent_task_021_mm_text",
+  "source": "GeoAgent Task 21",
+  "task_id": 21,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "MiniMax-M2.7-highspeed",
+    "provider": "minimax",
+    "reasoning": "thinking 开关未单列记录",
+    "visual_review": "未启用视觉审查"
+  },
+  "primary_label": "B1. Dataset Integrity Violation",
+  "secondary_labels": [],
+  "error_summary": "矢量属性写出时发生类型退化",
+  "result_previews": [
+    {
+      "source_artifact": "artifacts/hiv_points.shp",
+      "stage": "最终成果",
+      "preview_file": "previews/hiv_points.png",
+      "description": "由错误运行写出的 `hiv_points.shp` 生成。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "同一任务的 MiniMax-M2.7-highspeed 正确运行"
+}

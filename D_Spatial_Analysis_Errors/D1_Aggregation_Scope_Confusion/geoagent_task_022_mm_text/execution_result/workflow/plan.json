@@ -1,0 +1,26 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Filter US counties to retain only contiguous United States counties by excluding Alaska, Hawaii, Puerto Rico, and other non-continental territories",
+      "inputs": [
+        "us_counties_data"
+      ],
+      "expected_outputs": [
+        "contiguous_us_counties.shp"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Exclude non-contiguous territories using field STATEFP. Filter out STATEFP values: '02' (Alaska), '15' (Hawaii), '72' (Puerto Rico), and any other territory codes present. Retain all features where STATEFP is not in the excluded list. Preserve all original columns and geometry types (Polygon, MultiPolygon)."
+    }
+  ],
+  "current_step_index": 1,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": false,
+  "force_no_visual_review": true,
+  "visual_review_policy": "none"
+}

@@ -1,0 +1,26 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Reproject the country shapefile from EPSG:4326 to EPSG:3857 coordinate reference system and save as a new shapefile",
+      "inputs": [
+        "country"
+      ],
+      "expected_outputs": [
+        "country_3857.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "input_output_comparison",
+      "notes": "Source CRS is EPSG:4326, target CRS is EPSG:3857. Preserve all original attributes and geometry types (MultiPolygon/Polygon)."
+    }
+  ],
+  "current_step_index": 1,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "all_visualizable"
+}

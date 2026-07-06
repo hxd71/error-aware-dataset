@@ -1,0 +1,26 @@
+{
+  "sample_id": "geoagent_task_100_qw_all",
+  "source": "GeoAgent Task 100",
+  "task_id": 100,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "qwen3.6-plus",
+    "provider": "dashscope",
+    "reasoning": "thinking 开关未单列记录",
+    "visual_review": "审查全部可视化成果"
+  },
+  "primary_label": "B2. Raster Alignment Failure",
+  "secondary_labels": [],
+  "error_summary": "遥感栅格的比例因子或偏移量应用错误",
+  "result_previews": [
+    {
+      "source_artifact": "artifacts/ndvi.tif",
+      "stage": "最终成果",
+      "preview_file": "previews/ndvi.png",
+      "description": "由错误运行写出的 `ndvi.tif` 生成。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "同一任务的 MiniMax-M2.7-highspeed 正确运行"
+}

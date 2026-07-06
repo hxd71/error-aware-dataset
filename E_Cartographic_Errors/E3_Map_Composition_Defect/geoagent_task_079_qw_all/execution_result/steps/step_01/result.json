@@ -1,0 +1,17 @@
+{
+  "step_id": "step_01",
+  "success": true,
+  "artifacts": [
+    {
+      "name": "street_image_year.geojson",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T172139Z-88a9e18e-079-geoagent_079-try01\\steps\\step_01\\street_image_year.geojson",
+      "artifact_type": "vector",
+      "description": ""
+    }
+  ],
+  "logs": "exit_code=0\nduration_seconds=1.1102\n[stdout]\n{\"status\": \"success\", \"output\": \"[EXTERNAL_PATH]", \"features\": 7959}\n\n[stderr]\n\n",
+  "summary": "Step executed successfully. summary_keys=['features', 'output', 'status']; artifacts=['street_image_year.geojson']",
+  "error_type": null,
+  "recoverable": false,
+  "validation_messages": []
+}

@@ -1,0 +1,17 @@
+{
+  "step_id": "step_01",
+  "success": true,
+  "artifacts": [
+    {
+      "name": "generated_polygon_diff.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260423T184016Z-6344b54d-031-geoagent_031-try01\\steps\\step_01\\generated_polygon_diff.shp",
+      "artifact_type": "vector",
+      "description": ""
+    }
+  ],
+  "logs": "exit_code=0\nduration_seconds=0.9520\n[stdout]\n{\"step_id\": \"step_01\", \"status\": \"success\", \"output_path\": \"[EXTERNAL_PATH]"}\n\n[stderr]\n\n",
+  "summary": "Step executed successfully. summary_keys=['output_path', 'status', 'step_id']; artifacts=['generated_polygon_diff.shp']",
+  "error_type": null,
+  "recoverable": false,
+  "validation_messages": []
+}

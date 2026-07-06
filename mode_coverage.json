@@ -1,0 +1,35 @@
+{
+  "total_run_records": 525,
+  "modes": {
+    "no-thinking": {
+      "run_records": 120,
+      "mapped_task_records": 64,
+      "non_plan_output_records": 50,
+      "promoted_error_records": 7
+    },
+    "text-only": {
+      "run_records": 14,
+      "mapped_task_records": 14,
+      "non_plan_output_records": 14,
+      "promoted_error_records": 14
+    },
+    "thinking": {
+      "run_records": 359,
+      "mapped_task_records": 355,
+      "non_plan_output_records": 326,
+      "promoted_error_records": 31
+    },
+    "visual-all": {
+      "run_records": 12,
+      "mapped_task_records": 12,
+      "non_plan_output_records": 12,
+      "promoted_error_records": 12
+    },
+    "visual-one": {
+      "run_records": 20,
+      "mapped_task_records": 20,
+      "non_plan_output_records": 20,
+      "promoted_error_records": 20
+    }
+  }
+}

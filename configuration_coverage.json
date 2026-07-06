@@ -1,0 +1,10 @@
+{
+  "deepseek-v4-pro-root-config": 13,
+  "minimax2.7_visual_all": 6,
+  "minimax2.7_text_only": 10,
+  "qwen3.6_text_only": 4,
+  "qwen3.6_visual_one": 9,
+  "minimax2.7_visual_one": 11,
+  "qwen3.6_visual_all": 6,
+  "self-built-no-thinking": 1
+}

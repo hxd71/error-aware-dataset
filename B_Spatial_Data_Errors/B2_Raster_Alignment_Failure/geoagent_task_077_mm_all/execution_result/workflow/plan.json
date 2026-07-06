@@ -1,0 +1,53 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Compute terrain slope raster from the DEM using slope calculation",
+      "inputs": [
+        "rolla_dem_projected"
+      ],
+      "expected_outputs": [
+        "slope_rolla.tif"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Use degree units for slope. DEM is in NAD83(2011) / Missouri Central (projected CRS with metre units). Pixel size approximately 30m."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Create centroid points from building footprint polygons",
+      "inputs": [
+        "rolla_building_footprints"
+      ],
+      "expected_outputs": [
+        "building_centroids.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Generate point centroids for all 6909 building polygons. Retain building id field (bid or ftprntid) for join operations."
+    },
+    {
+      "step_id": "step_03",
+      "goal": "Extract slope values at each building centroid using point-in-raster sampling",
+      "inputs": [
+        "building_centroids.shp",
+        "slope_rolla.tif"
+      ],
+      "expected_outputs": [
+        "buildings_with_slope.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "input_output_comparison",
+      "notes": "Sample slope raster at centroid locations. Include building identifiers and the extracted slope value field in the output attribute table."
+    }
+  ],
+  "current_step_index": 3,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "all_visualizable"
+}

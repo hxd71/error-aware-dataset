@@ -1,0 +1,26 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Assign EPSG:6569 to the richland_dem raster dataset.",
+      "inputs": [
+        "richland_dem"
+      ],
+      "expected_outputs": [
+        "richland_dem_epsg6569.tif"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "input_output_comparison",
+      "notes": "Update the coordinate reference system metadata of the input raster to EPSG:6569. Preserve the original pixel values, dimensions, and geotransform while updating only the CRS definition."
+    }
+  ],
+  "current_step_index": 1,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "at_least_one"
+}

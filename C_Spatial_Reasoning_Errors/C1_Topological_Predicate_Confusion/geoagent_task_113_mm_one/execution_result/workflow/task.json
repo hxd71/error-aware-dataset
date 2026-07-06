@@ -1,0 +1,61 @@
+{
+  "user_query": "Please create Thiessen polygons (Voronoi diagrams) for the point features in the uploaded Shapefile. Ensure that all Tyson polygons are bounded and are not discarded. Complete the task with the geovoronoi package. The results should be saved as a new Shapefile.",
+  "task_context": {
+    "case_id": "geoagent_113",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "points",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\1\\8\\input\\points.shp",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path 1/8/input.",
+        "format": "shp",
+        "crs": "PROJCS[\"Krasovsky_1940_Transverse_Mercator\",GEOGCS[\"Unknown datum based upon the Krassowsky 1940 ellipsoid\",DATUM[\"Not_specified_based_on_Krassowsky_1940_ellipsoid\",SPHEROID[\"Krassowsky 1940\",6378245,298.3,AUTHORITY[\"EPSG\",\"7024\"]],AUTHORITY[\"EPSG\",\"6024\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",111],PARAMETER[\"scale_factor\",1],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "metadata": {
+          "feature_count": 5,
+          "columns": [
+            "名称",
+            "Distance"
+          ],
+          "geometry_types": [
+            "Point"
+          ],
+          "field_types": {
+            "名称": "object",
+            "Distance": "int32"
+          },
+          "sample_rows": [
+            {
+              "名称": null,
+              "Distance": 500
+            },
+            {
+              "名称": null,
+              "Distance": 200
+            },
+            {
+              "名称": null,
+              "Distance": 200
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            5633.931869759224,
+            1462.3655327372253,
+            6835.748775170185,
+            2446.3581851302347
+          ]
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": true,
+    "visual_review_policy": "at_least_one",
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

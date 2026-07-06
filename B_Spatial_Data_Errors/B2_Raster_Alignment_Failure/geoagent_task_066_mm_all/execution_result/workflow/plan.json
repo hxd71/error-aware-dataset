@@ -1,0 +1,27 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Add latitude and longitude coordinate fields to the fast food restaurants point layer, then sample elevation values from the DEM raster at each point location, and save the enriched results as a new vector layer.",
+      "inputs": [
+        "pa_fastfoods",
+        "pa_dem"
+      ],
+      "expected_outputs": [
+        "pa_fastfoods_elev.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Both pa_fastfoods (EPSG:4326) and pa_dem (EPSG:4326) are in geographic coordinates. Add 'lat' and 'lon' fields representing Y and X coordinates respectively. Sample the DEM raster to create an 'elevation' field. The output layer must include the original columns (name, osm_id, type) plus the new lat, lon, and elevation fields. Save as a new shapefile layer."
+    }
+  ],
+  "current_step_index": 1,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "all_visualizable"
+}

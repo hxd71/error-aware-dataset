@@ -1,0 +1,31 @@
+{
+  "sample_id": "geoagent_task_055_mm_one",
+  "source": "GeoAgent Task 55",
+  "task_id": 55,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "MiniMax-M2.7-highspeed",
+    "provider": "minimax",
+    "reasoning": "thinking 开关未单列记录",
+    "visual_review": "至少审查一项可视化成果"
+  },
+  "primary_label": "B3. Missing Data Misinterpretation",
+  "secondary_labels": [],
+  "error_summary": "二值化时误把有效掩膜值当作背景",
+  "result_previews": [
+    {
+      "source_artifact": "artifacts/elevation_mask_vector.geojson",
+      "stage": "最终成果",
+      "preview_file": "previews/elevation_mask_vector.png",
+      "description": "由错误运行写出的 `elevation_mask_vector.geojson` 生成。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "同一任务的 qwen3.6-plus 正确运行",
+  "evidence_metrics": {
+    "actual_features": 32,
+    "expected_features": 33,
+    "area_loss_percent": 97.08
+  }
+}

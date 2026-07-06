@@ -1,0 +1,7 @@
+exit_code=0
+duration_seconds=0.7239
+[stdout]
+{"step": "step_01", "status": "success", "input_features": 1349, "output_features": 397, "output_path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260422T115149Z-1e0672b1-001-geoagent_001-try01\\steps\\step_01\\columbia_residential_roads.shp"}
+
+[stderr]
+

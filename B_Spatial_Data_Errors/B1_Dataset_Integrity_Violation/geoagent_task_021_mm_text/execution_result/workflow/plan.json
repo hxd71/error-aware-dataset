@@ -1,0 +1,26 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Convert CSV table to point shapefile using X column as longitude and Y column as latitude to create point geometries",
+      "inputs": [
+        "hiv"
+      ],
+      "expected_outputs": [
+        "hiv_points.shp"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Use X column for longitude values and Y column for latitude values. The sample coordinates suggest the data is from Alabama (USA), so assign WGS84 (EPSG:4326) as the CRS since these are decimal degree coordinates. All attribute columns (Rate_per_100000, PopulationDensity, Beer, NoHealthInsurance, Neighbor_Disadvantage) should be carried forward as fields in the output shapefile."
+    }
+  ],
+  "current_step_index": 1,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": false,
+  "force_no_visual_review": true,
+  "visual_review_policy": "none"
+}

@@ -1,0 +1,208 @@
+{
+  "title": "Evidence for step_02",
+  "template_name": "input_output_comparison",
+  "add_basemap": false,
+  "layer_count": 2,
+  "highlight_layers": [
+    "[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260419T165504Z-57ef3a68\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\\steps\\step_02\\buildings_with_bg_totals.shp"
+  ],
+  "output_path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260419T165504Z-57ef3a68\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\\steps\\step_02\\figure.png",
+  "rendered_layers": [
+    "subject",
+    "buildings_with_bg_totals.shp"
+  ],
+  "comparison_left_labels": [
+    "subject"
+  ],
+  "comparison_right_labels": [
+    "buildings_with_bg_totals.shp"
+  ],
+  "shared_extent": [
+    560604.3650931215,
+    230872.61726600226,
+    569561.8081928248,
+    240021.9514178009
+  ],
+  "padded_extent": [
+    560066.9185071393,
+    230323.65721689432,
+    570099.254778807,
+    240570.91146690884
+  ],
+  "applied_view_focus": "full_extent",
+  "applied_extent": [
+    560066.9185071393,
+    230323.65721689432,
+    570099.254778807,
+    240570.91146690884
+  ],
+  "extent_padding_ratio": 0.06,
+  "max_extent_aspect_ratio": 2.0,
+  "aspect_ratio_guard_applied": false,
+  "shared_extent_aspect_ratio": 1.0214225253746487,
+  "padded_extent_aspect_ratio": 1.021422525374646,
+  "applied_extent_aspect_ratio": 1.021422525374646,
+  "legend_placement": "panel_top",
+  "note": null,
+  "input_panel_is_alpha_composite": false,
+  "input_panel_layers": [
+    {
+      "label": "subject",
+      "layer_type": "vector",
+      "alpha": 0.45
+    }
+  ],
+  "panel_colorbars": {
+    "inputs": {
+      "present": false,
+      "mode": null,
+      "source_layer": null,
+      "source_layers": [],
+      "vmin": null,
+      "vmax": null
+    },
+    "outputs": {
+      "present": false,
+      "mode": null,
+      "source_layer": null,
+      "source_layers": [],
+      "vmin": null,
+      "vmax": null
+    }
+  },
+  "comparison_uses_shared_raster_limits": false,
+  "comparison_raster_limits": null,
+  "map_boundary_box_visible": true,
+  "map_boundary_box_style": {
+    "color": "#6B7280",
+    "linewidth": 0.8
+  },
+  "scale_bar_visible": true,
+  "scale_bar_position": "below_panel",
+  "scale_bar_panels": [
+    {
+      "panel": "inputs",
+      "visible": true,
+      "length_meters": 2000.0,
+      "display_label": "2 km",
+      "estimated": false,
+      "crs": "PROJCS[\"NAD83(2011) / Missouri Central\",GEOGCS[\"NAD83(2011)\",DATUM[\"NAD83_National_Spatial_Reference_System_2011\",SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"1116\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",35.8333333333333],PARAMETER[\"central_meridian\",-92.5],PARAMETER[\"scale_factor\",0.999933333333333],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "width_fraction": 0.19935535909498853,
+      "reason": null
+    },
+    {
+      "panel": "outputs",
+      "visible": true,
+      "length_meters": 2000.0,
+      "display_label": "2 km",
+      "estimated": false,
+      "crs": "PROJCS[\"NAD83(2011) / Missouri Central\",GEOGCS[\"NAD83(2011)\",DATUM[\"NAD83_National_Spatial_Reference_System_2011\",SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"1116\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",35.8333333333333],PARAMETER[\"central_meridian\",-92.5],PARAMETER[\"scale_factor\",0.999933333333333],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "width_fraction": 0.19935535909498853,
+      "reason": null
+    }
+  ],
+  "crs": "PROJCS[\"NAD83(2011) / Missouri Central\",GEOGCS[\"NAD83(2011)\",DATUM[\"NAD83_National_Spatial_Reference_System_2011\",SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"1116\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",35.8333333333333],PARAMETER[\"central_meridian\",-92.5],PARAMETER[\"scale_factor\",0.999933333333333],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+  "display_crs": "PROJCS[\"NAD83(2011) / Missouri Central\",GEOGCS[\"NAD83(2011)\",DATUM[\"NAD83_National_Spatial_Reference_System_2011\",SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"1116\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",35.8333333333333],PARAMETER[\"central_meridian\",-92.5],PARAMETER[\"scale_factor\",0.999933333333333],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+  "layer_details": [
+    {
+      "label": "subject",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Rolla_watershed\\Rolla_building_footprints\\Rolla_building_footprints.shp",
+      "layer_type": "vector",
+      "source_crs": "PROJCS[\"NAD83(2011) / Missouri Central\",GEOGCS[\"NAD83(2011)\",DATUM[\"NAD83_National_Spatial_Reference_System_2011\",SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"1116\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",35.8333333333333],PARAMETER[\"central_meridian\",-92.5],PARAMETER[\"scale_factor\",0.999933333333333],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "display_crs": "PROJCS[\"NAD83(2011) / Missouri Central\",GEOGCS[\"NAD83(2011)\",DATUM[\"NAD83_National_Spatial_Reference_System_2011\",SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"1116\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",35.8333333333333],PARAMETER[\"central_meridian\",-92.5],PARAMETER[\"scale_factor\",0.999933333333333],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "alpha": 0.45,
+      "color": "#4C78A8",
+      "fill": true,
+      "fill_alpha": 0.18,
+      "linewidth": 0.6,
+      "zorder": 1,
+      "display_vmin": null,
+      "display_vmax": null
+    },
+    {
+      "label": "buildings_with_bg_totals.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260419T165504Z-57ef3a68\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\\steps\\step_02\\buildings_with_bg_totals.shp",
+      "layer_type": "vector",
+      "source_crs": "EPSG:4269",
+      "display_crs": "PROJCS[\"NAD83(2011) / Missouri Central\",GEOGCS[\"NAD83(2011)\",DATUM[\"NAD83_National_Spatial_Reference_System_2011\",SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"1116\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",35.8333333333333],PARAMETER[\"central_meridian\",-92.5],PARAMETER[\"scale_factor\",0.999933333333333],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "alpha": 0.8,
+      "color": "#4C78A8",
+      "fill": true,
+      "fill_alpha": 0.8,
+      "linewidth": 0.8,
+      "zorder": 2,
+      "display_vmin": null,
+      "display_vmax": null
+    }
+  ],
+  "applied_layer_styles": [
+    {
+      "label": "subject",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Rolla_watershed\\Rolla_building_footprints\\Rolla_building_footprints.shp",
+      "color": "#4C78A8",
+      "fill": true,
+      "fill_alpha": 0.18,
+      "linewidth": 0.6,
+      "zorder": 1
+    },
+    {
+      "label": "buildings_with_bg_totals.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260419T165504Z-57ef3a68\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\\steps\\step_02\\buildings_with_bg_totals.shp",
+      "color": "#4C78A8",
+      "fill": true,
+      "fill_alpha": 0.8,
+      "linewidth": 0.8,
+      "zorder": 2
+    }
+  ],
+  "renderer": "matplotlib",
+  "candidate_layer_count": 2,
+  "candidate_layer_ids": [
+    "layer_01",
+    "layer_02"
+  ],
+  "selected_layer_ids": [
+    "layer_01",
+    "layer_02"
+  ],
+  "selected_layer_labels": [
+    "subject",
+    "buildings_with_bg_totals.shp"
+  ],
+  "excluded_layer_ids": [],
+  "highlight_layer_ids": [
+    "layer_02"
+  ],
+  "selection_source": "llm",
+  "selector_attempt_count": 2,
+  "selector_repair_attempts": 1,
+  "selector_invalid_reason": null,
+  "view_focus": "full_extent",
+  "final_template_name": "input_output_comparison",
+  "template_decision_reason": "forced_input_output_comparison",
+  "selection_plan": {
+    "selected_layer_ids": [
+      "layer_01",
+      "layer_02"
+    ],
+    "highlight_layer_ids": [
+      "layer_02"
+    ],
+    "excluded_layer_ids": [],
+    "layer_roles": {
+      "layer_01": "reference",
+      "layer_02": "result"
+    },
+    "layer_styles": {
+      "layer_02": {
+        "color": "#4C78A8"
+      }
+    },
+    "render_priority": {
+      "layer_01": 1,
+      "layer_02": 2
+    },
+    "view_focus": "full_extent",
+    "rationale": "For input_output_comparison visual review, both the building footprints input and the joined result are necessary to verify the population join worked correctly. The input (layer_01) serves as reference to confirm buildings are preserved and spatially aligned after the join. The output (layer_02) is the primary result showing buildings with block group population data. Since no block group layer exists in candidates and the goal involves proportional distribution by building area, showing both input footprints and output buildings with population enables verification of the join logic and field population. The result is highlighted to draw attention to the output being reviewed."
+  }
+}

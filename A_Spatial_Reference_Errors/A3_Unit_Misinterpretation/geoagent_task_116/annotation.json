@@ -1,0 +1,35 @@
+{
+  "sample_id": "geoagent_task_116",
+  "source": "GeoAgent Task 116",
+  "task_id": 116,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "DeepSeek V4 Pro",
+    "provider": "DeepSeek",
+    "reasoning": "thinking 已开启",
+    "visual_review_model": "Qwen3-VL",
+    "visual_review_reasoning": "thinking 已关闭"
+  },
+  "primary_label": "A3. Unit Misinterpretation",
+  "secondary_labels": [
+    "B1. Dataset Integrity Violation"
+  ],
+  "error_summary": "任务明确要求 100、200、300、400 米缓冲，但代码在两个输入均无 CRS 时直接使用这些数值，无法保证结果单位为米。",
+  "result_previews": [
+    {
+      "source_artifact": "coder/subtask_1/multi_ring_buffers.shp",
+      "stage": "关键中间成果",
+      "preview_file": "previews/multi_ring_buffers.png",
+      "description": "`multi_ring_buffers.shp` 的四级缓冲环预览。"
+    },
+    {
+      "source_artifact": "coder/subtask_1/disaster_impact_roads.shp",
+      "stage": "最终成果",
+      "preview_file": "previews/disaster_impact_roads.png",
+      "description": "`disaster_impact_roads.shp` 的受影响道路预览。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "在明确的米制坐标假设下计算参考结果"
+}

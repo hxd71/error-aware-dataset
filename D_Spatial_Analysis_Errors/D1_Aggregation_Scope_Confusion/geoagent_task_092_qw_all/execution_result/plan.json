@@ -1,0 +1,40 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Perform a spatial join to count points from pa_data_epsg4326 that are contained within each county in pacounties, appending the count to the county attributes.",
+      "inputs": [
+        "pacounties",
+        "pa_data_epsg4326"
+      ],
+      "expected_outputs": [
+        "pa_counties_point_counts.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "input_output_comparison",
+      "notes": "Handle CRS difference between EPSG:4269 and EPSG:4326. Use 'within' predicate for point-in-polygon spatial relationship. Aggregate to produce a single count per county feature and add it as a new attribute column."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Filter the county layer to retain only those counties where the attached point count is strictly less than 10.",
+      "inputs": [
+        "pa_counties_point_counts.shp"
+      ],
+      "expected_outputs": [
+        "pa_counties_filtered_lt10.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Apply an attribute query on the point count field generated in step_01. Selection condition: count < 10. Preserve all original county attributes and geometry."
+    }
+  ],
+  "current_step_index": 2,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "all_visualizable"
+}

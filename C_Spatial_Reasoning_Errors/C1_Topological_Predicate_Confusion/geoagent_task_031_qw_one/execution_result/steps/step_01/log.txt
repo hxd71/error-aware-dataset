@@ -1,0 +1,7 @@
+exit_code=0
+duration_seconds=0.9520
+[stdout]
+{"step_id": "step_01", "status": "success", "output_path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260423T184016Z-6344b54d-031-geoagent_031-try01\\steps\\step_01\\generated_polygon_diff.shp"}
+
+[stderr]
+

@@ -1,0 +1,52 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Reproject the road vector layer from EPSG:4326 (WGS84) to NAD27/UTM Zone 10 (EPSG:26710)",
+      "inputs": [
+        "roads"
+      ],
+      "expected_outputs": [
+        "roads_nad27_utm10.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "input_output_comparison",
+      "notes": "Target CRS is EPSG:26710 (NAD27 / UTM zone 10N). San Francisco lies within UTM Zone 10."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Add a new field named 'Length' to the reprojected road layer containing the geometric length of each feature",
+      "inputs": [
+        "roads_nad27_utm10.shp"
+      ],
+      "expected_outputs": [
+        "roads_with_length.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Field name must be exactly 'Length'. Length values will be in meters since UTM projection is meter-based."
+    },
+    {
+      "step_id": "step_03",
+      "goal": "Count the number of road features where Length is less than 100 meters",
+      "inputs": [
+        "roads_with_length.shp"
+      ],
+      "expected_outputs": [
+        "short_roads_count.json"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Apply filter: Length < 100. Output should be a simple count or summary table with the count of short roads."
+    }
+  ],
+  "current_step_index": 3,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "all_visualizable"
+}

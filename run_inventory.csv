@@ -1,0 +1,526 @@
+﻿record_id,source,task_id,execution_mode,run_variant,runner_status,has_non_plan_output,output_file_count,promoted_to_error_dataset,taxonomy_label,disposition
+geoagent_nothinking_run_001,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_002,GeoAgent Task 1,1,no-thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_003,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_004,GeoAgent Task 1,1,no-thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_005,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_006,GeoAgent Task 1,1,no-thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_007,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_008,GeoAgent Task 1,1,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_009,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_010,,,no-thinking,main,Success,True,4,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_011,,,no-thinking,main,Success,True,16,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_012,GeoAgent Task 2,2,no-thinking,main,Success,True,6,True,D2. Spatial Allocation Error,gis_taxonomy_sample
+geoagent_nothinking_run_013,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_014,GeoAgent Task 1,1,no-thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_015,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_016,GeoAgent Task 1,1,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_017,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_018,GeoAgent Task 1,1,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_019,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_020,GeoAgent Task 2,2,no-thinking,main,Success,True,2,True,D2. Spatial Allocation Error,gis_taxonomy_sample
+geoagent_nothinking_run_021,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_022,GeoAgent Task 1,1,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_023,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_024,GeoAgent Task 1,1,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_025,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_026,GeoAgent Task 1,1,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_027,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_028,GeoAgent Task 2,2,no-thinking,main,Success,True,2,True,D2. Spatial Allocation Error,gis_taxonomy_sample
+geoagent_nothinking_run_029,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_030,GeoAgent Task 1,1,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_031,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_032,GeoAgent Task 2,2,no-thinking,main,Success,True,2,True,D2. Spatial Allocation Error,gis_taxonomy_sample
+geoagent_nothinking_run_033,GeoAgent Task 2,2,no-thinking,main,Success,True,2,True,D2. Spatial Allocation Error,gis_taxonomy_sample
+geoagent_nothinking_run_034,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_035,GeoAgent Task 3,3,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_036,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_037,GeoAgent Task 4,4,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_038,GeoAgent Task 4,4,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_039,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_040,GeoAgent Task 5,5,no-thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_041,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_042,GeoAgent Task 6,6,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_043,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_044,GeoAgent Task 7,7,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_045,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_046,GeoAgent Task 8,8,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_047,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_048,GeoAgent Task 9,9,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_049,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_050,GeoAgent Task 10,10,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_051,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_052,GeoAgent Task 11,11,no-thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_053,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_054,GeoAgent Task 12,12,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_055,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_056,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_057,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_058,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_059,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_060,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_061,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_062,GeoAgent Task 16,16,no-thinking,main,Success,True,4,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_063,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_064,GeoAgent Task 17,17,no-thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_065,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_066,GeoAgent Task 18,18,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_067,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_068,GeoAgent Task 19,19,no-thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_069,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_070,GeoAgent Task 20,20,no-thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_071,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_072,GeoAgent Task 21,21,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_073,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_074,GeoAgent Task 22,22,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_075,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_076,GeoAgent Task 23,23,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_077,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_078,GeoAgent Task 24,24,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_079,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_080,GeoAgent Task 25,25,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_081,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_082,GeoAgent Task 26,26,no-thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_083,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_084,GeoAgent Task 27,27,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_085,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_086,GeoAgent Task 28,28,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_087,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_088,GeoAgent Task 29,29,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_089,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_090,GeoAgent Task 30,30,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_091,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_092,GeoAgent Task 31,31,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_093,GeoAgent Task 31,31,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_094,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_095,GeoAgent Task 32,32,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_096,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_097,GeoAgent Task 33,33,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_098,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_099,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_100,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_101,GeoAgent Task 35,35,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_102,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_103,GeoAgent Task 36,36,no-thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_nothinking_run_104,,,no-thinking,main,Fail,False,0,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_nothinking_run_105,GeoAgent Task 37,37,no-thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_001,GeoAgent Task 1,1,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_002,GeoAgent Task 2,2,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_003,GeoAgent Task 3,3,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_004,GeoAgent Task 4,4,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_005,GeoAgent Task 5,5,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_006,GeoAgent Task 6,6,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_007,GeoAgent Task 7,7,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_008,GeoAgent Task 8,8,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_009,GeoAgent Task 9,9,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_010,GeoAgent Task 10,10,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_011,GeoAgent Task 11,11,thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_012,GeoAgent Task 12,12,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_013,GeoAgent Task 13,13,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_014,GeoAgent Task 14,14,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_015,GeoAgent Task 15,15,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_016,GeoAgent Task 16,16,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_017,GeoAgent Task 17,17,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_018,GeoAgent Task 18,18,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_019,GeoAgent Task 19,19,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_020,GeoAgent Task 20,20,thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_021,GeoAgent Task 21,21,thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_022,GeoAgent Task 22,22,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_023,GeoAgent Task 23,23,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_024,GeoAgent Task 24,24,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_025,GeoAgent Task 25,25,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_026,GeoAgent Task 26,26,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_027,GeoAgent Task 27,27,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_028,GeoAgent Task 28,28,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_029,GeoAgent Task 29,29,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_030,GeoAgent Task 30,30,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_031,GeoAgent Task 31,31,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_032,GeoAgent Task 32,32,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_033,GeoAgent Task 33,33,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_034,GeoAgent Task 34,34,thinking,main,Success,True,2,True,B1. Dataset Integrity Violation,gis_taxonomy_sample
+geoagent_thinking_main_035,GeoAgent Task 35,35,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_036,GeoAgent Task 36,36,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_037,GeoAgent Task 37,37,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_038,GeoAgent Task 38,38,thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_039,GeoAgent Task 39,39,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_040,GeoAgent Task 40,40,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_041,GeoAgent Task 41,41,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_042,GeoAgent Task 42,42,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_043,GeoAgent Task 43,43,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_044,GeoAgent Task 44,44,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_045,GeoAgent Task 45,45,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_046,GeoAgent Task 46,46,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_047,GeoAgent Task 47,47,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_048,GeoAgent Task 48,48,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_049,GeoAgent Task 49,49,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_050,GeoAgent Task 50,50,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_051,GeoAgent Task 51,51,thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_052,GeoAgent Task 52,52,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_053,GeoAgent Task 53,53,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_054,GeoAgent Task 54,54,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_055,GeoAgent Task 55,55,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_056,GeoAgent Task 56,56,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_057,GeoAgent Task 57,57,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_058,GeoAgent Task 58,58,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_059,GeoAgent Task 59,59,thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_060,GeoAgent Task 60,60,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_061,GeoAgent Task 61,61,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_062,GeoAgent Task 62,62,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_063,GeoAgent Task 63,63,thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_064,GeoAgent Task 64,64,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_065,GeoAgent Task 65,65,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_066,GeoAgent Task 66,66,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_067,GeoAgent Task 67,67,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_068,GeoAgent Task 68,68,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_069,GeoAgent Task 69,69,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_070,GeoAgent Task 70,70,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_071,GeoAgent Task 71,71,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_072,GeoAgent Task 72,72,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_073,GeoAgent Task 73,73,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_074,GeoAgent Task 74,74,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_075,GeoAgent Task 75,75,thinking,main,Success,True,3,True,D2. Spatial Allocation Error,gis_taxonomy_sample
+geoagent_thinking_main_076,GeoAgent Task 76,76,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_077,GeoAgent Task 77,77,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_078,GeoAgent Task 78,78,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_079,GeoAgent Task 79,79,thinking,main,Success,True,2,True,E2. Symbolization Error,gis_taxonomy_sample
+geoagent_thinking_main_080,GeoAgent Task 80,80,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_081,GeoAgent Task 81,81,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_082,GeoAgent Task 82,82,thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_083,GeoAgent Task 83,83,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_084,GeoAgent Task 84,84,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_085,GeoAgent Task 85,85,thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_086,GeoAgent Task 86,86,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_087,GeoAgent Task 87,87,thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_088,GeoAgent Task 88,88,thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_089,GeoAgent Task 89,89,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_090,GeoAgent Task 90,90,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_091,GeoAgent Task 91,91,thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_092,GeoAgent Task 92,92,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_093,GeoAgent Task 93,93,thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_094,GeoAgent Task 94,94,thinking,main,Success,True,3,True,C1. Topological Predicate Confusion,gis_taxonomy_sample
+geoagent_thinking_main_095,GeoAgent Task 95,95,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_096,GeoAgent Task 96,96,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_097,GeoAgent Task 97,97,thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_098,GeoAgent Task 98,98,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_099,GeoAgent Task 99,99,thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_100,GeoAgent Task 100,100,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_101,GeoAgent Task 101,101,thinking,main,Fail,False,0,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_102,GeoAgent Task 102,102,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_103,GeoAgent Task 103,103,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_104,GeoAgent Task 104,104,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_105,GeoAgent Task 105,105,thinking,main,Success,True,3,True,B3. Missing Data Misinterpretation,gis_taxonomy_sample
+geoagent_thinking_main_106,GeoAgent Task 106,106,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_107,GeoAgent Task 107,107,thinking,main,Success,True,2,True,B1. Dataset Integrity Violation,gis_taxonomy_sample
+geoagent_thinking_main_108,GeoAgent Task 108,108,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_109,GeoAgent Task 109,109,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_110,GeoAgent Task 110,110,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_111,GeoAgent Task 111,111,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_112,GeoAgent Task 112,112,thinking,main,Success,True,2,True,A3. Unit Misinterpretation,gis_taxonomy_sample
+geoagent_thinking_main_113,GeoAgent Task 113,113,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_114,GeoAgent Task 114,114,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_115,GeoAgent Task 115,115,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_116,GeoAgent Task 116,116,thinking,main,Success,True,3,True,A3. Unit Misinterpretation,gis_taxonomy_sample
+geoagent_thinking_main_117,GeoAgent Task 117,117,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_118,GeoAgent Task 118,118,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_119,GeoAgent Task 119,119,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_120,GeoAgent Task 120,120,thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_121,GeoAgent Task 121,121,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_122,GeoAgent Task 122,122,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_123,GeoAgent Task 123,123,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_124,GeoAgent Task 124,124,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_125,GeoAgent Task 125,125,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_126,GeoAgent Task 126,126,thinking,main,Success,True,3,True,B1. Dataset Integrity Violation,gis_taxonomy_sample
+geoagent_thinking_main_127,GeoAgent Task 127,127,thinking,main,Success,True,2,True,B1. Dataset Integrity Violation,gis_taxonomy_sample
+geoagent_thinking_main_128,GeoAgent Task 128,128,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_129,GeoAgent Task 129,129,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_130,GeoAgent Task 130,130,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_131,GeoAgent Task 131,131,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_132,GeoAgent Task 132,132,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_133,GeoAgent Task 133,133,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_134,GeoAgent Task 134,134,thinking,main,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_135,GeoAgent Task 135,135,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_136,GeoAgent Task 136,136,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_137,GeoAgent Task 137,137,thinking,main,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_138,GeoAgent Task 138,138,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_139,GeoAgent Task 139,139,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_140,GeoAgent Task 140,140,thinking,main,Success,True,2,True,B1. Dataset Integrity Violation,gis_taxonomy_sample
+geoagent_thinking_main_141,GeoAgent Task 141,141,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_142,GeoAgent Task 142,142,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_143,GeoAgent Task 143,143,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_144,GeoAgent Task 144,144,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_145,GeoAgent Task 145,145,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_main_146,GeoAgent Task 146,146,thinking,main,Success,True,2,True,B1. Dataset Integrity Violation,gis_taxonomy_sample
+geoagent_thinking_main_147,GeoAgent Task 147,147,thinking,main,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_001,GeoAgent Task 131,131,thinking,main_retry,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_002,GeoAgent Task 133,133,thinking,main_retry,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_003,GeoAgent Task 132,132,thinking,main_retry,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_004,GeoAgent Task 134,134,thinking,main_retry,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_005,GeoAgent Task 135,135,thinking,main_retry,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_006,GeoAgent Task 136,136,thinking,main_retry,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_007,GeoAgent Task 138,138,thinking,main_retry,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_008,GeoAgent Task 139,139,thinking,main_retry,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_009,GeoAgent Task 140,140,thinking,main_retry,Success,True,2,True,B1. Dataset Integrity Violation,related_variant_of_taxonomy_sample
+geoagent_thinking_variant_010,GeoAgent Task 137,137,thinking,main_retry,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_011,GeoAgent Task 141,141,thinking,main_retry,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_012,GeoAgent Task 142,142,thinking,main_retry,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_013,GeoAgent Task 143,143,thinking,main_retry,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_014,GeoAgent Task 144,144,thinking,main_retry,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_015,GeoAgent Task 145,145,thinking,main_retry,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_016,GeoAgent Task 146,146,thinking,main_retry,Success,True,2,True,B1. Dataset Integrity Violation,related_variant_of_taxonomy_sample
+geoagent_thinking_variant_017,GeoAgent Task 147,147,thinking,main_retry,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_018,GeoAgent Task 4,4,thinking,early_full,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_019,GeoAgent Task 3,3,thinking,early_full,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_020,GeoAgent Task 2,2,thinking,early_full,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_021,GeoAgent Task 6,6,thinking,early_full,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_022,GeoAgent Task 5,5,thinking,early_full,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_023,GeoAgent Task 7,7,thinking,early_full,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_024,GeoAgent Task 8,8,thinking,early_full,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_025,GeoAgent Task 114,114,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_026,GeoAgent Task 115,115,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_027,GeoAgent Task 112,112,thinking,tokenrun,Success,True,2,True,A3. Unit Misinterpretation,related_variant_of_taxonomy_sample
+geoagent_thinking_variant_028,GeoAgent Task 113,113,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_029,GeoAgent Task 116,116,thinking,tokenrun,Success,True,2,True,A3. Unit Misinterpretation,related_variant_of_taxonomy_sample
+geoagent_thinking_variant_030,GeoAgent Task 117,117,thinking,tokenrun,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_031,GeoAgent Task 118,118,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_032,GeoAgent Task 119,119,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_033,GeoAgent Task 120,120,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_034,GeoAgent Task 121,121,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_035,GeoAgent Task 122,122,thinking,tokenrun,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_036,GeoAgent Task 123,123,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_037,GeoAgent Task 124,124,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_038,GeoAgent Task 125,125,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_039,GeoAgent Task 126,126,thinking,tokenrun,Success,True,2,True,B1. Dataset Integrity Violation,related_variant_of_taxonomy_sample
+geoagent_thinking_variant_040,GeoAgent Task 127,127,thinking,tokenrun,Success,True,2,True,B1. Dataset Integrity Violation,related_variant_of_taxonomy_sample
+geoagent_thinking_variant_041,GeoAgent Task 128,128,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_042,GeoAgent Task 129,129,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_043,GeoAgent Task 130,130,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_044,GeoAgent Task 131,131,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_045,GeoAgent Task 132,132,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_046,GeoAgent Task 133,133,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_047,GeoAgent Task 134,134,thinking,tokenrun,Success,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_048,GeoAgent Task 135,135,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_049,GeoAgent Task 136,136,thinking,tokenrun,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_050,GeoAgent Task 137,137,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_051,GeoAgent Task 138,138,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_052,GeoAgent Task 139,139,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_053,GeoAgent Task 140,140,thinking,tokenrun,Success,True,2,True,B1. Dataset Integrity Violation,related_variant_of_taxonomy_sample
+geoagent_thinking_variant_054,GeoAgent Task 141,141,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_055,GeoAgent Task 142,142,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_056,GeoAgent Task 143,143,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_057,GeoAgent Task 144,144,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_058,GeoAgent Task 145,145,thinking,tokenrun,Success,False,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_variant_059,GeoAgent Task 146,146,thinking,tokenrun,Success,True,2,True,B1. Dataset Integrity Violation,related_variant_of_taxonomy_sample
+geoagent_thinking_variant_060,GeoAgent Task 147,147,thinking,tokenrun,Success,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_001,GeoAgent Task 1,1,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_002,GeoAgent Task 2,2,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_003,GeoAgent Task 3,3,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_004,GeoAgent Task 4,4,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_005,GeoAgent Task 5,5,thinking,legacy_session,observed_output,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_006,GeoAgent Task 9,9,thinking,legacy_session,observed_output,True,7,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_007,GeoAgent Task 10,10,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_008,GeoAgent Task 11,11,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_009,GeoAgent Task 12,12,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_010,,,thinking,legacy_session,observed_output,True,3,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_thinking_legacy_011,GeoAgent Task 17,17,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_012,GeoAgent Task 18,18,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_013,GeoAgent Task 19,19,thinking,legacy_session,observed_output,True,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_014,GeoAgent Task 20,20,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_015,GeoAgent Task 21,21,thinking,legacy_session,observed_output,True,10,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_016,GeoAgent Task 22,22,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_017,GeoAgent Task 23,23,thinking,legacy_session,observed_output,True,12,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_018,GeoAgent Task 24,24,thinking,legacy_session,observed_output,True,7,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_019,GeoAgent Task 25,25,thinking,legacy_session,observed_output,True,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_020,GeoAgent Task 26,26,thinking,legacy_session,observed_output,True,12,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_021,GeoAgent Task 27,27,thinking,legacy_session,observed_output,True,17,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_022,GeoAgent Task 28,28,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_023,GeoAgent Task 29,29,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_024,GeoAgent Task 30,30,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_025,GeoAgent Task 31,31,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_026,GeoAgent Task 32,32,thinking,legacy_session,observed_output,True,7,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_027,GeoAgent Task 33,33,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_028,GeoAgent Task 35,35,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_029,GeoAgent Task 36,36,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_030,GeoAgent Task 37,37,thinking,legacy_session,observed_output,True,8,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_031,GeoAgent Task 38,38,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_032,GeoAgent Task 39,39,thinking,legacy_session,observed_output,True,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_033,GeoAgent Task 40,40,thinking,legacy_session,observed_output,True,7,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_034,GeoAgent Task 41,41,thinking,legacy_session,observed_output,True,7,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_035,GeoAgent Task 42,42,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_036,GeoAgent Task 43,43,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_037,GeoAgent Task 44,44,thinking,legacy_session,observed_output,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_038,GeoAgent Task 45,45,thinking,legacy_session,observed_output,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_039,GeoAgent Task 46,46,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_040,GeoAgent Task 47,47,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_041,GeoAgent Task 48,48,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_042,GeoAgent Task 49,49,thinking,legacy_session,observed_output,True,5,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_043,GeoAgent Task 50,50,thinking,legacy_session,observed_output,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_044,GeoAgent Task 51,51,thinking,legacy_session,observed_output,True,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_045,GeoAgent Task 52,52,thinking,legacy_session,observed_output,True,8,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_046,GeoAgent Task 53,53,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_047,GeoAgent Task 54,54,thinking,legacy_session,observed_output,True,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_048,GeoAgent Task 55,55,thinking,legacy_session,observed_output,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_049,GeoAgent Task 56,56,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_050,GeoAgent Task 57,57,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_051,GeoAgent Task 58,58,thinking,legacy_session,observed_output,True,4,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_052,GeoAgent Task 59,59,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_053,GeoAgent Task 60,60,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_054,GeoAgent Task 61,61,thinking,legacy_session,observed_output,True,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_055,GeoAgent Task 62,62,thinking,legacy_session,observed_output,True,7,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_056,GeoAgent Task 62,62,thinking,legacy_session,observed_output,True,8,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_057,GeoAgent Task 63,63,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_058,GeoAgent Task 64,64,thinking,legacy_session,observed_output,True,7,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_059,GeoAgent Task 65,65,thinking,legacy_session,observed_output,True,8,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_060,,,thinking,legacy_session,observed_output,True,6,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_thinking_legacy_061,GeoAgent Task 67,67,thinking,legacy_session,observed_output,True,9,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_062,GeoAgent Task 68,68,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_063,GeoAgent Task 69,69,thinking,legacy_session,observed_output,True,11,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_064,GeoAgent Task 70,70,thinking,legacy_session,observed_output,True,13,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_065,GeoAgent Task 71,71,thinking,legacy_session,observed_output,True,5,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_066,GeoAgent Task 72,72,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_067,GeoAgent Task 73,73,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_068,GeoAgent Task 74,74,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_069,GeoAgent Task 75,75,thinking,legacy_session,observed_output,True,2,True,D2. Spatial Allocation Error,related_variant_of_taxonomy_sample
+geoagent_thinking_legacy_070,GeoAgent Task 76,76,thinking,legacy_session,observed_output,True,7,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_071,GeoAgent Task 78,78,thinking,legacy_session,observed_output,True,8,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_072,GeoAgent Task 79,79,thinking,legacy_session,observed_output,True,4,True,E2. Symbolization Error,related_variant_of_taxonomy_sample
+geoagent_thinking_legacy_073,GeoAgent Task 80,80,thinking,legacy_session,observed_output,True,7,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_074,GeoAgent Task 81,81,thinking,legacy_session,observed_output,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_075,GeoAgent Task 82,82,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_076,GeoAgent Task 83,83,thinking,legacy_session,observed_output,True,7,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_077,GeoAgent Task 84,84,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_078,GeoAgent Task 86,86,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_079,GeoAgent Task 87,87,thinking,legacy_session,observed_output,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_080,GeoAgent Task 88,88,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_081,GeoAgent Task 89,89,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_082,GeoAgent Task 91,91,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_083,GeoAgent Task 92,92,thinking,legacy_session,observed_output,True,7,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_084,GeoAgent Task 93,93,thinking,legacy_session,observed_output,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_085,GeoAgent Task 94,94,thinking,legacy_session,observed_output,True,6,True,C1. Topological Predicate Confusion,related_variant_of_taxonomy_sample
+geoagent_thinking_legacy_086,GeoAgent Task 95,95,thinking,legacy_session,observed_output,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_087,GeoAgent Task 96,96,thinking,legacy_session,observed_output,True,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_088,GeoAgent Task 97,97,thinking,legacy_session,observed_output,True,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_089,GeoAgent Task 98,98,thinking,legacy_session,observed_output,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_090,GeoAgent Task 99,99,thinking,legacy_session,observed_output,True,7,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_091,GeoAgent Task 100,100,thinking,legacy_session,observed_output,True,3,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_092,GeoAgent Task 102,102,thinking,legacy_session,observed_output,True,7,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_093,GeoAgent Task 103,103,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_094,GeoAgent Task 104,104,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_095,GeoAgent Task 105,105,thinking,legacy_session,observed_output,True,4,True,B3. Missing Data Misinterpretation,related_variant_of_taxonomy_sample
+geoagent_thinking_legacy_096,GeoAgent Task 106,106,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_097,GeoAgent Task 107,107,thinking,legacy_session,observed_output,True,5,True,B1. Dataset Integrity Violation,related_variant_of_taxonomy_sample
+geoagent_thinking_legacy_098,GeoAgent Task 108,108,thinking,legacy_session,observed_output,True,7,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_099,,,thinking,legacy_session,observed_output,True,7,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_thinking_legacy_100,GeoAgent Task 110,110,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_101,GeoAgent Task 111,111,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_102,GeoAgent Task 112,112,thinking,legacy_session,observed_output,True,5,True,A3. Unit Misinterpretation,related_variant_of_taxonomy_sample
+geoagent_thinking_legacy_103,GeoAgent Task 113,113,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_104,GeoAgent Task 114,114,thinking,legacy_session,observed_output,True,10,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_105,GeoAgent Task 115,115,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_106,GeoAgent Task 116,116,thinking,legacy_session,observed_output,True,5,True,A3. Unit Misinterpretation,related_variant_of_taxonomy_sample
+geoagent_thinking_legacy_107,GeoAgent Task 117,117,thinking,legacy_session,observed_output,True,11,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_108,,,thinking,legacy_session,observed_output,True,6,False,,unmapped_nonbenchmark_or_unresolved
+geoagent_thinking_legacy_109,GeoAgent Task 119,119,thinking,legacy_session,observed_output,True,7,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_110,GeoAgent Task 120,120,thinking,legacy_session,observed_output,True,1,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_111,GeoAgent Task 121,121,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_112,GeoAgent Task 122,122,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_113,GeoAgent Task 123,123,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_114,GeoAgent Task 124,124,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_115,GeoAgent Task 125,125,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_116,GeoAgent Task 126,126,thinking,legacy_session,observed_output,True,10,True,B1. Dataset Integrity Violation,related_variant_of_taxonomy_sample
+geoagent_thinking_legacy_117,GeoAgent Task 127,127,thinking,legacy_session,observed_output,True,5,True,B1. Dataset Integrity Violation,related_variant_of_taxonomy_sample
+geoagent_thinking_legacy_118,GeoAgent Task 128,128,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_119,GeoAgent Task 129,129,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_120,GeoAgent Task 130,130,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_121,GeoAgent Task 131,131,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_122,GeoAgent Task 132,132,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_123,GeoAgent Task 133,133,thinking,legacy_session,observed_output,True,226,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_124,GeoAgent Task 134,134,thinking,legacy_session,observed_output,True,4,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_125,GeoAgent Task 135,135,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_126,GeoAgent Task 136,136,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_127,GeoAgent Task 137,137,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_128,GeoAgent Task 138,138,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_129,GeoAgent Task 139,139,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_130,GeoAgent Task 140,140,thinking,legacy_session,observed_output,True,6,True,B1. Dataset Integrity Violation,related_variant_of_taxonomy_sample
+geoagent_thinking_legacy_131,GeoAgent Task 141,141,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_132,GeoAgent Task 142,142,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_133,GeoAgent Task 143,143,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_134,GeoAgent Task 144,144,thinking,legacy_session,observed_output,True,5,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_135,GeoAgent Task 145,145,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_136,GeoAgent Task 146,146,thinking,legacy_session,observed_output,True,5,True,B1. Dataset Integrity Violation,related_variant_of_taxonomy_sample
+geoagent_thinking_legacy_137,GeoAgent Task 147,147,thinking,legacy_session,observed_output,True,2,False,,outside_core_taxonomy_or_insufficient_evidence
+geoagent_thinking_legacy_138,GeoAgent Task 1,1,thinking,legacy_session,observed_output,True,6,False,,outside_core_taxonomy_or_insufficient_evidence
+viscritic_geoagent_task_143_mm_all,GeoAgent Task 143,143,visual-all,viscritic_eval,completed,True,1,True,A2. CRS Inconsistency,gis_taxonomy_sample
+viscritic_geoagent_task_088_mm_text,GeoAgent Task 88,88,text-only,viscritic_eval,completed,True,1,True,A3. Unit Misinterpretation,gis_taxonomy_sample
+viscritic_geoagent_task_001_qw_text,GeoAgent Task 1,1,text-only,viscritic_eval,completed,True,1,True,B1. Dataset Integrity Violation,gis_taxonomy_sample
+viscritic_geoagent_task_031_qw_one,GeoAgent Task 31,31,visual-one,viscritic_eval,completed,True,1,True,C1. Topological Predicate Confusion,gis_taxonomy_sample
+viscritic_geoagent_task_082_mm_one,GeoAgent Task 82,82,visual-one,viscritic_eval,completed,True,1,True,C3. Network Connectivity Misinterpretation,gis_taxonomy_sample
+viscritic_geoagent_task_092_qw_all,GeoAgent Task 92,92,visual-all,viscritic_eval,completed,True,1,True,D1. Aggregation Scope Confusion,gis_taxonomy_sample
+viscritic_geoagent_task_084_mm_all,GeoAgent Task 84,84,visual-all,viscritic_eval,completed,True,1,True,D2. Spatial Allocation Error,gis_taxonomy_sample
+viscritic_geoagent_task_079_qw_all,GeoAgent Task 79,79,visual-all,viscritic_eval,completed,True,1,True,E3. Map Composition Defect,gis_taxonomy_sample
+viscritic_geoagent_task_004_mm_one,GeoAgent Task 4,4,visual-one,viscritic_eval,completed,True,1,True,A3. Unit Misinterpretation,gis_taxonomy_sample
+viscritic_geoagent_task_007_mm_one,GeoAgent Task 7,7,visual-one,viscritic_eval,completed,True,1,True,C1. Topological Predicate Confusion,gis_taxonomy_sample
+viscritic_geoagent_task_012_qw_one,GeoAgent Task 12,12,visual-one,viscritic_eval,completed,True,1,True,B3. Missing Data Misinterpretation,gis_taxonomy_sample
+viscritic_geoagent_task_021_mm_text,GeoAgent Task 21,21,text-only,viscritic_eval,completed,True,1,True,B1. Dataset Integrity Violation,gis_taxonomy_sample
+viscritic_geoagent_task_022_mm_text,GeoAgent Task 22,22,text-only,viscritic_eval,completed,True,1,True,D1. Aggregation Scope Confusion,gis_taxonomy_sample
+viscritic_geoagent_task_030_qw_text,GeoAgent Task 30,30,text-only,viscritic_eval,completed,True,1,True,C1. Topological Predicate Confusion,gis_taxonomy_sample
+viscritic_geoagent_task_039_qw_one,GeoAgent Task 39,39,visual-one,viscritic_eval,completed,True,1,True,A2. CRS Inconsistency,gis_taxonomy_sample
+viscritic_geoagent_task_040_mm_one,GeoAgent Task 40,40,visual-one,viscritic_eval,completed,True,1,True,D1. Aggregation Scope Confusion,gis_taxonomy_sample
+viscritic_geoagent_task_041_mm_one,GeoAgent Task 41,41,visual-one,viscritic_eval,completed,True,1,True,C1. Topological Predicate Confusion,gis_taxonomy_sample
+viscritic_geoagent_task_055_mm_one,GeoAgent Task 55,55,visual-one,viscritic_eval,completed,True,1,True,B3. Missing Data Misinterpretation,gis_taxonomy_sample
+viscritic_geoagent_task_056_qw_one,GeoAgent Task 56,56,visual-one,viscritic_eval,completed,True,1,True,B3. Missing Data Misinterpretation,gis_taxonomy_sample
+viscritic_geoagent_task_057_mm_text,GeoAgent Task 57,57,text-only,viscritic_eval,completed,True,1,True,C1. Topological Predicate Confusion,gis_taxonomy_sample
+viscritic_geoagent_task_063_mm_one,GeoAgent Task 63,63,visual-one,viscritic_eval,completed,True,1,True,A3. Unit Misinterpretation,gis_taxonomy_sample
+viscritic_geoagent_task_064_mm_all,GeoAgent Task 64,64,visual-all,viscritic_eval,completed,True,1,True,B1. Dataset Integrity Violation,gis_taxonomy_sample
+viscritic_geoagent_task_065_mm_one,GeoAgent Task 65,65,visual-one,viscritic_eval,completed,True,1,True,D1. Aggregation Scope Confusion,gis_taxonomy_sample
+viscritic_geoagent_task_066_mm_all,GeoAgent Task 66,66,visual-all,viscritic_eval,completed,True,1,True,B2. Raster Alignment Failure,gis_taxonomy_sample
+viscritic_geoagent_task_067_mm_text,GeoAgent Task 67,67,text-only,viscritic_eval,completed,True,1,True,B2. Raster Alignment Failure,gis_taxonomy_sample
+viscritic_geoagent_task_070_qw_one,GeoAgent Task 70,70,visual-one,viscritic_eval,completed,True,1,True,B1. Dataset Integrity Violation,gis_taxonomy_sample
+viscritic_geoagent_task_073_qw_one,GeoAgent Task 73,73,visual-one,viscritic_eval,completed,True,1,True,A3. Unit Misinterpretation,gis_taxonomy_sample
+viscritic_geoagent_task_074_mm_text,GeoAgent Task 74,74,text-only,viscritic_eval,completed,True,1,True,B2. Raster Alignment Failure,gis_taxonomy_sample
+viscritic_geoagent_task_076_qw_one,GeoAgent Task 76,76,visual-one,viscritic_eval,completed,True,1,True,D1. Aggregation Scope Confusion,gis_taxonomy_sample
+viscritic_geoagent_task_077_mm_all,GeoAgent Task 77,77,visual-all,viscritic_eval,completed,True,1,True,B2. Raster Alignment Failure,gis_taxonomy_sample
+viscritic_geoagent_task_078_qw_text,GeoAgent Task 78,78,text-only,viscritic_eval,completed,True,1,True,E3. Map Composition Defect,gis_taxonomy_sample
+viscritic_geoagent_task_081_mm_text,GeoAgent Task 81,81,text-only,viscritic_eval,completed,True,1,True,A3. Unit Misinterpretation,gis_taxonomy_sample
+viscritic_geoagent_task_083_qw_one,GeoAgent Task 83,83,visual-one,viscritic_eval,completed,True,1,True,B1. Dataset Integrity Violation,gis_taxonomy_sample
+viscritic_geoagent_task_089_mm_one,GeoAgent Task 89,89,visual-one,viscritic_eval,completed,True,1,True,D1. Aggregation Scope Confusion,gis_taxonomy_sample
+viscritic_geoagent_task_093_mm_text,GeoAgent Task 93,93,text-only,viscritic_eval,completed,True,1,True,A3. Unit Misinterpretation,gis_taxonomy_sample
+viscritic_geoagent_task_095_mm_all,GeoAgent Task 95,95,visual-all,viscritic_eval,completed,True,1,True,D1. Aggregation Scope Confusion,gis_taxonomy_sample
+viscritic_geoagent_task_096_qw_all,GeoAgent Task 96,96,visual-all,viscritic_eval,completed,True,1,True,A3. Unit Misinterpretation,gis_taxonomy_sample
+viscritic_geoagent_task_100_qw_all,GeoAgent Task 100,100,visual-all,viscritic_eval,completed,True,1,True,B2. Raster Alignment Failure,gis_taxonomy_sample
+viscritic_geoagent_task_102_qw_text,GeoAgent Task 102,102,text-only,viscritic_eval,completed,True,1,True,E3. Map Composition Defect,gis_taxonomy_sample
+viscritic_geoagent_task_104_mm_one,GeoAgent Task 104,104,visual-one,viscritic_eval,completed,True,1,True,D3. Spatial Statistical Misinterpretation,gis_taxonomy_sample
+viscritic_geoagent_task_113_mm_one,GeoAgent Task 113,113,visual-one,viscritic_eval,completed,True,1,True,C1. Topological Predicate Confusion,gis_taxonomy_sample
+viscritic_geoagent_task_119_mm_text,GeoAgent Task 119,119,text-only,viscritic_eval,completed,True,1,True,D3. Spatial Statistical Misinterpretation,gis_taxonomy_sample
+viscritic_geoagent_task_124_qw_all,GeoAgent Task 124,124,visual-all,viscritic_eval,completed,True,1,True,C1. Topological Predicate Confusion,gis_taxonomy_sample
+viscritic_geoagent_task_133_mm_text,GeoAgent Task 133,133,text-only,viscritic_eval,completed,True,1,True,D1. Aggregation Scope Confusion,gis_taxonomy_sample
+viscritic_geoagent_task_066_axis_order,GeoAgent Task 66,66,visual-one,viscritic_eval,completed,True,1,True,A1. Coordinate Axis Misinterpretation,gis_taxonomy_sample
+viscritic_geoagent_task_079_classification,GeoAgent Task 79,79,visual-all,viscritic_eval,completed,True,1,True,E1. Classification Scheme Misuse,gis_taxonomy_sample
+viscritic_self_built_gis_task_c2_01_no_think_01,Self-built GIS Task C2-01,C2-01,no-thinking,viscritic_eval,completed,True,1,True,C2. Invalid Geometry Handling,gis_taxonomy_sample
+targeted_A1-01__no-thinking__01,Self-built GIS Task A1-01,A1-01,no-thinking,self_built_targeted,completed,True,1,False,,correct_result
+targeted_A1-01__no-thinking__02,Self-built GIS Task A1-01,A1-01,no-thinking,self_built_targeted,timeout,False,0,False,,excluded_run_failure
+targeted_A1-01__thinking__01,Self-built GIS Task A1-01,A1-01,thinking,self_built_targeted,timeout,False,0,False,,excluded_run_failure
+targeted_A1-01__thinking__02,Self-built GIS Task A1-01,A1-01,thinking,self_built_targeted,completed,True,1,False,,correct_result
+targeted_A1-02__no-thinking__01,Self-built GIS Task A1-02,A1-02,no-thinking,self_built_targeted,completed,True,1,False,,correct_result
+targeted_A1-02__no-thinking__02,Self-built GIS Task A1-02,A1-02,no-thinking,self_built_targeted,completed,True,1,False,,correct_result
+targeted_A1-02__thinking__01,Self-built GIS Task A1-02,A1-02,thinking,self_built_targeted,failed,False,0,False,,correct_result
+targeted_A1-02__thinking__02,Self-built GIS Task A1-02,A1-02,thinking,self_built_targeted,failed,False,0,False,,correct_result
+targeted_A1-03__no-thinking__01,Self-built GIS Task A1-03,A1-03,no-thinking,self_built_targeted,failed,False,0,False,,excluded_incomplete
+targeted_A1-03__no-thinking__02,Self-built GIS Task A1-03,A1-03,no-thinking,self_built_targeted,completed,True,1,False,,correct_result
+targeted_A1-03__thinking__01,Self-built GIS Task A1-03,A1-03,thinking,self_built_targeted,completed,True,1,False,,correct_result
+targeted_A1-03__thinking__02,Self-built GIS Task A1-03,A1-03,thinking,self_built_targeted,failed,False,0,False,,correct_result
+targeted_C2-01__no-thinking__01,Self-built GIS Task C2-01,C2-01,no-thinking,self_built_targeted,completed,True,1,True,C2. Invalid Geometry Handling,confirmed_target_error
+targeted_C2-01__no-thinking__02,Self-built GIS Task C2-01,C2-01,no-thinking,self_built_targeted,completed,True,1,False,C2. Invalid Geometry Handling,correct_result
+targeted_C2-01__thinking__01,Self-built GIS Task C2-01,C2-01,thinking,self_built_targeted,failed,False,0,False,C2. Invalid Geometry Handling,correct_result
+targeted_C2-01__thinking__02,Self-built GIS Task C2-01,C2-01,thinking,self_built_targeted,completed,True,1,False,C2. Invalid Geometry Handling,correct_result
+targeted_E1-01__no-thinking__01,Self-built GIS Task E1-01,E1-01,no-thinking,self_built_targeted,timeout,False,0,False,,excluded_run_failure
+targeted_E1-01__no-thinking__02,Self-built GIS Task E1-01,E1-01,no-thinking,self_built_targeted,timeout,False,0,False,,excluded_run_failure
+targeted_E1-01__thinking__01,Self-built GIS Task E1-01,E1-01,thinking,self_built_targeted,timeout,False,0,False,,excluded_run_failure
+targeted_E1-01__thinking__02,Self-built GIS Task E1-01,E1-01,thinking,self_built_targeted,timeout,False,0,False,,excluded_run_failure
+targeted_E1-02__no-thinking__01,Self-built GIS Task E1-02,E1-02,no-thinking,self_built_targeted,timeout,False,0,False,,excluded_run_failure
+targeted_E1-02__no-thinking__02,Self-built GIS Task E1-02,E1-02,no-thinking,self_built_targeted,timeout,False,0,False,,excluded_run_failure
+targeted_E1-02__thinking__01,Self-built GIS Task E1-02,E1-02,thinking,self_built_targeted,timeout,False,0,False,,excluded_run_failure
+targeted_E1-02__thinking__02,Self-built GIS Task E1-02,E1-02,thinking,self_built_targeted,timeout,False,0,False,,excluded_run_failure
+targeted_E1-03__no-thinking__01,Self-built GIS Task E1-03,E1-03,no-thinking,self_built_targeted,timeout,False,0,False,,excluded_run_failure
+targeted_E1-03__no-thinking__02,Self-built GIS Task E1-03,E1-03,no-thinking,self_built_targeted,timeout,False,0,False,,excluded_run_failure
+targeted_E1-03__thinking__01,Self-built GIS Task E1-03,E1-03,thinking,self_built_targeted,timeout,False,0,False,,excluded_run_failure
+targeted_E1-03__thinking__02,Self-built GIS Task E1-03,E1-03,thinking,self_built_targeted,timeout,False,0,False,,excluded_run_failure

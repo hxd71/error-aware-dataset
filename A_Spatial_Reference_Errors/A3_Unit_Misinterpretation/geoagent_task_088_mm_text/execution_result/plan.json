@@ -1,0 +1,39 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Filter point features to retain only those with image_date year >= 2013",
+      "inputs": [
+        "richland_downtown_street_view_image_location_epsg6569"
+      ],
+      "expected_outputs": [
+        "filtered_points_2013_onward.shp"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Extract the year from the image_date string field (format appears to be 'YYYY-M' like '2022-9') and filter for year >= 2013. Keep all geometry (Point) and attribute fields. The filtered layer will feed IDW interpolation."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Perform Inverse Distance Weighted (IDW) interpolation on filtered points to create a 10 m resolution DEM raster",
+      "inputs": [
+        "filtered_points_2013_onward.shp"
+      ],
+      "expected_outputs": [
+        "dem_idw.tif"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Use elevatio_1 as the interpolation field. Set raster cell size to 10 meters. Output extent should cover the full extent of the filtered points (bounds ~607111-611687 X, ~237963-240843 Y in EPSG:6569). Save as GeoTIFF."
+    }
+  ],
+  "current_step_index": 2,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": false,
+  "force_no_visual_review": true,
+  "visual_review_policy": "none"
+}

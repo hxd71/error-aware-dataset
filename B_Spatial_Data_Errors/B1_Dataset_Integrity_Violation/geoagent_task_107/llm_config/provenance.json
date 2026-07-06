@@ -1,0 +1,5 @@
+{
+  "source": "GeoAgent root configuration",
+  "snapshot": "sanitized",
+  "note": "保留模型与推理设置；密钥、服务地址和本机路径均已隐去。"
+}

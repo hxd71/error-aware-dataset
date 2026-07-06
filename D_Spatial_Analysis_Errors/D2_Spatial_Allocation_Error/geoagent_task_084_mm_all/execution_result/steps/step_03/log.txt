@@ -1,0 +1,29 @@
+exit_code=0
+duration_seconds=0.9648
+[stdout]
+Loaded 6909 buildings
+Columns: ['Join_Count', 'TARGET_FID', 'release', 'capture_da', 'GEOID', 'NAME', 'fd_id', 'bid', 'cbfips', 'st_damcat', 'occtype', 'bldgtype', 'num_story', 'sqft', 'found_type', 'found_ht', 'med_yr_blt', 'val_struct', 'val_cont', 'val_vehic', 'ftprntid', 'ftprntsrc', 'source', 'students', 'pop2amu65', 'pop2amo65', 'pop2pmu65', 'pop2pmo65', 'o65disable', 'u65disable', 'x', 'y', 'firmzone', 'grnd_elv_m', 'ground_elv', 'prediction', 'probabilit', 'id', 'DS', 'height', 'bldg_area', 'bg_total_a', 'geometry']
+Using block_group_id column: cbfips
+Using area column: sqft
+Using population column: pop2amu65
+Found 504 block groups
+Wrote 6909 features to [SECONDARY_RUN_WORKSPACE]\outputs\evaluations\from_geo_agent\eval-from-geo-agent-20260419T165504Z-57ef3a68\runs\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\steps\step_03\pop_rolla_buildings.shp
+Population range: 0.00 to 39.34
+Total population: 1298.06
+{
+  "step_id": "step_03",
+  "operation": "area_proportional_population",
+  "input_features": 6909,
+  "output_features": 6909,
+  "block_groups": 504,
+  "output_path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260419T165504Z-57ef3a68\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\\steps\\step_03\\pop_rolla_buildings.shp"
+}
+
+[stderr]
+[SECONDARY_RUN_WORKSPACE]\outputs\evaluations\from_geo_agent\eval-from-geo-agent-20260419T165504Z-57ef3a68\runs\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\steps\step_03\run_step.py:87: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  output_gdf.to_file(output_path)
+[SECONDARY_RUN_WORKSPACE]\.venv\Lib\site-packages\pyogrio\raw.py:733: RuntimeWarning: Normalized/laundered field name: 'block_group_id' to 'block_grou'
+  ogr_write(
+[SECONDARY_RUN_WORKSPACE]\.venv\Lib\site-packages\pyogrio\raw.py:733: RuntimeWarning: Normalized/laundered field name: 'building_area' to 'building_a'
+  ogr_write(
+

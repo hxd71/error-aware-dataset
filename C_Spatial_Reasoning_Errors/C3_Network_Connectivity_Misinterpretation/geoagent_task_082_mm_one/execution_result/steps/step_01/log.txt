@@ -1,0 +1,7 @@
+exit_code=0
+duration_seconds=0.8879
+[stdout]
+{"step_id": "step_01", "status": "success", "nodes": 7959, "output": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260423T184016Z-95a56beb-082-geoagent_082-try01\\steps\\step_01\\pano_graph.json"}
+
+[stderr]
+

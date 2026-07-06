@@ -1,0 +1,117 @@
+{
+  "user_query": "Propose a new Walmart store location, which has similar distances to the existing four locations, while near the roads within 300 meters. Save the proposed location in a new shapefile, after that, draw this new location and the old location on the map and save it as a picture.",
+  "task_context": {
+    "case_id": "geoagent_102",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "motorway_epsg32111",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Walmart_site\\Motorway_EPSG32111\\Motorway_EPSG32111.shp",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path Walmart_site.",
+        "format": "shp",
+        "crs": "EPSG:32111",
+        "metadata": {
+          "feature_count": 6450,
+          "columns": [
+            "type",
+            "id",
+            "bounds",
+            "tags"
+          ],
+          "geometry_types": [
+            "LineString"
+          ],
+          "field_types": {
+            "type": "str",
+            "id": "int64",
+            "bounds": "str",
+            "tags": "str"
+          },
+          "sample_rows": [
+            {
+              "type": "way",
+              "id": 11580442,
+              "bounds": "{\"minlat\": 39.8958913, \"minlon\": -74.9446639, \"maxlat\": 39.8973464, \"maxlon\": -74.9445987}",
+              "tags": "{\"highway\": \"tertiary\", \"name\": \"Conestoga Drive\", \"oneway\": \"yes\", \"tiger:cfcc\": \"A41\", \"tiger:county\": \"Burlington, NJ\", \"tiger:name_base\": \"Conestoga\", \"tiger:name_type\": \"Dr\", \"tiger:reviewed\": \"no\", \"tiger:zip_left\": \"08053\", \"tiger:zip_right\": \"080"
+            },
+            {
+              "type": "way",
+              "id": 11580558,
+              "bounds": "{\"minlat\": 39.9096963, \"minlon\": -74.940381, \"maxlat\": 39.9110769, \"maxlon\": -74.9385917}",
+              "tags": "{\"highway\": \"trunk_link\", \"junction\": \"jughandle\", \"oneway\": \"yes\", \"tiger:cfcc\": \"A41\", \"tiger:county\": \"Burlington, NJ\", \"tiger:reviewed\": \"no\"}"
+            },
+            {
+              "type": "way",
+              "id": 11580770,
+              "bounds": "{\"minlat\": 39.7958644, \"minlon\": -74.8566419, \"maxlat\": 39.8091257, \"maxlon\": -74.8521389}",
+              "tags": "{\"access\": \"no\", \"highway\": \"track\", \"tiger:cfcc\": \"A41\", \"tiger:county\": \"Burlington, NJ\", \"tiger:reviewed\": \"no\"}"
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            83404.57197041446,
+            98750.9227765055,
+            130606.62474815588,
+            123758.79557641006
+          ]
+        }
+      },
+      {
+        "asset_id": "walmart_4_site_epsg32111",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Walmart_site\\Walmart_4_site_EPSG32111\\Walmart_4_site_EPSG32111.shp",
+        "role": "reference",
+        "description": "GeoAgent source asset from data_path Walmart_site.",
+        "format": "shp",
+        "crs": "EPSG:32111",
+        "metadata": {
+          "feature_count": 4,
+          "columns": [
+            "id",
+            "tags"
+          ],
+          "geometry_types": [
+            "Point"
+          ],
+          "field_types": {
+            "id": "int64",
+            "tags": "str"
+          },
+          "sample_rows": [
+            {
+              "id": 246465605,
+              "tags": "{\"addr:city\": \"Somerdale\", \"addr:country\": \"US\", \"addr:housenumber\": \"1\", \"addr:postcode\": \"08083\", \"addr:state\": \"NJ\", \"addr:street\": \"Coopertown Boulevard\", \"brand\": \"Walmart\", \"brand:wikidata\": \"Q483551\", \"building\": \"retail\", \"name\": \"Walmart Superce"
+            },
+            {
+              "id": 265455954,
+              "tags": "{\"addr:city\": \"Woodbury\", \"addr:country\": \"US\", \"addr:housenumber\": \"820\", \"addr:postcode\": \"08096\", \"addr:state\": \"NJ\", \"addr:street\": \"Cooper Street\", \"brand\": \"Walmart\", \"brand:wikidata\": \"Q483551\", \"building\": \"retail\", \"building:levels\": \"1\", \"name\""
+            },
+            {
+              "id": 346606617,
+              "tags": "{\"addr:city\": \"Deptford\", \"addr:housenumber\": \"2000\", \"addr:postcode\": \"08096\", \"addr:state\": \"NJ\", \"addr:street\": \"Clements Bridge Road\", \"addr:unit\": \"100\", \"brand\": \"Walmart\", \"brand:wikidata\": \"Q483551\", \"building\": \"retail;commercial\", \"building:lev"
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            96141.22535821341,
+            108324.7035708972,
+            113389.33853893404,
+            113518.66632867343
+          ]
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": false,
+    "visual_review_policy": "none",
+    "force_no_visual_review": true,
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

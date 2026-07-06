@@ -1,0 +1,8 @@
+* -text
+A_Spatial_Reference_Errors/A3_Unit_Misinterpretation/geoagent_task_073_qw_one/data_source/input_01/US_Counties.shp filter=lfs diff=lfs merge=lfs -text
+B_Spatial_Data_Errors/B1_Dataset_Integrity_Violation/geoagent_task_034/data_source/US_Counties.shp filter=lfs diff=lfs merge=lfs -text
+B_Spatial_Data_Errors/B2_Raster_Alignment_Failure/geoagent_task_067_mm_text/execution_result/artifacts/tpi.tif filter=lfs diff=lfs merge=lfs -text
+B_Spatial_Data_Errors/B2_Raster_Alignment_Failure/geoagent_task_100_qw_all/data_source/input_10/LC08_L1TP_190055_20200214_20200823_02_T1_B8.TIF filter=lfs diff=lfs merge=lfs -text
+B_Spatial_Data_Errors/B2_Raster_Alignment_Failure/geoagent_task_100_qw_all/execution_result/artifacts/ndvi.tif filter=lfs diff=lfs merge=lfs -text
+D_Spatial_Analysis_Errors/D2_Spatial_Allocation_Error/geoagent_task_002/data_source/US_Counties/US_Counties.shp filter=lfs diff=lfs merge=lfs -text
+D_Spatial_Analysis_Errors/D2_Spatial_Allocation_Error/geoagent_task_075/data_source/US_Counties/US_Counties.shp filter=lfs diff=lfs merge=lfs -text

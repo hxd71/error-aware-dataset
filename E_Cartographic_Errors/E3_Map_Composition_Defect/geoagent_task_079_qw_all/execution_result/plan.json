@@ -1,0 +1,26 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Extract the year from the image_date column and export the street view points to a GeoJSON file for thematic mapping by year.",
+      "inputs": [
+        "street_image"
+      ],
+      "expected_outputs": [
+        "street_image_year.geojson"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "The input vector contains an existing year column (int32) and image_date column (str, e.g., '2023-1'). Parse image_date to extract the 4-digit year or validate against the existing year field. Ensure the output retains point geometry and the extracted year attribute for downstream color-coded thematic rendering."
+    }
+  ],
+  "current_step_index": 1,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "all_visualizable"
+}

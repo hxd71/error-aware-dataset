@@ -1,0 +1,83 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Perform spatial join between rainfall point layer and zone polygon layer to associate each rainfall observation with its containing region",
+      "inputs": [
+        "rainfall",
+        "zone"
+      ],
+      "expected_outputs": [
+        "joined_rainfall_zones.shp"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Use spatial join (predicate=within) to attach zone index to each rainfall point. Both layers share EPSG:32650 CRS. The P field contains precipitation values (float64). Target field for joining is 'index' from zone layer."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Aggregate rainfall statistics by zone and export precipitation data for each region as a separate Shapefile",
+      "inputs": [
+        "joined_rainfall_zones.shp"
+      ],
+      "expected_outputs": [
+        "zone_1_rainfall.shp",
+        "zone_2_rainfall.shp",
+        "zone_3_rainfall.shp",
+        "zone_4_rainfall.shp",
+        "zone_5_rainfall.shp",
+        "zone_6_rainfall.shp",
+        "zone_7_rainfall.shp",
+        "zone_8_rainfall.shp",
+        "zone_9_rainfall.shp",
+        "zone_10_rainfall.shp",
+        "zone_11_rainfall.shp",
+        "zone_12_rainfall.shp",
+        "zone_13_rainfall.shp",
+        "zone_14_rainfall.shp",
+        "zone_15_rainfall.shp",
+        "zone_16_rainfall.shp",
+        "zone_17_rainfall.shp",
+        "zone_18_rainfall.shp",
+        "zone_19_rainfall.shp",
+        "zone_20_rainfall.shp",
+        "zone_21_rainfall.shp",
+        "zone_22_rainfall.shp",
+        "zone_23_rainfall.shp",
+        "zone_24_rainfall.shp",
+        "zone_25_rainfall.shp",
+        "zone_26_rainfall.shp",
+        "zone_27_rainfall.shp",
+        "zone_28_rainfall.shp",
+        "zone_29_rainfall.shp",
+        "zone_30_rainfall.shp",
+        "zone_31_rainfall.shp",
+        "zone_32_rainfall.shp",
+        "zone_33_rainfall.shp",
+        "zone_34_rainfall.shp",
+        "zone_35_rainfall.shp",
+        "zone_36_rainfall.shp",
+        "zone_37_rainfall.shp",
+        "zone_38_rainfall.shp",
+        "zone_39_rainfall.shp",
+        "zone_40_rainfall.shp",
+        "zone_41_rainfall.shp",
+        "zone_42_rainfall.shp",
+        "zone_43_rainfall.shp",
+        "zone_44_rainfall.shp"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Group by 'index' field from zone layer. Each zone has 1 rainfall point. Export point features with all rainfall data (X, Y, P) plus zone identifier. Number of zones is 44 based on zone layer feature count."
+    }
+  ],
+  "current_step_index": 2,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": false,
+  "force_no_visual_review": true,
+  "visual_review_policy": "none"
+}

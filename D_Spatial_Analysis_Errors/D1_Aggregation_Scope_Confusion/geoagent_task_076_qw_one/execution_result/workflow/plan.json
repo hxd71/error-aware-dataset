@@ -1,0 +1,53 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Create 600-foot buffers around each coffee shop point to define the proximity search area.",
+      "inputs": [
+        "new_york_coffee_shops_epsg6535"
+      ],
+      "expected_outputs": [
+        "coffee_shops_buffer_600ft.shp"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Input CRS is EPSG:6535 (NAD83 / New York Long Island ftUS), so the buffer distance is exactly 600 units (feet). Output preserves original coffee shop attributes."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Count the number of bus and metro stops located within each coffee shop buffer using a spatial join.",
+      "inputs": [
+        "coffee_shops_buffer_600ft.shp",
+        "bus_metro_stop_epsg6535"
+      ],
+      "expected_outputs": [
+        "coffee_shops_stop_counts.shp"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Perform a spatial intersection or 'within' join between the stop points and the coffee shop buffers. Aggregate the count of stops per buffer and attach it as a new field named 'stop_count' to the original coffee shop attributes."
+    },
+    {
+      "step_id": "step_03",
+      "goal": "Sort the coffee shops by the stop_count field in descending order and retain only the top 20 features.",
+      "inputs": [
+        "coffee_shops_stop_counts.shp"
+      ],
+      "expected_outputs": [
+        "top20_coffee_shops.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Filter the dataset to keep the 20 rows with the highest stop_count values. Maintain the original point geometry and all associated attributes. Output as a Shapefile."
+    }
+  ],
+  "current_step_index": 3,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "at_least_one"
+}

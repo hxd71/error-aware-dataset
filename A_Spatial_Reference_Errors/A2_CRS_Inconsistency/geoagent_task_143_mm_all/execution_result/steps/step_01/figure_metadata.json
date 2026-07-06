@@ -1,0 +1,211 @@
+{
+  "title": "Evidence for step_01",
+  "template_name": "input_output_comparison",
+  "add_basemap": false,
+  "layer_count": 2,
+  "highlight_layers": [
+    "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-143-geoagent_143-try01\\steps\\step_01\\country_3857.shp"
+  ],
+  "output_path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-143-geoagent_143-try01\\steps\\step_01\\figure.png",
+  "rendered_layers": [
+    "subject",
+    "country_3857.shp"
+  ],
+  "comparison_left_labels": [
+    "subject"
+  ],
+  "comparison_right_labels": [
+    "country_3857.shp"
+  ],
+  "shared_extent": [
+    -180.0,
+    -90.0,
+    180.0,
+    83.59603881835938
+  ],
+  "padded_extent": [
+    -201.6,
+    -100.41576232910157,
+    201.6,
+    94.01180114746094
+  ],
+  "applied_view_focus": "full_extent",
+  "applied_extent": [
+    -201.6,
+    -104.00198059082031,
+    201.6,
+    97.59801940917968
+  ],
+  "extent_padding_ratio": 0.06,
+  "max_extent_aspect_ratio": 2.0,
+  "aspect_ratio_guard_applied": true,
+  "shared_extent_aspect_ratio": 2.0737800381302636,
+  "padded_extent_aspect_ratio": 2.073780038130263,
+  "applied_extent_aspect_ratio": 2.0,
+  "legend_placement": "panel_top",
+  "note": null,
+  "input_panel_is_alpha_composite": false,
+  "input_panel_layers": [
+    {
+      "label": "subject",
+      "layer_type": "vector",
+      "alpha": 0.45
+    }
+  ],
+  "panel_colorbars": {
+    "inputs": {
+      "present": false,
+      "mode": null,
+      "source_layer": null,
+      "source_layers": [],
+      "vmin": null,
+      "vmax": null
+    },
+    "outputs": {
+      "present": false,
+      "mode": null,
+      "source_layer": null,
+      "source_layers": [],
+      "vmin": null,
+      "vmax": null
+    }
+  },
+  "comparison_uses_shared_raster_limits": false,
+  "comparison_raster_limits": null,
+  "map_boundary_box_visible": true,
+  "map_boundary_box_style": {
+    "color": "#6B7280",
+    "linewidth": 0.8
+  },
+  "scale_bar_visible": true,
+  "scale_bar_position": "below_panel",
+  "scale_bar_panels": [
+    {
+      "panel": "inputs",
+      "visible": true,
+      "length_meters": 1000000.0,
+      "display_label": "1000 km",
+      "estimated": true,
+      "crs": "EPSG:4326",
+      "width_fraction": 0.20828264340445632,
+      "reason": null
+    },
+    {
+      "panel": "outputs",
+      "visible": true,
+      "length_meters": 1000000.0,
+      "display_label": "1000 km",
+      "estimated": true,
+      "crs": "EPSG:4326",
+      "width_fraction": 0.20828264340445632,
+      "reason": null
+    }
+  ],
+  "crs": "EPSG:4326",
+  "display_crs": "EPSG:4326",
+  "layer_details": [
+    {
+      "label": "subject",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\12\\2\\input\\country.shp",
+      "layer_type": "vector",
+      "source_crs": "EPSG:4326",
+      "display_crs": "EPSG:4326",
+      "alpha": 0.45,
+      "color": "#4C78A8",
+      "fill": true,
+      "fill_alpha": 0.45,
+      "linewidth": 0.6,
+      "zorder": 1,
+      "display_vmin": null,
+      "display_vmax": null
+    },
+    {
+      "label": "country_3857.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-143-geoagent_143-try01\\steps\\step_01\\country_3857.shp",
+      "layer_type": "vector",
+      "source_crs": "EPSG:3857",
+      "display_crs": "EPSG:4326",
+      "alpha": 0.8,
+      "color": "#F58518",
+      "fill": true,
+      "fill_alpha": 0.8,
+      "linewidth": 0.8,
+      "zorder": 2,
+      "display_vmin": null,
+      "display_vmax": null
+    }
+  ],
+  "applied_layer_styles": [
+    {
+      "label": "subject",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\12\\2\\input\\country.shp",
+      "color": "#4C78A8",
+      "fill": true,
+      "fill_alpha": 0.45,
+      "linewidth": 0.6,
+      "zorder": 1
+    },
+    {
+      "label": "country_3857.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-143-geoagent_143-try01\\steps\\step_01\\country_3857.shp",
+      "color": "#F58518",
+      "fill": true,
+      "fill_alpha": 0.8,
+      "linewidth": 0.8,
+      "zorder": 2
+    }
+  ],
+  "renderer": "matplotlib",
+  "candidate_layer_count": 2,
+  "candidate_layer_ids": [
+    "layer_01",
+    "layer_02"
+  ],
+  "selected_layer_ids": [
+    "layer_01",
+    "layer_02"
+  ],
+  "selected_layer_labels": [
+    "subject",
+    "country_3857.shp"
+  ],
+  "excluded_layer_ids": [],
+  "highlight_layer_ids": [
+    "layer_02"
+  ],
+  "selection_source": "llm",
+  "selector_attempt_count": 2,
+  "selector_repair_attempts": 1,
+  "selector_invalid_reason": null,
+  "view_focus": "full_extent",
+  "final_template_name": "input_output_comparison",
+  "template_decision_reason": "forced_input_output_comparison",
+  "selection_plan": {
+    "selected_layer_ids": [
+      "layer_01",
+      "layer_02"
+    ],
+    "highlight_layer_ids": [
+      "layer_02"
+    ],
+    "excluded_layer_ids": [],
+    "layer_roles": {
+      "layer_01": "subject",
+      "layer_02": "result"
+    },
+    "layer_styles": {
+      "layer_01": {
+        "color": "#4C78A8"
+      },
+      "layer_02": {
+        "color": "#F58518"
+      }
+    },
+    "render_priority": {
+      "layer_01": 1,
+      "layer_02": 2
+    },
+    "view_focus": "full_extent",
+    "rationale": "This is an input_output_comparison visual review task for a CRS reprojection. To verify the transformation from EPSG:4326 to EPSG:3857 was applied correctly, both the input (country.shp) and the output (country_3857.shp) must be displayed. The input layer serves as the subject/reference for comparison, while the output is the primary result being validated. No additional context layers are needed as the comparison task requires showing both the source and reprojected geometries to confirm CRS change and geometry preservation."
+  }
+}

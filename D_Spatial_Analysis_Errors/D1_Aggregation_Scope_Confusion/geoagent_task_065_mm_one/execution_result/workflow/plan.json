@@ -1,0 +1,54 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Calculate Terrain Ruggedness Index (TRI) from the PA DEM using focal statistics. Compute the square root of the sum of squared differences between each cell and its 8 neighboring cells.",
+      "inputs": [
+        "pa_dem"
+      ],
+      "expected_outputs": [
+        "ruggedness_index.tif"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "TRI formula: sqrt(sum((z_cell - z_neighbor)^2 for all 8 neighbors)). This produces a new single-band raster where higher values indicate more rugged terrain."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Compute zonal statistics of the ruggedness index for each county polygon. Calculate mean, min, max, and standard deviation of TRI pixel values within each county boundary.",
+      "inputs": [
+        "ruggedness_index.tif",
+        "pennsylvaniacounties"
+      ],
+      "expected_outputs": [
+        "county_tri_stats.csv"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Join key to county shapefile is COUNTYFP or NAME. Output must include COUNTYFP, mean_TRI, min_TRI, max_TRI, std_TRI. Export as CSV to avoid parquet dependency issues."
+    },
+    {
+      "step_id": "step_03",
+      "goal": "Join the TRI zonal statistics from CSV to the Pennsylvania counties shapefile as new attribute fields and export as a Shapefile.",
+      "inputs": [
+        "pennsylvaniacounties",
+        "county_tri_stats.csv"
+      ],
+      "expected_outputs": [
+        "pennsylvania_counties_ruggedness.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "input_output_comparison",
+      "notes": "New fields to add: mean_TRI (float64), min_TRI (float64), max_TRI (float64), std_TRI (float64). Join on COUNTYFP. Preserve all original county fields and geometry."
+    }
+  ],
+  "current_step_index": 3,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 1,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "at_least_one"
+}

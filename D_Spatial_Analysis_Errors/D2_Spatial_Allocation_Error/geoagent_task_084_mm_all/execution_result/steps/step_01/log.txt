@@ -1,0 +1,7 @@
+exit_code=0
+duration_seconds=0.7579
+[stdout]
+{"step_id": "step_01", "status": "success", "block_groups_processed": 504, "total_population_sum": 40602, "population_fields": ["pop2amu65", "pop2amo65", "pop2pmu65", "pop2pmo65"], "output_path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260419T165504Z-57ef3a68\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\\steps\\step_01\\bg_population_totals.csv"}
+
+[stderr]
+

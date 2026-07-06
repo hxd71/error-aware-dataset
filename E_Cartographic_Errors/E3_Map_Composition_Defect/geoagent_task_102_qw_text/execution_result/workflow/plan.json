@@ -1,0 +1,68 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Compute the geometric centroid of the four existing Walmart locations to establish a central candidate point with approximately equal distances to all sites.",
+      "inputs": [
+        "walmart_4_site_epsg32111"
+      ],
+      "expected_outputs": [
+        "walmart_centroid.shp"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "CRS is EPSG:32111. Calculate the mean center of the 4 point features."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Generate a 300-meter buffer zone around the road network to delineate areas suitable for road proximity.",
+      "inputs": [
+        "motorway_epsg32111"
+      ],
+      "expected_outputs": [
+        "roads_300m_buffer.shp"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Buffer distance is exactly 300 meters. CRS units are in meters."
+    },
+    {
+      "step_id": "step_03",
+      "goal": "Determine the final proposed store location by selecting a point within the 300-meter road buffer that is closest to the computed centroid.",
+      "inputs": [
+        "walmart_centroid.shp",
+        "roads_300m_buffer.shp",
+        "motorway_epsg32111"
+      ],
+      "expected_outputs": [
+        "proposed_walmart_location.shp"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "If the centroid intersects the buffer, retain it. If outside, snap or project it to the nearest road segment within the 300m zone. Output a single point shapefile."
+    },
+    {
+      "step_id": "step_04",
+      "goal": "Render a map image displaying the proposed location alongside the four existing Walmart locations to fulfill the visualization request.",
+      "inputs": [
+        "proposed_walmart_location.shp",
+        "walmart_4_site_epsg32111"
+      ],
+      "expected_outputs": [
+        "walmart_proposal_map.png"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Create a static map combining the new proposed point and existing sites. Save as PNG."
+    }
+  ],
+  "current_step_index": 4,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": false,
+  "force_no_visual_review": true,
+  "visual_review_policy": "none"
+}

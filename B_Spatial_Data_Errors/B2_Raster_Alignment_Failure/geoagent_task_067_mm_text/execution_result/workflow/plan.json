@@ -1,0 +1,94 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Mosaic the four adjacent DEM tiles into a single merged raster covering the full Richland County extent",
+      "inputs": [
+        "n33_w081_1arc_v3",
+        "n33_w082_1arc_v3",
+        "n34_w081_1arc_v3",
+        "n34_w082_1arc_v3"
+      ],
+      "expected_outputs": [
+        "merged_dem_richland.tif"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "All source DEMs share the same CRS (EPSG:4326), pixel size (~0.00028°), dtype (int16), and nodata value (-32767). Use nodata-aware merging. The merged extent spans approximately 32.9999°S to 35.0001°N and 82.0001°W to 79.9999°W."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Compute slope (rate of maximum change in elevation) from the merged DEM",
+      "inputs": [
+        "merged_dem_richland.tif"
+      ],
+      "expected_outputs": [
+        "slope.tif"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Use the merged DEM from step_01 as input. Calculate slope in degrees or percent rise as appropriate for terrain analysis."
+    },
+    {
+      "step_id": "step_03",
+      "goal": "Compute aspect (compass direction of the steepest downhill slope) from the merged DEM",
+      "inputs": [
+        "merged_dem_richland.tif"
+      ],
+      "expected_outputs": [
+        "aspect.tif"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Use the merged DEM from step_01 as input. Output values should represent azimuth degrees (0-360) or categorical N/E/S/W directions."
+    },
+    {
+      "step_id": "step_04",
+      "goal": "Compute hillshade (shaded relief illumination) from the merged DEM",
+      "inputs": [
+        "merged_dem_richland.tif"
+      ],
+      "expected_outputs": [
+        "hillshade.tif"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Use the merged DEM from step_01 as input. Standard azimuth (315°) and altitude (45°) illumination angles recommended."
+    },
+    {
+      "step_id": "step_05",
+      "goal": "Compute Terrain Ruggedness Index (TRI) from the merged DEM",
+      "inputs": [
+        "merged_dem_richland.tif"
+      ],
+      "expected_outputs": [
+        "tri.tif"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "TRI = square root of sum of squared differences between cell elevation and all 8 neighboring cell elevations. Use 3x3 neighborhood window. Output in elevation units (same as DEM)."
+    },
+    {
+      "step_id": "step_06",
+      "goal": "Compute Topographic Position Index (TPI) from the merged DEM",
+      "inputs": [
+        "merged_dem_richland.tif"
+      ],
+      "expected_outputs": [
+        "tpi.tif"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "TPI = elevation of cell minus mean elevation of immediate 8 neighbors. Use 3x3 neighborhood window. Positive values indicate ridges/peaks; negative values indicate valleys/canyons. Output in elevation units (same as DEM)."
+    }
+  ],
+  "current_step_index": 6,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": false,
+  "force_no_visual_review": true,
+  "visual_review_policy": "none"
+}

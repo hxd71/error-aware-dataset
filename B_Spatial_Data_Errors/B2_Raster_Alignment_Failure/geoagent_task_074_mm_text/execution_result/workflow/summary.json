@@ -1,0 +1,80 @@
+{
+  "backend": "langgraph",
+  "run_id": "eval-from-geo-agent-20260420T112719Z-2446843a-074-geoagent_074-try01",
+  "task_completed": true,
+  "task_succeeded": true,
+  "control_signal": "finish",
+  "plan_length": 4,
+  "current_step_index": 4,
+  "current_step": null,
+  "history_entries": 17,
+  "replan_count": 0,
+  "step_retry_count": 2,
+  "current_step_retry_count": 0,
+  "case_id": "geoagent_074",
+  "case_manifest": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+  "force_visual_review": false,
+  "force_no_visual_review": true,
+  "visual_review_policy": "none",
+  "token_usage": {
+    "total_prompt_tokens": 42296,
+    "total_completion_tokens": 11258,
+    "total_tokens": 53554,
+    "llm_call_count": 10,
+    "max_single_llm_call_tokens": 8223,
+    "max_single_llm_call": {
+      "node": "coder",
+      "step_id": "step_04",
+      "request_type": "contract_repair",
+      "attempt_index": 1,
+      "prompt_tokens": 6971,
+      "completion_tokens": 1252,
+      "total_tokens": 8223
+    },
+    "max_single_step_tokens": 23685,
+    "max_single_step": {
+      "step_id": "step_04",
+      "prompt_tokens": 19850,
+      "completion_tokens": 3835,
+      "total_tokens": 23685,
+      "llm_call_count": 4
+    },
+    "steps": [
+      {
+        "step_id": null,
+        "prompt_tokens": 2923,
+        "completion_tokens": 962,
+        "total_tokens": 3885,
+        "llm_call_count": 1
+      },
+      {
+        "step_id": "step_01",
+        "prompt_tokens": 11196,
+        "completion_tokens": 2422,
+        "total_tokens": 13618,
+        "llm_call_count": 3
+      },
+      {
+        "step_id": "step_02",
+        "prompt_tokens": 4152,
+        "completion_tokens": 1260,
+        "total_tokens": 5412,
+        "llm_call_count": 1
+      },
+      {
+        "step_id": "step_03",
+        "prompt_tokens": 4175,
+        "completion_tokens": 2779,
+        "total_tokens": 6954,
+        "llm_call_count": 1
+      },
+      {
+        "step_id": "step_04",
+        "prompt_tokens": 19850,
+        "completion_tokens": 3835,
+        "total_tokens": 23685,
+        "llm_call_count": 4
+      }
+    ]
+  }
+}

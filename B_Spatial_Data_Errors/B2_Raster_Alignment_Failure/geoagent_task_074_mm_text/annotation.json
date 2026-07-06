@@ -1,0 +1,30 @@
+{
+  "sample_id": "geoagent_task_074_mm_text",
+  "source": "GeoAgent Task 74",
+  "task_id": 74,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "MiniMax-M2.7-highspeed",
+    "provider": "minimax",
+    "reasoning": "thinking 开关未单列记录",
+    "visual_review": "未启用视觉审查"
+  },
+  "primary_label": "B2. Raster Alignment Failure",
+  "secondary_labels": [],
+  "error_summary": "距离栅格的网格或距离计算与参考结果不一致",
+  "result_previews": [
+    {
+      "source_artifact": "artifacts/sf_hospital_accessibility.tif",
+      "stage": "最终成果",
+      "preview_file": "previews/sf_hospital_accessibility.png",
+      "description": "由错误运行写出的 `sf_hospital_accessibility.tif` 生成。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "同一任务的 qwen3.6-plus 正确运行",
+  "evidence_metrics": {
+    "distance_mae_m": 45889,
+    "spatial_correlation": 0.28
+  }
+}

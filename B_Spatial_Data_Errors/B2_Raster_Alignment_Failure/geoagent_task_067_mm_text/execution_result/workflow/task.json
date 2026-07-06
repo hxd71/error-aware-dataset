@@ -1,0 +1,129 @@
+{
+  "user_query": "Merge the four DEMs into a single raster and perform terrain characteristic analysis for Richland County, including slope, aspect, hillshade, terrain ruggedness index (TRI), and topographic Position Index (TPI).",
+  "task_context": {
+    "case_id": "geoagent_067",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "n33_w081_1arc_v3",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Richland\\n33_w081_1arc_v3.tif",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path Richland.",
+        "format": "tif",
+        "crs": "EPSG:4326",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Richland\\n33_w081_1arc_v3.tif",
+          "width": 3601,
+          "height": 3601,
+          "count": 1,
+          "dtype": "int16",
+          "nodata": -32767.0,
+          "pixel_size": [
+            0.0002777777777777778,
+            0.0002777777777777778
+          ],
+          "bounds": [
+            -81.00013888888888,
+            32.99986111111111,
+            -79.9998611111111,
+            34.000138888888884
+          ],
+          "band_names": []
+        }
+      },
+      {
+        "asset_id": "n33_w082_1arc_v3",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Richland\\n33_w082_1arc_v3.tif",
+        "role": "reference",
+        "description": "GeoAgent source asset from data_path Richland.",
+        "format": "tif",
+        "crs": "EPSG:4326",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Richland\\n33_w082_1arc_v3.tif",
+          "width": 3601,
+          "height": 3601,
+          "count": 1,
+          "dtype": "int16",
+          "nodata": -32767.0,
+          "pixel_size": [
+            0.0002777777777777778,
+            0.0002777777777777778
+          ],
+          "bounds": [
+            -82.00013888888888,
+            32.99986111111111,
+            -80.9998611111111,
+            34.000138888888884
+          ],
+          "band_names": []
+        }
+      },
+      {
+        "asset_id": "n34_w081_1arc_v3",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Richland\\n34_w081_1arc_v3.tif",
+        "role": "asset_03",
+        "description": "GeoAgent source asset from data_path Richland.",
+        "format": "tif",
+        "crs": "EPSG:4326",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Richland\\n34_w081_1arc_v3.tif",
+          "width": 3601,
+          "height": 3601,
+          "count": 1,
+          "dtype": "int16",
+          "nodata": -32767.0,
+          "pixel_size": [
+            0.0002777777777777778,
+            0.0002777777777777778
+          ],
+          "bounds": [
+            -81.00013888888888,
+            33.99986111111111,
+            -79.9998611111111,
+            35.000138888888884
+          ],
+          "band_names": []
+        }
+      },
+      {
+        "asset_id": "n34_w082_1arc_v3",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Richland\\n34_w082_1arc_v3.tif",
+        "role": "asset_04",
+        "description": "GeoAgent source asset from data_path Richland.",
+        "format": "tif",
+        "crs": "EPSG:4326",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Richland\\n34_w082_1arc_v3.tif",
+          "width": 3601,
+          "height": 3601,
+          "count": 1,
+          "dtype": "int16",
+          "nodata": -32767.0,
+          "pixel_size": [
+            0.0002777777777777778,
+            0.0002777777777777778
+          ],
+          "bounds": [
+            -82.00013888888888,
+            33.99986111111111,
+            -80.9998611111111,
+            35.000138888888884
+          ],
+          "band_names": []
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": false,
+    "visual_review_policy": "none",
+    "force_no_visual_review": true,
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

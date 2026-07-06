@@ -1,0 +1,14 @@
+===== recovered research workflow terminal log =====
+source=GeoAgent Task 66
+exit_code=0
+[stdout]
+read_inputs: fast-food point layer reprojected to EPSG:4326; feature_count=2437
+error_operation: construct Point(latitude, longitude) instead of Point(longitude, latitude)
+write_outputs: execution_result/artifacts/axis_swapped.geojson
+reference_generation: execution_result/artifacts/axis_correct.geojson keeps longitude as X and latitude as Y
+quality_checks:
+feature_count=2437
+source_bounds=[-80.473272, 39.742298, -74.722287, 42.231754]
+axis_swapped_bounds=[39.742298, -80.473272, 42.231754, -74.722287]
+[stderr]
+

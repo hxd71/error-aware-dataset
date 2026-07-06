@@ -1,0 +1,161 @@
+﻿record_id,source,task_id,experiment,run_status,review_verdict,disposition,taxonomy_label,sample_id,failure_group
+geoagent_002__minimax2.7_visual_one,GeoAgent Task 2,2,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_002__qwen3.6_visual_one,GeoAgent Task 2,2,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_003__qwen3.6_visual_one,GeoAgent Task 3,3,qwen3.6_visual_one,failed,是,included_auxiliary,,,workflow_or_system_failure
+geoagent_004__minimax2.7_text_only,GeoAgent Task 4,4,minimax2.7_text_only,failed,否,included_auxiliary,A3. Unit Misinterpretation,,workflow_or_system_failure
+geoagent_004__minimax2.7_visual_all,GeoAgent Task 4,4,minimax2.7_visual_all,failed,否,included_auxiliary,A3. Unit Misinterpretation,,workflow_or_system_failure
+geoagent_004__qwen3.6_visual_all,GeoAgent Task 4,4,qwen3.6_visual_all,failed,否,included_auxiliary,A3. Unit Misinterpretation,,workflow_or_system_failure
+geoagent_008__minimax2.7_text_only,GeoAgent Task 8,8,minimax2.7_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_008__minimax2.7_visual_one,GeoAgent Task 8,8,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_008__minimax2.7_visual_all,GeoAgent Task 8,8,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_008__qwen3.6_text_only,GeoAgent Task 8,8,qwen3.6_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_008__qwen3.6_visual_one,GeoAgent Task 8,8,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_008__qwen3.6_visual_all,GeoAgent Task 8,8,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_010__minimax2.7_visual_one,GeoAgent Task 10,10,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_010__qwen3.6_visual_one,GeoAgent Task 10,10,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_016__minimax2.7_visual_one,GeoAgent Task 16,16,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_016__minimax2.7_visual_all,GeoAgent Task 16,16,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_018__qwen3.6_visual_one,GeoAgent Task 18,18,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_022__minimax2.7_visual_all,GeoAgent Task 22,22,minimax2.7_visual_all,failed,否,included_auxiliary,D1. Aggregation Scope Confusion,,workflow_or_system_failure
+geoagent_026__minimax2.7_visual_all,GeoAgent Task 26,26,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_035__minimax2.7_visual_one,GeoAgent Task 35,35,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_035__qwen3.6_visual_all,GeoAgent Task 35,35,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_036__minimax2.7_visual_one,GeoAgent Task 36,36,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_036__minimax2.7_visual_all,GeoAgent Task 36,36,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_036__qwen3.6_visual_one,GeoAgent Task 36,36,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_036__qwen3.6_visual_all,GeoAgent Task 36,36,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_037__minimax2.7_visual_one,GeoAgent Task 37,37,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_037__qwen3.6_visual_one,GeoAgent Task 37,37,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_037__qwen3.6_visual_all,GeoAgent Task 37,37,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_040__minimax2.7_visual_all,GeoAgent Task 40,40,minimax2.7_visual_all,failed,否,included_auxiliary,D1. Aggregation Scope Confusion,,workflow_or_system_failure
+geoagent_041__qwen3.6_visual_one,GeoAgent Task 41,41,qwen3.6_visual_one,failed,否,included_auxiliary,C1. Topological Predicate Confusion,,workflow_or_system_failure
+geoagent_047__qwen3.6_visual_all,GeoAgent Task 47,47,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_048__qwen3.6_visual_one,GeoAgent Task 48,48,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_048__qwen3.6_visual_all,GeoAgent Task 48,48,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_050__qwen3.6_visual_one,GeoAgent Task 50,50,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_050__qwen3.6_visual_all,GeoAgent Task 50,50,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_051__minimax2.7_visual_all,GeoAgent Task 51,51,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_051__qwen3.6_visual_all,GeoAgent Task 51,51,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_053__minimax2.7_visual_one,GeoAgent Task 53,53,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_053__minimax2.7_visual_all,GeoAgent Task 53,53,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_055__minimax2.7_visual_all,GeoAgent Task 55,55,minimax2.7_visual_all,failed,否,included_auxiliary,B3. Missing Data Misinterpretation,,workflow_or_system_failure
+geoagent_056__minimax2.7_visual_one,GeoAgent Task 56,56,minimax2.7_visual_one,failed,否,included_auxiliary,B3. Missing Data Misinterpretation,,workflow_or_system_failure
+geoagent_060__minimax2.7_visual_one,GeoAgent Task 60,60,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_061__minimax2.7_visual_one,GeoAgent Task 61,61,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_061__minimax2.7_visual_all,GeoAgent Task 61,61,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_061__qwen3.6_visual_one,GeoAgent Task 61,61,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_062__minimax2.7_visual_one,GeoAgent Task 62,62,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_062__minimax2.7_visual_all,GeoAgent Task 62,62,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_062__qwen3.6_visual_one,GeoAgent Task 62,62,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_064__minimax2.7_visual_one,GeoAgent Task 64,64,minimax2.7_visual_one,failed,否,included_auxiliary,B1. Dataset Integrity Violation,,workflow_or_system_failure
+geoagent_065__qwen3.6_visual_all,GeoAgent Task 65,65,qwen3.6_visual_all,failed,否,included_auxiliary,D1. Aggregation Scope Confusion,,workflow_or_system_failure
+geoagent_067__minimax2.7_visual_all,GeoAgent Task 67,67,minimax2.7_visual_all,failed,否,included_auxiliary,B2. Raster Alignment Failure,,workflow_or_system_failure
+geoagent_067__qwen3.6_visual_all,GeoAgent Task 67,67,qwen3.6_visual_all,failed,否,included_auxiliary,B2. Raster Alignment Failure,,workflow_or_system_failure
+geoagent_071__minimax2.7_text_only,GeoAgent Task 71,71,minimax2.7_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_071__minimax2.7_visual_one,GeoAgent Task 71,71,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_072__minimax2.7_text_only,GeoAgent Task 72,72,minimax2.7_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_072__minimax2.7_visual_one,GeoAgent Task 72,72,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_072__minimax2.7_visual_all,GeoAgent Task 72,72,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_072__qwen3.6_text_only,GeoAgent Task 72,72,qwen3.6_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_072__qwen3.6_visual_one,GeoAgent Task 72,72,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_072__qwen3.6_visual_all,GeoAgent Task 72,72,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_074__minimax2.7_visual_one,GeoAgent Task 74,74,minimax2.7_visual_one,failed,否,included_auxiliary,B2. Raster Alignment Failure,,workflow_or_system_failure
+geoagent_077__qwen3.6_visual_all,GeoAgent Task 77,77,qwen3.6_visual_all,failed,否,included_auxiliary,B2. Raster Alignment Failure,,workflow_or_system_failure
+geoagent_079__minimax2.7_visual_all,GeoAgent Task 79,79,minimax2.7_visual_all,failed,否,included_auxiliary,E3. Map Composition Defect,,workflow_or_system_failure
+geoagent_080__minimax2.7_text_only,GeoAgent Task 80,80,minimax2.7_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_080__minimax2.7_visual_one,GeoAgent Task 80,80,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_080__minimax2.7_visual_all,GeoAgent Task 80,80,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_080__qwen3.6_visual_all,GeoAgent Task 80,80,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_086__minimax2.7_visual_one,GeoAgent Task 86,86,minimax2.7_visual_one,failed,,included_auxiliary,,,workflow_or_system_failure
+geoagent_087__minimax2.7_text_only,GeoAgent Task 87,87,minimax2.7_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_087__minimax2.7_visual_one,GeoAgent Task 87,87,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_087__minimax2.7_visual_all,GeoAgent Task 87,87,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_087__qwen3.6_text_only,GeoAgent Task 87,87,qwen3.6_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_087__qwen3.6_visual_one,GeoAgent Task 87,87,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_087__qwen3.6_visual_all,GeoAgent Task 87,87,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_089__qwen3.6_visual_one,GeoAgent Task 89,89,qwen3.6_visual_one,failed,否,included_auxiliary,D1. Aggregation Scope Confusion,,workflow_or_system_failure
+geoagent_095__qwen3.6_visual_all,GeoAgent Task 95,95,qwen3.6_visual_all,failed,否,included_auxiliary,D1. Aggregation Scope Confusion,,workflow_or_system_failure
+geoagent_097__qwen3.6_visual_all,GeoAgent Task 97,97,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_099__minimax2.7_visual_one,GeoAgent Task 99,99,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_099__minimax2.7_visual_all,GeoAgent Task 99,99,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_099__qwen3.6_visual_all,GeoAgent Task 99,99,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_100__qwen3.6_visual_one,GeoAgent Task 100,100,qwen3.6_visual_one,failed,否,included_auxiliary,B2. Raster Alignment Failure,,workflow_or_system_failure
+geoagent_102__qwen3.6_visual_one,GeoAgent Task 102,102,qwen3.6_visual_one,failed,否,included_auxiliary,E3. Map Composition Defect,,workflow_or_system_failure
+geoagent_105__minimax2.7_visual_all,GeoAgent Task 105,105,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_105__qwen3.6_visual_one,GeoAgent Task 105,105,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_107__minimax2.7_text_only,GeoAgent Task 107,107,minimax2.7_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_107__minimax2.7_visual_one,GeoAgent Task 107,107,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_107__minimax2.7_visual_all,GeoAgent Task 107,107,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_107__qwen3.6_text_only,GeoAgent Task 107,107,qwen3.6_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_107__qwen3.6_visual_one,GeoAgent Task 107,107,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_107__qwen3.6_visual_all,GeoAgent Task 107,107,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_111__minimax2.7_visual_one,GeoAgent Task 111,111,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_111__minimax2.7_visual_all,GeoAgent Task 111,111,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_111__qwen3.6_visual_one,GeoAgent Task 111,111,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_111__qwen3.6_visual_all,GeoAgent Task 111,111,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_112__minimax2.7_text_only,GeoAgent Task 112,112,minimax2.7_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_112__minimax2.7_visual_one,GeoAgent Task 112,112,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_112__minimax2.7_visual_all,GeoAgent Task 112,112,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_112__qwen3.6_text_only,GeoAgent Task 112,112,qwen3.6_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_112__qwen3.6_visual_one,GeoAgent Task 112,112,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_112__qwen3.6_visual_all,GeoAgent Task 112,112,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_116__minimax2.7_text_only,GeoAgent Task 116,116,minimax2.7_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_116__minimax2.7_visual_one,GeoAgent Task 116,116,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_116__minimax2.7_visual_all,GeoAgent Task 116,116,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_116__qwen3.6_text_only,GeoAgent Task 116,116,qwen3.6_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_116__qwen3.6_visual_one,GeoAgent Task 116,116,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_116__qwen3.6_visual_all,GeoAgent Task 116,116,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_121__minimax2.7_visual_one,GeoAgent Task 121,121,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_122__qwen3.6_visual_one,GeoAgent Task 122,122,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_125__minimax2.7_visual_all,GeoAgent Task 125,125,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_126__minimax2.7_text_only,GeoAgent Task 126,126,minimax2.7_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_126__minimax2.7_visual_one,GeoAgent Task 126,126,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_126__minimax2.7_visual_all,GeoAgent Task 126,126,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_126__qwen3.6_text_only,GeoAgent Task 126,126,qwen3.6_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_126__qwen3.6_visual_one,GeoAgent Task 126,126,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_126__qwen3.6_visual_all,GeoAgent Task 126,126,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_127__minimax2.7_text_only,GeoAgent Task 127,127,minimax2.7_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_127__minimax2.7_visual_one,GeoAgent Task 127,127,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_127__minimax2.7_visual_all,GeoAgent Task 127,127,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_127__qwen3.6_text_only,GeoAgent Task 127,127,qwen3.6_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_127__qwen3.6_visual_one,GeoAgent Task 127,127,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_127__qwen3.6_visual_all,GeoAgent Task 127,127,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_132__minimax2.7_text_only,GeoAgent Task 132,132,minimax2.7_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_132__minimax2.7_visual_one,GeoAgent Task 132,132,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_132__minimax2.7_visual_all,GeoAgent Task 132,132,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_132__qwen3.6_text_only,GeoAgent Task 132,132,qwen3.6_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_132__qwen3.6_visual_one,GeoAgent Task 132,132,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_132__qwen3.6_visual_all,GeoAgent Task 132,132,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_134__minimax2.7_visual_one,GeoAgent Task 134,134,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_134__minimax2.7_visual_all,GeoAgent Task 134,134,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_134__qwen3.6_visual_one,GeoAgent Task 134,134,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_134__qwen3.6_visual_all,GeoAgent Task 134,134,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_137__minimax2.7_text_only,GeoAgent Task 137,137,minimax2.7_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_137__minimax2.7_visual_one,GeoAgent Task 137,137,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_137__minimax2.7_visual_all,GeoAgent Task 137,137,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_137__qwen3.6_text_only,GeoAgent Task 137,137,qwen3.6_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_137__qwen3.6_visual_one,GeoAgent Task 137,137,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_137__qwen3.6_visual_all,GeoAgent Task 137,137,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_138__minimax2.7_text_only,GeoAgent Task 138,138,minimax2.7_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_138__minimax2.7_visual_one,GeoAgent Task 138,138,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_138__minimax2.7_visual_all,GeoAgent Task 138,138,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_138__qwen3.6_text_only,GeoAgent Task 138,138,qwen3.6_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_138__qwen3.6_visual_one,GeoAgent Task 138,138,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_138__qwen3.6_visual_all,GeoAgent Task 138,138,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_140__minimax2.7_text_only,GeoAgent Task 140,140,minimax2.7_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_140__minimax2.7_visual_one,GeoAgent Task 140,140,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_140__minimax2.7_visual_all,GeoAgent Task 140,140,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_140__qwen3.6_text_only,GeoAgent Task 140,140,qwen3.6_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_140__qwen3.6_visual_one,GeoAgent Task 140,140,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_140__qwen3.6_visual_all,GeoAgent Task 140,140,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_143__qwen3.6_visual_one,GeoAgent Task 143,143,qwen3.6_visual_one,failed,否,included_auxiliary,A2. CRS Inconsistency,,workflow_or_system_failure
+geoagent_144__minimax2.7_visual_one,GeoAgent Task 144,144,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_144__minimax2.7_visual_all,GeoAgent Task 144,144,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_144__qwen3.6_visual_one,GeoAgent Task 144,144,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_144__qwen3.6_visual_all,GeoAgent Task 144,144,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_146__minimax2.7_text_only,GeoAgent Task 146,146,minimax2.7_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_146__minimax2.7_visual_one,GeoAgent Task 146,146,minimax2.7_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_146__minimax2.7_visual_all,GeoAgent Task 146,146,minimax2.7_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_146__qwen3.6_text_only,GeoAgent Task 146,146,qwen3.6_text_only,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_146__qwen3.6_visual_one,GeoAgent Task 146,146,qwen3.6_visual_one,failed,否,included_auxiliary,,,workflow_or_system_failure
+geoagent_146__qwen3.6_visual_all,GeoAgent Task 146,146,qwen3.6_visual_all,failed,否,included_auxiliary,,,workflow_or_system_failure

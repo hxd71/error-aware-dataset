@@ -1,0 +1,5 @@
+===== historical terminal log unavailable =====
+source=GeoAgent Task 2
+session=20260523_19_45_12_9e7c3f3f
+status=historical_log_not_retained
+note=The workspace does not contain the original terminal log for this historical GeoAgent run. The execution artifacts, workflow code, generated outputs, and evidence README are retained in this sample.

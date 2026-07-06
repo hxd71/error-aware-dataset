@@ -1,0 +1,26 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Compute geometric centroids for each polygon in the us_counties vector and export the resulting point features with all original attributes as a CSV table.",
+      "inputs": [
+        "us_counties"
+      ],
+      "expected_outputs": [
+        "us_counties_centroids.csv"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Calculate true geometric centroids from the MultiPolygon/Polygon geometries. Include all original attribute columns from us_counties in the output table. Coordinate reference system remains EPSG:4326."
+    }
+  ],
+  "current_step_index": 1,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "at_least_one"
+}

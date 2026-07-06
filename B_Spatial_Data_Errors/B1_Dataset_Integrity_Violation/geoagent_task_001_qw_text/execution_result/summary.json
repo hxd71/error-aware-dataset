@@ -1,0 +1,59 @@
+{
+  "backend": "langgraph",
+  "run_id": "eval-from-geo-agent-20260422T115149Z-1e0672b1-001-geoagent_001-try01",
+  "task_completed": true,
+  "task_succeeded": true,
+  "control_signal": "finish",
+  "plan_length": 1,
+  "current_step_index": 1,
+  "current_step": null,
+  "history_entries": 4,
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "current_step_retry_count": 0,
+  "case_id": "geoagent_001",
+  "case_manifest": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+  "force_visual_review": false,
+  "force_no_visual_review": true,
+  "visual_review_policy": "none",
+  "token_usage": {
+    "total_prompt_tokens": 14290,
+    "total_completion_tokens": 11468,
+    "total_tokens": 25758,
+    "llm_call_count": 3,
+    "max_single_llm_call_tokens": 12135,
+    "max_single_llm_call": {
+      "node": "coder",
+      "step_id": "step_01",
+      "request_type": "contract_repair",
+      "attempt_index": 1,
+      "prompt_tokens": 5963,
+      "completion_tokens": 6172,
+      "total_tokens": 12135
+    },
+    "max_single_step_tokens": 21383,
+    "max_single_step": {
+      "step_id": "step_01",
+      "prompt_tokens": 11164,
+      "completion_tokens": 10219,
+      "total_tokens": 21383,
+      "llm_call_count": 2
+    },
+    "steps": [
+      {
+        "step_id": null,
+        "prompt_tokens": 3126,
+        "completion_tokens": 1249,
+        "total_tokens": 4375,
+        "llm_call_count": 1
+      },
+      {
+        "step_id": "step_01",
+        "prompt_tokens": 11164,
+        "completion_tokens": 10219,
+        "total_tokens": 21383,
+        "llm_call_count": 2
+      }
+    ]
+  }
+}

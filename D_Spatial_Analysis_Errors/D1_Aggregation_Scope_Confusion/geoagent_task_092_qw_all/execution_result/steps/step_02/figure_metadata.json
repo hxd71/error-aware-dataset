@@ -1,0 +1,211 @@
+{
+  "title": "Evidence for step_02",
+  "template_name": "input_output_comparison",
+  "add_basemap": false,
+  "layer_count": 2,
+  "highlight_layers": [
+    "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T172139Z-88a9e18e-092-geoagent_092-try01\\steps\\step_02\\pa_counties_filtered_lt10.shp"
+  ],
+  "output_path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T172139Z-88a9e18e-092-geoagent_092-try01\\steps\\step_02\\figure.png",
+  "rendered_layers": [
+    "pa_counties_point_counts.shp",
+    "pa_counties_filtered_lt10.shp"
+  ],
+  "comparison_left_labels": [
+    "pa_counties_point_counts.shp"
+  ],
+  "comparison_right_labels": [
+    "pa_counties_filtered_lt10.shp"
+  ],
+  "shared_extent": [
+    -80.519891,
+    39.7198,
+    -74.689516,
+    42.26986
+  ],
+  "padded_extent": [
+    -80.8697135,
+    39.5667964,
+    -74.3396935,
+    42.4228636
+  ],
+  "applied_view_focus": "full_extent",
+  "applied_extent": [
+    -80.8697135,
+    39.362325,
+    -74.3396935,
+    42.627335
+  ],
+  "extent_padding_ratio": 0.06,
+  "max_extent_aspect_ratio": 2.0,
+  "aspect_ratio_guard_applied": true,
+  "shared_extent_aspect_ratio": 2.286367771738704,
+  "padded_extent_aspect_ratio": 2.2863677717387083,
+  "applied_extent_aspect_ratio": 2.0,
+  "legend_placement": "panel_top",
+  "note": null,
+  "input_panel_is_alpha_composite": false,
+  "input_panel_layers": [
+    {
+      "label": "pa_counties_point_counts.shp",
+      "layer_type": "vector",
+      "alpha": 0.45
+    }
+  ],
+  "panel_colorbars": {
+    "inputs": {
+      "present": false,
+      "mode": null,
+      "source_layer": null,
+      "source_layers": [],
+      "vmin": null,
+      "vmax": null
+    },
+    "outputs": {
+      "present": false,
+      "mode": null,
+      "source_layer": null,
+      "source_layers": [],
+      "vmin": null,
+      "vmax": null
+    }
+  },
+  "comparison_uses_shared_raster_limits": false,
+  "comparison_raster_limits": null,
+  "map_boundary_box_visible": true,
+  "map_boundary_box_style": {
+    "color": "#6B7280",
+    "linewidth": 0.8
+  },
+  "scale_bar_visible": true,
+  "scale_bar_position": "below_panel",
+  "scale_bar_panels": [
+    {
+      "panel": "inputs",
+      "visible": true,
+      "length_meters": 100000.0,
+      "display_label": "100 km",
+      "estimated": true,
+      "crs": "EPSG:4269",
+      "width_fraction": 0.18204347981310978,
+      "reason": null
+    },
+    {
+      "panel": "outputs",
+      "visible": true,
+      "length_meters": 100000.0,
+      "display_label": "100 km",
+      "estimated": true,
+      "crs": "EPSG:4269",
+      "width_fraction": 0.18204347981310978,
+      "reason": null
+    }
+  ],
+  "crs": "EPSG:4269",
+  "display_crs": "EPSG:4269",
+  "layer_details": [
+    {
+      "label": "pa_counties_point_counts.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T172139Z-88a9e18e-092-geoagent_092-try01\\steps\\step_01\\pa_counties_point_counts.shp",
+      "layer_type": "vector",
+      "source_crs": "EPSG:4269",
+      "display_crs": "EPSG:4269",
+      "alpha": 0.45,
+      "color": "#D3D3D3",
+      "fill": true,
+      "fill_alpha": 0.45,
+      "linewidth": 0.6,
+      "zorder": 2,
+      "display_vmin": null,
+      "display_vmax": null
+    },
+    {
+      "label": "pa_counties_filtered_lt10.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T172139Z-88a9e18e-092-geoagent_092-try01\\steps\\step_02\\pa_counties_filtered_lt10.shp",
+      "layer_type": "vector",
+      "source_crs": "EPSG:4269",
+      "display_crs": "EPSG:4269",
+      "alpha": 0.8,
+      "color": "#4C78A8",
+      "fill": true,
+      "fill_alpha": 0.8,
+      "linewidth": 0.8,
+      "zorder": 1,
+      "display_vmin": null,
+      "display_vmax": null
+    }
+  ],
+  "applied_layer_styles": [
+    {
+      "label": "pa_counties_point_counts.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T172139Z-88a9e18e-092-geoagent_092-try01\\steps\\step_01\\pa_counties_point_counts.shp",
+      "color": "#D3D3D3",
+      "fill": true,
+      "fill_alpha": 0.45,
+      "linewidth": 0.6,
+      "zorder": 2
+    },
+    {
+      "label": "pa_counties_filtered_lt10.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260419T172139Z-88a9e18e-092-geoagent_092-try01\\steps\\step_02\\pa_counties_filtered_lt10.shp",
+      "color": "#4C78A8",
+      "fill": true,
+      "fill_alpha": 0.8,
+      "linewidth": 0.8,
+      "zorder": 1
+    }
+  ],
+  "renderer": "matplotlib",
+  "candidate_layer_count": 2,
+  "candidate_layer_ids": [
+    "layer_01",
+    "layer_02"
+  ],
+  "selected_layer_ids": [
+    "layer_02",
+    "layer_01"
+  ],
+  "selected_layer_labels": [
+    "pa_counties_filtered_lt10.shp",
+    "pa_counties_point_counts.shp"
+  ],
+  "excluded_layer_ids": [],
+  "highlight_layer_ids": [
+    "layer_02"
+  ],
+  "selection_source": "llm",
+  "selector_attempt_count": 2,
+  "selector_repair_attempts": 1,
+  "selector_invalid_reason": null,
+  "view_focus": "full_extent",
+  "final_template_name": "input_output_comparison",
+  "template_decision_reason": "forced_input_output_comparison",
+  "selection_plan": {
+    "selected_layer_ids": [
+      "layer_02",
+      "layer_01"
+    ],
+    "highlight_layer_ids": [
+      "layer_02"
+    ],
+    "excluded_layer_ids": [],
+    "layer_roles": {
+      "layer_02": "result",
+      "layer_01": "subject"
+    },
+    "layer_styles": {
+      "layer_02": {
+        "color": "#4C78A8"
+      },
+      "layer_01": {
+        "color": "#D3D3D3"
+      }
+    },
+    "render_priority": {
+      "layer_02": 1,
+      "layer_01": 2
+    },
+    "view_focus": "full_extent",
+    "rationale": "Both the input county layer with point counts and the filtered output layer are required to visually verify that the attribute query (count < 10) was applied correctly. The output is highlighted to emphasize the result of the filtering step."
+  }
+}

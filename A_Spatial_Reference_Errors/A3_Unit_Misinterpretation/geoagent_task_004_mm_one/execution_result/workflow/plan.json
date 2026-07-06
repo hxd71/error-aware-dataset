@@ -1,0 +1,26 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Generate 50-meter interval contour lines from Puerto Rico DEM raster",
+      "inputs": [
+        "puerto_dem"
+      ],
+      "expected_outputs": [
+        "puerto_contours_50m.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Extract contour polylines using contour generation with interval=50. The DEM pixel values represent elevation in meters, so contour interval of 50 meters. Output as ESRI Shapefile (.shp) for vector contour visualization."
+    }
+  ],
+  "current_step_index": 1,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "at_least_one"
+}

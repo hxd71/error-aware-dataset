@@ -1,0 +1,7 @@
+exit_code=0
+duration_seconds=546.1831
+[stdout]
+{"step_id": "step_02", "status": "success", "output_paths": ["[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260420T112719Z-2446843a\\runs\\eval-from-geo-agent-20260420T112719Z-2446843a-088-geoagent_088-try01\\steps\\step_02\\dem_idw.tif"], "grid_shape": [288, 458], "cell_size": 10.0, "bounds": [607111.3516507, 237963.2003492626, 611687.0184570934, 240842.8520857328], "point_count": 18849}
+
+[stderr]
+

@@ -1,0 +1,73 @@
+{
+  "backend": "langgraph",
+  "run_id": "eval-from-geo-agent-20260420T112719Z-2446843a-093-geoagent_093-try01",
+  "task_completed": true,
+  "task_succeeded": true,
+  "control_signal": "finish",
+  "plan_length": 3,
+  "current_step_index": 3,
+  "current_step": null,
+  "history_entries": 10,
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "current_step_retry_count": 0,
+  "case_id": "geoagent_093",
+  "case_manifest": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+  "force_visual_review": false,
+  "force_no_visual_review": true,
+  "visual_review_policy": "none",
+  "token_usage": {
+    "total_prompt_tokens": 29139,
+    "total_completion_tokens": 6366,
+    "total_tokens": 35505,
+    "llm_call_count": 5,
+    "max_single_llm_call_tokens": 10128,
+    "max_single_llm_call": {
+      "node": "coder",
+      "step_id": "step_01",
+      "request_type": "contract_repair",
+      "attempt_index": 1,
+      "prompt_tokens": 8971,
+      "completion_tokens": 1157,
+      "total_tokens": 10128
+    },
+    "max_single_step_tokens": 19127,
+    "max_single_step": {
+      "step_id": "step_01",
+      "prompt_tokens": 16506,
+      "completion_tokens": 2621,
+      "total_tokens": 19127,
+      "llm_call_count": 2
+    },
+    "steps": [
+      {
+        "step_id": null,
+        "prompt_tokens": 2512,
+        "completion_tokens": 1007,
+        "total_tokens": 3519,
+        "llm_call_count": 1
+      },
+      {
+        "step_id": "step_01",
+        "prompt_tokens": 16506,
+        "completion_tokens": 2621,
+        "total_tokens": 19127,
+        "llm_call_count": 2
+      },
+      {
+        "step_id": "step_02",
+        "prompt_tokens": 4972,
+        "completion_tokens": 738,
+        "total_tokens": 5710,
+        "llm_call_count": 1
+      },
+      {
+        "step_id": "step_03",
+        "prompt_tokens": 5149,
+        "completion_tokens": 2000,
+        "total_tokens": 7149,
+        "llm_call_count": 1
+      }
+    ]
+  }
+}

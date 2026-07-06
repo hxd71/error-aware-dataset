@@ -1,0 +1,40 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Perform spatial join between South Carolina county boundaries and weather stations to find which stations fall inside each county",
+      "inputs": [
+        "sc_county_boundaries",
+        "sc_weatherstations"
+      ],
+      "expected_outputs": [
+        "stations_by_county.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Use spatial join (predicate=within) to match each weather station point to its containing county polygon. The output preserves county fields (NAME, GEOID) and station fields (NAME, ID). CRS is EPSG:26917. Output has one record per station-county pair."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Aggregate weather station names per county to produce a summary table",
+      "inputs": [
+        "stations_by_county.shp"
+      ],
+      "expected_outputs": [
+        "county_stations_summary.csv"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Group the spatial join results by county NAME (or GEOID) and aggregate station names using string concatenation or list collection. Output CSV with columns: county_name, station_names (pipe-separated or comma-separated). This provides the required per-county station name listing."
+    }
+  ],
+  "current_step_index": 2,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "all_visualizable"
+}

@@ -1,0 +1,41 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Spatial join each ground truth point to its nearest estimated point and compute the Euclidean distance using EPSG:6569 projected coordinates",
+      "inputs": [
+        "trunk_location_ground_truth_epsg6569",
+        "trunk_location_estimated_epsg6569"
+      ],
+      "expected_outputs": [
+        "nearest_estimated_to_gt.geojson"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Use nearest neighbor spatial join. Both layers are in EPSG:6569 (projected meters). The join must produce a distance field representing Euclidean distance in meters from each ground truth point to its nearest estimated point."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Filter ground truth points that have a matching estimated point within 3 meters and compute the average location error",
+      "inputs": [
+        "nearest_estimated_to_gt.geojson"
+      ],
+      "expected_outputs": [
+        "gt_within_3m.geojson",
+        "location_error_summary.csv"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Filter: distance <= 3.0 meters. Compute average error from the distance field. Output should include: (1) filtered GeoJSON of ground truth points with matched estimated locations within 3m, and (2) CSV summary with count of matched GT points and average_error_meters."
+    }
+  ],
+  "current_step_index": 2,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": false,
+  "force_no_visual_review": true,
+  "visual_review_policy": "none"
+}

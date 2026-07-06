@@ -1,0 +1,16 @@
+{
+  "run_id": "C2-01__no-thinking__01",
+  "task_id": "C2-01",
+  "source": "Self-built GIS Task C2-01",
+  "thinking": "no-thinking",
+  "attempt": 1,
+  "status": "completed",
+  "planner_mode": "llm",
+  "run_dir": "runs/campaign_20260622/C2-01/no-thinking/attempt_01/20260622_20_06_29_f0c3a4c1",
+  "outputs": [
+    "data/masks.geojson",
+    "data/overlap_result.gpkg",
+    "data/zones.geojson"
+  ],
+  "error": ""
+}

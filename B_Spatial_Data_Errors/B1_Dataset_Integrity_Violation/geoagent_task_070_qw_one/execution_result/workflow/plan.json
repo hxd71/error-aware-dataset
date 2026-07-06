@@ -1,0 +1,39 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Project the Nigeria major roads vector dataset from EPSG:4326 to EPSG:26392 and save the result as a Shapefile.",
+      "inputs": [
+        "nigeria_major_roads"
+      ],
+      "expected_outputs": [
+        "nigeria_major_roads_26392.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "input_output_comparison",
+      "notes": "Target CRS is EPSG:26392. Ensure all LineString geometries are preserved and remain valid after reprojection."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Calculate the total length of all line features in the projected Shapefile and save the numeric result to a text file.",
+      "inputs": [
+        "nigeria_major_roads_26392.shp"
+      ],
+      "expected_outputs": [
+        "total_length.txt"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Compute the sum of geometry lengths in meters (EPSG:26392 units) and write the final aggregated value to the text file."
+    }
+  ],
+  "current_step_index": 2,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "at_least_one"
+}

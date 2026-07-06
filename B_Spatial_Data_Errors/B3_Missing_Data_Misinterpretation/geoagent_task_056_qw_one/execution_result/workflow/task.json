@@ -1,0 +1,44 @@
+{
+  "user_query": "Save the data as a shapefile. The user's target area is the area with 0 pixels.",
+  "task_context": {
+    "case_id": "geoagent_056",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "elevation_mask_nodata",
+        "asset_type": "raster",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\elevation_mask_nodata\\elevation_mask_nodata.tif",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path elevation_mask_nodata.",
+        "format": "tif",
+        "crs": "EPSG:32733",
+        "metadata": {
+          "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\elevation_mask_nodata\\elevation_mask_nodata.tif",
+          "width": 837,
+          "height": 661,
+          "count": 1,
+          "dtype": "float32",
+          "nodata": -3.4028234663852886e+38,
+          "pixel_size": [
+            81.99342619588408,
+            81.99342619588404
+          ],
+          "bounds": [
+            969491.2754036566,
+            6196099.340848963,
+            1038119.7731296116,
+            6250296.995564442
+          ],
+          "band_names": []
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": true,
+    "visual_review_policy": "at_least_one",
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

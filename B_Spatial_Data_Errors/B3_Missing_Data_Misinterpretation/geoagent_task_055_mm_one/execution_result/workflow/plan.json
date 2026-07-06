@@ -1,0 +1,27 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Reclassify float32 mask raster to binary (0/1) then polygonize to vector, avoiding overly aggressive filtering that removed the valid polygon in the previous attempt",
+      "inputs": [
+        "elevation_mask_nodata"
+      ],
+      "expected_outputs": [
+        "elevation_mask_binary.tif",
+        "elevation_mask_vector.geojson"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "The float32 raster uses nodata value -3.4028234663852886e+38. First reclassify valid pixels to value 1 and nodata to 0 to create a clean binary mask. Then polygonize the binary raster. Do NOT apply post-polygonization artifact filtering that was removing the single valid polygon. Output CRS must match EPSG:32733."
+    }
+  ],
+  "current_step_index": 1,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 1,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "at_least_one"
+}

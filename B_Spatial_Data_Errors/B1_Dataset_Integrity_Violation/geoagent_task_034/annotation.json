@@ -1,0 +1,29 @@
+{
+  "sample_id": "geoagent_task_034",
+  "source": "GeoAgent Task 34",
+  "task_id": 34,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "DeepSeek V4 Pro",
+    "provider": "DeepSeek",
+    "reasoning": "thinking 已开启",
+    "visual_review_model": "Qwen3-VL",
+    "visual_review_reasoning": "thinking 已关闭"
+  },
+  "primary_label": "B1. Dataset Integrity Violation",
+  "secondary_labels": [
+    "A2. CRS Inconsistency"
+  ],
+  "error_summary": "生成的 Laramie County Shapefile 缺少 `.prj`，无法携带坐标参考系；完整县级数据可提供 EPSG:4326 作为派生参考。",
+  "result_previews": [
+    {
+      "source_artifact": "coder/subtask_1/Laramie_County.shp",
+      "stage": "最终成果",
+      "preview_file": "previews/Laramie_County.png",
+      "description": "`Laramie_County.shp` 的县界几何预览。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "依据原任务输入和 GIS 规则计算参考结果"
+}

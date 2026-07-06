@@ -1,0 +1,31 @@
+{
+  "sample_id": "geoagent_task_082_mm_one",
+  "source": "GeoAgent Task 82",
+  "task_id": 82,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "MiniMax-M2.7-highspeed",
+    "provider": "minimax",
+    "reasoning": "thinking 开关未单列记录",
+    "visual_review": "至少审查一项可视化成果"
+  },
+  "primary_label": "C3. Network Connectivity Misinterpretation",
+  "secondary_labels": [],
+  "error_summary": "输出覆盖率达到 1.0，但包含 290 条非法边。几何上看似连续的线并不代表测绘车辆的真实连接关系。",
+  "result_previews": [
+    {
+      "source_artifact": "steps/step_03/street_paths.shp",
+      "stage": "最终成果",
+      "preview_file": "previews/street_paths.png",
+      "description": "下图是该实验生成的街景路径。线网外观较完整，但其中 290 条连接不符合 panoId 邻接关系，这类错误不能仅凭几何连续性识别。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "同任务正确运行或依据原任务输入和 GIS 规则计算",
+  "evidence_metrics": {
+    "observed_invalid_edges": 290,
+    "observed_coverage": 1.0,
+    "reference_coverage": 0.995
+  }
+}

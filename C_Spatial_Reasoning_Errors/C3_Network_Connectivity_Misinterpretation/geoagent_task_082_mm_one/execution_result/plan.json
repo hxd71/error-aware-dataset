@@ -1,0 +1,53 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Build a neighbor graph from street view points using panoId, link_f_pan, and link_b_pan columns to represent connectivity relationships",
+      "inputs": [
+        "street_image"
+      ],
+      "expected_outputs": [
+        "pano_graph.json"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Read the point shapefile and construct an adjacency dictionary mapping each panoId to its forward neighbor (link_f_pan) and backward neighbor (link_b_pan). Handle missing or empty link values as null. This creates the graph structure needed for path tracing."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Traverse the neighbor graph to extract connected paths and convert them to line geometries",
+      "inputs": [
+        "street_image",
+        "pano_graph.json"
+      ],
+      "expected_outputs": [
+        "street_paths.geojson"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Implement path tracing algorithm: 1) Start from unvisited point, extend forward through link_f_pan until dead-end, then extend backward through link_b_pan; 2) Collect ordered lat/lng coordinates for each path; 3) Create LineString geometry for each path; 4) Mark all visited points to avoid reprocessing. Ignore isolated points with no valid neighbors."
+    },
+    {
+      "step_id": "step_03",
+      "goal": "Export the line features to a shapefile with original CRS (EPSG:4326)",
+      "inputs": [
+        "street_paths.geojson"
+      ],
+      "expected_outputs": [
+        "street_paths.shp"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Convert the GeoJSON LineString features to a ESRI shapefile. Maintain EPSG:4326 coordinate reference system. The output shapefile contains line features representing street view traversal paths."
+    }
+  ],
+  "current_step_index": 3,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "at_least_one"
+}

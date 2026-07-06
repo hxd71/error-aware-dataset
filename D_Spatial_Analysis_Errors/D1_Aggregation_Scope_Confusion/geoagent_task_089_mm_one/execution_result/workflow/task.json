@@ -1,0 +1,181 @@
+{
+  "user_query": "Identify the street tree count within 20-meter buffer for each street.",
+  "task_context": {
+    "case_id": "geoagent_089",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "street_tree_epsg6852_subset",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Street_tree\\Street_Tree_EPSG6852_subset\\Street_Tree_EPSG6852_subset.shp",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path Street_tree/Street_Tree_EPSG6852_subset.",
+        "format": "shp",
+        "crs": "EPSG:6852",
+        "metadata": {
+          "feature_count": 6897,
+          "columns": [
+            "OBJECTID",
+            "Neighborho",
+            "Address",
+            "Date_Inven",
+            "SPECIES",
+            "MATURE_SIZ",
+            "FUNCTIONAL",
+            "Condition",
+            "DIAMETER",
+            "Site_Type",
+            "Site_Size",
+            "Site_Width",
+            "Wires",
+            "SITE_IMPRO"
+          ],
+          "geometry_types": [
+            "Point"
+          ],
+          "field_types": {
+            "OBJECTID": "int32",
+            "Neighborho": "str",
+            "Address": "str",
+            "Date_Inven": "datetime64[ms]",
+            "SPECIES": "str",
+            "MATURE_SIZ": "str",
+            "FUNCTIONAL": "str",
+            "Condition": "str",
+            "DIAMETER": "float64",
+            "Site_Type": "str",
+            "Site_Size": "str",
+            "Site_Width": "float64",
+            "Wires": "str",
+            "SITE_IMPRO": "str"
+          },
+          "sample_rows": [
+            {
+              "OBJECTID": 5040,
+              "Neighborho": "KERNS",
+              "Address": "2237 NE COUCH ST",
+              "Date_Inven": "2014-07-12T00:00:00",
+              "SPECIES": "Acer platanoides - Norway maple",
+              "MATURE_SIZ": "Medium",
+              "FUNCTIONAL": "Broadleaf deciduous",
+              "Condition": "Good",
+              "DIAMETER": 3.7,
+              "Site_Type": "strip",
+              "Site_Size": "Small",
+              "Site_Width": 3.5,
+              "Wires": "High voltage",
+              "SITE_IMPRO": "Improved"
+            },
+            {
+              "OBJECTID": 5041,
+              "Neighborho": "KERNS",
+              "Address": "2227 NE COUCH ST",
+              "Date_Inven": "2014-07-12T00:00:00",
+              "SPECIES": "Prunus (cherry species and cultivars) - cherry",
+              "MATURE_SIZ": "Small",
+              "FUNCTIONAL": "Broadleaf deciduous",
+              "Condition": "Fair",
+              "DIAMETER": 12.8,
+              "Site_Type": "strip",
+              "Site_Size": "Small",
+              "Site_Width": 3.5,
+              "Wires": "High voltage",
+              "SITE_IMPRO": "Improved"
+            },
+            {
+              "OBJECTID": 5042,
+              "Neighborho": "KERNS",
+              "Address": "2211 NE COUCH ST",
+              "Date_Inven": "2014-07-12T00:00:00",
+              "SPECIES": "Acer spp. - maple",
+              "MATURE_SIZ": "Medium",
+              "FUNCTIONAL": "Broadleaf deciduous",
+              "Condition": "Fair",
+              "DIAMETER": 6.5,
+              "Site_Type": "strip",
+              "Site_Size": "Small",
+              "Site_Width": 3.5,
+              "Wires": "High voltage",
+              "SITE_IMPRO": "Improved"
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            108316.81566536885,
+            52196.7136744413,
+            110333.28582950197,
+            54031.67980027024
+          ]
+        }
+      },
+      {
+        "asset_id": "roads_potland_epsg6852_subset",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Street_tree\\Roads_Potland_EPSG6852_subset\\Roads_Potland_EPSG6852_subset.shp",
+        "role": "reference",
+        "description": "GeoAgent source asset from data_path Street_tree/Roads_Potland_EPSG6852_subset.",
+        "format": "shp",
+        "crs": "EPSG:6852",
+        "metadata": {
+          "feature_count": 887,
+          "columns": [
+            "type",
+            "id",
+            "bounds",
+            "nodes",
+            "tags"
+          ],
+          "geometry_types": [
+            "LineString"
+          ],
+          "field_types": {
+            "type": "str",
+            "id": "str",
+            "bounds": "str",
+            "nodes": "str",
+            "tags": "str"
+          },
+          "sample_rows": [
+            {
+              "type": "way",
+              "id": "5510382",
+              "bounds": "{'minlat': 45.5322713, 'minlon': -122.6204982, 'maxlat': 45.5323148, 'maxlon': -122.6204793}",
+              "nodes": "[40390373, 1319615537]",
+              "tags": "{'description': 'Northeast 42nd Avenue Pedestrian Walkway', 'est_width': '3.7', 'footway': 'crossing', 'highway': 'footway', 'source': 'RLIS Metro Aerials 2010', 'surface': 'paved'}"
+            },
+            {
+              "type": "way",
+              "id": "5513462",
+              "bounds": "{'minlat': 45.5322329, 'minlon': -122.6328066, 'maxlat': 45.5332176, 'maxlon': -122.6315816}",
+              "nodes": "[40412944, 1351858195, 1667960895, 40412945, 1351858199, 1351858201]",
+              "tags": "{'bicycle': 'no', 'destination': '33rd Avenue', 'highway': 'motorway_link', 'junction:ref': '1', 'lanes': '1', 'maxspeed:advisory': '40 mph', 'oneway': 'yes', 'surface': 'asphalt'}"
+            },
+            {
+              "type": "way",
+              "id": "5513609",
+              "bounds": "{'minlat': 45.533948, 'minlon': -122.6256272, 'maxlat': 45.5340442, 'maxlon': -122.6249687}",
+              "nodes": "[2126713571, 2126713568, 2126713566, 2126713563, 2126713556, 40413857, 40413854, 2126713560]",
+              "tags": "{'bicycle': 'no', 'bridge': 'yes', 'destination': 'City Center', 'destination:ref': 'I 84 West;US 30 West', 'destination:ref:to': 'I 5', 'highway': 'motorway_link', 'lanes': '1', 'layer': '1', 'oneway': 'yes', 'turn:lanes': 'right'}"
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            106841.80389658338,
+            51346.96004401912,
+            115121.22182734364,
+            55593.08815814737
+          ]
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": true,
+    "visual_review_policy": "at_least_one",
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

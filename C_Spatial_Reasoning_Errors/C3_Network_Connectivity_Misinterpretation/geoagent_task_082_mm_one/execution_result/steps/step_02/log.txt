@@ -1,0 +1,61 @@
+exit_code=0
+duration_seconds=1.1772
+[stdout]
+Loaded 7959 points from street_image
+Built graph with 7959 nodes
+Processed 190 nodes, found 100 paths
+Processed 340 nodes, found 200 paths
+Processed 498 nodes, found 300 paths
+Processed 643 nodes, found 400 paths
+Processed 846 nodes, found 500 paths
+Processed 1016 nodes, found 600 paths
+Processed 1175 nodes, found 700 paths
+Processed 1324 nodes, found 800 paths
+Processed 1504 nodes, found 900 paths
+Processed 1697 nodes, found 1000 paths
+Processed 1821 nodes, found 1100 paths
+Processed 1943 nodes, found 1200 paths
+Processed 2088 nodes, found 1300 paths
+Processed 2242 nodes, found 1400 paths
+Processed 2384 nodes, found 1500 paths
+Processed 2572 nodes, found 1600 paths
+Processed 2760 nodes, found 1700 paths
+Processed 2890 nodes, found 1800 paths
+Processed 3084 nodes, found 1900 paths
+Processed 3219 nodes, found 2000 paths
+Processed 3342 nodes, found 2100 paths
+Processed 3502 nodes, found 2200 paths
+Processed 3697 nodes, found 2300 paths
+Processed 3846 nodes, found 2400 paths
+Processed 3972 nodes, found 2500 paths
+Processed 4091 nodes, found 2600 paths
+Processed 4240 nodes, found 2700 paths
+Processed 4377 nodes, found 2800 paths
+Processed 4538 nodes, found 2900 paths
+Processed 4704 nodes, found 3000 paths
+Processed 4891 nodes, found 3100 paths
+Processed 5057 nodes, found 3200 paths
+Processed 5221 nodes, found 3300 paths
+Processed 5357 nodes, found 3400 paths
+Processed 5505 nodes, found 3500 paths
+Processed 5646 nodes, found 3600 paths
+Processed 5844 nodes, found 3700 paths
+Processed 5995 nodes, found 3800 paths
+Processed 6150 nodes, found 3900 paths
+Processed 6321 nodes, found 4000 paths
+Processed 6483 nodes, found 4100 paths
+Processed 6615 nodes, found 4200 paths
+Processed 6771 nodes, found 4300 paths
+Processed 6984 nodes, found 4400 paths
+Processed 7130 nodes, found 4500 paths
+Processed 7238 nodes, found 4600 paths
+Processed 7396 nodes, found 4700 paths
+Processed 7521 nodes, found 4800 paths
+Processed 7670 nodes, found 4900 paths
+Processed 7799 nodes, found 5000 paths
+Found 5073 connected paths from 7959 iterations
+Wrote 5073 street paths to [SECONDARY_RUN_WORKSPACE]\outputs\runs\eval-from-geo-agent-20260423T184016Z-95a56beb-082-geoagent_082-try01\steps\step_02\street_paths.geojson
+{"step_id": "step_02", "input_points": 7959, "graph_nodes": 7959, "paths_created": 5073, "total_iterations": 7959, "output_path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260423T184016Z-95a56beb-082-geoagent_082-try01\\steps\\step_02\\street_paths.geojson"}
+
+[stderr]
+

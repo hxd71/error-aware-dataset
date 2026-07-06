@@ -1,0 +1,27 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Calculate NDVI from Landsat 8 Red and NIR bands",
+      "inputs": [
+        "lc08_l1tp_190055_20200214_20200823_02_t1_b4",
+        "lc08_l1tp_190055_20200214_20200823_02_t1_b5"
+      ],
+      "expected_outputs": [
+        "ndvi.tif"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Band 4 corresponds to Red and Band 5 corresponds to NIR. Apply standard Landsat 8 scale factor 0.0001 and offset 0 to convert stored DN values to TOA reflectance before computing NDVI = (NIR - Red) / (NIR + Red). Mask nodata value 0. Output as float32 raster."
+    }
+  ],
+  "current_step_index": 1,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "all_visualizable"
+}

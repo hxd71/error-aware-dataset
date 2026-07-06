@@ -1,0 +1,202 @@
+{
+  "user_query": "For each county, 1) find the weather stations inside the county, and 2) list the weather station names inside the county.",
+  "task_context": {
+    "case_id": "geoagent_095",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "sc_county_boundaries",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\SC_county_boundaries\\SC_county_boundaries.shp",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path SC_county_boundaries.",
+        "format": "shp",
+        "crs": "EPSG:26917",
+        "metadata": {
+          "feature_count": 46,
+          "columns": [
+            "fid_1",
+            "STATEFP",
+            "COUNTYFP",
+            "COUNTYNS",
+            "AFFGEOID",
+            "GEOID",
+            "NAME",
+            "NAMELSAD",
+            "STUSPS",
+            "STATE_NAME",
+            "LSAD",
+            "ALAND",
+            "AWATER"
+          ],
+          "geometry_types": [
+            "MultiPolygon",
+            "Polygon"
+          ],
+          "field_types": {
+            "fid_1": "float64",
+            "STATEFP": "str",
+            "COUNTYFP": "str",
+            "COUNTYNS": "str",
+            "AFFGEOID": "str",
+            "GEOID": "str",
+            "NAME": "str",
+            "NAMELSAD": "str",
+            "STUSPS": "str",
+            "STATE_NAME": "str",
+            "LSAD": "str",
+            "ALAND": "float64",
+            "AWATER": "float64"
+          },
+          "sample_rows": [
+            {
+              "fid_1": 28.0,
+              "STATEFP": "45",
+              "COUNTYFP": "027",
+              "COUNTYNS": "01247990",
+              "AFFGEOID": "0500000US45027",
+              "GEOID": "45027",
+              "NAME": "Clarendon",
+              "NAMELSAD": "Clarendon County",
+              "STUSPS": "SC",
+              "STATE_NAME": "South Carolina",
+              "LSAD": "06",
+              "ALAND": 1572656992.0,
+              "AWATER": 229097204.0
+            },
+            {
+              "fid_1": 30.0,
+              "STATEFP": "45",
+              "COUNTYFP": "015",
+              "COUNTYNS": "01247985",
+              "AFFGEOID": "0500000US45015",
+              "GEOID": "45015",
+              "NAME": "Berkeley",
+              "NAMELSAD": "Berkeley County",
+              "STUSPS": "SC",
+              "STATE_NAME": "South Carolina",
+              "LSAD": "06",
+              "ALAND": 2858362715.0,
+              "AWATER": 337375088.0
+            },
+            {
+              "fid_1": 37.0,
+              "STATEFP": "45",
+              "COUNTYFP": "059",
+              "COUNTYNS": "01248009",
+              "AFFGEOID": "0500000US45059",
+              "GEOID": "45059",
+              "NAME": "Laurens",
+              "NAMELSAD": "Laurens County",
+              "STUSPS": "SC",
+              "STATE_NAME": "South Carolina",
+              "LSAD": "06",
+              "ALAND": 1846324508.0,
+              "AWATER": 26063893.0
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            284397.26460339397,
+            3544607.9416609216,
+            727407.98015384,
+            3897819.5085795997
+          ]
+        }
+      },
+      {
+        "asset_id": "sc_weatherstations",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\SC_weatherstations\\SC_weatherstations.shp",
+        "role": "reference",
+        "description": "GeoAgent source asset from data_path SC_weatherstations.",
+        "format": "shp",
+        "crs": "EPSG:26917",
+        "metadata": {
+          "feature_count": 84,
+          "columns": [
+            "OBJECTID",
+            "NAME",
+            "CLASS",
+            "ID",
+            "MONTH",
+            "MIN_AVG",
+            "MAX_AVG",
+            "AVG",
+            "PRECIP",
+            "SNOW"
+          ],
+          "geometry_types": [
+            "Point"
+          ],
+          "field_types": {
+            "OBJECTID": "int32",
+            "NAME": "str",
+            "CLASS": "int32",
+            "ID": "int32",
+            "MONTH": "str",
+            "MIN_AVG": "float64",
+            "MAX_AVG": "float64",
+            "AVG": "float64",
+            "PRECIP": "float64",
+            "SNOW": "float64"
+          },
+          "sample_rows": [
+            {
+              "OBJECTID": 1,
+              "NAME": "AIKEN 4 NE",
+              "CLASS": 1,
+              "ID": 74,
+              "MONTH": "Ann",
+              "MIN_AVG": 51.0,
+              "MAX_AVG": 76.1,
+              "AVG": 63.5,
+              "PRECIP": 50.99,
+              "SNOW": 1.0
+            },
+            {
+              "OBJECTID": 2,
+              "NAME": "ANDERSON",
+              "CLASS": 1,
+              "ID": 165,
+              "MONTH": "Ann",
+              "MIN_AVG": 48.8,
+              "MAX_AVG": 73.3,
+              "AVG": 61.1,
+              "PRECIP": 51.68,
+              "SNOW": 2.2
+            },
+            {
+              "OBJECTID": 3,
+              "NAME": "ANDERSON FAA AP",
+              "CLASS": 1,
+              "ID": 170,
+              "MONTH": "Ann",
+              "MIN_AVG": 50.8,
+              "MAX_AVG": 72.1,
+              "AVG": 61.4,
+              "PRECIP": 46.25,
+              "SNOW": 3.5
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            292287.0275999997,
+            3564848.9148999993,
+            695679.6485000001,
+            3887624.450200001
+          ]
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": true,
+    "visual_review_policy": "all_visualizable",
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

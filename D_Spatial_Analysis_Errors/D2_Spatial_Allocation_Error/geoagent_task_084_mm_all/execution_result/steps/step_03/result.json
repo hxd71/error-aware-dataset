@@ -1,0 +1,17 @@
+{
+  "step_id": "step_03",
+  "success": true,
+  "artifacts": [
+    {
+      "name": "pop_rolla_buildings.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260419T165504Z-57ef3a68\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\\steps\\step_03\\pop_rolla_buildings.shp",
+      "artifact_type": "vector",
+      "description": ""
+    }
+  ],
+  "logs": "exit_code=0\nduration_seconds=0.9648\n[stdout]\nLoaded 6909 buildings\nColumns: ['Join_Count', 'TARGET_FID', 'release', 'capture_da', 'GEOID', 'NAME', 'fd_id', 'bid', 'cbfips', 'st_damcat', 'occtype', 'bldgtype', 'num_story', 'sqft', 'found_type', 'found_ht', 'med_yr_blt', 'val_struct', 'val_cont', 'val_vehic', 'ftprntid', 'ftprntsrc', 'source', 'students', 'pop2amu65', 'pop2amo65', 'pop2pmu65', 'pop2pmo65', 'o65disable', 'u65disable', 'x', 'y', 'firmzone', 'grnd_elv_m', 'ground_elv', 'prediction', 'probabilit', 'id', 'DS', 'height', 'bldg_area', 'bg_total_a', 'geometry']\nUsing block_group_id column: cbfips\nUsing area column: sqft\nUsing population column: pop2amu65\nFound 504 block groups\nWrote 6909 features to [SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260419T165504Z-57ef3a68\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\\steps\\step_03\\pop_rolla_buildings.shp\nPopulation range: 0.00 to 39.34\nTotal population: 1298.06\n{\n  \"step_id\": \"step_03\",\n  \"operation\": \"area_proportional_population\",\n  \"input_features\": 6909,\n  \"output_features\": 6909,\n  \"block_groups\": 504,\n  \"output_path\": \"[EXTERNAL_PATH]"\n}\n\n[stderr]\n[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260419T165504Z-57ef3a68\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\\steps\\step_03\\run_step.py:87: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.\n  output_gdf.to_file(output_path)\n[SECONDARY_RUN_WORKSPACE]\\.venv\\Lib\\site-packages\\pyogrio\\raw.py:733: RuntimeWarning: Normalized/laundered field name: 'block_group_id' to 'block_grou'\n  ogr_write(\n[SECONDARY_RUN_WORKSPACE]\\.venv\\Lib\\site-packages\\pyogrio\\raw.py:733: RuntimeWarning: Normalized/laundered field name: 'building_area' to 'building_a'\n  ogr_write(\n\n",
+  "summary": "Step executed successfully with 1 artifact(s).",
+  "error_type": null,
+  "recoverable": false,
+  "validation_messages": []
+}

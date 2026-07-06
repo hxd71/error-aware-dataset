@@ -1,0 +1,39 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Create a binary mask raster identifying pixels with value exactly 0.0 in the input elevation raster.",
+      "inputs": [
+        "elevation_mask_nodata"
+      ],
+      "expected_outputs": [
+        "zero_mask.tif"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Input dtype is float32 with nodata -3.4028234663852886e+38. Compute mask where output = 1 if pixel == 0.0, else 0. Explicitly ignore or mask out nodata values to prevent them from being classified as 0. Preserve CRS EPSG:32733."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Polygonize the binary mask raster to extract vector polygons for the masked regions and save as a shapefile.",
+      "inputs": [
+        "zero_mask.tif"
+      ],
+      "expected_outputs": [
+        "zero_pixel_area.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Apply polygonization targeting mask value 1. Filter out any background polygons (value 0). Ensure output geometry CRS matches EPSG:32733. This step replaces the previously empty shapefile with correctly extracted zero-value areas."
+    }
+  ],
+  "current_step_index": 2,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 1,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "at_least_one"
+}

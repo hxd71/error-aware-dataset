@@ -1,0 +1,67 @@
+{
+  "user_query": "Create Thiessen polygons for the point data, use the outsourced rectangles of the points or larger rectangles as boundaries, make sure that all the points are contained within the Tyson polygon, and end up with a Thiessen polygon that has the shape of a complete rectangle, save the final result as a Shapefile.",
+  "task_context": {
+    "case_id": "geoagent_057",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "richland_sc_fastfood",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Richland_SC_fastfood\\Richland_SC_fastfood.shp",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path Richland_SC_fastfood.",
+        "format": "shp",
+        "crs": "EPSG:4326",
+        "metadata": {
+          "feature_count": 263,
+          "columns": [
+            "type",
+            "id",
+            "tags"
+          ],
+          "geometry_types": [
+            "Point"
+          ],
+          "field_types": {
+            "type": "str",
+            "id": "int64",
+            "tags": "str"
+          },
+          "sample_rows": [
+            {
+              "type": "node",
+              "id": 1294004693,
+              "tags": "{\"addr:city\": \"Columbia\", \"addr:housenumber\": \"7915\", \"addr:postcode\": \"29209-4739\", \"addr:state\": \"SC\", \"addr:street\": \"Garners Ferry Road\", \"amenity\": \"fast_food\", \"brand\": \"Burger King\", \"brand:wikidata\": \"Q177054\", \"cuisine\": \"burger\", \"delivery\": \"y"
+            },
+            {
+              "type": "node",
+              "id": 1294004697,
+              "tags": "{\"addr:city\": \"Columbia\", \"addr:housenumber\": \"7942\", \"addr:postcode\": \"29209\", \"addr:state\": \"SC\", \"addr:street\": \"Garners Ferry Road\", \"amenity\": \"fast_food\", \"brand\": \"Hardee's\", \"brand:wikidata\": \"Q1585088\", \"cuisine\": \"burger\", \"name\": \"Hardee's\", \""
+            },
+            {
+              "type": "node",
+              "id": 1294004698,
+              "tags": "{\"addr:city\": \"Columbia\", \"addr:housenumber\": \"7846\", \"addr:postcode\": \"29209\", \"addr:state\": \"SC\", \"addr:street\": \"Garners Ferry Road\", \"amenity\": \"fast_food\", \"brand\": \"Wendy's\", \"brand:wikidata\": \"Q550258\", \"cuisine\": \"burger\", \"drive_through\": \"yes\","
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            -81.236099,
+            33.9535872,
+            -80.8314184,
+            34.215222
+          ]
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": false,
+    "visual_review_policy": "none",
+    "force_no_visual_review": true,
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

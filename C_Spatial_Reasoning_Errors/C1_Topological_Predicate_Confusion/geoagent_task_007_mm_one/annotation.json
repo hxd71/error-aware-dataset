@@ -1,0 +1,26 @@
+{
+  "sample_id": "geoagent_task_007_mm_one",
+  "source": "GeoAgent Task 7",
+  "task_id": 7,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "MiniMax-M2.7-highspeed",
+    "provider": "minimax",
+    "reasoning": "thinking 开关未单列记录",
+    "visual_review": "至少审查一项可视化成果"
+  },
+  "primary_label": "C1. Topological Predicate Confusion",
+  "secondary_labels": [],
+  "error_summary": "空间连接保留了不应进入结果的左侧要素",
+  "result_previews": [
+    {
+      "source_artifact": "artifacts/damaged_houses_saf_zone_count.csv",
+      "stage": "最终成果",
+      "preview_file": "previews/damaged_houses_saf_zone_count.png",
+      "description": "由错误运行写出的 `damaged_houses_saf_zone_count.csv` 生成。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "同一任务的 qwen3.6-plus 正确运行"
+}

@@ -1,0 +1,36 @@
+{
+  "sample_id": "self_built_gis_task_c2_01_no_think_01",
+  "source": "Self-built GIS Task C2-01",
+  "task_id": "C2-01",
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "DeepSeek V4 Pro",
+    "provider": "DeepSeek",
+    "reasoning": "thinking 已关闭",
+    "visual_review_model": "Qwen3-VL",
+    "visual_review_reasoning": "thinking 已关闭"
+  },
+  "primary_label": "C2. Invalid Geometry Handling",
+  "secondary_labels": [],
+  "error_summary": "叠加流程未正确处理输入中的无效和多部件几何，导致最终几何、面片或面积与规范结果不一致。",
+  "result_previews": [
+    {
+      "source_artifact": "artifacts/overlap_result.gpkg",
+      "stage": "最终成果",
+      "preview_file": "previews/overlap_result.png",
+      "description": "由本次实际运行的 `overlap_result.gpkg` 生成。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "依据独立参考流程计算",
+  "evidence_metrics": {
+    "feature_count": 8,
+    "reference_feature_count": 9,
+    "invalid_geometry_count": 0,
+    "relative_symmetric_difference": 0.02666666666666667,
+    "missing_fields": [],
+    "missing_source_mask_pairs": [],
+    "output": "data/overlap_result.gpkg"
+  }
+}

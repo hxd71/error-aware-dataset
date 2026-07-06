@@ -1,0 +1,13 @@
+===== recovered research workflow terminal log =====
+source=GeoAgent Task 79
+exit_code=0
+[stdout]
+read_inputs: street-view points loaded; distinct_years=11
+error_operation: classify discrete years with pd.cut(year, bins=5)
+write_outputs: execution_result/artifacts/year_equal_interval.geojson and previews/year_equal_interval.png
+reference_generation: evidence/reference.png maps every capture year as a separate nominal category
+quality_checks:
+year_count=11
+wrong_class_count=5
+[stderr]
+

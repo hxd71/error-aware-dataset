@@ -1,0 +1,52 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Aggregate total population per block group from building-level population fields",
+      "inputs": [
+        "rolla_building_footprints"
+      ],
+      "expected_outputs": [
+        "bg_population_totals.csv"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Sum building population fields (pop2amu65 + pop2amo65 + pop2pmu65 + pop2pmo65) grouped by cbfips field to get total population per block group. This total will be used for proportional distribution. The cbfips field in buildings (e.g., '291618910003033') corresponds to GEOID field in block groups (e.g., '291618909001'). Output as CSV for intermediate tracking."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Join aggregated block group population back to individual building footprints",
+      "inputs": [
+        "rolla_building_footprints"
+      ],
+      "expected_outputs": [
+        "buildings_with_bg_totals.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "input_output_comparison",
+      "notes": "Join the block group total population to each building record using cbfips = GEOID. Also compute total building area per block group for proportional calculation. Project to EPSG:4269 to match block group CRS."
+    },
+    {
+      "step_id": "step_03",
+      "goal": "Compute area-proportional population distribution for each building and export as Shapefile",
+      "inputs": [
+        "buildings_with_bg_totals.shp"
+      ],
+      "expected_outputs": [
+        "pop_rolla_buildings.shp"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "For each building: population = (building_sqft / sum_sqft_in_block_group) * total_population_in_block_group. Use sqft field for building area. Output fields must include: block_group_id (from GEOID/cbfips), building_area (from sqft), and population (computed value)."
+    }
+  ],
+  "current_step_index": 3,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "all_visualizable"
+}

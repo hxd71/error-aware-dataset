@@ -1,0 +1,55 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Sample idw_output raster at checkpoint locations to extract elevation values",
+      "inputs": [
+        "checkpoints_columbia",
+        "idw_output"
+      ],
+      "expected_outputs": [
+        "idw_checkpoints.csv"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "input_output_comparison",
+      "notes": "Use point sampling/raster extraction with EPSG:6569 CRS. Output CSV should include checkpoint id and extracted raster value."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Sample richland_dem_epsg_6569 raster at checkpoint locations to extract elevation values",
+      "inputs": [
+        "checkpoints_columbia",
+        "richland_dem_epsg_6569"
+      ],
+      "expected_outputs": [
+        "richland_checkpoints.csv"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Use point sampling/raster extraction with EPSG:6569 CRS. Output CSV should include checkpoint id and extracted raster value. Both DEMs use same CRS as checkpoints."
+    },
+    {
+      "step_id": "step_03",
+      "goal": "Compute RMSE between the two extracted DEM value arrays",
+      "inputs": [
+        "idw_checkpoints.csv",
+        "richland_checkpoints.csv"
+      ],
+      "expected_outputs": [
+        "rmse_result.txt"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Join both CSV files on checkpoint id, compute squared differences, then take square root of mean. Report RMSE value in result file."
+    }
+  ],
+  "current_step_index": 3,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "at_least_one"
+}

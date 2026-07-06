@@ -1,0 +1,27 @@
+{
+  "sample_id": "geoagent_task_079",
+  "source": "GeoAgent Task 79",
+  "task_id": 79,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "DeepSeek V4 Pro",
+    "provider": "DeepSeek",
+    "reasoning": "thinking 已开启",
+    "visual_review_model": "Qwen3-VL",
+    "visual_review_reasoning": "thinking 已关闭"
+  },
+  "primary_label": "E2. Symbolization Error",
+  "secondary_labels": [],
+  "error_summary": "实际专题图对多个年份类别使用重复或过于接近的颜色，且高频点严重遮盖低频类别，削弱了年份辨识度。",
+  "result_previews": [
+    {
+      "source_artifact": "coder/subtask_1/street_view_years_thematic_map.png",
+      "stage": "最终制图成果",
+      "preview_file": "previews/street_view_years_thematic_map.png",
+      "description": "LLM 生成的年份专题地图原图，保留其标题、图例和年份配色。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "依据原任务输入和 GIS 规则计算参考结果"
+}

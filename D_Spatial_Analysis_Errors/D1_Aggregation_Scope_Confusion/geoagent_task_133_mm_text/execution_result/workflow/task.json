@@ -1,0 +1,112 @@
+{
+  "user_query": "Please collect the rainfall statistics for different regions in the specified area and save the precipitation data for each region as a new Shapefile.",
+  "task_context": {
+    "case_id": "geoagent_133",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "rainfall",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\2\\6\\input\\rainfall.shp",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path 2/6/input.",
+        "format": "shp",
+        "crs": "EPSG:32650",
+        "metadata": {
+          "feature_count": 44,
+          "columns": [
+            "Index",
+            "X",
+            "Y",
+            "P"
+          ],
+          "geometry_types": [
+            "Point"
+          ],
+          "field_types": {
+            "Index": "int64",
+            "X": "float64",
+            "Y": "float64",
+            "P": "float64"
+          },
+          "sample_rows": [
+            {
+              "Index": 0,
+              "X": 435783.152085683,
+              "Y": 4163044.880699833,
+              "P": 947.3978
+            },
+            {
+              "Index": 1,
+              "X": 435467.089534922,
+              "Y": 4163504.009385194,
+              "P": 952.5519
+            },
+            {
+              "Index": 2,
+              "X": 435920.025685008,
+              "Y": 4162929.233497055,
+              "P": 1024.9949
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            435245.486131036,
+            4162232.53602834,
+            438776.633511171,
+            4165077.830525468
+          ]
+        }
+      },
+      {
+        "asset_id": "zone",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\2\\6\\input\\zone.shp",
+        "role": "reference",
+        "description": "GeoAgent source asset from data_path 2/6/input.",
+        "format": "shp",
+        "crs": "EPSG:32650",
+        "metadata": {
+          "feature_count": 44,
+          "columns": [
+            "index"
+          ],
+          "geometry_types": [
+            "Polygon"
+          ],
+          "field_types": {
+            "index": "int32"
+          },
+          "sample_rows": [
+            {
+              "index": 1
+            },
+            {
+              "index": 2
+            },
+            {
+              "index": 3
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            434792.1164867301,
+            4161976.966687361,
+            439190.8590847855,
+            4165429.645138519
+          ]
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": false,
+    "visual_review_policy": "none",
+    "force_no_visual_review": true,
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

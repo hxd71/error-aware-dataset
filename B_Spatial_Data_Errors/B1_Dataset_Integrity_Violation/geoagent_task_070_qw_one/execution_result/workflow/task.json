@@ -1,0 +1,81 @@
+{
+  "user_query": "Project the Nigeria railways into EPSG:26392 map projection, save the result in a Shapefile, then calculate the total length. save the total length in a text file.",
+  "task_context": {
+    "case_id": "geoagent_070",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "nigeria_major_roads",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Nigeria\\Nigeria_Major_Roads\\Nigeria_Major_Roads.shp",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path Nigeria/Nigeria_Major_Roads.",
+        "format": "shp",
+        "crs": "EPSG:4326",
+        "metadata": {
+          "feature_count": 26248,
+          "columns": [
+            "fid",
+            "type",
+            "id",
+            "bounds",
+            "nodes",
+            "tags"
+          ],
+          "geometry_types": [
+            "LineString"
+          ],
+          "field_types": {
+            "fid": "float64",
+            "type": "str",
+            "id": "str",
+            "bounds": "str",
+            "nodes": "str",
+            "tags": "str"
+          },
+          "sample_rows": [
+            {
+              "fid": 1.0,
+              "type": "way",
+              "id": "4844938",
+              "bounds": "{'minlat': 8.9656697, 'minlon': 7.2468727, 'maxlat': 8.9903199, 'maxlon': 7.2716071}",
+              "nodes": "4589190984, 31420732, 5543036764, 4589190970, 32165281, 9363259761, 9824493993, 9824493988, 31420731, 5543304156, 5402616170, 5402616172, 9157263685, 5543304111, 5543304109, 4734148191, 4734148200, 31420727, 9157263704, 5543036751, 11386813307, 113868133",
+              "tags": "{'highway': 'primary', 'lanes': '2', 'maxspeed': '50', 'name': 'Bill Clinton Drive', 'oneway': 'yes'}"
+            },
+            {
+              "fid": 2.0,
+              "type": "way",
+              "id": "4844939",
+              "bounds": "{'minlat': 9.0025357, 'minlon': 7.270163, 'maxlat': 9.006244, 'maxlon': 7.2799723}",
+              "nodes": "5378810686, 3751984963, 32165323, 5378810685, 32165325, 31203245, 7120581406, 7120581411, 6904472613, 3751984972, 2232129091, 5378810684, 5378810683, 2232129093, 5378810682, 31203256, 5378810679, 5378810680, 31203247, 5378810681, 6904472599, 5402616258,",
+              "tags": "{'highway': 'primary', 'oneway': 'yes'}"
+            },
+            {
+              "fid": 3.0,
+              "type": "way",
+              "id": "4863116",
+              "bounds": "{'minlat': 9.0657432, 'minlon': 7.4999568, 'maxlat': 9.0671355, 'maxlon': 7.5003056}",
+              "nodes": "1993701447, 1993701454, 2637698373, 1993701511, 1993701499, 2637698266",
+              "tags": "{'highway': 'primary', 'lanes': '3', 'oneway': 'yes'}"
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            2.6400366,
+            4.4858726,
+            14.6729191,
+            13.7905522
+          ]
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": true,
+    "visual_review_policy": "at_least_one",
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

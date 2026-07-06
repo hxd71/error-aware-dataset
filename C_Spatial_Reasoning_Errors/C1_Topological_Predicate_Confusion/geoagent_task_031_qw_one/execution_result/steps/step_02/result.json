@@ -1,0 +1,17 @@
+{
+  "step_id": "step_02",
+  "success": true,
+  "artifacts": [
+    {
+      "name": "merged_polygon.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260423T184016Z-6344b54d-031-geoagent_031-try01\\steps\\step_02\\merged_polygon.shp",
+      "artifact_type": "vector",
+      "description": ""
+    }
+  ],
+  "logs": "exit_code=0\nduration_seconds=0.6631\n[stdout]\n{\"status\": \"success\", \"output\": \"[EXTERNAL_PATH]", \"feature_count\": 67}\n\n[stderr]\n\n",
+  "summary": "Step executed successfully. summary_keys=['feature_count', 'output', 'status']; artifacts=['merged_polygon.shp']",
+  "error_type": null,
+  "recoverable": false,
+  "validation_messages": []
+}

@@ -1,0 +1,29 @@
+{
+  "sample_id": "geoagent_task_127",
+  "source": "GeoAgent Task 127",
+  "task_id": 127,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "DeepSeek V4 Pro",
+    "provider": "DeepSeek",
+    "reasoning": "thinking 已开启",
+    "visual_review_model": "Qwen3-VL",
+    "visual_review_reasoning": "thinking 已关闭"
+  },
+  "primary_label": "B1. Dataset Integrity Violation",
+  "secondary_labels": [
+    "A2. CRS Inconsistency"
+  ],
+  "error_summary": "分割后的 Shapefile 与两个输入一样缺少 `.prj`，输出数据包未保存空间参考定义。",
+  "result_previews": [
+    {
+      "source_artifact": "coder/subtask_1/split_parcels.shp",
+      "stage": "最终成果",
+      "preview_file": "previews/split_parcels.png",
+      "description": "`split_parcels.shp` 中线分割后的面几何预览。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "在明确的米制坐标假设下计算参考结果"
+}

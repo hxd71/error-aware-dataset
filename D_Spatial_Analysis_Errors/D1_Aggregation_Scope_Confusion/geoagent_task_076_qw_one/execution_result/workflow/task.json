@@ -1,0 +1,126 @@
+{
+  "user_query": "Find out the top 20 coffee shops in New York City that have the most bus stops or metro entrances within 600 feet. Save the result in a Shapefile.",
+  "task_context": {
+    "case_id": "geoagent_076",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "bus_metro_stop_epsg6535",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\New_York_coffee_shop\\bus_metro_stop_EPSG6535\\bus_metro_stop_EPSG6535.shp",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path New_York_coffee_shop.",
+        "format": "shp",
+        "crs": "EPSG:6535",
+        "metadata": {
+          "feature_count": 496,
+          "columns": [
+            "type",
+            "id",
+            "lat",
+            "lon",
+            "tags"
+          ],
+          "geometry_types": [
+            "Point"
+          ],
+          "field_types": {
+            "type": "str",
+            "id": "str",
+            "lat": "str",
+            "lon": "str",
+            "tags": "str"
+          },
+          "sample_rows": [
+            {
+              "type": "node",
+              "id": "42736282",
+              "lat": "40.8584149",
+              "lon": "-73.9038667",
+              "tags": "{'internet_access': 'no', 'level': '2', 'name': '183rd Street', 'network': 'NYC Subway', 'operator': 'New York City Transit Authority', 'public_transport': 'station', 'railway': 'station', 'railway:ref': '383', 'short_name': '183 St', 'start_date': '1917"
+            },
+            {
+              "type": "node",
+              "id": "42969559",
+              "lat": "40.6439626",
+              "lon": "-74.0734416",
+              "tags": "{'name': 'St. George', 'network': 'Staten Island Railway', 'network:wikidata': 'Q1273068', 'operator': 'Metropolitan Transportation Authority', 'operator:wikidata': 'Q1146109', 'owner': 'City of New York', 'owner:wikidata': 'Q60', 'public_transport': 'st"
+            },
+            {
+              "type": "node",
+              "id": "42969919",
+              "lat": "40.5513353",
+              "lon": "-74.151201",
+              "tags": "{'name': 'Great Kills', 'network': 'Staten Island Railway', 'network:wikidata': 'Q1273068', 'operator': 'Metropolitan Transportation Authority', 'operator:wikidata': 'Q1146109', 'owner': 'City of New York', 'owner:wikidata': 'Q60', 'public_transport': 's"
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            1468445.9595019724,
+            195361.00680609306,
+            1605742.3149394784,
+            340813.45665337343
+          ]
+        }
+      },
+      {
+        "asset_id": "new_york_coffee_shops_epsg6535",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\New_York_coffee_shop\\New_york_coffee_shops_EPSG6535\\New_york_coffee_shops_EPSG6535.shp",
+        "role": "reference",
+        "description": "GeoAgent source asset from data_path New_York_coffee_shop.",
+        "format": "shp",
+        "crs": "EPSG:6535",
+        "metadata": {
+          "feature_count": 2218,
+          "columns": [
+            "type",
+            "id",
+            "tags"
+          ],
+          "geometry_types": [
+            "Point"
+          ],
+          "field_types": {
+            "type": "str",
+            "id": "str",
+            "tags": "str"
+          },
+          "sample_rows": [
+            {
+              "type": "node",
+              "id": "418520887",
+              "tags": "{'addr:city': 'Staten Island', 'addr:housenumber': '208', 'addr:state': 'NY', 'addr:street': 'Bay Street', 'amenity': 'cafe', 'internet_access': 'wlan', 'internet_access:fee': 'no', 'name': 'Everything Goes Book Cafe', 'outdoor_seating': 'yes', 'shop': '"
+            },
+            {
+              "type": "node",
+              "id": "419360003",
+              "tags": "{'amenity': 'cafe', 'cuisine': 'latin_american;breakfast', 'drink:coffee': 'yes', 'drink:espresso': 'yes', 'drink:tea': 'yes', 'name': 'La Fondita', 'opening_hours': 'Mo-Su 15:00-23:00', 'outdoor_seating': 'sidewalk;street', 'phone': '+1-718-600-9884'}"
+            },
+            {
+              "type": "node",
+              "id": "419360064",
+              "tags": "{'amenity': 'cafe', 'cuisine': 'middle_eastern;breakfast', 'drink:bubble_tea': 'yes', 'drink:coffee': 'yes', 'internet_access': 'wlan', 'name': 'Mocha Hookah', 'opening_hours': 'Mo-Su 09:00-07:00', 'smoking': 'hookah'}"
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            1471992.4543958816,
+            197408.61093824467,
+            1618232.8765236044,
+            341599.7124961942
+          ]
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": true,
+    "visual_review_policy": "at_least_one",
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

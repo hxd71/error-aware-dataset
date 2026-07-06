@@ -1,0 +1,11 @@
+exit_code=0
+duration_seconds=0.7790
+[stdout]
+{"step_id": "step_03", "output_features": 5073, "geometry_types": ["LineString"], "crs": "EPSG:4326", "output_path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\runs\\eval-from-geo-agent-20260423T184016Z-95a56beb-082-geoagent_082-try01\\steps\\step_03\\street_paths.shp"}
+
+[stderr]
+[SECONDARY_RUN_WORKSPACE]\outputs\runs\eval-from-geo-agent-20260423T184016Z-95a56beb-082-geoagent_082-try01\steps\step_03\run_step.py:29: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  gdf.to_file(output_path, driver="ESRI Shapefile")
+[SECONDARY_RUN_WORKSPACE]\.venv\Lib\site-packages\pyogrio\raw.py:733: RuntimeWarning: Normalized/laundered field name: 'street_name' to 'street_nam'
+  ogr_write(
+

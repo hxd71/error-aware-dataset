@@ -1,0 +1,165 @@
+{
+  "user_query": "Join the U.S. Census block group population table to the block group boundaries. Note that you must first create the full block group FIPS for the table by merging state, county, tract, and block group short FIPSs.",
+  "task_context": {
+    "case_id": "geoagent_083",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "rolla_downtown_block_groups_2021",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Rolla_watershed\\Rolla_downtown_block_groups_2021\\Rolla_downtown_block_groups_2021.shp",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path Rolla_watershed/Rolla_downtown_block_groups_2021.",
+        "format": "shp",
+        "crs": "EPSG:4269",
+        "metadata": {
+          "feature_count": 18,
+          "columns": [
+            "STATEFP",
+            "COUNTYFP",
+            "TRACTCE",
+            "BLKGRPCE",
+            "AFFGEOID",
+            "GEOID",
+            "NAME",
+            "NAMELSAD",
+            "LSAD",
+            "ALAND",
+            "AWATER"
+          ],
+          "geometry_types": [
+            "Polygon"
+          ],
+          "field_types": {
+            "STATEFP": "str",
+            "COUNTYFP": "str",
+            "TRACTCE": "str",
+            "BLKGRPCE": "str",
+            "AFFGEOID": "str",
+            "GEOID": "str",
+            "NAME": "str",
+            "NAMELSAD": "str",
+            "LSAD": "str",
+            "ALAND": "int64",
+            "AWATER": "int64"
+          },
+          "sample_rows": [
+            {
+              "STATEFP": "29",
+              "COUNTYFP": "161",
+              "TRACTCE": "890302",
+              "BLKGRPCE": "1",
+              "AFFGEOID": "1500000US291618903021",
+              "GEOID": "291618903021",
+              "NAME": "1",
+              "NAMELSAD": "Block Group 1",
+              "LSAD": "BG",
+              "ALAND": 1236792,
+              "AWATER": 7797
+            },
+            {
+              "STATEFP": "29",
+              "COUNTYFP": "161",
+              "TRACTCE": "890900",
+              "BLKGRPCE": "2",
+              "AFFGEOID": "1500000US291618909002",
+              "GEOID": "291618909002",
+              "NAME": "2",
+              "NAMELSAD": "Block Group 2",
+              "LSAD": "BG",
+              "ALAND": 887648,
+              "AWATER": 0
+            },
+            {
+              "STATEFP": "29",
+              "COUNTYFP": "161",
+              "TRACTCE": "890302",
+              "BLKGRPCE": "2",
+              "AFFGEOID": "1500000US291618903022",
+              "GEOID": "291618903022",
+              "NAME": "2",
+              "NAMELSAD": "Block Group 2",
+              "LSAD": "BG",
+              "ALAND": 575858,
+              "AWATER": 0
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            -91.803292,
+            37.915035,
+            -91.71296,
+            37.983598
+          ]
+        }
+      },
+      {
+        "asset_id": "rolla_2021_population_block_group",
+        "asset_type": "table",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\Rolla_watershed\\Rolla_2021_population_block_group.csv",
+        "role": "reference",
+        "description": "GeoAgent source asset from data_path Rolla_watershed/Rolla_2021_population_block_group.csv.",
+        "format": "csv",
+        "crs": null,
+        "metadata": {
+          "row_count": 42,
+          "columns": [
+            "population2021",
+            "state_fips",
+            "county_fips",
+            "tract_fips",
+            "block_group_fips",
+            "year",
+            "source"
+          ],
+          "field_types": {
+            "population2021": "int64",
+            "state_fips": "int64",
+            "county_fips": "int64",
+            "tract_fips": "int64",
+            "block_group_fips": "int64",
+            "year": "int64",
+            "source": "str"
+          },
+          "sample_rows": [
+            {
+              "population2021": 2226,
+              "state_fips": 29,
+              "county_fips": 161,
+              "tract_fips": 890100,
+              "block_group_fips": 1,
+              "year": 2021,
+              "source": "ACS 2021"
+            },
+            {
+              "population2021": 935,
+              "state_fips": 29,
+              "county_fips": 161,
+              "tract_fips": 890100,
+              "block_group_fips": 2,
+              "year": 2021,
+              "source": "ACS 2021"
+            },
+            {
+              "population2021": 903,
+              "state_fips": 29,
+              "county_fips": 161,
+              "tract_fips": 890100,
+              "block_group_fips": 3,
+              "year": 2021,
+              "source": "ACS 2021"
+            }
+          ]
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": true,
+    "visual_review_policy": "at_least_one",
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}

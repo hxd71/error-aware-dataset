@@ -1,0 +1,26 @@
+{
+  "sample_id": "geoagent_task_095_mm_all",
+  "source": "GeoAgent Task 95",
+  "task_id": 95,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "MiniMax-M2.7-highspeed",
+    "provider": "minimax",
+    "reasoning": "thinking 开关未单列记录",
+    "visual_review": "审查全部可视化成果"
+  },
+  "primary_label": "D1. Aggregation Scope Confusion",
+  "secondary_labels": [],
+  "error_summary": "空间汇总遗漏部分行政单元或观测站",
+  "result_previews": [
+    {
+      "source_artifact": "artifacts/county_stations_summary.csv",
+      "stage": "最终成果",
+      "preview_file": "previews/county_stations_summary.png",
+      "description": "由错误运行写出的 `county_stations_summary.csv` 生成。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "同一任务的 MiniMax-M2.7-highspeed 正确运行"
+}

@@ -1,0 +1,26 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Group points by cluster identifier, compute spatial statistics per cluster, and generate fitted standard deviation ellipse geometries as polygon output",
+      "inputs": [
+        "points"
+      ],
+      "expected_outputs": [
+        "cluster_ellipses.shp"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Cluster grouping is based on the 'Type' integer field. For each cluster, compute: (1) mean center (cx, cy), (2) standard deviations (std_x, std_y), (3) covariance matrix for orientation angle, (4) semi-major and semi-minor axes using 1-std or 2-std ellipse as appropriate. Output polygon layer with attributes: cluster_id (from Type), center_x, center_y, std_x, std_y, semi_major, semi_minor, rotation_degrees. Preserve source CRS (Krasovsky 1940 Transverse Mercator) in output."
+    }
+  ],
+  "current_step_index": 1,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": false,
+  "force_no_visual_review": true,
+  "visual_review_policy": "none"
+}

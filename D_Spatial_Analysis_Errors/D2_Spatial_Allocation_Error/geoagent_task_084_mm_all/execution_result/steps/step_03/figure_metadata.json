@@ -1,0 +1,204 @@
+{
+  "title": "Evidence for step_03",
+  "template_name": "input_output_comparison",
+  "add_basemap": false,
+  "layer_count": 2,
+  "highlight_layers": [
+    "[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260419T165504Z-57ef3a68\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\\steps\\step_03\\pop_rolla_buildings.shp"
+  ],
+  "output_path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260419T165504Z-57ef3a68\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\\steps\\step_03\\figure.png",
+  "rendered_layers": [
+    "buildings_with_bg_totals.shp",
+    "pop_rolla_buildings.shp"
+  ],
+  "comparison_left_labels": [
+    "buildings_with_bg_totals.shp"
+  ],
+  "comparison_right_labels": [
+    "pop_rolla_buildings.shp"
+  ],
+  "shared_extent": [
+    -91.81057344554425,
+    37.911595019500474,
+    -91.70811346941994,
+    37.99394500811039
+  ],
+  "padded_extent": [
+    -91.8167210441117,
+    37.90665402018388,
+    -91.70196587085249,
+    37.99888600742698
+  ],
+  "applied_view_focus": "result_extent",
+  "applied_extent": [
+    -91.8167210441117,
+    37.90665402018388,
+    -91.70196587085249,
+    37.99888600742698
+  ],
+  "extent_padding_ratio": 0.06,
+  "max_extent_aspect_ratio": 2.0,
+  "aspect_ratio_guard_applied": false,
+  "shared_extent_aspect_ratio": 1.24420146078775,
+  "padded_extent_aspect_ratio": 1.2442014607875969,
+  "applied_extent_aspect_ratio": 1.2442014607875969,
+  "legend_placement": "panel_top",
+  "note": null,
+  "input_panel_is_alpha_composite": false,
+  "input_panel_layers": [
+    {
+      "label": "buildings_with_bg_totals.shp",
+      "layer_type": "vector",
+      "alpha": 0.45
+    }
+  ],
+  "panel_colorbars": {
+    "inputs": {
+      "present": false,
+      "mode": null,
+      "source_layer": null,
+      "source_layers": [],
+      "vmin": null,
+      "vmax": null
+    },
+    "outputs": {
+      "present": false,
+      "mode": null,
+      "source_layer": null,
+      "source_layers": [],
+      "vmin": null,
+      "vmax": null
+    }
+  },
+  "comparison_uses_shared_raster_limits": false,
+  "comparison_raster_limits": null,
+  "map_boundary_box_visible": true,
+  "map_boundary_box_style": {
+    "color": "#6B7280",
+    "linewidth": 0.8
+  },
+  "scale_bar_visible": true,
+  "scale_bar_position": "below_panel",
+  "scale_bar_panels": [
+    {
+      "panel": "inputs",
+      "visible": true,
+      "length_meters": 2000.0,
+      "display_label": "2 km",
+      "estimated": true,
+      "crs": "EPSG:4269",
+      "width_fraction": 0.19830077126937432,
+      "reason": null
+    },
+    {
+      "panel": "outputs",
+      "visible": true,
+      "length_meters": 2000.0,
+      "display_label": "2 km",
+      "estimated": true,
+      "crs": "EPSG:4269",
+      "width_fraction": 0.19830077126937432,
+      "reason": null
+    }
+  ],
+  "crs": "EPSG:4269",
+  "display_crs": "EPSG:4269",
+  "layer_details": [
+    {
+      "label": "buildings_with_bg_totals.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260419T165504Z-57ef3a68\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\\steps\\step_02\\buildings_with_bg_totals.shp",
+      "layer_type": "vector",
+      "source_crs": "EPSG:4269",
+      "display_crs": "EPSG:4269",
+      "alpha": 0.45,
+      "color": "#4C78A8",
+      "fill": true,
+      "fill_alpha": 0.18,
+      "linewidth": 0.6,
+      "zorder": 2,
+      "display_vmin": null,
+      "display_vmax": null
+    },
+    {
+      "label": "pop_rolla_buildings.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260419T165504Z-57ef3a68\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\\steps\\step_03\\pop_rolla_buildings.shp",
+      "layer_type": "vector",
+      "source_crs": "EPSG:4269",
+      "display_crs": "EPSG:4269",
+      "alpha": 0.8,
+      "color": "#4C78A8",
+      "fill": true,
+      "fill_alpha": 0.8,
+      "linewidth": 0.8,
+      "zorder": 1,
+      "display_vmin": null,
+      "display_vmax": null
+    }
+  ],
+  "applied_layer_styles": [
+    {
+      "label": "buildings_with_bg_totals.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260419T165504Z-57ef3a68\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\\steps\\step_02\\buildings_with_bg_totals.shp",
+      "color": "#4C78A8",
+      "fill": true,
+      "fill_alpha": 0.18,
+      "linewidth": 0.6,
+      "zorder": 2
+    },
+    {
+      "label": "pop_rolla_buildings.shp",
+      "path": "[SECONDARY_RUN_WORKSPACE]\\outputs\\evaluations\\from_geo_agent\\eval-from-geo-agent-20260419T165504Z-57ef3a68\\runs\\eval-from-geo-agent-20260419T165504Z-57ef3a68-084-geoagent_084-try01\\steps\\step_03\\pop_rolla_buildings.shp",
+      "color": "#4C78A8",
+      "fill": true,
+      "fill_alpha": 0.8,
+      "linewidth": 0.8,
+      "zorder": 1
+    }
+  ],
+  "renderer": "matplotlib",
+  "candidate_layer_count": 2,
+  "candidate_layer_ids": [
+    "layer_01",
+    "layer_02"
+  ],
+  "selected_layer_ids": [
+    "layer_02",
+    "layer_01"
+  ],
+  "selected_layer_labels": [
+    "pop_rolla_buildings.shp",
+    "buildings_with_bg_totals.shp"
+  ],
+  "excluded_layer_ids": [],
+  "highlight_layer_ids": [
+    "layer_02"
+  ],
+  "selection_source": "llm",
+  "selector_attempt_count": 2,
+  "selector_repair_attempts": 1,
+  "selector_invalid_reason": null,
+  "view_focus": "result_extent",
+  "final_template_name": "input_output_comparison",
+  "template_decision_reason": "forced_input_output_comparison",
+  "selection_plan": {
+    "selected_layer_ids": [
+      "layer_02",
+      "layer_01"
+    ],
+    "highlight_layer_ids": [
+      "layer_02"
+    ],
+    "excluded_layer_ids": [],
+    "layer_roles": {
+      "layer_02": "result",
+      "layer_01": "reference"
+    },
+    "layer_styles": {},
+    "render_priority": {
+      "layer_02": 1,
+      "layer_01": 2
+    },
+    "view_focus": "result_extent",
+    "rationale": "The primary result layer (pop_rolla_buildings.shp) shows the computed population values for each building. The input layer (buildings_with_bg_totals.shp) is retained as reference to verify the proportional distribution calculation was performed correctly—reviewers can cross-check building areas and block group totals against the computed population values. Both layers are necessary to validate this transformation step."
+  }
+}

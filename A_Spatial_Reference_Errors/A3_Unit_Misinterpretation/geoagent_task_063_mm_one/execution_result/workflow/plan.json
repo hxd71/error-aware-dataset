@@ -1,0 +1,39 @@
+{
+  "plan": [
+    {
+      "step_id": "step_01",
+      "goal": "Reproject building polygons to a suitable map projection and calculate the planar area for each building",
+      "inputs": [
+        "penn_state_buildings"
+      ],
+      "expected_outputs": [
+        "penn_state_buildings_projected.gpkg"
+      ],
+      "requires_visual_review": true,
+      "visual_review_template": "highlighted_result",
+      "notes": "Source data is in EPSG:4326 (geographic coordinates). Reproject to EPSG:2272 (NAD83 Pennsylvania State Plane South, US feet) or EPSG:32617/32618 (UTM Zone 17N/18N, meters) for accurate area calculation. Calculate the geometric area of each polygon and add as a new field. The 'name' field from tags or 'id' can be used for building identification. Use the projected CRS for area computation to ensure accurate results."
+    },
+    {
+      "step_id": "step_02",
+      "goal": "Generate an HTML report listing each building with its computed area",
+      "inputs": [
+        "penn_state_buildings_projected.gpkg"
+      ],
+      "expected_outputs": [
+        "building_area_report.html"
+      ],
+      "requires_visual_review": false,
+      "visual_review_template": null,
+      "notes": "Create a formatted HTML table or list showing building name (from 'name' or 'short_name' tags, fallback to 'id'), building ID, and computed area. Include summary statistics such as total building count and total area. Style the report for readability."
+    }
+  ],
+  "current_step_index": 2,
+  "current_step_id": null,
+  "task_completed": true,
+  "control_signal": "finish",
+  "replan_count": 0,
+  "step_retry_count": 0,
+  "force_visual_review": true,
+  "force_no_visual_review": false,
+  "visual_review_policy": "at_least_one"
+}

@@ -1,0 +1,26 @@
+{
+  "sample_id": "geoagent_task_041_mm_one",
+  "source": "GeoAgent Task 41",
+  "task_id": 41,
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "MiniMax-M2.7-highspeed",
+    "provider": "minimax",
+    "reasoning": "thinking 开关未单列记录",
+    "visual_review": "至少审查一项可视化成果"
+  },
+  "primary_label": "C1. Topological Predicate Confusion",
+  "secondary_labels": [],
+  "error_summary": "随机点生成结果没有全部满足面内约束",
+  "result_previews": [
+    {
+      "source_artifact": "artifacts/random_points_in_circle.shp",
+      "stage": "最终成果",
+      "preview_file": "previews/random_points_in_circle.png",
+      "description": "由错误运行写出的 `random_points_in_circle.shp` 生成。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "同一任务的 MiniMax-M2.7-highspeed 正确运行"
+}

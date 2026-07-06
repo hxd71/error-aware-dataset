@@ -1,0 +1,57 @@
+{
+  "user_query": "Please perform a spatial analysis on clustered point features in the provided Shapefile. For each cluster, calculate and describe its spatial distribution, including the cluster's center, shape, orientation, and extent. The results should be stored in a new Shapefile, where each cluster's spatial characteristics (center coordinates, standard deviations, and fitted ellipse geometry) are clearly represented.",
+  "task_context": {
+    "case_id": "geoagent_119",
+    "description": "",
+    "assets": [
+      {
+        "asset_id": "points",
+        "asset_type": "vector",
+        "path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\datasets\\1\\14\\input\\points.shp",
+        "role": "subject",
+        "description": "GeoAgent source asset from data_path 1/14/input.",
+        "format": "shp",
+        "crs": "PROJCS[\"Krasovsky_1940_Transverse_Mercator\",GEOGCS[\"Unknown datum based upon the Krassowsky 1940 ellipsoid\",DATUM[\"Not_specified_based_on_Krassowsky_1940_ellipsoid\",SPHEROID[\"Krassowsky 1940\",6378245,298.3,AUTHORITY[\"EPSG\",\"7024\"]],AUTHORITY[\"EPSG\",\"6024\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",111],PARAMETER[\"scale_factor\",1],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "metadata": {
+          "feature_count": 500,
+          "columns": [
+            "Type"
+          ],
+          "geometry_types": [
+            "Point"
+          ],
+          "field_types": {
+            "Type": "int32"
+          },
+          "sample_rows": [
+            {
+              "Type": 4
+            },
+            {
+              "Type": 3
+            },
+            {
+              "Type": 3
+            }
+          ],
+          "invalid_geometry_count": 0,
+          "null_geometry_count": 0,
+          "bounds": [
+            5299.734886557837,
+            1277.4229753114996,
+            7361.0892621232615,
+            3058.4991139643607
+          ]
+        }
+      }
+    ],
+    "analysis_crs": null,
+    "manifest_path": "[SECONDARY_RUN_WORKSPACE]\\data\\from_geo_agent\\cases.json",
+    "force_visual_review": false,
+    "visual_review_policy": "none",
+    "force_no_visual_review": true,
+    "max_retries_per_step": 4,
+    "max_replans": 4,
+    "default_crs": "EPSG:4326"
+  }
+}
