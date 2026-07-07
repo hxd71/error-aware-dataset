@@ -26,32 +26,10 @@
 | | **E2. Symbolization Error** | Visual variables inconsistent with data type or semantics | Applying continuous colormaps to categorical land-use classes; misleading ordinal interpretation |
 | | **E3. Map Composition Defect** | Missing or defective cartographic elements required for interpretation | Missing legend, scale bar, labels, or unreadable class breaks; poor layout causing ambiguous map reading |
 
-## Relationship to the Original Error List
-
-| 原表错误点 | 修订后分类 | 是否属于 GIS-specific taxonomy |
-| :--- | :--- | :---: |
-| 1.1 尺度与单位混淆 | A3. Unit Misinterpretation | Yes |
-| 1.2 坐标轴顺序反转 | A1. Coordinate Axis Misinterpretation | Yes |
-| 1.3 缺失显式重投影/对齐 | A2. CRS Inconsistency | Yes |
-| 2.1 多文件物理结构遗漏 | B1. Dataset Integrity Violation | Yes |
-| 2.2 忽略栅格多维一致性 | B2. Raster Alignment Failure | Yes |
-| 2.3 空间无效值 NoData 语义丢失 | B3. Missing Data Misinterpretation | Yes |
-| 2.4 密集/广延型变量聚合错误 | D2. Spatial Allocation Error | Yes |
-| 3.1 拓扑谓词语义混用 | C1. Topological Predicate Confusion | Yes |
-| 3.2 脏数据缺乏拓扑修复 | C2. Invalid Geometry Handling | Yes |
-| 3.3 网络拓扑与节点捕捉缺失 | C3. Network Connectivity Misinterpretation | Yes |
-| 4.1 数据分段模型错位 | E1. Classification Scheme Misuse | Yes |
-| 4.2 符号化与色彩滥用 | E2. Symbolization Error | Yes |
-| 4.3 视觉排版与要素缺失 | E3. Map Composition Defect | Yes |
-| 5.1 空间操作依赖断裂 | Workflow Dependency Omission | No; agent workflow failure |
-| 5.2 局部与全局操作混淆 | D1. Aggregation Scope Confusion | Yes |
-| 5.3 级联错误累积 | Error Propagation and Silent Failure | No; agent workflow failure |
-| 6.1 空间索引机制遗漏 | Scalability / Indexing Failure | No; system execution failure |
-| 6.2 内存外大栅格直接吞吐 | Memory Management Failure | No; system execution failure |
 
 ## Detectability and Observability as Evaluation Dimensions
 
-为避免 taxonomy 与评价指标混杂，建议将“纯文本模态可检测性”和“可视化后的可观测性”作为分析维度，而不是分类维度。可在正文或附表中对每个二级类别补充如下判断：
+为避免 taxonomy 与评价指标混杂，将“纯文本模态可检测性”和“可视化后的可观测性”作为分析维度，而不是分类维度。在正文或附表中对每个二级类别补充如下判断：
 
 | Level-2 Category | Text-only Detectability | Post-visualization Observability |
 | :--- | :---: | :---: |
@@ -82,23 +60,3 @@ The following failures are important in GIS agent workflows but should not be pa
 | **System Errors** | **Scalability / Indexing Failure** | Missing spatial index, bounding-box filtering, or chunking causes severe computational inefficiency | Although spatial indexes are common in GIS, the failure mode is a general computational scalability issue |
 | | **Memory Management Failure** | Large rasters or vector datasets are loaded into memory at once, causing OOM | OOM is a system-level execution failure and is not specific to GIS domain reasoning |
 
-## Suggested Paper Structure
-
-```text
-Section 4. Taxonomy of GIS-specific Errors
-  A. Spatial Reference Errors
-  B. Spatial Data Errors
-  C. Spatial Reasoning Errors
-  D. Spatial Analysis Errors
-  E. Cartographic Errors
-
-Section 5. Agent Workflow Failures Beyond GIS Knowledge
-  Workflow Errors
-  System Errors
-```
-
-## Suggested Paper Wording
-
-> We define GIS-specific errors as failures rooted in GIS domain knowledge, including spatial reference systems, spatial data models, spatial reasoning, spatial analysis, and cartographic representation. General agent workflow failures, such as dependency omission, silent error propagation, memory exhaustion, and computational scalability failures, are analyzed separately because they are not unique to GIS and may occur in many agentic data-processing pipelines.
-
-这样处理后，主 taxonomy 更接近 Longley、Burrough、Goodchild 等经典 GIS 知识结构，也更容易回应审稿人关于 “Why is OOM a GIS error?” 的质疑。
