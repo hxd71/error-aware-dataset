@@ -1,0 +1,44 @@
+{
+  "observed_candidate_pool_values": [
+    0.0,
+    0.0
+  ],
+  "all_observed_candidate_values_zero": true,
+  "expected_better_province": "Córdoba",
+  "reference_decision": {
+    "better_province": "Córdoba",
+    "decision_metric": "candidate_pool_pct = conditional_pct + eligible_pct",
+    "records": [
+      {
+        "province": "Murcia",
+        "not_eligible_pct": 14.6,
+        "conditional_pct": 16.8,
+        "eligible_pct": 68.5,
+        "candidate_pool_pct": 85.3
+      },
+      {
+        "province": "Córdoba",
+        "not_eligible_pct": 11.0,
+        "conditional_pct": 20.6,
+        "eligible_pct": 68.4,
+        "candidate_pool_pct": 89.0
+      }
+    ]
+  },
+  "observed_records": [
+    {
+      "province": "Murcia",
+      "not_eligible": 0,
+      "conditional": 0,
+      "eligible": 0,
+      "candidate_pool": 0
+    },
+    {
+      "province": "Cordoba",
+      "not_eligible": 0,
+      "conditional": 0,
+      "eligible": 0,
+      "candidate_pool": 0
+    }
+  ]
+}

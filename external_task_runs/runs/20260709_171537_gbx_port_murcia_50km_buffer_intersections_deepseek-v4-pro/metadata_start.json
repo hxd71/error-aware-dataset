@@ -1,0 +1,25 @@
+{
+  "source_project": "GeoBenchX tools ported in GeoNatureAgent Benchmark",
+  "paper_case_id": "GeoBenchX-style spatial relationship task",
+  "task_id": "gbx_port_murcia_50km_buffer_intersections",
+  "category": "spatial_reasoning",
+  "difficulty": "medium",
+  "method_family": "metric buffering and topological predicate selection",
+  "task": "Create a 50 km buffer around the province of Murcia and list all Spanish provinces whose geometry intersects that buffer. Save the buffer and selected provinces.",
+  "notes": "Use a projected CRS with metre units before buffering. Use the intersects predicate against the 50 km buffer, not within or contains. Preserve EPSG:4326 in GeoJSON outputs.",
+  "data_files": [
+    "spain_provinces.geojson"
+  ],
+  "data_locations": [
+    "<LOCAL_REPO_ROOT>\\external_task_runs\\data\\geonature\\spain_provinces.geojson"
+  ],
+  "required_outputs": [
+    "murcia_50km_buffer.geojson",
+    "murcia_50km_intersecting_provinces.csv",
+    "murcia_50km_intersections_map.png"
+  ],
+  "model": "deepseek-v4-pro",
+  "base_url": "https://api.deepseek.com/v1",
+  "started_at": "20260709_171537",
+  "status": "started"
+}

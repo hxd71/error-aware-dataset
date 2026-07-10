@@ -1,0 +1,51 @@
+[
+  {
+    "step_index": 1,
+    "reference_function": "load_data",
+    "generated_function": "load_data",
+    "reference_arguments": "{\"dataset\": \"Rural population\", \"output_dataframe_name\": \"rural_pop\"}",
+    "generated_arguments": "{\"dataset\": \"Rural population\", \"output_dataframe_name\": \"rural_pop_df\"}"
+  },
+  {
+    "step_index": 2,
+    "reference_function": "load_data",
+    "generated_function": "load_geodata",
+    "reference_arguments": "{\"dataset\": \"Population, total\", \"output_dataframe_name\": \"total_pop\"}",
+    "generated_arguments": "{\"geodataset\": \"Countries\", \"output_geodataframe_name\": \"countries_gdf\"}"
+  },
+  {
+    "step_index": 3,
+    "reference_function": "calculate_columns",
+    "generated_function": "merge_dataframes",
+    "reference_arguments": "{\"dataframe1_name\": \"rural_pop\", \"column1_name\": \"2023\", \"dataframe2_name\": \"total_pop\", \"column2_name\": \"2023\", \"operation\": \"divide\", \"output_column_name\": \"rural_percentage\", \"output_dataframe_name\": \"rural_percent_df\"}",
+    "generated_arguments": "{\"dataframe_name\": \"rural_pop_df\", \"geodataframe_name\": \"countries_gdf\", \"statkey\": \"Country Code\", \"geokey\": \"WB_A3\", \"output_dataframe_name\": \"merged_rural_pop\"}"
+  },
+  {
+    "step_index": 4,
+    "reference_function": "scale_column_by_value",
+    "generated_function": "make_choropleth_map",
+    "reference_arguments": "{\"dataframe_name\": \"rural_percent_df\", \"column_name\": \"rural_percentage\", \"operation\": \"multiply\", \"value\": 100, \"output_column_name\": \"rural_percentage\", \"output_dataframe_name\": \"rural_percent_final\"}",
+    "generated_arguments": "{\"dataframe_name\": \"merged_rural_pop\", \"mappingkey\": \"2023\", \"legendtext\": \"Rural Population (%)\", \"colormap\": \"Population\"}"
+  },
+  {
+    "step_index": 5,
+    "reference_function": "load_geodata",
+    "generated_function": "",
+    "reference_arguments": "{\"geodataset\": \"Countries\", \"output_geodataframe_name\": \"world_geo\"}",
+    "generated_arguments": ""
+  },
+  {
+    "step_index": 6,
+    "reference_function": "merge_dataframes",
+    "generated_function": "",
+    "reference_arguments": "{\"dataframe_name\": \"rural_percent_final\", \"geodataframe_name\": \"world_geo\", \"statkey\": \"Country Code\", \"geokey\": \"WB_A3\", \"output_dataframe_name\": \"world_rural_geo\"}",
+    "generated_arguments": ""
+  },
+  {
+    "step_index": 7,
+    "reference_function": "make_choropleth_map",
+    "generated_function": "",
+    "reference_arguments": "{\"dataframe_name\": \"world_rural_geo\", \"mappingkey\": \"rural_percentage\", \"legendtext\": \"Rural Population (%)\", \"colormap\": \"Population\"}",
+    "generated_arguments": ""
+  }
+]

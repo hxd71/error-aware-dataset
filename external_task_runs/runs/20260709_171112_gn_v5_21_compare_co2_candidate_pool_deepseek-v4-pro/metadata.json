@@ -1,0 +1,40 @@
+{
+  "source_project": "GeoNatureAgent Benchmark",
+  "paper_case_id": "V5_21_comparison_close_values",
+  "task_id": "gn_v5_21_compare_co2_candidate_pool",
+  "category": "comparison",
+  "difficulty": "medium",
+  "method_family": "close-value comparison and indicator interpretation",
+  "task": "Compare CO2 geological storage suitability between Murcia and Cordoba. Which province is better suited?",
+  "notes": "GeoNatureAgent layer notes say the candidate pool is class 2 Eligible plus class 1 Conditional. Report not eligible, conditional, eligible, candidate_pool, and make the final decision using candidate_pool.",
+  "data_files": [
+    "province_rankings.json",
+    "layers_registry.yaml"
+  ],
+  "data_locations": [
+    "<LOCAL_REPO_ROOT>\\external_task_runs\\data\\geonature\\province_rankings.json",
+    "<LOCAL_REPO_ROOT>\\external_task_runs\\data\\geonature\\layers_registry.yaml"
+  ],
+  "required_outputs": [
+    "murcia_cordoba_co2_comparison.csv",
+    "murcia_cordoba_co2_decision.json",
+    "murcia_cordoba_co2_chart.png"
+  ],
+  "model": "deepseek-v4-pro",
+  "base_url": "https://api.deepseek.com/v1",
+  "started_at": "20260709_171112",
+  "status": "completed",
+  "execution_returncode": 0,
+  "missing_required_outputs": [],
+  "finished_at": "20260709_171214",
+  "output_files": [
+    "generated_code.py",
+    "metadata_start.json",
+    "model_response.txt",
+    "murcia_cordoba_co2_chart.png",
+    "murcia_cordoba_co2_comparison.csv",
+    "murcia_cordoba_co2_decision.json",
+    "prompt.txt",
+    "run.log"
+  ]
+}

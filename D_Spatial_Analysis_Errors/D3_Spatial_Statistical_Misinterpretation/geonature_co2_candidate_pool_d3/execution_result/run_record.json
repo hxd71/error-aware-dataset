@@ -1,0 +1,60 @@
+{
+  "source_run": "20260709_171112_gn_v5_21_compare_co2_candidate_pool_deepseek-v4-pro",
+  "status": "completed",
+  "execution_returncode": 0,
+  "missing_required_outputs": [],
+  "task_id": "gn_v5_21_compare_co2_candidate_pool",
+  "model": "deepseek-v4-pro",
+  "method_family": "close-value comparison and indicator interpretation",
+  "difficulty": "medium",
+  "audit_summary": {
+    "task_id": "gn_v5_21_compare_co2_candidate_pool",
+    "reference_decision": {
+      "better_province": "Córdoba",
+      "decision_metric": "candidate_pool_pct = conditional_pct + eligible_pct",
+      "records": [
+        {
+          "province": "Murcia",
+          "not_eligible_pct": 14.6,
+          "conditional_pct": 16.8,
+          "eligible_pct": 68.5,
+          "candidate_pool_pct": 85.3
+        },
+        {
+          "province": "Córdoba",
+          "not_eligible_pct": 11.0,
+          "conditional_pct": 20.6,
+          "eligible_pct": 68.4,
+          "candidate_pool_pct": 89.0
+        }
+      ]
+    },
+    "observed_records": [
+      {
+        "province": "Murcia",
+        "not_eligible": 0,
+        "conditional": 0,
+        "eligible": 0,
+        "candidate_pool": 0
+      },
+      {
+        "province": "Cordoba",
+        "not_eligible": 0,
+        "conditional": 0,
+        "eligible": 0,
+        "candidate_pool": 0
+      }
+    ],
+    "observed_candidate_pool_values": [
+      0.0,
+      0.0
+    ],
+    "expected_better_province": "Córdoba",
+    "all_observed_candidate_values_zero": true,
+    "reference_files": [
+      "reference/murcia_cordoba_co2_reference.csv",
+      "reference/murcia_cordoba_co2_reference_decision.json",
+      "reference/murcia_cordoba_co2_reference.png"
+    ]
+  }
+}

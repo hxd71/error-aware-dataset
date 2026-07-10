@@ -1,0 +1,22 @@
+Source project: GeoNatureAgent Benchmark
+Paper case id: V5_21_comparison_close_values
+Benchmark category: comparison
+Difficulty: medium
+Spatial method family: close-value comparison and indicator interpretation
+
+Task:
+Compare CO2 geological storage suitability between Murcia and Cordoba. Which province is better suited?
+
+Local data files:
+- data_source\province_rankings.json
+- data_source\layers_registry.yaml
+
+Important GIS/data interpretation notes:
+GeoNatureAgent layer notes say the candidate pool is class 2 Eligible plus class 1 Conditional. Report not eligible, conditional, eligible, candidate_pool, and make the final decision using candidate_pool.
+
+Required outputs:
+- murcia_cordoba_co2_comparison.csv
+- murcia_cordoba_co2_decision.json
+- murcia_cordoba_co2_chart.png
+
+Write a single complete Python script that performs the task and saves the requested outputs.

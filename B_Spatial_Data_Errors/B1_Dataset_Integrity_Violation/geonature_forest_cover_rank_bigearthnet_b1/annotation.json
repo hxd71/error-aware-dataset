@@ -1,0 +1,88 @@
+{
+  "sample_id": "geonature_forest_cover_rank_bigearthnet_b1",
+  "source": "GeoNatureAgent BigEarthNet Forest Cover Rank",
+  "task_id": "gn_v5_62_forest_cover_rank_bigearthnet",
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "reasoning": "direct request；thinking 开关未单列记录",
+    "framework": "GeoNatureAgent Benchmark"
+  },
+  "primary_label": "B1. Dataset Integrity Violation",
+  "secondary_labels": [],
+  "error_summary": "生成代码没有进入 BigEarthNet 的 `breakdown` 分类统计结构读取 class 1/2，而是把 district 顶层字典当作平铺类别字段，导致四个地区森林覆盖率全部为 0、排名全部为 1，破坏了 LULC 分类属性语义与空间单元排名结果。",
+  "result_previews": [
+    {
+      "source_artifact": "previews/forest_cover_rank_chart.png",
+      "stage": "最终成果",
+      "preview_file": "previews/forest_cover_rank_chart.png",
+      "description": "错误运行生成的森林覆盖排名柱状图，四个 district 均为 0。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "依据 BigEarthNet LULC breakdown 数据结构中 class 1 Coniferous Forest 与 class 2 Broadleaf Forest 的百分比独立计算",
+  "evidence_metrics": {
+    "observed_zero_forest_rows": 4,
+    "all_observed_values_zero": true,
+    "expected_top_district": "Portalegre",
+    "expected_top_forest_cover_pct": 75.2,
+    "reference_records": [
+      {
+        "District": "Portalegre",
+        "ConiferousPct": 13.2,
+        "BroadleafPct": 62.0,
+        "ForestCoverPct": 75.2,
+        "ForestPatchEstimate": 4674.43,
+        "Rank": 1
+      },
+      {
+        "District": "Lisboa",
+        "ConiferousPct": 23.1,
+        "BroadleafPct": 22.1,
+        "ForestCoverPct": 45.2,
+        "ForestPatchEstimate": 648.62,
+        "Rank": 2
+      },
+      {
+        "District": "Faro",
+        "ConiferousPct": 2.0,
+        "BroadleafPct": 35.0,
+        "ForestCoverPct": 37.0,
+        "ForestPatchEstimate": 2503.79,
+        "Rank": 3
+      },
+      {
+        "District": "Beja",
+        "ConiferousPct": 2.7,
+        "BroadleafPct": 33.8,
+        "ForestCoverPct": 36.5,
+        "ForestPatchEstimate": 5262.94,
+        "Rank": 4
+      }
+    ],
+    "observed_records": [
+      {
+        "District": "Beja",
+        "ForestCover": 0,
+        "Rank": 1
+      },
+      {
+        "District": "Faro",
+        "ForestCover": 0,
+        "Rank": 1
+      },
+      {
+        "District": "Lisboa",
+        "ForestCover": 0,
+        "Rank": 1
+      },
+      {
+        "District": "Portalegre",
+        "ForestCover": 0,
+        "Rank": 1
+      }
+    ]
+  }
+}

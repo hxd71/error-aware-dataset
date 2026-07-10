@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+
+# Local cache of the official GeoBenchX data archive. Promoted samples copy
+# the required task inputs into their own data_source folders.
+external_task_runs/data/geobenchx/Data.zip
+external_task_runs/data/geobenchx/Data/
+external_task_runs/geobenchx_drive_probe.html

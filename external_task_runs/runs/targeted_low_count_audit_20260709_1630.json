@@ -1,0 +1,178 @@
+{
+  "axis_order_sc_hospitals": {
+    "run_dir": "<LOCAL_REPO_ROOT>\\external_task_runs\\runs\\20260709_163054_axis_order_sc_hospitals_direct_deepseek-v4-pro",
+    "declared_target_label": "A1. Coordinate Axis Misinterpretation",
+    "observed_error_label": "C2. Invalid Geometry Handling",
+    "execution_status_from_runner": "completed_but_no_requested_outputs",
+    "requested_outputs_present": {
+      "axis_order_hospitals_points.geojson": false,
+      "axis_order_hospitals_map.png": false
+    },
+    "zip_polygon_count": 424,
+    "invalid_zip_geometry_count": 50,
+    "invalid_examples": [
+      {
+        "index": 13,
+        "validity_reason": "Self-intersection[-82.3584508586674 34.8710064227577]",
+        "bounds": [
+          -82.38754,
+          34.728935,
+          -82.254825,
+          34.878389999999996
+        ]
+      },
+      {
+        "index": 21,
+        "validity_reason": "Self-intersection[-82.5780998627104 34.4764854676698]",
+        "bounds": [
+          -82.720754,
+          34.325067,
+          -82.509281,
+          34.655609999999996
+        ]
+      },
+      {
+        "index": 23,
+        "validity_reason": "Self-intersection[-82.7677789457288 34.6035361803451]",
+        "bounds": [
+          -82.862329,
+          34.502054,
+          -82.65077,
+          34.633055
+        ]
+      },
+      {
+        "index": 25,
+        "validity_reason": "Self-intersection[-82.5780998627104 34.4764854676698]",
+        "bounds": [
+          -82.6044,
+          34.353975,
+          -82.31623599999999,
+          34.617900999999996
+        ]
+      },
+      {
+        "index": 42,
+        "validity_reason": "Self-intersection[-82.2248381408637 34.3761490229396]",
+        "bounds": [
+          -82.33080799999999,
+          34.216971,
+          -82.114012,
+          34.381096
+        ]
+      }
+    ],
+    "manual_error_contains_topology_exception": true,
+    "manual_error_summary": "unary_union(sc_zip.geometry.values) raised shapely.errors.GEOSException TopologyException because the SC ZIP boundary dataset contains invalid polygon geometry; generated code did not validate/repair before union.",
+    "evidence_files": [
+      "final_direct_code.py",
+      "generated_direct_code.py",
+      "run.log",
+      "manual_reexecution_error.log",
+      "metadata.json"
+    ],
+    "verdict": "main_dataset_candidate_C2_invalid_geometry_handling"
+  },
+  "population_equal_interval_nc": {
+    "run_dir": "<LOCAL_REPO_ROOT>\\external_task_runs\\runs\\20260709_163151_population_equal_interval_nc_direct_deepseek-v4-pro",
+    "declared_target_label": "E1. Classification Scheme Misuse",
+    "requested_outputs_present": {
+      "nc_population_equal_interval_map.png": true,
+      "nc_population_equal_interval_class_counts.csv": true
+    },
+    "merged_tract_count": 2195,
+    "csv_class_count_rows": 5,
+    "csv_counts_sum": 2195,
+    "correct_equal_interval_edges_5_classes": [
+      0.0,
+      3952.2,
+      7904.4,
+      11856.599999999999,
+      15808.8,
+      19761.0
+    ],
+    "correct_equal_interval_counts_5_classes": [
+      876,
+      1157,
+      139,
+      19,
+      4
+    ],
+    "csv_counts_reported": [
+      876,
+      1157,
+      139,
+      19,
+      4
+    ],
+    "mapclassify_userdefined_class_count_if_code_bins_are_used": 6,
+    "mapclassify_userdefined_bins_if_code_bins_are_used": [
+      0.0,
+      3952.2,
+      7904.4,
+      11856.599999999999,
+      15808.8,
+      19761.0
+    ],
+    "mapclassify_userdefined_counts_if_code_bins_are_used": [
+      25,
+      851,
+      1157,
+      139,
+      19,
+      4
+    ],
+    "mapclassify_error": null,
+    "code_uses_userdefined_with_full_edges": true,
+    "manual_error_summary": "The CSV uses pandas.cut with 5 equal-width intervals, but the map call passes all 6 bin edges to mapclassify.UserDefined. UserDefined treats every supplied value as an upper bound, producing 6 displayed classes rather than the requested exactly five equal-interval classes.",
+    "evidence_files": [
+      "final_direct_code.py",
+      "generated_direct_code.py",
+      "run.log",
+      "metadata.json",
+      "nc_population_equal_interval_map.png",
+      "nc_population_equal_interval_class_counts.csv"
+    ],
+    "verdict": "main_dataset_candidate_E1_classification_scheme_misuse"
+  },
+  "invalid_polygon_repair": {
+    "run_dir": "<LOCAL_REPO_ROOT>\\external_task_runs\\runs\\20260709_163312_invalid_polygon_repair_direct_deepseek-v4-pro",
+    "declared_target_label": "C2. Invalid Geometry Handling",
+    "requested_outputs_present": {
+      "repaired_polygons.geojson": true,
+      "repaired_polygon_areas.csv": true,
+      "repaired_polygons_map.png": true
+    },
+    "input_validity": {
+      "bowtie_001": false,
+      "valid_001": true
+    },
+    "output_validity": {
+      "bowtie_001": true,
+      "valid_001": true
+    },
+    "csv_original_validity": {
+      "bowtie_001": false,
+      "valid_001": true
+    },
+    "csv_repaired_validity": {
+      "bowtie_001": true,
+      "valid_001": true
+    },
+    "area_km2_positive_all": true,
+    "geometry_types": [
+      "MultiPolygon",
+      "Polygon"
+    ],
+    "evidence_files": [
+      "final_direct_code.py",
+      "generated_direct_code.py",
+      "run.log",
+      "metadata.json",
+      "repaired_polygons.geojson",
+      "repaired_polygon_areas.csv",
+      "repaired_polygons_map.png"
+    ],
+    "verdict": "pass_control_correct_invalid_geometry_repair"
+  }
+}

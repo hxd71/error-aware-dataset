@@ -1,0 +1,13 @@
+{
+  "source": "GeoBenchX evaluator tuning set",
+  "model": "claude-3-5-haiku-20241022",
+  "temperature": 0,
+  "task_ID": "TASK_250309_135125_367674",
+  "task_text": "Make a heatmap showing population concentration in earthquake-affected zones",
+  "task_labels": [
+    "Vague",
+    "Heatmaps, Contour Lines",
+    "Task Set 04"
+  ],
+  "note": "The original benchmark stores the generated tool-call solution and human evaluation, not a full chat transcript. This package materializes that trace and re-audits it against local GeoBenchX data."
+}

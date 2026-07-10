@@ -1,0 +1,85 @@
+import json
+import os
+
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# ----------------------------------------------------------------------
+# 1. Load the BigEarthNet Portugal statistics
+# ----------------------------------------------------------------------
+data_path = r"<LOCAL_REPO_ROOT>\external_task_runs\data\geonature\bigearthnet_portugal_stats.json"
+with open(data_path, "r", encoding="utf-8") as f:
+    stats = json.load(f)
+
+# ----------------------------------------------------------------------
+# 2. Extract forest cover for the four required districts
+# ----------------------------------------------------------------------
+target_districts = ["Beja", "Faro", "Lisboa", "Portalegre"]
+records = []
+
+for district in target_districts:
+    if district not in stats:
+        raise KeyError(f"District '{district}' not found in the statistics file.")
+    dist_data = stats[district]  # assumed to be dict of class -> pixel count
+
+    # Retrieve coniferous (class 1) and broadleaf (class 2) values.
+    # Several possible key naming conventions are handled.
+    coniferous = (
+        dist_data.get("1")
+        or dist_data.get("class_1")
+        or dist_data.get("Coniferous Forest")
+        or 0
+    )
+    broadleaf = (
+        dist_data.get("2")
+        or dist_data.get("class_2")
+        or dist_data.get("Broadleaf Forest")
+        or 0
+    )
+    forest_cover = coniferous + broadleaf
+    records.append({"District": district, "ForestCover": forest_cover})
+
+# ----------------------------------------------------------------------
+# 3. Build ranked DataFrame
+# ----------------------------------------------------------------------
+df = pd.DataFrame(records)
+df["Rank"] = df["ForestCover"].rank(ascending=False, method="dense").astype(int)
+df = df.sort_values("ForestCover", ascending=False).reset_index(drop=True)
+
+# ----------------------------------------------------------------------
+# 4. Save tabular outputs
+# ----------------------------------------------------------------------
+df.to_csv("forest_cover_rank.csv", index=False)
+
+json_records = df.to_dict(orient="records")
+with open("forest_cover_rank.json", "w", encoding="utf-8") as f:
+    json.dump(json_records, f, indent=2)
+
+# ----------------------------------------------------------------------
+# 5. Create and save the bar chart
+# ----------------------------------------------------------------------
+fig, ax = plt.subplots(figsize=(8, 5))
+bars = ax.bar(df["District"], df["ForestCover"])
+
+# Annotate each bar with its rank
+for bar, rank in zip(bars, df["Rank"]):
+    yval = bar.get_height()
+    ax.text(
+        bar.get_x() + bar.get_width() / 2,
+        yval + max(0.5, yval * 0.01),   # small offset
+        f"#{rank}",
+        ha="center",
+        va="bottom",
+        fontweight="bold",
+    )
+
+ax.set_xlabel("District")
+ax.set_ylabel("Forest Cover (pixels)")
+ax.set_title("Forest Cover Rank (Coniferous + Broadleaf)")
+plt.tight_layout()
+plt.savefig("forest_cover_rank_chart.png")
+plt.close()
+
+print("forest_cover_rank.csv, forest_cover_rank.json and forest_cover_rank_chart.png created.")

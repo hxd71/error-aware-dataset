@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d2" for="node" attr.name="description" attr.type="string"/>
+<key id="d1" for="node" attr.name="data_path" attr.type="string"/>
+<key id="d0" for="node" attr.name="node_type" attr.type="string"/>
+<graph edgedefault="directed"><node id="zip_shp_path">
+  <data key="d0">data</data>
+  <data key="d1"><LOCAL_REPO_ROOT>\external_task_runs\data\llm_geo\hospital_accessibility_sc\sc_zip_boundary.zip</data>
+  <data key="d2">SC zipcode boundary shapefile (WGS84)</data>
+</node>
+<node id="hospitals_csv_path">
+  <data key="d0">data</data>
+  <data key="d1"><LOCAL_REPO_ROOT>\external_task_runs\data\llm_geo\hospital_accessibility_sc\SC_hospitals_with_emergency_room_cleaned.csv</data>
+  <data key="d2">SC hospitals with emergency room CSV (long/lat columns)</data>
+</node>
+<node id="load_zipcodes">
+  <data key="d0">operation</data>
+  <data key="d2">Load SC zipcode shapefile into a GeoDataFrame</data>
+</node>
+<node id="zipcodes_gdf">
+  <data key="d0">data</data>
+  <data key="d1"></data>
+  <data key="d2">GeoDataFrame of SC zipcodes (WGS84)</data>
+</node>
+<node id="load_hospitals_as_gdf">
+  <data key="d0">operation</data>
+  <data key="d2">Load hospitals CSV, create GeoDataFrame with point geometry from Longitude/Latitude</data>
+</node>
+<node id="hospitals_gdf">
+  <data key="d0">data</data>
+  <data key="d1"></data>
+  <data key="d2">GeoDataFrame of SC hospitals (WGS84)</data>
+</node>
+<node id="reproject_zipcodes">
+  <data key="d0">operation</data>
+  <data key="d2">Reproject zipcodes to NAD83 / South Carolina (EPSG:32133) for accurate distance calculation</data>
+</node>
+<node id="zipcodes_proj">
+  <data key="d0">data</data>
+  <data key="d1"></data>
+  <data key="d2">SC zipcodes reprojected to EPSG:32133 (meters)</data>
+</node>
+<node id="reproject_hospitals">
+  <data key="d0">operation</data>
+  <data key="d2">Reproject hospitals to NAD83 / South Carolina (EPSG:32133)</data>
+</node>
+<node id="hospitals_proj">
+  <data key="d0">data</data>
+  <data key="d1"></data>
+  <data key="d2">SC hospitals reprojected to EPSG:32133 (meters)</data>
+</node>
+<node id="compute_centroids">
+  <data key="d0">operation</data>
+  <data key="d2">Create a GeoDataFrame of zipcode centroids, retaining all attributes</data>
+</node>
+<node id="centroids_gdf">
+  <data key="d0">data</data>
+  <data key="d1"></data>
+  <data key="d2">Zipcode centroids (EPSG:32133) with ZIPCODE attribute</data>
+</node>
+<node id="sjoin_nearest_hospital">
+  <data key="d0">operation</data>
+  <data key="d2">For each centroid, find nearest hospital and calculate distance in kilometers</data>
+</node>
+<node id="centroids_with_distance_km">
+  <data key="d0">data</data>
+  <data key="d1"></data>
+  <data key="d2">Centroids with added column 'dist_km' (distance to nearest hospital)</data>
+</node>
+<node id="merge_dist_to_zipcodes">
+  <data key="d0">operation</data>
+  <data key="d2">Join the computed distance (by ZIPCODE) to the projected zipcode polygons</data>
+</node>
+<node id="zipcodes_with_dist">
+  <data key="d0">data</data>
+  <data key="d1"></data>
+  <data key="d2">Projected zipcodes with 'dist_km' attribute for choropleth mapping</data>
+</node>
+<node id="plot_map">
+  <data key="d0">operation</data>
+  <data key="d2">Create choropleth map of distance (km) to nearest hospital, with hospital points overlaid</data>
+</node>
+<node id="map_figure">
+  <data key="d0">data</data>
+  <data key="d1"></data>
+  <data key="d2">Final choropleth map (Matplotlib figure) showing distances and hospital locations</data>
+</node>
+<edge source="zip_shp_path" target="load_zipcodes"/>
+<edge source="hospitals_csv_path" target="load_hospitals_as_gdf"/>
+<edge source="load_zipcodes" target="zipcodes_gdf"/>
+<edge source="zipcodes_gdf" target="reproject_zipcodes"/>
+<edge source="load_hospitals_as_gdf" target="hospitals_gdf"/>
+<edge source="hospitals_gdf" target="reproject_hospitals"/>
+<edge source="reproject_zipcodes" target="zipcodes_proj"/>
+<edge source="zipcodes_proj" target="compute_centroids"/>
+<edge source="zipcodes_proj" target="merge_dist_to_zipcodes"/>
+<edge source="reproject_hospitals" target="hospitals_proj"/>
+<edge source="hospitals_proj" target="sjoin_nearest_hospital"/>
+<edge source="hospitals_proj" target="plot_map"/>
+<edge source="compute_centroids" target="centroids_gdf"/>
+<edge source="centroids_gdf" target="sjoin_nearest_hospital"/>
+<edge source="sjoin_nearest_hospital" target="centroids_with_distance_km"/>
+<edge source="centroids_with_distance_km" target="merge_dist_to_zipcodes"/>
+<edge source="merge_dist_to_zipcodes" target="zipcodes_with_dist"/>
+<edge source="zipcodes_with_dist" target="plot_map"/>
+<edge source="plot_map" target="map_figure"/>
+</graph></graphml>

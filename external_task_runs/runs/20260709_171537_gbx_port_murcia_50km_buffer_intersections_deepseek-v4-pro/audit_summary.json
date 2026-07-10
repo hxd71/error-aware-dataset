@@ -1,0 +1,28 @@
+{
+  "task_id": "gbx_port_murcia_50km_buffer_intersections",
+  "total_features": 52,
+  "cleaned_features": 52,
+  "total_rings": 1124,
+  "dropped_degenerate_rings": 834,
+  "features_with_dropped_rings": 14,
+  "buffer_distance_m": 50000,
+  "projected_crs": "EPSG:25830",
+  "intersecting_province_count": 7,
+  "intersecting_provinces": [
+    "Alacant/Alicante",
+    "Albacete",
+    "Almería",
+    "Granada",
+    "Murcia",
+    "València/Valencia",
+    "Jaén"
+  ],
+  "observed_error": "ValueError: A linearring requires at least 4 coordinates.",
+  "reference_files": [
+    "reference/murcia_50km_intersecting_provinces_reference.csv",
+    "reference/murcia_50km_intersecting_provinces_reference.json",
+    "reference/murcia_50km_buffer_reference.geojson",
+    "reference/murcia_50km_selected_provinces_reference.geojson",
+    "reference/murcia_50km_intersections_reference.png"
+  ]
+}

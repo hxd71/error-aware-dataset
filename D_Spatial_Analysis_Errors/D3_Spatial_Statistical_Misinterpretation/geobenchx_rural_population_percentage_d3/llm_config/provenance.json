@@ -1,0 +1,7 @@
+{
+  "source": "GeoBenchX Rural Population Percentages",
+  "source_project": "GeoBenchX",
+  "paper_case_id": "TASK_250309_135125_748943",
+  "snapshot": "published GeoBenchX evaluator tuning trace with local data audit",
+  "note": "密钥、服务端点和本机绝对路径已隐去；原始材料来自 GeoBenchX benchmark_set/evaluator_tuning_set.json。"
+}

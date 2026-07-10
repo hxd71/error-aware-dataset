@@ -1,0 +1,38 @@
+{
+  "source_project": "GeoNatureAgent Benchmark",
+  "paper_case_id": "V5_62_list_layers_habitat_years",
+  "task_id": "gn_v5_62_forest_cover_rank_bigearthnet",
+  "category": "tool_selection",
+  "difficulty": "hard",
+  "method_family": "categorical aggregation and ranking",
+  "task": "Create a chart ranking Beja, Faro, Lisboa, and Portalegre by their total forest cover (coniferous + broadleaf) using the BigEarthNet data.",
+  "notes": "Total forest cover must be class 1 Coniferous Forest plus class 2 Broadleaf Forest. Do not include shrubland or grassland in forest cover.",
+  "data_files": [
+    "bigearthnet_portugal_stats.json"
+  ],
+  "data_locations": [
+    "<LOCAL_REPO_ROOT>\\external_task_runs\\data\\geonature\\bigearthnet_portugal_stats.json"
+  ],
+  "required_outputs": [
+    "forest_cover_rank.csv",
+    "forest_cover_rank.json",
+    "forest_cover_rank_chart.png"
+  ],
+  "model": "deepseek-v4-pro",
+  "base_url": "https://api.deepseek.com/v1",
+  "started_at": "20260709_171038",
+  "status": "completed",
+  "execution_returncode": 0,
+  "missing_required_outputs": [],
+  "finished_at": "20260709_171111",
+  "output_files": [
+    "forest_cover_rank.csv",
+    "forest_cover_rank.json",
+    "forest_cover_rank_chart.png",
+    "generated_code.py",
+    "metadata_start.json",
+    "model_response.txt",
+    "prompt.txt",
+    "run.log"
+  ]
+}

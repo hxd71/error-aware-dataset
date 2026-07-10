@@ -1,0 +1,13 @@
+{
+  "status": "audited_trace",
+  "execution_returncode": 0,
+  "task_id": "geobenchx_task_367674",
+  "source_task_id": "TASK_250309_135125_367674",
+  "model": "claude-3-5-haiku-20241022",
+  "provider": "Anthropic",
+  "method_family": "raster-to-point extraction and weighted heatmap visualization",
+  "difficulty": "hard",
+  "human_score": 0,
+  "human_reasoning": "The candidate solution does not match to any of the reference solutions. It does load correct datasets, but misses important step 'get_values_from_raster_with_geometries' to get population in earthquakes locations and produces heatmap of earthquakes instead of population. Also it contains extra step \"filter_numerical\" to select major earthquakes though the task does not require this.",
+  "missing_required_outputs": []
+}

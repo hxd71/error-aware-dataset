@@ -1,0 +1,82 @@
+{
+  "reference_mapping_key": "rural_percentage",
+  "generated_mapping_key": "2023",
+  "missing_reference_steps": [
+    "calculate_columns",
+    "scale_column_by_value"
+  ],
+  "omitted_total_population_dataset": true,
+  "observed_legend_text": "Rural Population (%)",
+  "raw_rural_population_2023_max": 909121500.0,
+  "rural_percentage_max": 86.2770041736,
+  "reference_top_rural_percentage": [
+    {
+      "mapped_country_name": "Papua New Guinea",
+      "rural_percentage": 86.2770041736
+    },
+    {
+      "mapped_country_name": "Liechtenstein",
+      "rural_percentage": 85.38298302344381
+    },
+    {
+      "mapped_country_name": "Burundi",
+      "rural_percentage": 85.21599669571287
+    },
+    {
+      "mapped_country_name": "Niger",
+      "rural_percentage": 82.94599943101535
+    },
+    {
+      "mapped_country_name": "Samoa",
+      "rural_percentage": 82.4921016833495
+    },
+    {
+      "mapped_country_name": "Rwanda",
+      "rural_percentage": 82.10799774638421
+    },
+    {
+      "mapped_country_name": "Malawi",
+      "rural_percentage": 81.7200003955713
+    },
+    {
+      "mapped_country_name": "Saint Lucia",
+      "rural_percentage": 80.8278456152809
+    }
+  ],
+  "generated_top_raw_rural_population": [
+    {
+      "mapped_country_name": "India",
+      "rural_population_2023": 909121500.0
+    },
+    {
+      "mapped_country_name": "China",
+      "rural_population_2023": 499814553.0
+    },
+    {
+      "mapped_country_name": "Pakistan",
+      "rural_population_2023": 149004914.0
+    },
+    {
+      "mapped_country_name": "Indonesia",
+      "rural_population_2023": 114976836.0
+    },
+    {
+      "mapped_country_name": "Bangladesh",
+      "rural_population_2023": 102954517.0
+    },
+    {
+      "mapped_country_name": "Nigeria",
+      "rural_population_2023": 102316764.0
+    },
+    {
+      "mapped_country_name": "Ethiopia",
+      "rural_population_2023": 97227189.0
+    },
+    {
+      "mapped_country_name": "Egypt, Arab Rep.",
+      "rural_population_2023": 64135744.0
+    }
+  ],
+  "human_score": 0,
+  "human_reasoning": "The candidate solution uses less tools than the reference solution. The candidate solution does not calculate the percentage of the rural population but directly maps its total value, though the question was about the percentages. So the candidate solution is not a match to the reference solution."
+}

@@ -1,0 +1,41 @@
+{
+  "steps": [
+    {
+      "function_name": "load_data",
+      "arguments": {
+        "dataset": "Rural population",
+        "output_dataframe_name": "rural_pop_df"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "load_geodata",
+      "arguments": {
+        "geodataset": "Countries",
+        "output_geodataframe_name": "countries_gdf"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "merge_dataframes",
+      "arguments": {
+        "dataframe_name": "rural_pop_df",
+        "geodataframe_name": "countries_gdf",
+        "statkey": "Country Code",
+        "geokey": "WB_A3",
+        "output_dataframe_name": "merged_rural_pop"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "make_choropleth_map",
+      "arguments": {
+        "dataframe_name": "merged_rural_pop",
+        "mappingkey": "2023",
+        "legendtext": "Rural Population (%)",
+        "colormap": "Population"
+      },
+      "comment": null
+    }
+  ]
+}

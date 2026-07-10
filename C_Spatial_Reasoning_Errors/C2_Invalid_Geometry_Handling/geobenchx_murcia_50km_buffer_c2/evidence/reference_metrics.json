@@ -1,0 +1,19 @@
+{
+  "total_features": 52,
+  "total_rings": 1124,
+  "dropped_degenerate_rings": 834,
+  "features_with_dropped_rings": 14,
+  "observed_error": "ValueError: A linearring requires at least 4 coordinates.",
+  "buffer_distance_m": 50000,
+  "projected_crs": "EPSG:25830",
+  "intersecting_province_count": 7,
+  "intersecting_provinces": [
+    "Alacant/Alicante",
+    "Albacete",
+    "Almería",
+    "Granada",
+    "Murcia",
+    "València/Valencia",
+    "Jaén"
+  ]
+}

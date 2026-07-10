@@ -1,0 +1,25 @@
+{
+  "source_project": "GeoNatureAgent Benchmark",
+  "paper_case_id": "V5_50_threshold_dual_indicator",
+  "task_id": "gn_v5_50_dual_indicator_high_priority",
+  "category": "threshold",
+  "difficulty": "hard",
+  "method_family": "cross-indicator threshold filtering",
+  "task": "Find provinces where mean gully erosion exceeds 65% AND CO2 eligibility exceeds 60%. These would be high-priority areas needing both reforestation and geological storage.",
+  "notes": "Both thresholds are strict greater-than comparisons. Use erosion.mean_pct and co2.eligible_pct; do not use max erosion or conditional CO2.",
+  "data_files": [
+    "province_rankings.json"
+  ],
+  "data_locations": [
+    "<LOCAL_REPO_ROOT>\\external_task_runs\\data\\geonature\\province_rankings.json"
+  ],
+  "required_outputs": [
+    "dual_indicator_high_priority.csv",
+    "dual_indicator_high_priority.json",
+    "dual_indicator_high_priority_chart.png"
+  ],
+  "model": "deepseek-v4-pro",
+  "base_url": "https://api.deepseek.com/v1",
+  "started_at": "20260709_171251",
+  "status": "started"
+}

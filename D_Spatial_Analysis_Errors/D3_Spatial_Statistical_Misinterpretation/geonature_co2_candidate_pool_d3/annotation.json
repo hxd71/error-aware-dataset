@@ -1,0 +1,70 @@
+{
+  "sample_id": "geonature_co2_candidate_pool_d3",
+  "source": "GeoNatureAgent CO2 Candidate Pool Comparison",
+  "task_id": "gn_v5_21_compare_co2_candidate_pool",
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "reasoning": "direct request；thinking 开关未单列记录",
+    "framework": "GeoNatureAgent Benchmark"
+  },
+  "primary_label": "D3. Spatial Statistical Misinterpretation",
+  "secondary_labels": [],
+  "error_summary": "生成代码没有进入 `provinces -> <province> -> co2` 指标层，所有 CO2 适宜性百分比回退为 0，并给出 Equal 决策；参考值显示 Murcia 候选池为 85.3%，Córdoba 为 89.0%，正确结论应为 Córdoba 更适合。",
+  "result_previews": [
+    {
+      "source_artifact": "previews/murcia_cordoba_co2_chart.png",
+      "stage": "最终成果",
+      "preview_file": "previews/murcia_cordoba_co2_chart.png",
+      "description": "错误运行生成的 CO2 适宜性图，Murcia 与 Cordoba 均为 0。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "依据 province_rankings.json 中 provinces -> province -> co2 的 not_eligible_pct、conditional_pct、eligible_pct 独立计算",
+  "evidence_metrics": {
+    "observed_candidate_pool_values": [
+      0.0,
+      0.0
+    ],
+    "all_observed_candidate_values_zero": true,
+    "expected_better_province": "Córdoba",
+    "reference_decision": {
+      "better_province": "Córdoba",
+      "decision_metric": "candidate_pool_pct = conditional_pct + eligible_pct",
+      "records": [
+        {
+          "province": "Murcia",
+          "not_eligible_pct": 14.6,
+          "conditional_pct": 16.8,
+          "eligible_pct": 68.5,
+          "candidate_pool_pct": 85.3
+        },
+        {
+          "province": "Córdoba",
+          "not_eligible_pct": 11.0,
+          "conditional_pct": 20.6,
+          "eligible_pct": 68.4,
+          "candidate_pool_pct": 89.0
+        }
+      ]
+    },
+    "observed_records": [
+      {
+        "province": "Murcia",
+        "not_eligible": 0,
+        "conditional": 0,
+        "eligible": 0,
+        "candidate_pool": 0
+      },
+      {
+        "province": "Cordoba",
+        "not_eligible": 0,
+        "conditional": 0,
+        "eligible": 0,
+        "candidate_pool": 0
+      }
+    ]
+  }
+}

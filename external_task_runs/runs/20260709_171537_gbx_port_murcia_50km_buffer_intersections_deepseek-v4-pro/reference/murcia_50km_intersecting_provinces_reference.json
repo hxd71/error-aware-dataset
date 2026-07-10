@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Alacant/Alicante",
+    "code": "03",
+    "distance_to_murcia_m": 0.0
+  },
+  {
+    "name": "Albacete",
+    "code": "02",
+    "distance_to_murcia_m": 0.0
+  },
+  {
+    "name": "Almería",
+    "code": "04",
+    "distance_to_murcia_m": 0.0
+  },
+  {
+    "name": "Granada",
+    "code": "18",
+    "distance_to_murcia_m": 0.0
+  },
+  {
+    "name": "Murcia",
+    "code": "30",
+    "distance_to_murcia_m": 0.0
+  },
+  {
+    "name": "València/Valencia",
+    "code": "46",
+    "distance_to_murcia_m": 16108.41
+  },
+  {
+    "name": "Jaén",
+    "code": "23",
+    "distance_to_murcia_m": 16267.05
+  }
+]

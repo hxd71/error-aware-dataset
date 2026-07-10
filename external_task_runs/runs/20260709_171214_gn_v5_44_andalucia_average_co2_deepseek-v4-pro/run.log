@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "<LOCAL_REPO_ROOT>\external_task_runs\runs\20260709_171214_gn_v5_44_andalucia_average_co2_deepseek-v4-pro\generated_code.py", line 24, in <module>
+    rankings_data = json.load(f)
+                    ^^^^^^^^^^^^
+  File "<LOCAL_USER_PATH>", line 293, in load
+    return loads(fp.read(),
+                 ^^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0x94 in position 107: illegal multibyte sequence

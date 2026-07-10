@@ -1,0 +1,21 @@
+Source project: GeoNatureAgent Benchmark
+Paper case id: V5_31_habitat_province_single
+Benchmark category: habitat_analysis
+Difficulty: easy
+Spatial method family: categorical LULC composition
+
+Task:
+Analyze the land cover composition for the district of Beja in Portugal using the BigEarthNet LULC dataset.
+
+Local data files:
+- <LOCAL_REPO_ROOT>\external_task_runs\data\geonature\bigearthnet_portugal_stats.json
+
+Important GIS/data interpretation notes:
+Use the categorical class labels and percentages exactly as provided. Do not average numeric class codes or treat land-cover class IDs as ordinal values.
+
+Required outputs:
+- beja_lulc_breakdown.csv
+- beja_lulc_summary.json
+- beja_lulc_chart.png
+
+Write a single complete Python script that performs the task and saves the requested outputs.

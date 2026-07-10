@@ -1,0 +1,161 @@
+def direct_solution():
+    """
+    Task:
+    1) Draw a choropleth map showing COVID-19 death rate (deaths/cases) for contiguous US counties
+       using data from 2020-12-31, with quantile classification and Conus Albers projection.
+    2) Draw a scatter plot of death rate vs. senior resident rate, with regression line,
+       R² and p-value annotations.
+
+    Input:
+        - COVID-19 daily county-level CSV (us-counties-2020.csv)
+        - Contiguous US county boundaries shapefile (contiguous_counties.zip)
+        - ACS 2020 5-year county CSV (ACS2020_5year_county.csv)
+
+    Output:
+        - Two figures: choropleth map and scatter plot, both displayed on screen.
+    """
+
+    import geopandas as gpd
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from scipy.stats import linregress
+
+    # ------------------------------------------------------------------------
+    # 1. Paths to the datasets
+    # ------------------------------------------------------------------------
+    covid_file = r"<LOCAL_REPO_ROOT>\external_task_runs\data\llm_geo\covid_death_rate\us-counties-2020.csv"
+    county_zip = r"<LOCAL_REPO_ROOT>\external_task_runs\data\llm_geo\covid_death_rate\contiguous_counties.zip"
+    census_file = r"<LOCAL_REPO_ROOT>\external_task_runs\data\llm_geo\covid_death_rate\ACS2020_5year_county.csv"
+
+    # ------------------------------------------------------------------------
+    # 2. Load and prepare COVID-19 data
+    # ------------------------------------------------------------------------
+    # Read FIPS as string to preserve leading zeros when possible
+    covid_df = pd.read_csv(covid_file, dtype={'fips': str}, parse_dates=['date'])
+    # Filter to the target date
+    covid_2020 = covid_df[covid_df['date'] == '2020-12-31'].copy()
+    # Drop rows where cases or deaths are missing
+    covid_2020.dropna(subset=['cases', 'deaths'], inplace=True)
+    # Compute death rate; set NaN where cases == 0
+    covid_2020['death_rate'] = covid_2020['deaths'] / covid_2020['cases'].replace(0, np.nan)
+    covid_2020.dropna(subset=['death_rate'], inplace=True)
+    # Create a clean FIPS column with 5‑digit string (leading zeros)
+    covid_2020['fips_str'] = covid_2020['fips'].str.zfill(5)
+
+    # ------------------------------------------------------------------------
+    # 3. Load contiguous US county boundaries
+    # ------------------------------------------------------------------------
+    counties = gpd.read_file(county_zip)
+    # Convert GEOID to 5‑digit string
+    counties['GEOID_str'] = counties['GEOID'].astype(str).str.zfill(5)
+    # Reproject to Conus Albers (EPSG:5070) – the requested projection for the map
+    counties = counties.to_crs(epsg=5070)
+
+    # ------------------------------------------------------------------------
+    # 4. Load and prepare census data
+    # ------------------------------------------------------------------------
+    census_cols = [
+        'FIPS',
+        'Total Population',
+        'Total Population: 65 to 74 Years',
+        'Total Population: 75 to 84 Years',
+        'Total Population: 85 Years and Over'
+    ]
+    census = pd.read_csv(census_file, usecols=census_cols, dtype={'FIPS': str})
+    # Drop rows that have any NaN in the used columns
+    census.dropna(subset=census_cols, inplace=True)
+    # Create a clean 5‑digit FIPS string
+    census['FIPS_str'] = census['FIPS'].str.zfill(5)
+    # Senior population (65+)
+    census['senior_pop'] = (
+        census['Total Population: 65 to 74 Years'] +
+        census['Total Population: 75 to 84 Years'] +
+        census['Total Population: 85 Years and Over']
+    )
+    # Senior resident rate (senior_pop / total_pop); set NaN where total_pop == 0
+    census['senior_rate'] = census['senior_pop'] / census['Total Population'].replace(0, np.nan)
+    census.dropna(subset=['senior_rate'], inplace=True)
+
+    # ------------------------------------------------------------------------
+    # 5. Combine all data
+    # ------------------------------------------------------------------------
+    # Inner join ensures we keep only counties present in both COVID and boundaries
+    covid_gdf = counties.merge(
+        covid_2020[['fips_str', 'death_rate']],
+        left_on='GEOID_str',
+        right_on='fips_str',
+        how='inner'
+    )
+    # Merge with census senior rate
+    final_gdf = covid_gdf.merge(
+        census[['FIPS_str', 'senior_rate']],
+        left_on='GEOID_str',
+        right_on='FIPS_str',
+        how='inner'
+    )
+
+    # ------------------------------------------------------------------------
+    # 6. Choropleth map: Death rate with quantile classification
+    # ------------------------------------------------------------------------
+    fig, ax = plt.subplots(1, 1, figsize=(15, 10))
+    final_gdf.plot(
+        column='death_rate',
+        scheme='quantiles',
+        legend=True,
+        ax=ax,
+        legend_kwds={'title': 'Death Rate\n(deaths/case)'}
+    )
+    ax.set_title('COVID-19 Death Rate by County (2020-12-31)', fontsize=16)
+    ax.set_axis_off()
+    plt.tight_layout()
+
+    # ------------------------------------------------------------------------
+    # 7. Scatter plot: Death rate vs. senior resident rate with regression line
+    # ------------------------------------------------------------------------
+    fig2, ax2 = plt.subplots(figsize=(15, 10))
+
+    # Extract clean numeric arrays
+    x = final_gdf['senior_rate'].values
+    y = final_gdf['death_rate'].values
+    mask = np.isfinite(x) & np.isfinite(y)
+    x_clean = x[mask]
+    y_clean = y[mask]
+
+    # Linear regression
+    slope, intercept, r_value, p_value, std_err = linregress(x_clean, y_clean)
+    r_squared = r_value ** 2
+
+    # Scatter points with 50% transparency
+    ax2.scatter(x_clean, y_clean, alpha=0.5, label='County data')
+
+    # Regression line
+    line_x = np.linspace(x_clean.min(), x_clean.max(), 100)
+    line_y = slope * line_x + intercept
+    ax2.plot(line_x, line_y, color='red', linewidth=2, label='Regression line')
+
+    # Annotate R² and p‑value
+    annot_text = f"$R^2 = {r_squared:.4f}$\n$p \\text{{-value}} = {p_value:.4g}$"
+    ax2.annotate(
+        annot_text,
+        xy=(0.05, 0.95),
+        xycoords='axes fraction',
+        fontsize=12,
+        verticalalignment='top',
+        bbox=dict(boxstyle='round', facecolor='white', alpha=0.8)
+    )
+
+    ax2.set_xlabel('Senior Resident Rate (65 years and over)')
+    ax2.set_ylabel('Death Rate (deaths/case)')
+    ax2.set_title('COVID-19 Death Rate vs Senior Resident Rate by County')
+    ax2.legend()
+    plt.tight_layout()
+
+    # Display both figures
+    plt.show()
+
+
+# ----------------------------------------------------------------------------
+# Run the function (required for exec() execution)
+# ----------------------------------------------------------------------------
+direct_solution()

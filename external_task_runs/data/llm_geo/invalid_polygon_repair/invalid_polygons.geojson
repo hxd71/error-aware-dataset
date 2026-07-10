@@ -1,0 +1,80 @@
+{
+  "type": "FeatureCollection",
+  "name": "invalid_polygons",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "EPSG:4326"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "poly_id": "bowtie_001",
+        "description": "self-intersecting bow-tie polygon"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.95,
+              33.95
+            ],
+            [
+              -80.75,
+              34.15
+            ],
+            [
+              -80.95,
+              34.15
+            ],
+            [
+              -80.75,
+              33.95
+            ],
+            [
+              -80.95,
+              33.95
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "poly_id": "valid_001",
+        "description": "valid comparison polygon"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.55,
+              33.95
+            ],
+            [
+              -80.35,
+              33.95
+            ],
+            [
+              -80.35,
+              34.15
+            ],
+            [
+              -80.55,
+              34.15
+            ],
+            [
+              -80.55,
+              33.95
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

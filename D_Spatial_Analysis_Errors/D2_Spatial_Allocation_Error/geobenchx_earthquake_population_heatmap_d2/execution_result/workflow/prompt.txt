@@ -1,0 +1,5 @@
+GeoBenchX task trace materialization
+Task ID: TASK_250309_135125_367674
+Task: Make a heatmap showing population concentration in earthquake-affected zones
+Labels: Vague, Heatmaps, Contour Lines, Task Set 04
+Expected output: GeoBenchX tool-call sequence solving the task.

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "<LOCAL_REPO_ROOT>\external_task_runs\runs\20260709_171235_gn_v5_49_threshold_co2_high_deepseek-v4-pro\generated_code.py", line 26, in <module>
+    raise ValueError("Could not locate 'eligible_pct' column in the data.")
+ValueError: Could not locate 'eligible_pct' column in the data.

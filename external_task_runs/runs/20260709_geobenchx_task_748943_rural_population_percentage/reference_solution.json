@@ -1,0 +1,74 @@
+{
+  "steps": [
+    {
+      "function_name": "load_data",
+      "arguments": {
+        "dataset": "Rural population",
+        "output_dataframe_name": "rural_pop"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "load_data",
+      "arguments": {
+        "dataset": "Population, total",
+        "output_dataframe_name": "total_pop"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "calculate_columns",
+      "arguments": {
+        "dataframe1_name": "rural_pop",
+        "column1_name": "2023",
+        "dataframe2_name": "total_pop",
+        "column2_name": "2023",
+        "operation": "divide",
+        "output_column_name": "rural_percentage",
+        "output_dataframe_name": "rural_percent_df"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "scale_column_by_value",
+      "arguments": {
+        "dataframe_name": "rural_percent_df",
+        "column_name": "rural_percentage",
+        "operation": "multiply",
+        "value": 100,
+        "output_column_name": "rural_percentage",
+        "output_dataframe_name": "rural_percent_final"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "load_geodata",
+      "arguments": {
+        "geodataset": "Countries",
+        "output_geodataframe_name": "world_geo"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "merge_dataframes",
+      "arguments": {
+        "dataframe_name": "rural_percent_final",
+        "geodataframe_name": "world_geo",
+        "statkey": "Country Code",
+        "geokey": "WB_A3",
+        "output_dataframe_name": "world_rural_geo"
+      },
+      "comment": "If 'statkey' is 'Country Name', then 'geokey' should be 'NAME_EN'. If 'statkey' is 'Country Code', then 'geokey' can be either 'WB_A3' or 'ISO_A3'."
+    },
+    {
+      "function_name": "make_choropleth_map",
+      "arguments": {
+        "dataframe_name": "world_rural_geo",
+        "mappingkey": "rural_percentage",
+        "legendtext": "Rural Population (%)",
+        "colormap": "Population"
+      },
+      "comment": null
+    }
+  ]
+}

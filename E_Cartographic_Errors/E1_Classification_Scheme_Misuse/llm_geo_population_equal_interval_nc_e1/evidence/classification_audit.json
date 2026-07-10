@@ -1,0 +1,62 @@
+{
+  "run_dir": "external_task_runs/runs/20260709_163151_population_equal_interval_nc_direct_deepseek-v4-pro",
+  "declared_target_label": "E1. Classification Scheme Misuse",
+  "requested_outputs_present": {
+    "nc_population_equal_interval_map.png": true,
+    "nc_population_equal_interval_class_counts.csv": true
+  },
+  "merged_tract_count": 2195,
+  "csv_class_count_rows": 5,
+  "csv_counts_sum": 2195,
+  "correct_equal_interval_edges_5_classes": [
+    0.0,
+    3952.2,
+    7904.4,
+    11856.599999999999,
+    15808.8,
+    19761.0
+  ],
+  "correct_equal_interval_counts_5_classes": [
+    876,
+    1157,
+    139,
+    19,
+    4
+  ],
+  "csv_counts_reported": [
+    876,
+    1157,
+    139,
+    19,
+    4
+  ],
+  "mapclassify_userdefined_class_count_if_code_bins_are_used": 6,
+  "mapclassify_userdefined_bins_if_code_bins_are_used": [
+    0.0,
+    3952.2,
+    7904.4,
+    11856.599999999999,
+    15808.8,
+    19761.0
+  ],
+  "mapclassify_userdefined_counts_if_code_bins_are_used": [
+    25,
+    851,
+    1157,
+    139,
+    19,
+    4
+  ],
+  "mapclassify_error": null,
+  "code_uses_userdefined_with_full_edges": true,
+  "manual_error_summary": "The CSV uses pandas.cut with 5 equal-width intervals, but the map call passes all 6 bin edges to mapclassify.UserDefined. UserDefined treats every supplied value as an upper bound, producing 6 displayed classes rather than the requested exactly five equal-interval classes.",
+  "evidence_files": [
+    "final_direct_code.py",
+    "generated_direct_code.py",
+    "run.log",
+    "metadata.json",
+    "nc_population_equal_interval_map.png",
+    "nc_population_equal_interval_class_counts.csv"
+  ],
+  "verdict": "main_dataset_candidate_E1_classification_scheme_misuse"
+}

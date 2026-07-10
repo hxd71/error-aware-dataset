@@ -1,0 +1,16 @@
+{
+  "earthquake_count": 9176,
+  "generated_filtered_count_mag_ge_4": 1030,
+  "population_sample_non_null_count": 7270,
+  "population_sample_positive_count": 3251,
+  "reference_value_column": "earthquake_population",
+  "generated_value_column": "mag",
+  "missing_reference_steps": [
+    "get_values_from_raster_with_geometries"
+  ],
+  "extra_generated_steps": [
+    "filter_numerical"
+  ],
+  "human_score": 0,
+  "human_reasoning": "The candidate solution does not match to any of the reference solutions. It does load correct datasets, but misses important step 'get_values_from_raster_with_geometries' to get population in earthquakes locations and produces heatmap of earthquakes instead of population. Also it contains extra step \"filter_numerical\" to select major earthquakes though the task does not require this."
+}

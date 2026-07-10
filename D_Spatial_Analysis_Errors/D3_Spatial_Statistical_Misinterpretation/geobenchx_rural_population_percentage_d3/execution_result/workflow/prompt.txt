@@ -1,0 +1,5 @@
+GeoBenchX task trace materialization
+Task ID: TASK_250309_135125_748943
+Task: Show rural population percentages worldwide.
+Labels: Merge, Visualize, Task Set 01
+Expected output: GeoBenchX tool-call sequence solving the task.

@@ -1,0 +1,7 @@
+{
+  "source": "GeoNatureAgent CO2 Candidate Pool Comparison",
+  "source_project": "GeoNatureAgent Benchmark",
+  "paper_case_id": "V5_21_comparison_close_values",
+  "snapshot": "sanitized external run package",
+  "note": "密钥、服务端点和本机绝对路径已隐去；原始复现运行保存在 external_task_runs/runs。"
+}

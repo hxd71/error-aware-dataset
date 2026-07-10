@@ -1,0 +1,63 @@
+{
+  "zip_polygon_count": 424,
+  "invalid_zip_geometry_count_before_repair": 50,
+  "invalid_examples": [
+    {
+      "index": 13,
+      "validity_reason": "Self-intersection[-82.3584508586674 34.8710064227577]",
+      "bounds": [
+        -82.38754,
+        34.728935,
+        -82.254825,
+        34.878389999999996
+      ]
+    },
+    {
+      "index": 21,
+      "validity_reason": "Self-intersection[-82.5780998627104 34.4764854676698]",
+      "bounds": [
+        -82.720754,
+        34.325067,
+        -82.509281,
+        34.655609999999996
+      ]
+    },
+    {
+      "index": 23,
+      "validity_reason": "Self-intersection[-82.7677789457288 34.6035361803451]",
+      "bounds": [
+        -82.862329,
+        34.502054,
+        -82.65077,
+        34.633055
+      ]
+    },
+    {
+      "index": 25,
+      "validity_reason": "Self-intersection[-82.5780998627104 34.4764854676698]",
+      "bounds": [
+        -82.6044,
+        34.353975,
+        -82.31623599999999,
+        34.617900999999996
+      ]
+    },
+    {
+      "index": 42,
+      "validity_reason": "Self-intersection[-82.2248381408637 34.3761490229396]",
+      "bounds": [
+        -82.33080799999999,
+        34.216971,
+        -82.114012,
+        34.381096
+      ]
+    }
+  ],
+  "hospital_point_count": 61,
+  "hospital_points_inside_repaired_zip_union": 61,
+  "requested_outputs_missing_in_observed_run": {
+    "axis_order_hospitals_points.geojson": false,
+    "axis_order_hospitals_map.png": false
+  },
+  "observed_exception": "shapely.errors.GEOSException: TopologyException during unary_union"
+}

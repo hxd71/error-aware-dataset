@@ -1,0 +1,22 @@
+Source project: GeoNatureAgent Benchmark
+Paper case id: V5_44_province_aggregation_andalucia
+Benchmark category: province_aggregation
+Difficulty: hard
+Spatial method family: administrative aggregation
+
+Task:
+What is the average CO2 storage eligibility percentage across all provinces in Andalucia?
+
+Local data files:
+- <LOCAL_REPO_ROOT>\external_task_runs\data\geonature\province_rankings.json
+- <LOCAL_REPO_ROOT>\external_task_runs\data\geonature\spain_admin_index.json
+
+Important GIS/data interpretation notes:
+Use the provinces whose ccaa_name is Andalucía in spain_admin_index.json. Average eligible_pct across those provinces because only province-level percentages are available in province_rankings.json. Do not include municipalities.
+
+Required outputs:
+- andalucia_co2_province_values.csv
+- andalucia_co2_average.json
+- andalucia_co2_average_chart.png
+
+Write a single complete Python script that performs the task and saves the requested outputs.

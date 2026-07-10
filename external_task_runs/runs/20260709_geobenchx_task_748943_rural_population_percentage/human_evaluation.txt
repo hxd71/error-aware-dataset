@@ -1,0 +1,1 @@
+The candidate solution uses less tools than the reference solution. The candidate solution does not calculate the percentage of the rural population but directly maps its total value, though the question was about the percentages. So the candidate solution is not a match to the reference solution.

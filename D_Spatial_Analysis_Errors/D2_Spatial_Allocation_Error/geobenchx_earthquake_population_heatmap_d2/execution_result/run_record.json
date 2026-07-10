@@ -1,0 +1,30 @@
+{
+  "source_run": "20260709_geobenchx_task_367674_earthquake_population_heatmap",
+  "status": "audited_trace",
+  "execution_returncode": 0,
+  "task_id": "geobenchx_task_367674",
+  "source_task_id": "TASK_250309_135125_367674",
+  "model": "claude-3-5-haiku-20241022",
+  "method_family": "raster-to-point extraction and weighted heatmap visualization",
+  "difficulty": "hard",
+  "audit_summary": {
+    "task_type": "raster-to-point value extraction for heatmap",
+    "earthquake_count": 9176,
+    "generated_filtered_count_mag_ge_4": 1030,
+    "population_sample_non_null_count": 7270,
+    "population_sample_positive_count": 3251,
+    "population_sample_max": 6862.3154296875,
+    "raster_crs": "GEOGCS[\"WGS 84\",DATUM[\"World Geodetic System 1984\",SPHEROID[\"WGS 84\",6378137,298.257223563]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST]]",
+    "raster_nodata": -99999.0,
+    "reference_value_column": "earthquake_population",
+    "generated_value_column": "mag",
+    "missing_reference_steps": [
+      "get_values_from_raster_with_geometries"
+    ],
+    "extra_generated_steps": [
+      "filter_numerical"
+    ],
+    "human_score": 0,
+    "human_reasoning": "The candidate solution does not match to any of the reference solutions. It does load correct datasets, but misses important step 'get_values_from_raster_with_geometries' to get population in earthquakes locations and produces heatmap of earthquakes instead of population. Also it contains extra step \"filter_numerical\" to select major earthquakes though the task does not require this."
+  }
+}

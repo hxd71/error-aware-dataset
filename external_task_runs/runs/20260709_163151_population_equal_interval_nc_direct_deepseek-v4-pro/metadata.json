@@ -1,0 +1,29 @@
+{
+  "source_project": "LLM-Geo",
+  "source_repo": "<LOCAL_LLM_GEO_ROOT>",
+  "task_id": "population_equal_interval_nc",
+  "task_name": "Population_equal_interval_NC",
+  "mode": "direct",
+  "model": "deepseek-v4-pro",
+  "base_url": "https://api.deepseek.com/v1",
+  "debug_attempts": 1,
+  "review": false,
+  "data_mode": "local",
+  "local_data_root": "<LOCAL_REPO_ROOT>\\external_task_runs\\data\\llm_geo\\population_equal_interval_nc",
+  "task": "Join North Carolina Census tract population attributes to tract polygons and create a choropleth map of TotalPopulation. Use exactly five equal-interval classes, not quantiles and not natural breaks. Save the map as nc_population_equal_interval_map.png and save a CSV named nc_population_equal_interval_class_counts.csv with one row per class showing the class label and number of tracts in that class.",
+  "data_locations": [
+    "NC tract boundary shapefile: <LOCAL_REPO_ROOT>\\\\external_task_runs\\\\data\\\\llm_geo\\\\population_equal_interval_nc\\tract_37_EPSG4326.zip. The tract ID column is 'GEOID'.",
+    "NC tract population CSV file: <LOCAL_REPO_ROOT>\\\\external_task_runs\\\\data\\\\llm_geo\\\\population_equal_interval_nc\\NC_tract_population.csv. The population is stored in 'TotalPopulation'. The tract ID column is 'GEOID'."
+  ],
+  "started_at": "20260709_163151",
+  "status": "completed",
+  "finished_at": "20260709_163258",
+  "output_files": [
+    "final_direct_code.py",
+    "generated_direct_code.py",
+    "metadata_start.json",
+    "nc_population_equal_interval_class_counts.csv",
+    "nc_population_equal_interval_map.png",
+    "run.log"
+  ]
+}

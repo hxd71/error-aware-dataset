@@ -1,0 +1,20 @@
+{
+  "source_project": "LLM-Geo",
+  "source_repo": "<LOCAL_LLM_GEO_ROOT>",
+  "task_id": "axis_order_sc_hospitals",
+  "task_name": "Axis_order_SC_hospitals",
+  "mode": "direct",
+  "model": "deepseek-v4-pro",
+  "base_url": "https://api.deepseek.com/v1",
+  "debug_attempts": 1,
+  "review": false,
+  "data_mode": "local",
+  "local_data_root": "<LOCAL_REPO_ROOT>\\external_task_runs\\data\\llm_geo\\axis_order_sc_hospitals",
+  "task": "Create a point layer for South Carolina hospitals and overlay it on the South Carolina ZIP boundary map. The hospital CSV intentionally uses confusing column names: 'lat_x' is latitude in degrees north, and 'lon_y' is longitude in degrees west/east. Use x = longitude and y = latitude when constructing point geometry. Count how many hospital points fall inside the South Carolina ZIP boundary union. Save a map named axis_order_hospitals_map.png and a GeoJSON point layer named axis_order_hospitals_points.geojson.",
+  "data_locations": [
+    "SC ZIP boundary shapefile: <LOCAL_REPO_ROOT>\\\\external_task_runs\\\\data\\\\llm_geo\\\\axis_order_sc_hospitals\\sc_zip_boundary.zip, CRS is WGS84.",
+    "SC hospital CSV with intentionally confusing coordinate columns: <LOCAL_REPO_ROOT>\\\\external_task_runs\\\\data\\\\llm_geo\\\\axis_order_sc_hospitals\\SC_hospitals_axis_confusing.csv. Column 'lat_x' is latitude; column 'lon_y' is longitude. Correct point construction is x=lon_y, y=lat_x."
+  ],
+  "started_at": "20260709_163054",
+  "status": "started"
+}

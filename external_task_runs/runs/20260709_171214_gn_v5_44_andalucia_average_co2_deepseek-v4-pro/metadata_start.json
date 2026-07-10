@@ -1,0 +1,27 @@
+{
+  "source_project": "GeoNatureAgent Benchmark",
+  "paper_case_id": "V5_44_province_aggregation_andalucia",
+  "task_id": "gn_v5_44_andalucia_average_co2",
+  "category": "province_aggregation",
+  "difficulty": "hard",
+  "method_family": "administrative aggregation",
+  "task": "What is the average CO2 storage eligibility percentage across all provinces in Andalucia?",
+  "notes": "Use the provinces whose ccaa_name is Andalucía in spain_admin_index.json. Average eligible_pct across those provinces because only province-level percentages are available in province_rankings.json. Do not include municipalities.",
+  "data_files": [
+    "province_rankings.json",
+    "spain_admin_index.json"
+  ],
+  "data_locations": [
+    "<LOCAL_REPO_ROOT>\\external_task_runs\\data\\geonature\\province_rankings.json",
+    "<LOCAL_REPO_ROOT>\\external_task_runs\\data\\geonature\\spain_admin_index.json"
+  ],
+  "required_outputs": [
+    "andalucia_co2_province_values.csv",
+    "andalucia_co2_average.json",
+    "andalucia_co2_average_chart.png"
+  ],
+  "model": "deepseek-v4-pro",
+  "base_url": "https://api.deepseek.com/v1",
+  "started_at": "20260709_171214",
+  "status": "started"
+}

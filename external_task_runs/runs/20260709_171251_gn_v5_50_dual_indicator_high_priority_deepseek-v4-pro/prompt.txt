@@ -1,0 +1,21 @@
+Source project: GeoNatureAgent Benchmark
+Paper case id: V5_50_threshold_dual_indicator
+Benchmark category: threshold
+Difficulty: hard
+Spatial method family: cross-indicator threshold filtering
+
+Task:
+Find provinces where mean gully erosion exceeds 65% AND CO2 eligibility exceeds 60%. These would be high-priority areas needing both reforestation and geological storage.
+
+Local data files:
+- <LOCAL_REPO_ROOT>\external_task_runs\data\geonature\province_rankings.json
+
+Important GIS/data interpretation notes:
+Both thresholds are strict greater-than comparisons. Use erosion.mean_pct and co2.eligible_pct; do not use max erosion or conditional CO2.
+
+Required outputs:
+- dual_indicator_high_priority.csv
+- dual_indicator_high_priority.json
+- dual_indicator_high_priority_chart.png
+
+Write a single complete Python script that performs the task and saves the requested outputs.

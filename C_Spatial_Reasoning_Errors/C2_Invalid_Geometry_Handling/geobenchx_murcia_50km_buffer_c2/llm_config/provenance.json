@@ -1,0 +1,7 @@
+{
+  "source": "GeoBenchX/GeoNature Murcia 50km Buffer",
+  "source_project": "GeoBenchX tools ported in GeoNatureAgent Benchmark",
+  "paper_case_id": "GeoBenchX-style spatial relationship task",
+  "snapshot": "sanitized external run package",
+  "note": "密钥、服务端点和本机绝对路径已隐去；原始复现运行保存在 external_task_runs/runs。"
+}

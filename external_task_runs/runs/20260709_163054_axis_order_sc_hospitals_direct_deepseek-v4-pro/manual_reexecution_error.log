@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<LOCAL_REPO_ROOT>\external_task_runs\runs\20260709_163054_axis_order_sc_hospitals_direct_deepseek-v4-pro\final_direct_code.py", line 67, in <module>
+    direct_solution()
+  File "<LOCAL_REPO_ROOT>\external_task_runs\runs\20260709_163054_axis_order_sc_hospitals_direct_deepseek-v4-pro\final_direct_code.py", line 40, in direct_solution
+    union_geom = unary_union(sc_zip.geometry.values)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<LOCAL_PYTHON_ENV>\Lib\site-packages\shapely\ops.py", line 135, in unary_union
+    return shapely.union_all(geoms, axis=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<LOCAL_PYTHON_ENV>\Lib\site-packages\shapely\decorators.py", line 77, in wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "<LOCAL_PYTHON_ENV>\Lib\site-packages\shapely\set_operations.py", line 421, in union_all
+    return lib.unary_union(collections, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+shapely.errors.GEOSException: TopologyException: side location conflict at -82.57809986271036 34.476485467669782. This can occur if the input geometry is invalid.

@@ -1,0 +1,5 @@
+{
+  "source": "LLM-Geo Population_equal_interval_NC",
+  "snapshot": "sanitized run configuration",
+  "note": "密钥、服务端点和本机绝对路径已隐去；原始复现运行保存在 external_task_runs/runs。"
+}

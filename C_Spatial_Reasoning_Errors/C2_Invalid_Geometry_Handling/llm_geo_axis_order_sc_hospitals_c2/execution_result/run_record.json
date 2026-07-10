@@ -1,0 +1,12 @@
+{
+  "source_project": "LLM-Geo",
+  "task_id": "axis_order_sc_hospitals",
+  "task_name": "Axis_order_SC_hospitals",
+  "mode": "direct_request",
+  "model": "deepseek-v4-pro",
+  "provider": "DeepSeek",
+  "status": "failed_during_execution_despite_runner_completed_status",
+  "error_type": "shapely.errors.GEOSException",
+  "error_message": "TopologyException during unary_union of invalid SC ZIP boundary geometries",
+  "audit_file": "external_task_runs/runs/targeted_low_count_audit_20260709_1630.json"
+}

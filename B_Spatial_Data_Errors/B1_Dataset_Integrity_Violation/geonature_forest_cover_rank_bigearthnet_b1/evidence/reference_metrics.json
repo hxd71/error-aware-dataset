@@ -1,0 +1,62 @@
+{
+  "observed_zero_forest_rows": 4,
+  "all_observed_values_zero": true,
+  "expected_top_district": "Portalegre",
+  "expected_top_forest_cover_pct": 75.2,
+  "reference_records": [
+    {
+      "District": "Portalegre",
+      "ConiferousPct": 13.2,
+      "BroadleafPct": 62.0,
+      "ForestCoverPct": 75.2,
+      "ForestPatchEstimate": 4674.43,
+      "Rank": 1
+    },
+    {
+      "District": "Lisboa",
+      "ConiferousPct": 23.1,
+      "BroadleafPct": 22.1,
+      "ForestCoverPct": 45.2,
+      "ForestPatchEstimate": 648.62,
+      "Rank": 2
+    },
+    {
+      "District": "Faro",
+      "ConiferousPct": 2.0,
+      "BroadleafPct": 35.0,
+      "ForestCoverPct": 37.0,
+      "ForestPatchEstimate": 2503.79,
+      "Rank": 3
+    },
+    {
+      "District": "Beja",
+      "ConiferousPct": 2.7,
+      "BroadleafPct": 33.8,
+      "ForestCoverPct": 36.5,
+      "ForestPatchEstimate": 5262.94,
+      "Rank": 4
+    }
+  ],
+  "observed_records": [
+    {
+      "District": "Beja",
+      "ForestCover": 0,
+      "Rank": 1
+    },
+    {
+      "District": "Faro",
+      "ForestCover": 0,
+      "Rank": 1
+    },
+    {
+      "District": "Lisboa",
+      "ForestCover": 0,
+      "Rank": 1
+    },
+    {
+      "District": "Portalegre",
+      "ForestCover": 0,
+      "Rank": 1
+    }
+  ]
+}

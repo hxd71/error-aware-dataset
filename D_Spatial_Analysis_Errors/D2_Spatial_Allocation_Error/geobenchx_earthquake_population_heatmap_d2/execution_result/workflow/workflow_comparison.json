@@ -1,0 +1,30 @@
+[
+  {
+    "step_index": 1,
+    "reference_function": "load_geodata",
+    "generated_function": "load_geodata",
+    "reference_arguments": "{\"geodataset\": \"Earthquakes occurences and magnitude March 15- February 14 2025\", \"output_geodataframe_name\": \"earthquakes\"}",
+    "generated_arguments": "{\"geodataset\": \"Earthquakes occurences and magnitude March 15- February 14 2025\", \"output_geodataframe_name\": \"earthquakes\"}"
+  },
+  {
+    "step_index": 2,
+    "reference_function": "get_raster_path",
+    "generated_function": "filter_numerical",
+    "reference_arguments": "{\"rasterdataset\": \"USA population 2020, people, resolution 1 km\"}",
+    "generated_arguments": "{\"dataframe_name\": \"earthquakes\", \"conditions\": \"mag >= 4.0\", \"output_dataframe_name\": \"significant_earthquakes\"}"
+  },
+  {
+    "step_index": 3,
+    "reference_function": "get_values_from_raster_with_geometries",
+    "generated_function": "get_raster_path",
+    "reference_arguments": "{\"raster_path\": \"data_source/GeoData/usa_ppp_2020_1km_Aggregated_UNadj.tif\", \"geodataframe_name\": \"earthquakes\", \"output_variable_name\": \"earthquake_population\"}",
+    "generated_arguments": "{\"rasterdataset\": \"USA population 2020, people, resolution 1 km\"}"
+  },
+  {
+    "step_index": 4,
+    "reference_function": "make_heatmap",
+    "generated_function": "make_heatmap",
+    "reference_arguments": "{\"geodataframe_name\": \"earthquakes\", \"value_column\": \"earthquake_population\", \"radius\": 30, \"map_style\": \"carto-positron\", \"title\": \"Heatmap of population in earthquakes locations (March 2024 - February 2025)\"}",
+    "generated_arguments": "{\"geodataframe_name\": \"significant_earthquakes\", \"value_column\": \"mag\", \"map_style\": \"carto-darkmatter\", \"radius\": 30}"
+  }
+]

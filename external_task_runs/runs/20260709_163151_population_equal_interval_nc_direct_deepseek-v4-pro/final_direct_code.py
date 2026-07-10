@@ -1,0 +1,73 @@
+import geopandas as gpd
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+def direct_solution():
+    # Input file paths
+    shapefile_zip = r"<LOCAL_REPO_ROOT>\external_task_runs\data\llm_geo\population_equal_interval_nc\tract_37_EPSG4326.zip"
+    population_csv = r"<LOCAL_REPO_ROOT>\external_task_runs\data\llm_geo\population_equal_interval_nc\NC_tract_population.csv"
+
+    # Output file names
+    map_output = "nc_population_equal_interval_map.png"
+    csv_output = "nc_population_equal_interval_class_counts.csv"
+
+    # Load tract boundaries (EPSG:4326)
+    gdf = gpd.read_file(shapefile_zip)
+    # Drop rows with missing GEOID or geometry
+    gdf = gdf.dropna(subset=['GEOID', 'geometry'])
+
+    # Load population CSV with GEOID as string
+    pop_df = pd.read_csv(population_csv, dtype={'GEOID': str})
+    pop_df = pop_df.dropna(subset=['GEOID', 'TotalPopulation'])
+
+    # Standardize GEOID: pad to 11 characters (standard US tract FIPS) to ensure consistent merge
+    gdf['GEOID'] = gdf['GEOID'].astype(str).str.zfill(11)
+    pop_df['GEOID'] = pop_df['GEOID'].astype(str).str.zfill(11)
+
+    # Merge population attributes to polygons (inner join to keep only matched)
+    gdf_merged = gdf.merge(pop_df, on='GEOID', how='inner')
+
+    # Remove any rows where population is still missing after merge
+    gdf_merged = gdf_merged.dropna(subset=['TotalPopulation'])
+
+    # Ensure population is numeric
+    gdf_merged['TotalPopulation'] = pd.to_numeric(gdf_merged['TotalPopulation'])
+
+    # Compute equal-interval bins (5 classes)
+    pop_min = gdf_merged['TotalPopulation'].min()
+    pop_max = gdf_merged['TotalPopulation'].max()
+    # Create 5 equal intervals from min to max
+    bins = np.linspace(pop_min, pop_max, 6)
+
+    # --- Create choropleth map ---
+    fig, ax = plt.subplots(figsize=(15, 10))
+    gdf_merged.plot(
+        column='TotalPopulation',
+        cmap='OrRd',
+        legend=True,
+        scheme='UserDefined',
+        classification_kwds={'bins': bins},
+        edgecolor='grey',
+        linewidth=0.2,
+        ax=ax
+    )
+    ax.set_title('North Carolina Census Tract Total Population (Equal Interval, 5 Classes)', fontsize=16)
+    ax.axis('off')
+    plt.savefig(map_output, dpi=300, bbox_inches='tight')
+    plt.close(fig)
+
+    # --- Create class counts CSV ---
+    # Categorize into the bins (include lowest for first interval)
+    gdf_merged['pop_class'] = pd.cut(gdf_merged['TotalPopulation'], bins=bins, include_lowest=True)
+    # Count tracts in each class (preserve order)
+    class_counts = gdf_merged['pop_class'].value_counts(sort=False)
+    # Build dataframe with class label and count
+    count_df = pd.DataFrame({
+        'class_label': class_counts.index.astype(str),
+        'count': class_counts.values
+    })
+    count_df.to_csv(csv_output, index=False)
+
+# Execute the function
+direct_solution()

@@ -1,0 +1,21 @@
+Source project: GeoNatureAgent Benchmark
+Paper case id: V5_62_list_layers_habitat_years
+Benchmark category: tool_selection
+Difficulty: hard
+Spatial method family: categorical aggregation and ranking
+
+Task:
+Create a chart ranking Beja, Faro, Lisboa, and Portalegre by their total forest cover (coniferous + broadleaf) using the BigEarthNet data.
+
+Local data files:
+- data_source\bigearthnet_portugal_stats.json
+
+Important GIS/data interpretation notes:
+Total forest cover must be class 1 Coniferous Forest plus class 2 Broadleaf Forest. Do not include shrubland or grassland in forest cover.
+
+Required outputs:
+- forest_cover_rank.csv
+- forest_cover_rank.json
+- forest_cover_rank_chart.png
+
+Write a single complete Python script that performs the task and saves the requested outputs.

@@ -1,0 +1,39 @@
+{
+  "source_project": "GeoNatureAgent Benchmark",
+  "paper_case_id": "V5_31_habitat_province_single",
+  "task_id": "gn_v5_31_habitat_beja_lulc",
+  "category": "habitat_analysis",
+  "difficulty": "easy",
+  "method_family": "categorical LULC composition",
+  "task": "Analyze the land cover composition for the district of Beja in Portugal using the BigEarthNet LULC dataset.",
+  "notes": "Use the categorical class labels and percentages exactly as provided. Do not average numeric class codes or treat land-cover class IDs as ordinal values.",
+  "data_files": [
+    "bigearthnet_portugal_stats.json"
+  ],
+  "data_locations": [
+    "<LOCAL_REPO_ROOT>\\external_task_runs\\data\\geonature\\bigearthnet_portugal_stats.json"
+  ],
+  "required_outputs": [
+    "beja_lulc_breakdown.csv",
+    "beja_lulc_summary.json",
+    "beja_lulc_chart.png"
+  ],
+  "model": "deepseek-v4-pro",
+  "base_url": "https://api.deepseek.com/v1",
+  "started_at": "20260709_170953",
+  "status": "failed",
+  "execution_returncode": 1,
+  "missing_required_outputs": [
+    "beja_lulc_breakdown.csv",
+    "beja_lulc_summary.json",
+    "beja_lulc_chart.png"
+  ],
+  "finished_at": "20260709_171037",
+  "output_files": [
+    "generated_code.py",
+    "metadata_start.json",
+    "model_response.txt",
+    "prompt.txt",
+    "run.log"
+  ]
+}

@@ -1,0 +1,295 @@
+import json
+import os
+import sys
+from pathlib import Path
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import numpy as np
+
+# ------------------------------------------------------------
+# 0. Configuration: file paths and outputs
+# ------------------------------------------------------------
+DATA_DIR = Path("data_source")
+RANKINGS_FILE = DATA_DIR / "province_rankings.json"
+REGISTRY_FILE = DATA_DIR / "layers_registry.yaml"
+
+OUTPUT_CSV = Path("murcia_cordoba_co2_comparison.csv")
+OUTPUT_JSON = Path("murcia_cordoba_co2_decision.json")
+OUTPUT_CHART = Path("murcia_cordoba_co2_chart.png")
+
+PROVINCES = ["Murcia", "Cordoba"]
+
+# ------------------------------------------------------------
+# 1. Load province rankings (JSON)
+# ------------------------------------------------------------
+def load_rankings(filepath):
+    """Load province rankings from JSON, return a dict keyed by province name."""
+    with open(filepath, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    # Support both dict-like and list-like structures
+    if isinstance(data, dict):
+        return data
+    elif isinstance(data, list):
+        # assume list of objects with 'name' or 'province' field
+        result = {}
+        for item in data:
+            name = item.get("name") or item.get("province") or item.get("Province")
+            if name:
+                result[name] = item
+        return result
+    else:
+        raise ValueError("Unsupported JSON structure")
+
+# ------------------------------------------------------------
+# 2. Load class labels from YAML (optional, fallback to default)
+# ------------------------------------------------------------
+try:
+    import yaml
+    def load_class_mapping(yaml_path):
+        with open(yaml_path, 'r', encoding='utf-8') as f:
+            reg = yaml.safe_load(f)
+        # try to find mapping for CO2 storage suitability
+        # typical structure: layers.co2_storage.suitability.classes
+        mapping = {}
+        # navigate recursively or specific known paths
+        def find_classes(d, path=()):
+            if isinstance(d, dict):
+                if 'classes' in d and isinstance(d['classes'], dict):
+                    return d['classes']
+                for k, v in d.items():
+                    res = find_classes(v, path + (k,))
+                    if res:
+                        return res
+            return None
+        classes_dict = find_classes(reg)
+        if classes_dict:
+            # convert keys to int if possible
+            for k, v in classes_dict.items():
+                try:
+                    key_int = int(k)
+                except (ValueError, TypeError):
+                    key_int = k
+                mapping[key_int] = v
+            return mapping
+        return None
+except ImportError:
+    load_class_mapping = lambda x: None
+
+# Default class mapping if YAML not present or missing
+DEFAULT_CLASS_MAP = {
+    0: "Not eligible",
+    1: "Conditional",
+    2: "Eligible"
+}
+
+# ------------------------------------------------------------
+# 3. Extract per‑province suitability areas
+# ------------------------------------------------------------
+def extract_province_stats(province_data, class_map):
+    """
+    Given a dictionary for one province, return a dict with
+    areas for not_eligible (class 0), conditional (class 1),
+    eligible (class 2). Handles various possible JSON structures.
+    """
+    # If the data already has explicit fields for each class
+    area_not = 0
+    area_cond = 0
+    area_elig = 0
+
+    # Case 1: keys are 'not_eligible_area', 'conditional_area', 'eligible_area'
+    if 'not_eligible_area' in province_data:
+        area_not = province_data['not_eligible_area']
+    if 'conditional_area' in province_data:
+        area_cond = province_data['conditional_area']
+    if 'eligible_area' in province_data:
+        area_elig = province_data['eligible_area']
+    if area_not + area_cond + area_elig > 0:
+        return {
+            'not_eligible': area_not,
+            'conditional': area_cond,
+            'eligible': area_elig
+        }
+
+    # Case 2: a dictionary mapping class numbers to areas (e.g., "0": 123.4)
+    for key in province_data:
+        try:
+            cls = int(key)
+        except (ValueError, TypeError):
+            continue
+        val = province_data[key]
+        if isinstance(val, (int, float)):
+            if cls == 0:
+                area_not = val
+            elif cls == 1:
+                area_cond = val
+            elif cls == 2:
+                area_elig = val
+    if area_not + area_cond + area_elig > 0:
+        return {
+            'not_eligible': area_not,
+            'conditional': area_cond,
+            'eligible': area_elig
+        }
+
+    # Case 3: a single 'class' field – treat entire province as that class,
+    # assume area = 1 (unitless) so candidate_pool = 1 if class 1 or 2.
+    if 'class' in province_data or 'suitability_class' in province_data:
+        cls_val = province_data.get('class') or province_data.get('suitability_class')
+        try:
+            cls = int(cls_val)
+        except (ValueError, TypeError):
+            cls = -1
+        area_not = 1 if cls == 0 else 0
+        area_cond = 1 if cls == 1 else 0
+        area_elig = 1 if cls == 2 else 0
+        return {
+            'not_eligible': area_not,
+            'conditional': area_cond,
+            'eligible': area_elig
+        }
+
+    # Fallback: return zeros
+    return {
+        'not_eligible': 0,
+        'conditional': 0,
+        'eligible': 0
+    }
+
+# ------------------------------------------------------------
+# 4. Main logic
+# ------------------------------------------------------------
+def main():
+    # Load data
+    rankings = load_rankings(RANKINGS_FILE)
+    
+    # Try to load class labels (for reference, not critical)
+    class_map = DEFAULT_CLASS_MAP
+    if REGISTRY_FILE.exists():
+        try:
+            loaded = load_class_mapping(REGISTRY_FILE)
+            if loaded:
+                class_map = loaded
+        except Exception:
+            pass  # fallback to default
+
+    # Extract stats for Murcia and Cordoba
+    stats = {}
+    for prov in PROVINCES:
+        if prov not in rankings:
+            # try case variations
+            found_key = None
+            for key in rankings:
+                if key.lower().replace("ó","o") == prov.lower():
+                    found_key = key
+                    break
+            if found_key is None:
+                print(f"Province '{prov}' not found in rankings. Using zero areas.")
+                stats[prov] = {'not_eligible': 0, 'conditional': 0, 'eligible': 0}
+            else:
+                stats[prov] = extract_province_stats(rankings[found_key], class_map)
+        else:
+            stats[prov] = extract_province_stats(rankings[prov], class_map)
+
+    # Add candidate pool (eligible + conditional)
+    for prov in PROVINCES:
+        s = stats[prov]
+        s['candidate_pool'] = s['eligible'] + s['conditional']
+
+    # Decision: better suited = larger candidate_pool; if tie, larger eligible area
+    murcia = stats['Murcia']
+    cordoba = stats['Cordoba']
+    if murcia['candidate_pool'] > cordoba['candidate_pool']:
+        better = "Murcia"
+    elif cordoba['candidate_pool'] > murcia['candidate_pool']:
+        better = "Cordoba"
+    else:
+        # tie in candidate_pool, check eligible area
+        if murcia['eligible'] > cordoba['eligible']:
+            better = "Murcia"
+        elif cordoba['eligible'] > murcia['eligible']:
+            better = "Cordoba"
+        else:
+            better = "Equal"
+
+    # ------------------------------------------------------------
+    # 5. Write CSV
+    # ------------------------------------------------------------
+    import csv
+    with open(OUTPUT_CSV, 'w', newline='', encoding='utf-8') as csvfile:
+        fieldnames = ['province', 'not_eligible', 'conditional', 'eligible', 'candidate_pool']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        for prov in PROVINCES:
+            writer.writerow({
+                'province': prov,
+                'not_eligible': stats[prov]['not_eligible'],
+                'conditional': stats[prov]['conditional'],
+                'eligible': stats[prov]['eligible'],
+                'candidate_pool': stats[prov]['candidate_pool']
+            })
+
+    # ------------------------------------------------------------
+    # 6. Write decision JSON
+    # ------------------------------------------------------------
+    decision = {
+        "Murcia": {
+            "not_eligible": murcia['not_eligible'],
+            "conditional": murcia['conditional'],
+            "eligible": murcia['eligible'],
+            "candidate_pool": murcia['candidate_pool']
+        },
+        "Cordoba": {
+            "not_eligible": cordoba['not_eligible'],
+            "conditional": cordoba['conditional'],
+            "eligible": cordoba['eligible'],
+            "candidate_pool": cordoba['candidate_pool']
+        },
+        "better_province": better,
+        "decision_reason": f"Compared candidate pool (eligible + conditional areas): Murcia {murcia['candidate_pool']}, Cordoba {cordoba['candidate_pool']}. Decision: {better} is better suited."
+    }
+    with open(OUTPUT_JSON, 'w', encoding='utf-8') as jf:
+        json.dump(decision, jf, indent=2, ensure_ascii=False)
+
+    # ------------------------------------------------------------
+    # 7. Create chart (stacked bar chart of suitability areas)
+    # ------------------------------------------------------------
+    categories = ['Not eligible', 'Conditional', 'Eligible']
+    colors = ['#d9d9d9', '#fdb462', '#80b1d3']  # grey, orange, blue
+
+    murcia_vals = [murcia['not_eligible'], murcia['conditional'], murcia['eligible']]
+    cordoba_vals = [cordoba['not_eligible'], cordoba['conditional'], cordoba['eligible']]
+
+    x = np.arange(len(PROVINCES))
+    width = 0.6
+
+    fig, ax = plt.subplots(figsize=(8, 6))
+    bottom = np.zeros(len(PROVINCES))
+    for i, (cat, color) in enumerate(zip(categories, colors)):
+        vals = [murcia_vals[i], cordoba_vals[i]]
+        ax.bar(x, vals, width, bottom=bottom, label=cat, color=color)
+        bottom += vals
+
+    ax.set_ylabel('Area (units)')
+    ax.set_title('CO2 Geological Storage Suitability: Murcia vs Cordoba')
+    ax.set_xticks(x)
+    ax.set_xticklabels(PROVINCES)
+    ax.legend()
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+
+    # Annotate candidate pool
+    for idx, prov in enumerate(PROVINCES):
+        cp = stats[prov]['candidate_pool']
+        ax.text(idx, bottom[idx] + 0.02 * max(bottom), f'Candidate pool: {cp:.1f}',
+                ha='center', va='bottom', fontweight='bold')
+
+    plt.tight_layout()
+    fig.savefig(OUTPUT_CHART, dpi=150)
+    plt.close(fig)
+
+    print(f"Outputs saved: {OUTPUT_CSV}, {OUTPUT_JSON}, {OUTPUT_CHART}")
+    print(f"Decision: {better} is better suited for CO2 geological storage.")
+
+if __name__ == "__main__":
+    main()

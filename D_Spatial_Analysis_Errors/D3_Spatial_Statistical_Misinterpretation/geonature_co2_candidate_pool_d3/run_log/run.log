@@ -1,0 +1,4 @@
+Province 'Murcia' not found in rankings. Using zero areas.
+Province 'Cordoba' not found in rankings. Using zero areas.
+Outputs saved: murcia_cordoba_co2_comparison.csv, murcia_cordoba_co2_decision.json, murcia_cordoba_co2_chart.png
+Decision: Equal is better suited for CO2 geological storage.

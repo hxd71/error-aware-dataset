@@ -1,0 +1,16 @@
+{
+  "Murcia": {
+    "not_eligible": 0,
+    "conditional": 0,
+    "eligible": 0,
+    "candidate_pool": 0
+  },
+  "Cordoba": {
+    "not_eligible": 0,
+    "conditional": 0,
+    "eligible": 0,
+    "candidate_pool": 0
+  },
+  "better_province": "Equal",
+  "decision_reason": "Compared candidate pool (eligible + conditional areas): Murcia 0, Cordoba 0. Decision: Equal is better suited."
+}

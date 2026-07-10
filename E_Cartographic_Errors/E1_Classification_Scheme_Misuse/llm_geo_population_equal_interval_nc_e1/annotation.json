@@ -1,0 +1,46 @@
+{
+  "sample_id": "llm_geo_population_equal_interval_nc_e1",
+  "source": "LLM-Geo Population_equal_interval_NC",
+  "task_id": "population_equal_interval_nc",
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "reasoning": "direct request；thinking 开关未单列记录",
+    "framework": "LLM-Geo"
+  },
+  "primary_label": "E1. Classification Scheme Misuse",
+  "secondary_labels": [],
+  "error_summary": "任务要求地图使用正好 5 个等距分级，但生成代码把包含最小值和最大值的 6 个边界传给 `mapclassify.UserDefined`，图面实际形成 6 个类别；CSV 统计虽为 5 类，地图分类方案与任务要求不一致。",
+  "result_previews": [
+    {
+      "source_artifact": "previews/nc_population_equal_interval_map.png",
+      "stage": "最终成果",
+      "preview_file": "previews/nc_population_equal_interval_map.png",
+      "description": "由本次实际运行生成的 NC 人口分级专题图。"
+    }
+  ],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "依据任务要求的 exactly five equal-interval classes 独立计算",
+  "evidence_metrics": {
+    "merged_tract_count": 2195,
+    "csv_class_count_rows": 5,
+    "map_userdefined_class_count_from_code_bins": 6,
+    "correct_equal_interval_counts_5_classes": [
+      876,
+      1157,
+      139,
+      19,
+      4
+    ],
+    "map_userdefined_counts_from_code_bins": [
+      25,
+      851,
+      1157,
+      139,
+      19,
+      4
+    ]
+  }
+}

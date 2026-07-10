@@ -1,0 +1,39 @@
+{
+  "steps": [
+    {
+      "function_name": "load_geodata",
+      "arguments": {
+        "geodataset": "Earthquakes occurences and magnitude March 15- February 14 2025",
+        "output_geodataframe_name": "earthquakes"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "get_raster_path",
+      "arguments": {
+        "rasterdataset": "USA population 2020, people, resolution 1 km"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "get_values_from_raster_with_geometries",
+      "arguments": {
+        "raster_path": "data_source/GeoData/usa_ppp_2020_1km_Aggregated_UNadj.tif",
+        "geodataframe_name": "earthquakes",
+        "output_variable_name": "earthquake_population"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "make_heatmap",
+      "arguments": {
+        "geodataframe_name": "earthquakes",
+        "value_column": "earthquake_population",
+        "radius": 30,
+        "map_style": "carto-positron",
+        "title": "Heatmap of population in earthquakes locations (March 2024 - February 2025)"
+      },
+      "comment": null
+    }
+  ]
+}

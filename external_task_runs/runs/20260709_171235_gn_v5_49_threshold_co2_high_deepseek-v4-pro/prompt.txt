@@ -1,0 +1,20 @@
+Source project: GeoNatureAgent Benchmark
+Paper case id: V5_49_threshold_co2_high
+Benchmark category: threshold
+Difficulty: medium
+Spatial method family: threshold filtering
+
+Task:
+Which provinces in Spain have more than 70% of their territory eligible for CO2 storage?
+
+Local data files:
+- <LOCAL_REPO_ROOT>\external_task_runs\data\geonature\province_rankings.json
+
+Important GIS/data interpretation notes:
+Use eligible_pct only, and apply a strict greater-than 70% threshold. Do not use >= 70 and do not add conditional_pct.
+
+Required outputs:
+- co2_eligible_gt70.csv
+- co2_eligible_gt70.json
+
+Write a single complete Python script that performs the task and saves the requested outputs.

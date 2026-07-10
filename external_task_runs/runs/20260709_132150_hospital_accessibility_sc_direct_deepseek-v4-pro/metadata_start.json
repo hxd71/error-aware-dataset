@@ -1,0 +1,20 @@
+{
+  "source_project": "LLM-Geo",
+  "source_repo": "<LOCAL_LLM_GEO_ROOT>",
+  "task_id": "hospital_accessibility_sc",
+  "task_name": "Hospital_accessibility_SC",
+  "mode": "direct",
+  "model": "deepseek-v4-pro",
+  "base_url": "https://api.deepseek.com/v1",
+  "debug_attempts": 1,
+  "review": false,
+  "data_mode": "local",
+  "local_data_root": "<LOCAL_REPO_ROOT>\\external_task_runs\\data\\llm_geo\\hospital_accessibility_sc",
+  "task": "For each zipcode area in South Carolina (SC), calculate the distance from the centroid of the zipcode area to its nearest hospital, and then create a choropleth distance map of zipcode area polygons (unit: km), also show the hospital.",
+  "data_locations": [
+    "SC zipcode boundary shapefile: <LOCAL_REPO_ROOT>\\\\external_task_runs\\\\data\\\\llm_geo\\\\hospital_accessibility_sc\\sc_zip_boundary.zip, the map projection is WGS1984.",
+    "SC hospitals: <LOCAL_REPO_ROOT>\\\\external_task_runs\\\\data\\\\llm_geo\\\\hospital_accessibility_sc\\SC_hospitals_with_emergency_room_cleaned.csv, location columns: longitude in 'Longitude' column, latitude in 'Latitude' column."
+  ],
+  "started_at": "20260709_132150",
+  "status": "started"
+}

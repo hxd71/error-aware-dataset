@@ -1,0 +1,10 @@
+{
+  "source_project": "LLM-Geo",
+  "task_id": "population_equal_interval_nc",
+  "task_name": "Population_equal_interval_NC",
+  "mode": "direct_request",
+  "model": "deepseek-v4-pro",
+  "provider": "DeepSeek",
+  "status": "completed_with_gis_error",
+  "audit_file": "external_task_runs/runs/targeted_low_count_audit_20260709_1630.json"
+}

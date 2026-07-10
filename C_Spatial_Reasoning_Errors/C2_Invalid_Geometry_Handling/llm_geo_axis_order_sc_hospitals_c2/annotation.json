@@ -1,0 +1,30 @@
+{
+  "sample_id": "llm_geo_axis_order_sc_hospitals_c2",
+  "source": "LLM-Geo Axis_order_SC_hospitals",
+  "task_id": "axis_order_sc_hospitals",
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "reasoning": "direct request；thinking 开关未单列记录",
+    "framework": "LLM-Geo"
+  },
+  "primary_label": "C2. Invalid Geometry Handling",
+  "secondary_labels": [],
+  "error_summary": "生成代码在 SC ZIP 边界包含 50 个无效 polygon 时直接执行 `unary_union`，触发 Shapely `TopologyException`，未在空间包含统计前修复无效几何，导致点图层和地图均未交付。",
+  "result_previews": [],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "依据修复无效 ZIP 边界后的独立参考流程计算",
+  "evidence_metrics": {
+    "zip_polygon_count": 424,
+    "invalid_zip_geometry_count": 50,
+    "hospital_point_count": 61,
+    "hospital_points_inside_repaired_zip_union": 61,
+    "manual_error_contains_topology_exception": true,
+    "requested_outputs_present": {
+      "axis_order_hospitals_points.geojson": false,
+      "axis_order_hospitals_map.png": false
+    }
+  }
+}

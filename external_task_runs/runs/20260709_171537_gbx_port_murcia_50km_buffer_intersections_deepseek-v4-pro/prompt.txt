@@ -1,0 +1,21 @@
+Source project: GeoBenchX tools ported in GeoNatureAgent Benchmark
+Paper case id: GeoBenchX-style spatial relationship task
+Benchmark category: spatial_reasoning
+Difficulty: medium
+Spatial method family: metric buffering and topological predicate selection
+
+Task:
+Create a 50 km buffer around the province of Murcia and list all Spanish provinces whose geometry intersects that buffer. Save the buffer and selected provinces.
+
+Local data files:
+- <LOCAL_REPO_ROOT>\external_task_runs\data\geonature\spain_provinces.geojson
+
+Important GIS/data interpretation notes:
+Use a projected CRS with metre units before buffering. Use the intersects predicate against the 50 km buffer, not within or contains. Preserve EPSG:4326 in GeoJSON outputs.
+
+Required outputs:
+- murcia_50km_buffer.geojson
+- murcia_50km_intersecting_provinces.csv
+- murcia_50km_intersections_map.png
+
+Write a single complete Python script that performs the task and saves the requested outputs.

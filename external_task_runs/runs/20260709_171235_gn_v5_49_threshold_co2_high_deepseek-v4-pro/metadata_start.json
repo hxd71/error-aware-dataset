@@ -1,0 +1,24 @@
+{
+  "source_project": "GeoNatureAgent Benchmark",
+  "paper_case_id": "V5_49_threshold_co2_high",
+  "task_id": "gn_v5_49_threshold_co2_high",
+  "category": "threshold",
+  "difficulty": "medium",
+  "method_family": "threshold filtering",
+  "task": "Which provinces in Spain have more than 70% of their territory eligible for CO2 storage?",
+  "notes": "Use eligible_pct only, and apply a strict greater-than 70% threshold. Do not use >= 70 and do not add conditional_pct.",
+  "data_files": [
+    "province_rankings.json"
+  ],
+  "data_locations": [
+    "<LOCAL_REPO_ROOT>\\external_task_runs\\data\\geonature\\province_rankings.json"
+  ],
+  "required_outputs": [
+    "co2_eligible_gt70.csv",
+    "co2_eligible_gt70.json"
+  ],
+  "model": "deepseek-v4-pro",
+  "base_url": "https://api.deepseek.com/v1",
+  "started_at": "20260709_171235",
+  "status": "started"
+}

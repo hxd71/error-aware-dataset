@@ -1,0 +1,38 @@
+{
+  "sample_id": "geobenchx_murcia_50km_buffer_c2",
+  "source": "GeoBenchX/GeoNature Murcia 50km Buffer",
+  "task_id": "gbx_port_murcia_50km_buffer_intersections",
+  "sample_origin": "observed_run",
+  "llm_configuration": {
+    "primary_model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "reasoning": "direct request；thinking 开关未单列记录",
+    "framework": "GeoBenchX tools ported in GeoNatureAgent Benchmark"
+  },
+  "primary_label": "C2. Invalid Geometry Handling",
+  "secondary_labels": [],
+  "error_summary": "生成代码直接用 GeoPandas 读取包含退化 ring 的 Spain province GeoJSON，未清理少于 4 个坐标的线性环，读入阶段即触发 `ValueError: A linearring requires at least 4 coordinates`，导致 50 km buffer 与相交省份结果均未生成。",
+  "result_previews": [],
+  "reference_preview_file": "reference.png",
+  "evidence_readme": "README.md",
+  "reference_basis": "依据清除退化 ring 后的 Spain province GeoJSON、EPSG:25830 米制缓冲和 intersects 谓词独立计算",
+  "evidence_metrics": {
+    "total_features": 52,
+    "total_rings": 1124,
+    "dropped_degenerate_rings": 834,
+    "features_with_dropped_rings": 14,
+    "observed_error": "ValueError: A linearring requires at least 4 coordinates.",
+    "buffer_distance_m": 50000,
+    "projected_crs": "EPSG:25830",
+    "intersecting_province_count": 7,
+    "intersecting_provinces": [
+      "Alacant/Alicante",
+      "Albacete",
+      "Almería",
+      "Granada",
+      "Murcia",
+      "València/Valencia",
+      "Jaén"
+    ]
+  }
+}

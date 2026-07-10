@@ -1,0 +1,82 @@
+<LOCAL_PYTHON_ENV>\Lib\site-packages\requests\__init__.py:113: RequestsDependencyWarning: urllib3 (2.6.3) or chardet (7.4.3)/charset_normalizer (3.4.7) doesn't match a supported version!
+  warnings.warn(
+```python
+def direct_solution():
+    import geopandas as gpd
+    import pandas as pd
+    import matplotlib.pyplot as plt
+
+    # Input file path
+    input_path = r"<LOCAL_REPO_ROOT>\external_task_runs\data\llm_geo\invalid_polygon_repair\invalid_polygons.geojson"
+
+    # Load GeoJSON
+    gdf = gpd.read_file(input_path)
+
+    # If CRS is missing, assume WGS84
+    if gdf.crs is None:
+        gdf = gdf.set_crs("EPSG:4326")
+
+    # Drop rows with null geometry (should not happen but safe)
+    gdf = gdf.dropna(subset=['geometry']).copy()
+
+    # Record original validity
+    gdf['original_validity'] = gdf.geometry.is_valid
+
+    # Repair invalid geometries using shapely.make_valid via GeoSeries.make_valid()
+    gdf['geometry'] = gdf.geometry.make_valid()
+
+    # Check repaired validity
+    gdf['repaired_validity'] = gdf.geometry.is_valid
+
+    # Project to an equal‑area projection (Cylindrical Equal Area) for area calculation
+    gdf_eqarea = gdf.to_crs("EPSG:6933")
+
+    # Area in square meters, convert to km²
+    area_m2 = gdf_eqarea.geometry.area
+    gdf['area_km2'] = area_m2 / 1e6
+
+    # Save repaired GeoJSON (original CRS)
+    gdf.to_file("repaired_polygons.geojson", driver="GeoJSON")
+
+    # Prepare CSV with required columns
+    csv_df = gdf[['poly_id', 'original_validity', 'repaired_validity', 'area_km2']].copy()
+    csv_df.to_csv("repaired_polygon_areas.csv", index=False)
+
+    # Plot the repaired polygons
+    fig, ax = plt.subplots(figsize=(15, 10))
+    gdf.plot(
+        ax=ax,
+        column='poly_id',
+        categorical=True,
+        legend=True,
+        edgecolor='black',
+        cmap='Set1',
+        legend_kwds={'title': "Polygon ID"}
+    )
+    ax.set_title("Repaired Polygons")
+    ax.set_axis_off()
+
+    # Add a text note indicating the area unit
+    fig.text(0.99, 0.02, "Areas in square kilometers",
+             ha='right', va='bottom', fontsize=10, color='grey')
+
+    fig.savefig("repaired_polygons_map.png", dpi=150, bbox_inches='tight')
+    plt.close(fig)
+
+    print("Processing completed.")
+
+direct_solution()
+```
+
+
+
+
+-------------- Running code (trial # 1/1) --------------
+
+
+Processing completed.
+
+
+--------------- Done ---------------
+
+

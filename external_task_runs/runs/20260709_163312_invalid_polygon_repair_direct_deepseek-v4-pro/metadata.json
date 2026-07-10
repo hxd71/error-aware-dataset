@@ -1,0 +1,29 @@
+{
+  "source_project": "LLM-Geo",
+  "source_repo": "<LOCAL_LLM_GEO_ROOT>",
+  "task_id": "invalid_polygon_repair",
+  "task_name": "Invalid_polygon_repair",
+  "mode": "direct",
+  "model": "deepseek-v4-pro",
+  "base_url": "https://api.deepseek.com/v1",
+  "debug_attempts": 1,
+  "review": false,
+  "data_mode": "local",
+  "local_data_root": "<LOCAL_REPO_ROOT>\\external_task_runs\\data\\llm_geo\\invalid_polygon_repair",
+  "task": "The input GeoJSON contains one self-intersecting invalid polygon and one valid polygon. Repair invalid polygon geometries before any area calculation, then calculate area in square kilometers in a projected CRS, save a repaired GeoJSON named repaired_polygons.geojson, and save a CSV named repaired_polygon_areas.csv with polygon id, original validity, repaired validity, and area_km2. Also save a PNG map named repaired_polygons_map.png.",
+  "data_locations": [
+    "Input polygons GeoJSON: <LOCAL_REPO_ROOT>\\\\external_task_runs\\\\data\\\\llm_geo\\\\invalid_polygon_repair\\invalid_polygons.geojson. It contains fields 'poly_id' and 'description'. One polygon is a bow-tie self-intersection and must be repaired before area calculation."
+  ],
+  "started_at": "20260709_163312",
+  "status": "completed",
+  "finished_at": "20260709_163405",
+  "output_files": [
+    "final_direct_code.py",
+    "generated_direct_code.py",
+    "metadata_start.json",
+    "repaired_polygon_areas.csv",
+    "repaired_polygons.geojson",
+    "repaired_polygons_map.png",
+    "run.log"
+  ]
+}
