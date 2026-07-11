@@ -1,0 +1,9 @@
+step_index,reference_function,generated_function,reference_arguments,generated_arguments
+1,reject_task,load_data,{},"{""dataset"": ""Incidence of Tuberculosis Disease, 2023, Massachusetts Counties"", ""output_dataframe_name"": ""ma_tb""}"
+2,,load_data,,"{""dataset"": ""Incidence of Tuberculosis Disease, 2023, New York State Counties"", ""output_dataframe_name"": ""ny_tb""}"
+3,,get_raster_path,,"{""rasterdataset"": ""USA population 2020, people, resolution 1 km""}"
+4,,load_geodata,,"{""geodataset"": ""USA counties borders"", ""output_geodataframe_name"": ""counties""}"
+5,,filter_categorical,,"{""dataframe_name"": ""counties"", ""filters"": {""STATEFP"": [""25"", ""36""]}, ""output_dataframe_name"": ""ma_ny_counties""}"
+6,,get_centroids,,"{""geodataframe_name"": ""ma_ny_counties"", ""output_geodataframe_name"": ""ma_ny_centroids""}"
+7,,get_values_from_raster_with_geometries,,"{""raster_path"": ""data_source/GeoData/usa_ppp_2020_1km_Aggregated_UNadj.tif"", ""geodataframe_name"": ""ma_ny_counties"", ""output_variable_name"": ""population_density""}"
+8,,make_heatmap,,"{""geodataframe_name"": ""ma_ny_centroids"", ""value_column"": ""ALAND"", ""output_geodataframe_name"": ""population_heatmap"", ""plot_title"": ""Population Density Heatmap in MA and NY Counties with TB Cases (2023)"", ""column_title"": ""Population Density"", ""radius"": 30, ""map_style"": ""carto-positron""}"

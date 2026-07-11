@@ -1,0 +1,96 @@
+{
+  "steps": [
+    {
+      "function_name": "load_geodata",
+      "arguments": {
+        "geodataset": "Countries",
+        "output_geodataframe_name": "countries"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "load_data",
+      "arguments": {
+        "dataset": "Forest area (sq. km)",
+        "output_dataframe_name": "forest"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "load_geodata",
+      "arguments": {
+        "geodataset": "Power stations in Africa",
+        "output_geodataframe_name": "power_stations"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "filter_categorical",
+      "arguments": {
+        "dataframe_name": "countries",
+        "filters": {
+          "CONTINENT": "Africa"
+        },
+        "output_dataframe_name": "africa_countries"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "merge_dataframes",
+      "arguments": {
+        "dataframe_name": "forest",
+        "geodataframe_name": "africa_countries",
+        "statkey": "Country Name",
+        "geokey": "NAME_EN",
+        "output_dataframe_name": "africa_forest"
+      },
+      "comment": "If 'statkey' is 'Country Name', then 'geokey' should be 'NAME_EN'. If 'statkey' is 'Country Code', then 'geokey' can be either 'WB_A3' or 'ISO_A3'."
+    },
+    {
+      "function_name": "calculate_columns",
+      "arguments": {
+        "dataframe1_name": "africa_forest",
+        "column1_name": "2021",
+        "dataframe2_name": "africa_forest",
+        "column2_name": "1990",
+        "operation": "divide",
+        "output_column_name": "forest_change_ratio",
+        "output_dataframe_name": "africa_forest_change"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "calculate_column_statistics",
+      "arguments": {
+        "dataframe_name": "africa_forest_change",
+        "column_name": "forest_change_ratio",
+        "output_variable_name": "forest_stats",
+        "additional_quantiles": [
+          0.25
+        ]
+      },
+      "comment": null
+    },
+    {
+      "function_name": "filter_numerical",
+      "arguments": {
+        "dataframe_name": "africa_forest_change",
+        "conditions": "forest_change_ratio < 0.79",
+        "output_dataframe_name": "high_forest_loss"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "select_features_by_spatial_relationship",
+      "arguments": {
+        "features_geodataframe_name": "power_stations",
+        "reference_geodataframe_name": "high_forest_loss",
+        "spatial_predicates": [
+          "within"
+        ],
+        "output_geodataframe_name": "power_stations_forest_loss"
+      },
+      "comment": null
+    }
+  ]
+}

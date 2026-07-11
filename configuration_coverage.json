@@ -9,5 +9,5 @@
   "self-built-no-thinking": 1,
   "llm-geo-deepseek-v4-pro-direct": 2,
   "geonature-deepseek-v4-pro-direct": 3,
-  "geobenchx-claude-3-5-haiku-tool-trace": 2
+  "geobenchx-claude-3-5-haiku-tool-trace": 5
 }

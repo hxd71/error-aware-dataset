@@ -818,5 +818,45 @@
     "provider": "Anthropic",
     "reasoning": "GeoBenchX published tool-call trace; temperature 0",
     "error_summary": "模型只读取并映射 `Rural population` 的 2023 原始人数，却把图例写成 `Rural Population (%)`；它没有读取总人口，也没有计算比例，导致分级设色图表达的是规模效应而不是农村人口百分比。"
+  },
+  {
+    "sample_id": "geobenchx_snow_water_bodies_layer_omission_e3",
+    "source": "GeoBenchX Snow Water Bodies Layer Omission",
+    "task_id": "geobenchx_task_996706",
+    "sample_origin": "observed_run",
+    "primary_label": "E3. Map Composition Defect",
+    "secondary_labels": [],
+    "llm_model": "claude-3-5-haiku-20241022",
+    "provider": "Anthropic",
+    "reasoning": "GeoBenchX published tool-call trace; temperature 0",
+    "error_summary": "生成工具调用只加载 `Lakes in North America`，遗漏任务所需的 `Rivers in North America`，最终可视化图层只有 snow_contours 和 lakes；因此“major water bodies”语义不完整，地图缺少关键上下文图层。"
+  },
+  {
+    "sample_id": "geobenchx_power_stations_forest_loss_threshold_d3",
+    "source": "GeoBenchX Power Stations Forest Loss Threshold",
+    "task_id": "geobenchx_task_932053",
+    "sample_origin": "observed_run",
+    "primary_label": "D3. Spatial Statistical Misinterpretation",
+    "secondary_labels": [
+      "D1. Aggregation Scope Confusion"
+    ],
+    "llm_model": "claude-3-5-haiku-20241022",
+    "provider": "Anthropic",
+    "reasoning": "GeoBenchX published tool-call trace; temperature 0",
+    "error_summary": "模型虽然加载了森林面积、国家边界和非洲电站数据，但没有用统计阈值/分位数定义 `significant forest loss`，也没有执行电站到高损失国家的空间筛选；最终只生成森林损失分级设色图，无法回答电站数量。"
+  },
+  {
+    "sample_id": "geobenchx_tb_county_population_density_d2",
+    "source": "GeoBenchX TB County Population Density Heatmap",
+    "task_id": "geobenchx_task_419069",
+    "sample_origin": "observed_run",
+    "primary_label": "D2. Spatial Allocation Error",
+    "secondary_labels": [
+      "D1. Aggregation Scope Confusion"
+    ],
+    "llm_model": "claude-3-5-haiku-20241022",
+    "provider": "Anthropic",
+    "reasoning": "GeoBenchX published tool-call trace; temperature 0",
+    "error_summary": "模型没有把 TB 表连接到县界，也没有对县域人口栅格做有效的面域统计；它生成所有 MA/NY 县质心，并在 `make_heatmap` 中使用 `ALAND` 作为权重，实际表达县面积而不是有 TB 病例县的人口密度。"
   }
 ]

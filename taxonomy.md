@@ -20,11 +20,11 @@
 | | **C2. Invalid Geometry Handling** | Missing defensive handling for self-intersections or invalid polygons | Running `overlay`, `dissolve`, or `union` without `make_valid()`; `TopologyException` or corrupted output |
 | | **C3. Network Connectivity Misinterpretation** | Network topology inferred from geometry appearance rather than graph connectivity | Treating road polylines as already routable; failing to snap origin/destination points to the nearest network nodes |
 | **D. Spatial Analysis Errors** | **D1. Aggregation Scope Confusion** | Local analytical constraints collapsed into global computation | Returning one global maximum instead of one maximum per province/county; ignoring administrative grouping |
-| | **D2. Spatial Allocation Error** | Extensive or intensive variables transferred across zones without valid spatial weighting | MAUP-related errors; assigning polygon-level values to intersecting zones without area-weighted redistribution |
-| | **D3. Spatial Statistical Misinterpretation** | Spatial dependence, heterogeneity, or local/global statistics interpreted incorrectly | Treating spatially autocorrelated samples as independent; confusing local and global spatial statistics |
+| | **D2. Spatial Allocation Error** | Extensive or intensive variables transferred across zones without valid spatial weighting | MAUP-related errors; assigning polygon-level values to intersecting zones without area-weighted redistribution; sampling a polygon's centroid or using area as a proxy for county-level population density |
+| | **D3. Spatial Statistical Misinterpretation** | Spatial dependence, heterogeneity, derived indicators, thresholds, or local/global statistics interpreted incorrectly | Treating spatially autocorrelated samples as independent; confusing local and global spatial statistics; omitting the statistical threshold that defines “significant” spatial change |
 | **E. Cartographic Errors** | **E1. Classification Scheme Misuse** | Inappropriate classification method for the data distribution | Using equal interval for heavy-tailed variables where quantile or Jenks classification is needed |
 | | **E2. Symbolization Error** | Visual variables inconsistent with data type or semantics | Applying continuous colormaps to categorical land-use classes; misleading ordinal interpretation |
-| | **E3. Map Composition Defect** | Missing or defective cartographic elements required for interpretation | Missing legend, scale bar, labels, or unreadable class breaks; poor layout causing ambiguous map reading |
+| | **E3. Map Composition Defect** | Missing or defective cartographic elements, required context/thematic layers, or map deliverables needed for interpretation | Missing legend, scale bar, labels, required context layers, or unreadable class breaks; poor layout causing ambiguous map reading |
 
 
 ## Detectability and Observability as Evaluation Dimensions

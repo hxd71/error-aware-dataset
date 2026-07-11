@@ -1,0 +1,25 @@
+{
+  "task": "Create contour lines of snow accumulation near major water bodies",
+  "reference_required_geodata_layers": [
+    "Lakes in North America",
+    "Rivers in North America"
+  ],
+  "generated_loaded_geodata_layers": [
+    "Lakes in North America"
+  ],
+  "reference_visual_layers": [
+    "snow_contours",
+    "rivers",
+    "lakes"
+  ],
+  "generated_visual_layers": [
+    "snow_contours",
+    "lakes"
+  ],
+  "missing_required_geodata_layers": [
+    "Rivers in North America"
+  ],
+  "missing_visual_layers": [
+    "rivers"
+  ]
+}

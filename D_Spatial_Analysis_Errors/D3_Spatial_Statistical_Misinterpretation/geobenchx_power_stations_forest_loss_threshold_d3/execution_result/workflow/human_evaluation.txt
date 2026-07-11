@@ -1,0 +1,1 @@
+The candidate solution does not match any of the reference solutions. It loads correct datasets. However, the tools called are different. Both reference solutions contain 'select_features_by_spatial_relationship' on 'Power stations in Africa' dataset to get answer to the task. No such tool is used in the candidate solution.

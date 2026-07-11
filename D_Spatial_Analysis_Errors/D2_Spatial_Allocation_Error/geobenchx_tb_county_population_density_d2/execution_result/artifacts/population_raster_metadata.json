@@ -1,0 +1,13 @@
+{
+  "source_artifact": "GeoData/usa_ppp_2020_1km_Aggregated_UNadj.tif",
+  "crs": "GEOGCS[\"WGS 84\",DATUM[\"World Geodetic System 1984\",SPHEROID[\"WGS 84\",6378137,298.257223563]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST]]",
+  "bounds": {
+    "left": -179.15124930330558,
+    "bottom": 18.90791676654655,
+    "right": 179.78208259429442,
+    "top": 71.39124988994655
+  },
+  "width": 43072,
+  "height": 6298,
+  "nodata": -99999.0
+}

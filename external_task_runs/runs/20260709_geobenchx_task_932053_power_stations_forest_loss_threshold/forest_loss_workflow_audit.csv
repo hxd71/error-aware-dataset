@@ -1,0 +1,4 @@
+requirement,reference,generated
+define significant forest loss with statistics/threshold,calculate_column_statistics + filter_numerical,missing
+select power stations within high-loss countries,select_features_by_spatial_relationship(predicate=within),missing
+answer how many power stations,451 selected stations,choropleth map only

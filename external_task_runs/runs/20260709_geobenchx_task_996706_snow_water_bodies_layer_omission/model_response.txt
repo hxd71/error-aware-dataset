@@ -1,0 +1,58 @@
+{
+  "steps": [
+    {
+      "function_name": "get_raster_path",
+      "arguments": {
+        "rasterdataset": "Accumulated snow cover season 2024-2025, USA, inches"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "load_geodata",
+      "arguments": {
+        "geodataset": "Lakes in North America",
+        "output_geodataframe_name": "lakes"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "generate_contours_display",
+      "arguments": {
+        "raster_path": "data_source/GeoData/sfav2_CONUS_2024093012_to_2025052012_processed.tif",
+        "output_filename": "snow_contours",
+        "contour_interval": 10,
+        "column_title": "snow_depth",
+        "nodataval": -9999,
+        "output_geodataframe_name": "snow_contours",
+        "plot_title": "Snow Accumulation Contours (inches) with Major Lakes, February 2025",
+        "colormap": "Blues"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "visualize_geographies",
+      "arguments": {
+        "geodataframe_names": [
+          "snow_contours",
+          "lakes"
+        ],
+        "layer_styles": [
+          {
+            "color": "blue",
+            "alpha": 0.6,
+            "linewidth": 0.5,
+            "label": "Snow Depth Contours"
+          },
+          {
+            "color": "darkblue",
+            "alpha": 0.3,
+            "linewidth": 0.5,
+            "label": "Lakes"
+          }
+        ],
+        "title": "Snow Accumulation Contours and Major Lakes - February 2025"
+      },
+      "comment": null
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "reference_metric": "forest_change_ratio = forest_area_2021 / forest_area_1990",
+  "reference_threshold": 0.79,
+  "computed_first_quartile": 0.7914654482710257,
+  "generated_metric": "forest_loss = forest_area_2000 - forest_area_2021",
+  "generated_threshold": null,
+  "reference_selected_power_station_count": 451,
+  "generated_selected_power_station_count": null
+}

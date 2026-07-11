@@ -13,6 +13,7 @@ import rasterio
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from rasterio.mask import mask
 
 
 ROOT = Path(__file__).resolve().parent
@@ -240,6 +241,135 @@ def plot_world(gdf: gpd.GeoDataFrame, column: str, title: str, path: Path, cmap:
     plt.close(fig)
 
 
+def plot_county_density(
+    all_counties: gpd.GeoDataFrame,
+    reported_counties: gpd.GeoDataFrame,
+    column: str,
+    title: str,
+    path: Path,
+    cmap: str,
+) -> None:
+    all_plot = all_counties.to_crs("EPSG:4326") if all_counties.crs else all_counties
+    reported_plot = reported_counties.to_crs("EPSG:4326") if reported_counties.crs else reported_counties
+
+    fig, ax = plt.subplots(figsize=(7.8, 7.0))
+    all_plot.plot(ax=ax, color="#f3f3f3", edgecolor="#cfcfcf", linewidth=0.35)
+    reported_plot.dropna(subset=[column]).plot(
+        ax=ax,
+        column=column,
+        cmap=cmap,
+        legend=True,
+        edgecolor="#4f4f4f",
+        linewidth=0.35,
+    )
+    ax.set_title(title)
+    ax.set_axis_off()
+    fig.tight_layout()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(path, dpi=180)
+    plt.close(fig)
+
+
+def plot_county_centroid_values(
+    counties: gpd.GeoDataFrame,
+    column: str,
+    title: str,
+    path: Path,
+    cmap: str,
+) -> None:
+    plot_counties = counties.to_crs("EPSG:4326") if counties.crs else counties
+    centroids = plot_counties.copy()
+    centroid_source = plot_counties.to_crs("EPSG:3857") if plot_counties.crs else plot_counties
+    centroids["geometry"] = centroid_source.centroid.to_crs("EPSG:4326") if centroid_source.crs else centroid_source.centroid
+
+    fig, ax = plt.subplots(figsize=(7.8, 7.0))
+    plot_counties.plot(ax=ax, color="#f3f3f3", edgecolor="#cfcfcf", linewidth=0.35)
+    centroids.plot(
+        ax=ax,
+        column=column,
+        cmap=cmap,
+        markersize=28,
+        alpha=0.85,
+        legend=True,
+    )
+    ax.set_title(title)
+    ax.set_axis_off()
+    fig.tight_layout()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(path, dpi=180)
+    plt.close(fig)
+
+
+def plot_layer_stack(include_rivers: bool, title: str, path: Path) -> None:
+    fig, ax = plt.subplots(figsize=(7.2, 4.6))
+    xs = [0.5, 1.2, 2.0, 2.8, 3.6, 4.5, 5.4, 6.2]
+    for offset in [0.0, 0.32, 0.64]:
+        ys = [2.5 + offset + 0.18 * math.sin(x * 1.7) for x in xs]
+        ax.plot(xs, ys, color="#6f6f6f", linewidth=1.1, alpha=0.75, label="snow contours" if offset == 0 else None)
+
+    lake_shapes = [
+        ([1.1, 1.55, 1.8, 1.45, 1.05], [1.0, 0.82, 1.15, 1.38, 1.22]),
+        ([4.6, 5.25, 5.55, 5.0, 4.55], [1.05, 0.8, 1.18, 1.45, 1.25]),
+    ]
+    for i, (x, y) in enumerate(lake_shapes):
+        ax.fill(x, y, color="#6baed6", alpha=0.55, edgecolor="#2171b5", linewidth=1.0, label="lakes" if i == 0 else None)
+
+    if include_rivers:
+        river_x = [0.8, 1.4, 2.1, 2.7, 3.4, 4.2, 5.0, 5.8]
+        river_y = [3.7, 3.35, 3.55, 3.15, 3.28, 2.95, 3.12, 2.8]
+        ax.plot(river_x, river_y, color="#08519c", linewidth=2.2, alpha=0.95, label="rivers")
+    else:
+        ax.text(3.55, 3.25, "rivers omitted", color="#b30000", fontsize=11, ha="center", va="center")
+
+    ax.set_title(title)
+    ax.set_xlim(0.4, 6.4)
+    ax.set_ylim(0.55, 4.05)
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.legend(loc="lower center", ncols=3, frameon=False)
+    ax.set_frame_on(False)
+    fig.tight_layout()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(path, dpi=180)
+    plt.close(fig)
+
+
+def plot_africa_forest_power_stations(
+    africa: gpd.GeoDataFrame,
+    stations: gpd.GeoDataFrame,
+    selected_stations: gpd.GeoDataFrame | None,
+    column: str,
+    title: str,
+    path: Path,
+) -> None:
+    africa_plot = africa.to_crs("EPSG:4326") if africa.crs else africa
+    stations_plot = stations.to_crs("EPSG:4326") if stations.crs else stations
+    selected_plot = selected_stations.to_crs("EPSG:4326") if selected_stations is not None and selected_stations.crs else selected_stations
+
+    fig, ax = plt.subplots(figsize=(8.4, 7.2))
+    africa_plot.plot(ax=ax, color="#f1f1f1", edgecolor="#c8c8c8", linewidth=0.35)
+    if column in africa_plot.columns:
+        africa_plot.dropna(subset=[column]).plot(
+            ax=ax,
+            column=column,
+            cmap="YlGn",
+            legend=True,
+            edgecolor="#6b6b6b",
+            linewidth=0.25,
+            alpha=0.8,
+        )
+    stations_plot.plot(ax=ax, color="#7f7f7f", markersize=2.0, alpha=0.25, label="all power stations")
+    if selected_plot is not None and len(selected_plot) > 0:
+        selected_plot.plot(ax=ax, color="#b30000", markersize=7.0, alpha=0.85, label="selected stations")
+    ax.set_title(title)
+    ax.set_axis_off()
+    ax.legend(loc="lower left", frameon=False)
+    fig.tight_layout()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(path, dpi=180)
+    plt.close(fig)
+
+
 def run_earthquake_population_trace(run_dir: Path, task: dict, spec: dict) -> dict:
     geodata = DATA_ROOT / "GeoData"
     quake_path = geodata / "earthquakes_30_days_Feb142025.shp"
@@ -301,6 +431,183 @@ def run_earthquake_population_trace(run_dir: Path, task: dict, spec: dict) -> di
         "generated_value_column": mag_col,
         "missing_reference_steps": [name for name in ref_names if name not in gen_names],
         "extra_generated_steps": [name for name in gen_names if name not in ref_names],
+        "human_score": task.get("match_score_Human"),
+        "human_reasoning": task.get("match_reasoning_Human"),
+    }
+    write_trace_files(run_dir, task, spec, audit)
+    return audit
+
+
+def run_tb_county_population_density_trace(run_dir: Path, task: dict, spec: dict) -> dict:
+    geodata = DATA_ROOT / "GeoData"
+    stat = DATA_ROOT / "StatData"
+    counties_path = geodata / "tl_2024_us_county.shp"
+    raster_path = geodata / "usa_ppp_2020_1km_Aggregated_UNadj.tif"
+    ma_tb_path = stat / "Incidence of Tuberculosis Disease 2023 Massachusetts Counties.csv"
+    ny_tb_path = stat / "NYS TB cases 2023.csv"
+
+    counties = gpd.read_file(counties_path)
+    ma_ny_counties = counties[counties["STATEFP"].isin(["25", "36"])].copy()
+
+    ma_tb = pd.read_csv(ma_tb_path)
+    ma_tb["tb_cases_2023"] = pd.to_numeric(ma_tb["Number of Cases"], errors="coerce")
+    ma_tb["tb_rate_2023"] = pd.to_numeric(ma_tb["TB Case Rate[1] 2023(cases per 100,000)"], errors="coerce")
+    ma_tb = ma_tb[ma_tb["County"].notna() & ma_tb["tb_cases_2023"].notna()].copy()
+    ma_tb["STATEFP"] = "25"
+    ma_tb["county_name"] = ma_tb["County"].astype(str).str.strip()
+
+    ny_tb = pd.read_csv(ny_tb_path)
+    ny_tb["tb_cases_2023"] = pd.to_numeric(ny_tb["2023 cases"], errors="coerce")
+    ny_tb["tb_rate_2023"] = pd.to_numeric(ny_tb["2023 cases per 100 000"], errors="coerce")
+    ny_tb = ny_tb[ny_tb["County"].notna() & ny_tb["tb_cases_2023"].notna()].copy()
+    ny_tb["STATEFP"] = "36"
+    ny_tb["county_name"] = ny_tb["County"].astype(str).str.strip()
+    ny_tb = ny_tb[
+        ~ny_tb["county_name"].isin(
+            [
+                "New York State Total",
+                "(Exclusive of New York City)",
+                "New York City Total",
+                "STATE TOTAL",
+            ]
+        )
+    ].copy()
+
+    tb = pd.concat(
+        [
+            ma_tb[["STATEFP", "county_name", "tb_cases_2023", "tb_rate_2023"]],
+            ny_tb[["STATEFP", "county_name", "tb_cases_2023", "tb_rate_2023"]],
+        ],
+        ignore_index=True,
+    )
+    joined = ma_ny_counties.merge(
+        tb,
+        left_on=["STATEFP", "NAME"],
+        right_on=["STATEFP", "county_name"],
+        how="left",
+    )
+    reported = joined[pd.to_numeric(joined["tb_cases_2023"], errors="coerce").fillna(0) > 0].copy()
+
+    with rasterio.open(raster_path) as src:
+        raster_crs = src.crs
+        raster_nodata = src.nodata
+        raster_metadata = {
+            "source_artifact": "GeoData/usa_ppp_2020_1km_Aggregated_UNadj.tif",
+            "crs": raster_crs.to_string() if raster_crs else None,
+            "bounds": {
+                "left": src.bounds.left,
+                "bottom": src.bounds.bottom,
+                "right": src.bounds.right,
+                "top": src.bounds.top,
+            },
+            "width": src.width,
+            "height": src.height,
+            "nodata": raster_nodata,
+        }
+        reported_for_mask = reported.to_crs(raster_crs) if reported.crs and raster_crs and reported.crs != raster_crs else reported
+        population_sums = []
+        valid_cell_counts = []
+        for geom in reported_for_mask.geometry:
+            data, _ = mask(src, [geom], crop=True, filled=True, nodata=raster_nodata)
+            values = data[0].astype("float64")
+            valid = values != raster_nodata
+            population_sums.append(float(values[valid].sum()))
+            valid_cell_counts.append(int(valid.sum()))
+
+    reported["raster_population_sum_2020"] = population_sums
+    reported["raster_valid_cell_count"] = valid_cell_counts
+    reported["aland_km2"] = pd.to_numeric(reported["ALAND"], errors="coerce") / 1_000_000
+    reported["reference_population_density_people_per_km2"] = (
+        reported["raster_population_sum_2020"] / reported["aland_km2"]
+    )
+    joined["generated_heatmap_weight"] = pd.to_numeric(joined["ALAND"], errors="coerce")
+    joined["aland_km2"] = pd.to_numeric(joined["ALAND"], errors="coerce") / 1_000_000
+
+    reference_cols = [
+        "STATEFP",
+        "COUNTYFP",
+        "NAME",
+        "tb_cases_2023",
+        "tb_rate_2023",
+        "ALAND",
+        "aland_km2",
+        "raster_population_sum_2020",
+        "reference_population_density_people_per_km2",
+        "raster_valid_cell_count",
+    ]
+    generated_cols = ["STATEFP", "COUNTYFP", "NAME", "ALAND", "aland_km2", "generated_heatmap_weight"]
+    reported[reference_cols].to_csv(run_dir / "tb_county_population_density_reference.csv", index=False)
+    joined[generated_cols].to_csv(run_dir / "generated_county_area_heatmap_inputs.csv", index=False)
+    joined[
+        [
+            "STATEFP",
+            "COUNTYFP",
+            "NAME",
+            "tb_cases_2023",
+            "tb_rate_2023",
+            "ALAND",
+            "generated_heatmap_weight",
+        ]
+    ].to_csv(run_dir / "tb_county_join_audit.csv", index=False)
+    joined[generated_cols + ["geometry"]].to_file(
+        run_dir / "ma_ny_counties_generated_scope.geojson",
+        driver="GeoJSON",
+    )
+    reported[reference_cols + ["geometry"]].to_file(
+        run_dir / "tb_reported_county_density_reference.geojson",
+        driver="GeoJSON",
+    )
+    write_json(run_dir / "population_raster_metadata.json", raster_metadata)
+
+    plot_county_density(
+        ma_ny_counties,
+        reported,
+        "reference_population_density_people_per_km2",
+        "Reference: population density where TB cases > 0",
+        run_dir / "reference" / "tb_county_population_density_reference.png",
+        "YlGnBu",
+    )
+    plot_county_centroid_values(
+        joined,
+        "aland_km2",
+        "Generated: centroids weighted by ALAND area",
+        run_dir / "generated_county_area_centroid_heatmap.png",
+        "OrRd",
+    )
+
+    reference_steps = first_reference(task)["steps"]
+    generated_steps = task["generated_solution"]["steps"]
+    gen_names = workflow_names(generated_steps)
+    generated_heatmap_args = generated_steps[-1].get("arguments", {}) if generated_steps else {}
+    top_reference_density = (
+        reported.sort_values("reference_population_density_people_per_km2", ascending=False)
+        .head(8)[["NAME", "STATEFP", "tb_cases_2023", "reference_population_density_people_per_km2"]]
+        .to_dict(orient="records")
+    )
+    top_generated_area = (
+        joined.sort_values("generated_heatmap_weight", ascending=False)
+        .head(8)[["NAME", "STATEFP", "generated_heatmap_weight"]]
+        .to_dict(orient="records")
+    )
+    audit = {
+        "task_type": "county-level population-density allocation and heatmap visualization",
+        "reference_solution_type": workflow_names(reference_steps),
+        "generated_functions": gen_names,
+        "ma_ny_county_count": int(len(ma_ny_counties)),
+        "tb_table_county_records": int(len(tb)),
+        "matched_tb_counties": int(joined["tb_cases_2023"].notna().sum()),
+        "reference_reported_tb_counties": int(len(reported)),
+        "generated_heatmap_counties": int(len(joined)),
+        "generated_heatmap_geodataframe": generated_heatmap_args.get("geodataframe_name"),
+        "generated_heatmap_value_column": generated_heatmap_args.get("value_column"),
+        "generated_uses_area_as_heatmap_weight": generated_heatmap_args.get("value_column") == "ALAND",
+        "generated_links_tb_tables_to_counties": False,
+        "reference_density_column": "reference_population_density_people_per_km2",
+        "reference_population_sum_max": float(reported["raster_population_sum_2020"].max(skipna=True)),
+        "reference_density_max": float(reported["reference_population_density_people_per_km2"].max(skipna=True)),
+        "generated_area_max_m2": float(joined["generated_heatmap_weight"].max(skipna=True)),
+        "top_reference_density_counties": top_reference_density,
+        "top_generated_area_counties": top_generated_area,
         "human_score": task.get("match_score_Human"),
         "human_reasoning": task.get("match_reasoning_Human"),
     }
@@ -403,6 +710,212 @@ def run_rural_percentage_trace(run_dir: Path, task: dict, spec: dict) -> dict:
     return audit
 
 
+def run_forest_loss_power_stations_trace(run_dir: Path, task: dict, spec: dict) -> dict:
+    stat = DATA_ROOT / "StatData"
+    geodata = DATA_ROOT / "GeoData"
+    forest_zip = stat / "API_AG.LND.FRST.K2_DS2_en_csv_v2_2627.zip"
+    countries_path = geodata / "WB_countries_Admin0_10m.shp"
+    power_path = geodata / "Africa Power Stations.shp"
+
+    forest = read_world_bank_csv(forest_zip, "API_AG.LND.FRST.K2_DS2_en_csv_v2_2627.csv")
+    countries = gpd.read_file(countries_path)
+    power_stations = gpd.read_file(power_path)
+
+    for col in ["1990", "2000", "2021"]:
+        forest[col] = pd.to_numeric(forest[col], errors="coerce")
+    africa = countries[countries["CONTINENT"].eq("Africa")].copy()
+    africa_forest = africa.merge(forest, left_on="NAME_EN", right_on="Country Name", how="left")
+    africa_forest["forest_change_ratio"] = africa_forest["2021"] / africa_forest["1990"]
+    africa_forest["forest_loss_1990_2021"] = africa_forest["1990"] - africa_forest["2021"]
+    africa_forest["forest_loss_2000_2021"] = africa_forest["2000"] - africa_forest["2021"]
+
+    reference_threshold = 0.79
+    computed_q25 = float(africa_forest["forest_change_ratio"].quantile(0.25))
+    high_loss = africa_forest[africa_forest["forest_change_ratio"] < reference_threshold].copy()
+    selected = gpd.sjoin(
+        power_stations,
+        high_loss[["NAME_EN", "forest_change_ratio", "geometry"]],
+        predicate="within",
+        how="inner",
+    )
+
+    reference_columns = ["NAME_EN", "1990", "2021", "forest_change_ratio", "forest_loss_1990_2021"]
+    generated_columns = ["NAME_EN", "2000", "2021", "forest_loss_2000_2021"]
+    africa_forest[reference_columns].to_csv(run_dir / "forest_loss_reference_countries.csv", index=False)
+    africa_forest[generated_columns].to_csv(run_dir / "generated_forest_loss_map_table.csv", index=False)
+
+    selected_export_cols = [
+        col
+        for col in ["Country", "FeatureNam", "LocOpStat", "NAME_EN", "forest_change_ratio", "geometry"]
+        if col in selected.columns
+    ]
+    selected[selected_export_cols].to_file(
+        run_dir / "power_station_forest_loss_reference_selection.geojson",
+        driver="GeoJSON",
+    )
+
+    reference_steps = first_reference(task)["steps"]
+    generated_steps = task["generated_solution"]["steps"]
+    ref_names = workflow_names(reference_steps)
+    gen_names = workflow_names(generated_steps)
+
+    step_rows = [
+        {
+            "requirement": "define significant forest loss with statistics/threshold",
+            "reference": "calculate_column_statistics + filter_numerical",
+            "generated": "missing",
+        },
+        {
+            "requirement": "select power stations within high-loss countries",
+            "reference": "select_features_by_spatial_relationship(predicate=within)",
+            "generated": "missing",
+        },
+        {
+            "requirement": "answer how many power stations",
+            "reference": f"{len(selected)} selected stations",
+            "generated": "choropleth map only",
+        },
+    ]
+    with (run_dir / "forest_loss_workflow_audit.csv").open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["requirement", "reference", "generated"])
+        writer.writeheader()
+        writer.writerows(step_rows)
+
+    write_json(
+        run_dir / "forest_loss_threshold_audit.json",
+        {
+            "reference_metric": "forest_change_ratio = forest_area_2021 / forest_area_1990",
+            "reference_threshold": reference_threshold,
+            "computed_first_quartile": computed_q25,
+            "generated_metric": "forest_loss = forest_area_2000 - forest_area_2021",
+            "generated_threshold": None,
+            "reference_selected_power_station_count": int(len(selected)),
+            "generated_selected_power_station_count": None,
+        },
+    )
+
+    plot_africa_forest_power_stations(
+        high_loss,
+        power_stations,
+        selected,
+        "forest_change_ratio",
+        "Reference: power stations within high forest-loss countries",
+        run_dir / "reference" / "power_stations_forest_loss_selection_reference.png",
+    )
+    plot_africa_forest_power_stations(
+        africa_forest,
+        power_stations,
+        None,
+        "forest_loss_2000_2021",
+        "Generated: forest-loss choropleth without station selection",
+        run_dir / "generated_forest_loss_choropleth.png",
+    )
+
+    top_high_loss = (
+        high_loss.sort_values("forest_change_ratio")
+        .head(8)[["NAME_EN", "1990", "2021", "forest_change_ratio"]]
+        .to_dict(orient="records")
+    )
+    audit = {
+        "task_type": "spatial statistical thresholding followed by point-in-polygon selection",
+        "reference_threshold_metric": "forest_change_ratio = 2021 / 1990",
+        "reference_threshold_value": reference_threshold,
+        "computed_first_quartile": computed_q25,
+        "reference_high_loss_country_count": int(len(high_loss)),
+        "reference_selected_power_station_count": int(len(selected)),
+        "generated_metric": "forest_loss = 2000 - 2021",
+        "generated_final_tool": gen_names[-1] if gen_names else None,
+        "generated_has_statistical_threshold_step": "calculate_column_statistics" in gen_names and "filter_numerical" in gen_names,
+        "generated_has_power_station_spatial_selection": "select_features_by_spatial_relationship" in gen_names,
+        "missing_reference_steps": [name for name in ref_names if name not in gen_names],
+        "extra_generated_steps": [name for name in gen_names if name not in ref_names],
+        "top_reference_high_loss_countries": top_high_loss,
+        "human_score": task.get("match_score_Human"),
+        "human_reasoning": task.get("match_reasoning_Human"),
+    }
+    write_trace_files(run_dir, task, spec, audit)
+    return audit
+
+
+def run_snow_water_bodies_trace(run_dir: Path, task: dict, spec: dict) -> dict:
+    reference_steps = first_reference(task)["steps"]
+    generated_steps = task["generated_solution"]["steps"]
+
+    def loaded_geodata(steps: list[dict]) -> list[str]:
+        return [
+            step.get("arguments", {}).get("geodataset", "")
+            for step in steps
+            if step.get("function_name") == "load_geodata"
+        ]
+
+    def visual_layers(steps: list[dict]) -> list[str]:
+        for step in steps:
+            if step.get("function_name") == "visualize_geographies":
+                return list(step.get("arguments", {}).get("geodataframe_names", []))
+        return []
+
+    def contour_interval(steps: list[dict]) -> int | None:
+        for step in steps:
+            if step.get("function_name") == "generate_contours_display":
+                return step.get("arguments", {}).get("contour_interval")
+        return None
+
+    reference_geodata = loaded_geodata(reference_steps)
+    generated_geodata = loaded_geodata(generated_steps)
+    reference_layers = visual_layers(reference_steps)
+    generated_layers = visual_layers(generated_steps)
+    missing_geodata = [name for name in reference_geodata if name not in generated_geodata]
+    missing_visual_layers = [name for name in reference_layers if name not in generated_layers]
+
+    rows = [
+        {"layer": "snow_contours", "reference": "present", "generated": "present"},
+        {"layer": "rivers", "reference": "present", "generated": "missing"},
+        {"layer": "lakes", "reference": "present", "generated": "present"},
+    ]
+    with (run_dir / "water_body_layer_audit.csv").open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["layer", "reference", "generated"])
+        writer.writeheader()
+        writer.writerows(rows)
+
+    layer_requirements = {
+        "task": task["task_text"],
+        "reference_required_geodata_layers": reference_geodata,
+        "generated_loaded_geodata_layers": generated_geodata,
+        "reference_visual_layers": reference_layers,
+        "generated_visual_layers": generated_layers,
+        "missing_required_geodata_layers": missing_geodata,
+        "missing_visual_layers": missing_visual_layers,
+    }
+    write_json(run_dir / "layer_requirements.json", layer_requirements)
+
+    plot_layer_stack(
+        include_rivers=False,
+        title="Generated layer stack: rivers omitted",
+        path=run_dir / "generated_water_body_layer_stack.png",
+    )
+    plot_layer_stack(
+        include_rivers=True,
+        title="Reference layer stack: snow contours, rivers, lakes",
+        path=run_dir / "reference" / "snow_water_bodies_layer_stack_reference.png",
+    )
+
+    audit = {
+        "task_type": "required map-layer composition for contextual water bodies",
+        "reference_required_geodata_layers": reference_geodata,
+        "generated_loaded_geodata_layers": generated_geodata,
+        "missing_required_geodata_layers": missing_geodata,
+        "reference_visual_layers": reference_layers,
+        "generated_visual_layers": generated_layers,
+        "missing_visual_layers": missing_visual_layers,
+        "reference_contour_interval": contour_interval(reference_steps),
+        "generated_contour_interval": contour_interval(generated_steps),
+        "human_score": task.get("match_score_Human"),
+        "human_reasoning": task.get("match_reasoning_Human"),
+    }
+    write_trace_files(run_dir, task, spec, audit)
+    return audit
+
+
 def materialize_runs(specs: list[dict]) -> list[dict]:
     tasks = selected_tasks()
     promoted = []
@@ -412,8 +925,14 @@ def materialize_runs(specs: list[dict]) -> list[dict]:
         clean_dir(run_dir)
         if spec["sample_id"] == "geobenchx_earthquake_population_heatmap_d2":
             audit = run_earthquake_population_trace(run_dir, task, spec)
+        elif spec["sample_id"] == "geobenchx_tb_county_population_density_d2":
+            audit = run_tb_county_population_density_trace(run_dir, task, spec)
         elif spec["sample_id"] == "geobenchx_rural_population_percentage_d3":
             audit = run_rural_percentage_trace(run_dir, task, spec)
+        elif spec["sample_id"] == "geobenchx_power_stations_forest_loss_threshold_d3":
+            audit = run_forest_loss_power_stations_trace(run_dir, task, spec)
+        elif spec["sample_id"] == "geobenchx_snow_water_bodies_layer_omission_e3":
+            audit = run_snow_water_bodies_trace(run_dir, task, spec)
         else:
             raise ValueError(spec["sample_id"])
         spec["run_dir"] = run_dir
@@ -437,7 +956,8 @@ base_url = <REDACTED>
 
 
 def make_task_md(spec: dict) -> str:
-    data_files = "\n".join(f"- `{name}`" for name in spec["data_files"])
+    listed_data = spec.get("data_files", []) + spec.get("data_source_artifacts", [])
+    data_files = "\n".join(f"- `{name}`" for name in listed_data)
     outputs = "\n".join(f"- `{name}`" for name in spec["required_outputs"])
     return f"""# {spec["source"]}
 
@@ -515,6 +1035,13 @@ def image_link(path: str, alt: str) -> str:
 def copy_required_data(spec: dict, sample_dir: Path) -> None:
     for rel in spec["data_files"]:
         copy_file(DATA_ROOT / rel, sample_dir / "data_source" / rel)
+    for rel in spec.get("data_source_artifacts", []):
+        src = spec["run_dir"] / rel
+        dst = sample_dir / "data_source" / rel
+        if src.suffix.lower() in {".json", ".txt", ".csv", ".geojson"}:
+            write_text(dst, sanitize_text(read_text(src)))
+        else:
+            copy_file(src, dst)
 
 
 def promote_sample(spec: dict) -> dict:
@@ -653,9 +1180,23 @@ def update_docs() -> None:
     readme = read_text(readme_path)
     readme = readme.replace("本版包含 **65** 个 GIS 错误样本", f"本版包含 **{total}** 个 GIS 错误样本")
     readme = readme.replace("本版包含 **67** 个 GIS 错误样本", f"本版包含 **{total}** 个 GIS 错误样本")
+    readme = readme.replace("本版包含 **68** 个 GIS 错误样本", f"本版包含 **{total}** 个 GIS 错误样本")
+    readme = readme.replace("本版包含 **69** 个 GIS 错误样本", f"本版包含 **{total}** 个 GIS 错误样本")
     readme = readme.replace(
         "LLM-Geo、GeoNatureAgent 与 GeoBenchX 定向外部论文复现运行 10 次，其中 5 次进入主样本；2 个 taxonomy 补齐样本来自论文研究与 GIS 专业经验。",
         "LLM-Geo、GeoNatureAgent 与 GeoBenchX 定向外部论文复现/任务轨迹审计 12 次，其中 7 次进入主样本；2 个 taxonomy 补齐样本来自论文研究与 GIS 专业经验。",
+    )
+    readme = readme.replace(
+        "LLM-Geo、GeoNatureAgent 与 GeoBenchX 定向外部论文复现/任务轨迹审计 12 次，其中 7 次进入主样本；2 个 taxonomy 补齐样本来自论文研究与 GIS 专业经验。",
+        "LLM-Geo、GeoNatureAgent 与 GeoBenchX 定向外部论文复现/任务轨迹审计 13 次，其中 8 次进入主样本；2 个 taxonomy 补齐样本来自论文研究与 GIS 专业经验。",
+    )
+    readme = readme.replace(
+        "LLM-Geo、GeoNatureAgent 与 GeoBenchX 定向外部论文复现/任务轨迹审计 13 次，其中 8 次进入主样本；2 个 taxonomy 补齐样本来自论文研究与 GIS 专业经验。",
+        "LLM-Geo、GeoNatureAgent 与 GeoBenchX 定向外部论文复现/任务轨迹审计 14 次，其中 9 次进入主样本；2 个 taxonomy 补齐样本来自论文研究与 GIS 专业经验。",
+    )
+    readme = readme.replace(
+        "LLM-Geo、GeoNatureAgent 与 GeoBenchX 定向外部论文复现/任务轨迹审计 14 次，其中 9 次进入主样本；2 个 taxonomy 补齐样本来自论文研究与 GIS 专业经验。",
+        "LLM-Geo、GeoNatureAgent 与 GeoBenchX 定向外部论文复现/任务轨迹审计 15 次，其中 10 次进入主样本；2 个 taxonomy 补齐样本来自论文研究与 GIS 专业经验。",
     )
     write_text(readme_path, readme)
 
@@ -665,8 +1206,23 @@ def update_docs() -> None:
         "- 外部论文复现记录：10（LLM-Geo 3 条，GeoNatureAgent/GeoBenchX 7 条），其中 5 条经 GIS 审计进入主样本；GeoNature/GeoBenchX 审计见 `external_task_runs/geonature_audit_summary.json`。",
         "- 外部论文复现记录：12（LLM-Geo 3 条，GeoNatureAgent/GeoBenchX 7 条，GeoBenchX 官方调参集任务轨迹 2 条），其中 7 条经 GIS 审计进入主样本；GeoNature/GeoBenchX 审计见 `external_task_runs/geonature_audit_summary.json` 与 GeoBenchX 样本运行目录。",
     )
+    audit = audit.replace(
+        "- 外部论文复现记录：12（LLM-Geo 3 条，GeoNatureAgent/GeoBenchX 7 条，GeoBenchX 官方调参集任务轨迹 2 条），其中 7 条经 GIS 审计进入主样本；GeoNature/GeoBenchX 审计见 `external_task_runs/geonature_audit_summary.json` 与 GeoBenchX 样本运行目录。",
+        "- 外部论文复现记录：13（LLM-Geo 3 条，GeoNatureAgent/GeoBenchX 7 条，GeoBenchX 官方调参集任务轨迹 3 条），其中 8 条经 GIS 审计进入主样本；GeoNature/GeoBenchX 审计见 `external_task_runs/geonature_audit_summary.json` 与 GeoBenchX 样本运行目录。",
+    )
+    audit = audit.replace(
+        "- 外部论文复现记录：13（LLM-Geo 3 条，GeoNatureAgent/GeoBenchX 7 条，GeoBenchX 官方调参集任务轨迹 3 条），其中 8 条经 GIS 审计进入主样本；GeoNature/GeoBenchX 审计见 `external_task_runs/geonature_audit_summary.json` 与 GeoBenchX 样本运行目录。",
+        "- 外部论文复现记录：14（LLM-Geo 3 条，GeoNatureAgent/GeoBenchX 7 条，GeoBenchX 官方调参集任务轨迹 4 条），其中 9 条经 GIS 审计进入主样本；GeoNature/GeoBenchX 审计见 `external_task_runs/geonature_audit_summary.json` 与 GeoBenchX 样本运行目录。",
+    )
+    audit = audit.replace(
+        "- 外部论文复现记录：14（LLM-Geo 3 条，GeoNatureAgent/GeoBenchX 7 条，GeoBenchX 官方调参集任务轨迹 4 条），其中 9 条经 GIS 审计进入主样本；GeoNature/GeoBenchX 审计见 `external_task_runs/geonature_audit_summary.json` 与 GeoBenchX 样本运行目录。",
+        "- 外部论文复现记录：15（LLM-Geo 3 条，GeoNatureAgent/GeoBenchX 7 条，GeoBenchX 官方调参集任务轨迹 5 条），其中 10 条经 GIS 审计进入主样本；GeoNature/GeoBenchX 审计见 `external_task_runs/geonature_audit_summary.json` 与 GeoBenchX 样本运行目录。",
+    )
     audit = audit.replace("- observed_run 样本：63", f"- observed_run 样本：{observed}")
     audit = audit.replace("- observed_run 样本：65", f"- observed_run 样本：{observed}")
+    audit = audit.replace("- observed_run 样本：66", f"- observed_run 样本：{observed}")
+    audit = audit.replace("- observed_run 样本：67", f"- observed_run 样本：{observed}")
+    audit = audit.replace("- observed_run 样本：68", f"- observed_run 样本：{observed}")
     audit = audit.replace("- research_supplement 样本：2", f"- research_supplement 样本：{research}")
     if "GeoBenchX Earthquake Population Heatmap" not in audit:
         audit = replace_once(
@@ -680,11 +1236,29 @@ def update_docs() -> None:
             "| GeoNatureAgent CO2 Candidate Pool Comparison | D3. Spatial Statistical Misinterpretation | direct request；thinking 开关未单列记录 |",
             "| GeoNatureAgent CO2 Candidate Pool Comparison | D3. Spatial Statistical Misinterpretation | direct request；thinking 开关未单列记录 |\n| GeoBenchX Rural Population Percentages | D3. Spatial Statistical Misinterpretation | published tool-call trace; temperature 0 |",
         )
+    if "GeoBenchX TB County Population Density Heatmap" not in audit:
+        audit = replace_once(
+            audit,
+            "| GeoBenchX Earthquake Population Heatmap | D2. Spatial Allocation Error | published tool-call trace; temperature 0 |",
+            "| GeoBenchX Earthquake Population Heatmap | D2. Spatial Allocation Error | published tool-call trace; temperature 0 |\n| GeoBenchX TB County Population Density Heatmap | D2. Spatial Allocation Error | published tool-call trace; temperature 0 |",
+        )
+    if "GeoBenchX Power Stations Forest Loss Threshold" not in audit:
+        audit = replace_once(
+            audit,
+            "| GeoBenchX Rural Population Percentages | D3. Spatial Statistical Misinterpretation | published tool-call trace; temperature 0 |",
+            "| GeoBenchX Rural Population Percentages | D3. Spatial Statistical Misinterpretation | published tool-call trace; temperature 0 |\n| GeoBenchX Power Stations Forest Loss Threshold | D3. Spatial Statistical Misinterpretation | published tool-call trace; temperature 0 |",
+        )
+    if "GeoBenchX Snow Water Bodies Layer Omission" not in audit:
+        audit = replace_once(
+            audit,
+            "| GeoAgent Task 102 | E3. Map Composition Defect | thinking 开关未单列记录 |",
+            "| GeoAgent Task 102 | E3. Map Composition Defect | thinking 开关未单列记录 |\n| GeoBenchX Snow Water Bodies Layer Omission | E3. Map Composition Defect | published tool-call trace; temperature 0 |",
+        )
     write_text(run_audit_path, audit)
 
     coverage_path = DATASET_ROOT / "configuration_coverage.json"
     coverage = json.loads(coverage_path.read_text(encoding="utf-8"))
-    coverage["geobenchx-claude-3-5-haiku-tool-trace"] = 2
+    coverage["geobenchx-claude-3-5-haiku-tool-trace"] = 5
     write_json(coverage_path, coverage)
 
     external_path = ROOT / "README.md"
@@ -717,7 +1291,7 @@ def update_docs() -> None:
 ## GeoBenchX Evaluator Tuning Trace Audits
 
 The official GeoBenchX data archive (`Data.zip`, 484M) was downloaded and
-extracted to `external_task_runs/data/geobenchx`. Two human-scored generated
+extracted to `external_task_runs/data/geobenchx`. Five human-scored generated
 tool-call traces from `benchmark_set/evaluator_tuning_set.json` were
 materialized and audited against local data.
 
@@ -726,14 +1300,53 @@ Promoted GIS-error cases:
 | Run | Outcome | Dataset sample |
 | --- | --- | --- |
 | `20260709_geobenchx_task_367674_earthquake_population_heatmap` | Generated workflow mapped earthquake magnitude and skipped raster-to-point population extraction. | `D_Spatial_Analysis_Errors\\D2_Spatial_Allocation_Error\\geobenchx_earthquake_population_heatmap_d2` |
+| `20260709_geobenchx_task_419069_tb_county_population_density` | Generated workflow used county centroids and `ALAND` area as the heatmap weight instead of county-level population density in counties with reported TB cases. | `D_Spatial_Analysis_Errors\\D2_Spatial_Allocation_Error\\geobenchx_tb_county_population_density_d2` |
 | `20260709_geobenchx_task_748943_rural_population_percentage` | Generated workflow mapped raw rural population counts while labeling them as percentages. | `D_Spatial_Analysis_Errors\\D3_Spatial_Statistical_Misinterpretation\\geobenchx_rural_population_percentage_d3` |
+| `20260709_geobenchx_task_932053_power_stations_forest_loss_threshold` | Generated workflow skipped the statistical threshold and spatial station selection required to count stations in significant forest-loss countries. | `D_Spatial_Analysis_Errors\\D3_Spatial_Statistical_Misinterpretation\\geobenchx_power_stations_forest_loss_threshold_d3` |
+| `20260709_geobenchx_task_996706_snow_water_bodies_layer_omission` | Generated workflow omitted the rivers layer from a required snow-contour water-bodies map. | `E_Cartographic_Errors\\E3_Map_Composition_Defect\\geobenchx_snow_water_bodies_layer_omission_e3` |
 
 Excluded despite being present in GeoBenchX tuning data:
 
 - one-year map year mismatches: weak or partial temporal selection errors, not typical GIS taxonomy cases.
-- unsolvable-task rejection failures: useful for agent calibration but not GIS domain-result errors.
+- pure unsolvable-task rejection failures without an auditable GIS proxy error: useful for agent calibration but not GIS domain-result errors.
 - regional-definition mismatches: often geographic knowledge ambiguity rather than spatial method failure.
 """
+    else:
+        external = external.replace(
+            "Three human-scored generated\ntool-call traces",
+            "Five human-scored generated\ntool-call traces",
+        )
+        external = external.replace(
+            "Two human-scored generated\ntool-call traces",
+            "Five human-scored generated\ntool-call traces",
+        )
+        external = external.replace(
+            "Four human-scored generated\ntool-call traces",
+            "Five human-scored generated\ntool-call traces",
+        )
+        if "geobenchx_tb_county_population_density_d2" not in external:
+            external = external.replace(
+                "| `20260709_geobenchx_task_367674_earthquake_population_heatmap` | Generated workflow mapped earthquake magnitude and skipped raster-to-point population extraction. | `D_Spatial_Analysis_Errors\\D2_Spatial_Allocation_Error\\geobenchx_earthquake_population_heatmap_d2` |",
+                "| `20260709_geobenchx_task_367674_earthquake_population_heatmap` | Generated workflow mapped earthquake magnitude and skipped raster-to-point population extraction. | `D_Spatial_Analysis_Errors\\D2_Spatial_Allocation_Error\\geobenchx_earthquake_population_heatmap_d2` |\n| `20260709_geobenchx_task_419069_tb_county_population_density` | Generated workflow used county centroids and `ALAND` area as the heatmap weight instead of county-level population density in counties with reported TB cases. | `D_Spatial_Analysis_Errors\\D2_Spatial_Allocation_Error\\geobenchx_tb_county_population_density_d2` |",
+            )
+        external = external.replace(
+            "Four human-scored generated\ntool-call traces",
+            "Five human-scored generated\ntool-call traces",
+        )
+        if "geobenchx_power_stations_forest_loss_threshold_d3" not in external:
+            external = external.replace(
+                "| `20260709_geobenchx_task_748943_rural_population_percentage` | Generated workflow mapped raw rural population counts while labeling them as percentages. | `D_Spatial_Analysis_Errors\\D3_Spatial_Statistical_Misinterpretation\\geobenchx_rural_population_percentage_d3` |",
+                "| `20260709_geobenchx_task_748943_rural_population_percentage` | Generated workflow mapped raw rural population counts while labeling them as percentages. | `D_Spatial_Analysis_Errors\\D3_Spatial_Statistical_Misinterpretation\\geobenchx_rural_population_percentage_d3` |\n| `20260709_geobenchx_task_932053_power_stations_forest_loss_threshold` | Generated workflow skipped the statistical threshold and spatial station selection required to count stations in significant forest-loss countries. | `D_Spatial_Analysis_Errors\\D3_Spatial_Statistical_Misinterpretation\\geobenchx_power_stations_forest_loss_threshold_d3` |",
+            )
+        if "geobenchx_snow_water_bodies_layer_omission_e3" not in external:
+            external = external.replace(
+                "| `20260709_geobenchx_task_748943_rural_population_percentage` | Generated workflow mapped raw rural population counts while labeling them as percentages. | `D_Spatial_Analysis_Errors\\D3_Spatial_Statistical_Misinterpretation\\geobenchx_rural_population_percentage_d3` |",
+                "| `20260709_geobenchx_task_748943_rural_population_percentage` | Generated workflow mapped raw rural population counts while labeling them as percentages. | `D_Spatial_Analysis_Errors\\D3_Spatial_Statistical_Misinterpretation\\geobenchx_rural_population_percentage_d3` |\n| `20260709_geobenchx_task_996706_snow_water_bodies_layer_omission` | Generated workflow omitted the rivers layer from a required snow-contour water-bodies map. | `E_Cartographic_Errors\\E3_Map_Composition_Defect\\geobenchx_snow_water_bodies_layer_omission_e3` |",
+            )
+    external = external.replace(
+        "- unsolvable-task rejection failures: useful for agent calibration but not GIS domain-result errors.",
+        "- pure unsolvable-task rejection failures without an auditable GIS proxy error: useful for agent calibration but not GIS domain-result errors.",
+    )
     write_text(external_path, external)
 
 
@@ -806,6 +1419,85 @@ def sample_specs() -> list[dict]:
             },
         },
         {
+            "sample_id": "geobenchx_tb_county_population_density_d2",
+            "run_id": "20260709_geobenchx_task_419069_tb_county_population_density",
+            "category_dir": "D_Spatial_Analysis_Errors/D2_Spatial_Allocation_Error",
+            "source": "GeoBenchX TB County Population Density Heatmap",
+            "source_task_id": "TASK_250309_135125_419069",
+            "task_id": "geobenchx_task_419069",
+            "difficulty": "hard",
+            "method_family": "county-level raster allocation and centroid heatmap visualization",
+            "task": "Generate a heatmap of USA population density in counties with reported tuberculosis cases.",
+            "task_goal": "识别有 2023 年 TB 报告病例的县，并在县域尺度表达这些县的人口密度，而不是用县质心或县面积替代县域人口密度。",
+            "primary_label": "D2. Spatial Allocation Error",
+            "secondary_labels": ["D1. Aggregation Scope Confusion"],
+            "reference_basis": "GeoBenchX 参考解为 `reject_task`；本地审计用 MA/NY TB 表、USA 县界和 1 km 人口栅格计算诊断性县域人口密度，用于证明生成轨迹的空间分配代理无效。",
+            "error_summary": "模型没有把 TB 表连接到县界，也没有对县域人口栅格做有效的面域统计；它生成所有 MA/NY 县质心，并在 `make_heatmap` 中使用 `ALAND` 作为权重，实际表达县面积而不是有 TB 病例县的人口密度。",
+            "workflow_text": "1. GeoBenchX 参考方案认为该任务在给定工具约束下应拒绝。\n2. 错误流程读取 MA/NY TB 表、USA 人口栅格和县界。\n3. 错误流程只按州 FIPS 选出所有 MA/NY 县，没有把 TB 病例表连接到县界并筛选有病例县。\n4. 错误流程生成县质心，但最终 `make_heatmap` 使用 `ALAND` 字段，而不是县域人口密度。诊断参考用人口栅格按县面掩膜求和后除以 `ALAND`。",
+            "error_location": "错误发生在生成工具调用序列的第 5-8 步：`filter_categorical` 只筛 MA/NY 州，缺少 TB 病例县筛选；`get_values_from_raster_with_geometries` 的结果没有用于制图；`make_heatmap` 的 `value_column` 被设置为 `ALAND`。",
+            "error_mechanism": "这是典型的空间分配错误。人口密度是面域上的强度变量，需要把人口栅格按县域进行有效汇总并除以面积；模型把面域问题简化成县质心点图，并用县面积作为热力图权重，导致空间变量、分析单元和制图对象全部错位。",
+            "preview_section": image_link("../execution_result/previews/generated_county_area_centroid_heatmap.png", "错误运行：按县面积绘制的县质心图"),
+            "reference_section": image_link("reference.png", "诊断参考：有 TB 病例县的人口密度"),
+            "data_files": [
+                "StatData/Incidence of Tuberculosis Disease 2023 Massachusetts Counties.csv",
+                "StatData/NYS TB cases 2023.csv",
+            ],
+            "data_source_artifacts": [
+                "ma_ny_counties_generated_scope.geojson",
+                "population_raster_metadata.json",
+            ],
+            "required_outputs": [
+                "tb_county_population_density_reference.csv",
+                "generated_county_area_heatmap_inputs.csv",
+                "tb_county_join_audit.csv",
+                "ma_ny_counties_generated_scope.geojson",
+                "tb_reported_county_density_reference.geojson",
+                "population_raster_metadata.json",
+                "generated_county_area_centroid_heatmap.png",
+                "tb_county_population_density_reference.png",
+            ],
+            "artifacts": [
+                "tb_county_population_density_reference.csv",
+                "generated_county_area_heatmap_inputs.csv",
+                "tb_county_join_audit.csv",
+                "ma_ny_counties_generated_scope.geojson",
+                "tb_reported_county_density_reference.geojson",
+                "population_raster_metadata.json",
+            ],
+            "previews": ["generated_county_area_centroid_heatmap.png"],
+            "references": [
+                (Path("reference/tb_county_population_density_reference.png"), Path("reference.png")),
+                (Path("tb_county_population_density_reference.csv"), Path("tb_county_population_density_reference.csv")),
+                (Path("tb_reported_county_density_reference.geojson"), Path("tb_reported_county_density_reference.geojson")),
+            ],
+            "result_previews": [
+                {
+                    "source_artifact": "previews/generated_county_area_centroid_heatmap.png",
+                    "stage": "最终热力图变量",
+                    "preview_file": "previews/generated_county_area_centroid_heatmap.png",
+                    "description": "错误流程按县质心和 `ALAND` 面积字段绘图，未表达有 TB 病例县的人口密度。"
+                }
+            ],
+            "evidence_metrics": lambda audit: {
+                "ma_ny_county_count": audit["ma_ny_county_count"],
+                "tb_table_county_records": audit["tb_table_county_records"],
+                "matched_tb_counties": audit["matched_tb_counties"],
+                "reference_reported_tb_counties": audit["reference_reported_tb_counties"],
+                "generated_heatmap_counties": audit["generated_heatmap_counties"],
+                "generated_heatmap_geodataframe": audit["generated_heatmap_geodataframe"],
+                "generated_heatmap_value_column": audit["generated_heatmap_value_column"],
+                "generated_uses_area_as_heatmap_weight": audit["generated_uses_area_as_heatmap_weight"],
+                "generated_links_tb_tables_to_counties": audit["generated_links_tb_tables_to_counties"],
+                "reference_density_column": audit["reference_density_column"],
+                "reference_density_max": audit["reference_density_max"],
+                "generated_area_max_m2": audit["generated_area_max_m2"],
+                "top_reference_density_counties": audit["top_reference_density_counties"],
+                "top_generated_area_counties": audit["top_generated_area_counties"],
+                "human_score": audit["human_score"],
+                "human_reasoning": audit["human_reasoning"],
+            },
+        },
+        {
             "sample_id": "geobenchx_rural_population_percentage_d3",
             "run_id": "20260709_geobenchx_task_748943_rural_population_percentage",
             "category_dir": "D_Spatial_Analysis_Errors/D3_Spatial_Statistical_Misinterpretation",
@@ -868,6 +1560,147 @@ def sample_specs() -> list[dict]:
                 "rural_percentage_max": audit["rural_percentage_max"],
                 "reference_top_rural_percentage": audit["reference_top_rural_percentage"],
                 "generated_top_raw_rural_population": audit["generated_top_raw_rural_population"],
+                "human_score": audit["human_score"],
+                "human_reasoning": audit["human_reasoning"],
+            },
+        },
+        {
+            "sample_id": "geobenchx_power_stations_forest_loss_threshold_d3",
+            "run_id": "20260709_geobenchx_task_932053_power_stations_forest_loss_threshold",
+            "category_dir": "D_Spatial_Analysis_Errors/D3_Spatial_Statistical_Misinterpretation",
+            "source": "GeoBenchX Power Stations Forest Loss Threshold",
+            "source_task_id": "TASK_250309_135125_932053",
+            "task_id": "geobenchx_task_932053",
+            "difficulty": "hard",
+            "method_family": "spatial statistical thresholding and point-in-polygon selection",
+            "task": "How many African power stations are located in countries with significant forest loss?",
+            "task_goal": "先用森林面积时间序列定义显著森林损失国家，再用国家面与非洲电站点做空间筛选，返回位于这些国家内的电站数量。",
+            "primary_label": "D3. Spatial Statistical Misinterpretation",
+            "secondary_labels": ["D1. Aggregation Scope Confusion"],
+            "reference_basis": "依据 GeoBenchX 参考工具链：用 `calculate_column_statistics` 与 `filter_numerical` 定义 significant forest loss，再用 `select_features_by_spatial_relationship` 选择电站。",
+            "error_summary": "模型虽然加载了森林面积、国家边界和非洲电站数据，但没有用统计阈值/分位数定义 `significant forest loss`，也没有执行电站到高损失国家的空间筛选；最终只生成森林损失分级设色图，无法回答电站数量。",
+            "workflow_text": "1. 参考流程读取国家边界、森林面积表和非洲电站点。\n2. 参考流程计算 `forest_change_ratio = 2021 / 1990`，用统计阈值筛选显著森林损失国家。\n3. 参考流程用 `within` 空间谓词选择这些国家内的电站。\n4. 错误流程计算 2000-2021 森林损失后直接制图，缺少统计阈值和空间筛选步骤。",
+            "error_location": "错误发生在生成工具调用序列第 6-7 步之后：生成流程从 `calculate_columns` 直接进入 `make_choropleth_map`，缺少参考流程中的 `calculate_column_statistics`、`filter_numerical` 和 `select_features_by_spatial_relationship`。",
+            "error_mechanism": "`significant forest loss` 是空间统计判定，不是任意森林损失图层；任务问题还要求统计位于这些国家内的电站数量。模型把统计阈值判定和点-面空间筛选都省略，导致最终成果从“计数问题”退化为“森林损失地图”。",
+            "preview_section": image_link("../execution_result/previews/generated_forest_loss_choropleth.png", "错误运行：只绘制森林损失图，未筛选电站"),
+            "reference_section": image_link("reference.png", "参考结果：高森林损失国家内的电站筛选"),
+            "data_files": [
+                "StatData/API_AG.LND.FRST.K2_DS2_en_csv_v2_2627.zip",
+                "GeoData/Africa Power Stations.cpg",
+                "GeoData/Africa Power Stations.dbf",
+                "GeoData/Africa Power Stations.prj",
+                "GeoData/Africa Power Stations.qmd",
+                "GeoData/Africa Power Stations.shp",
+                "GeoData/Africa Power Stations.shx",
+                "GeoData/WB_countries_Admin0_10m.cpg",
+                "GeoData/WB_countries_Admin0_10m.dbf",
+                "GeoData/WB_countries_Admin0_10m.prj",
+                "GeoData/WB_countries_Admin0_10m.shp",
+                "GeoData/WB_countries_Admin0_10m.shp.xml",
+                "GeoData/WB_countries_Admin0_10m.shx",
+            ],
+            "required_outputs": [
+                "forest_loss_reference_countries.csv",
+                "generated_forest_loss_map_table.csv",
+                "power_station_forest_loss_reference_selection.geojson",
+                "forest_loss_threshold_audit.json",
+                "forest_loss_workflow_audit.csv",
+                "generated_forest_loss_choropleth.png",
+                "power_stations_forest_loss_selection_reference.png",
+            ],
+            "artifacts": [
+                "forest_loss_reference_countries.csv",
+                "generated_forest_loss_map_table.csv",
+                "power_station_forest_loss_reference_selection.geojson",
+                "forest_loss_threshold_audit.json",
+                "forest_loss_workflow_audit.csv",
+            ],
+            "previews": ["generated_forest_loss_choropleth.png"],
+            "references": [
+                (Path("reference/power_stations_forest_loss_selection_reference.png"), Path("reference.png")),
+                (Path("forest_loss_threshold_audit.json"), Path("forest_loss_threshold_audit.json")),
+                (Path("forest_loss_workflow_audit.csv"), Path("forest_loss_workflow_audit.csv")),
+            ],
+            "result_previews": [
+                {
+                    "source_artifact": "previews/generated_forest_loss_choropleth.png",
+                    "stage": "最终成果类型",
+                    "preview_file": "previews/generated_forest_loss_choropleth.png",
+                    "description": "错误流程只输出森林损失分级设色图，没有给出显著损失国家内的电站筛选和计数。"
+                }
+            ],
+            "evidence_metrics": lambda audit: {
+                "reference_threshold_metric": audit["reference_threshold_metric"],
+                "reference_threshold_value": audit["reference_threshold_value"],
+                "computed_first_quartile": audit["computed_first_quartile"],
+                "reference_high_loss_country_count": audit["reference_high_loss_country_count"],
+                "reference_selected_power_station_count": audit["reference_selected_power_station_count"],
+                "generated_metric": audit["generated_metric"],
+                "generated_final_tool": audit["generated_final_tool"],
+                "generated_has_statistical_threshold_step": audit["generated_has_statistical_threshold_step"],
+                "generated_has_power_station_spatial_selection": audit["generated_has_power_station_spatial_selection"],
+                "missing_reference_steps": audit["missing_reference_steps"],
+                "top_reference_high_loss_countries": audit["top_reference_high_loss_countries"],
+                "human_score": audit["human_score"],
+                "human_reasoning": audit["human_reasoning"],
+            },
+        },
+        {
+            "sample_id": "geobenchx_snow_water_bodies_layer_omission_e3",
+            "run_id": "20260709_geobenchx_task_996706_snow_water_bodies_layer_omission",
+            "category_dir": "E_Cartographic_Errors/E3_Map_Composition_Defect",
+            "source": "GeoBenchX Snow Water Bodies Layer Omission",
+            "source_task_id": "TASK_250309_135125_996706",
+            "task_id": "geobenchx_task_996706",
+            "difficulty": "medium",
+            "method_family": "contour generation and required contextual layer composition",
+            "task": "Create contour lines of snow accumulation near major water bodies.",
+            "task_goal": "从 2024-2025 USA snow accumulation raster 生成雪深等值线，并与北美主要水体图层共同制图；参考流程要求同时呈现 rivers 与 lakes。",
+            "primary_label": "E3. Map Composition Defect",
+            "secondary_labels": [],
+            "reference_basis": "依据 GeoBenchX 参考工具调用轨迹与人审理由：参考 `visualize_geographies` 包含 `snow_contours`、`rivers`、`lakes`，生成轨迹只包含 `snow_contours` 与 `lakes`。",
+            "error_summary": "生成工具调用只加载 `Lakes in North America`，遗漏任务所需的 `Rivers in North America`，最终可视化图层只有 snow_contours 和 lakes；因此“major water bodies”语义不完整，地图缺少关键上下文图层。",
+            "workflow_text": "1. 参考流程读取雪深栅格并生成 snow contours。\n2. 参考流程加载 Lakes in North America 与 Rivers in North America。\n3. 参考流程在同一地图中绘制 snow_contours、rivers、lakes。\n4. 生成流程只加载 lakes，并在 `visualize_geographies` 中只传入 snow_contours 与 lakes。",
+            "error_location": "错误发生在 GeoBenchX 生成工具调用序列的图层准备和制图阶段：缺少 `load_geodata(geodataset='Rivers in North America')`，且 `visualize_geographies.geodataframe_names` 中没有 `rivers`。",
+            "error_mechanism": "这是地图构成缺陷中的必要图层遗漏。任务文本的 major water bodies 覆盖河流和湖泊，参考流程也明确将两者作为上下文图层；生成结果只展示湖泊，会让读者误以为雪深等值线只需与湖泊关系进行判读，遗漏河流廊道这一关键空间参照。",
+            "preview_section": image_link("../execution_result/previews/generated_water_body_layer_stack.png", "错误运行：生成图层栈缺少 rivers"),
+            "reference_section": image_link("reference.png", "参考图层栈：snow contours、rivers、lakes"),
+            "data_files": [],
+            "data_source_artifacts": ["layer_requirements.json", "water_body_layer_audit.csv"],
+            "required_outputs": [
+                "workflow_comparison.json",
+                "layer_requirements.json",
+                "water_body_layer_audit.csv",
+                "generated_water_body_layer_stack.png",
+                "snow_water_bodies_layer_stack_reference.png",
+            ],
+            "artifacts": [
+                "layer_requirements.json",
+                "water_body_layer_audit.csv",
+            ],
+            "previews": ["generated_water_body_layer_stack.png"],
+            "references": [
+                (Path("reference/snow_water_bodies_layer_stack_reference.png"), Path("reference.png")),
+                (Path("layer_requirements.json"), Path("layer_requirements.json")),
+                (Path("water_body_layer_audit.csv"), Path("water_body_layer_audit.csv")),
+            ],
+            "result_previews": [
+                {
+                    "source_artifact": "previews/generated_water_body_layer_stack.png",
+                    "stage": "最终地图图层构成",
+                    "preview_file": "previews/generated_water_body_layer_stack.png",
+                    "description": "错误流程只包含雪深等值线和湖泊，遗漏任务需要的河流图层。"
+                }
+            ],
+            "evidence_metrics": lambda audit: {
+                "reference_required_geodata_layers": audit["reference_required_geodata_layers"],
+                "generated_loaded_geodata_layers": audit["generated_loaded_geodata_layers"],
+                "missing_required_geodata_layers": audit["missing_required_geodata_layers"],
+                "reference_visual_layers": audit["reference_visual_layers"],
+                "generated_visual_layers": audit["generated_visual_layers"],
+                "missing_visual_layers": audit["missing_visual_layers"],
+                "reference_contour_interval": audit["reference_contour_interval"],
+                "generated_contour_interval": audit["generated_contour_interval"],
                 "human_score": audit["human_score"],
                 "human_reasoning": audit["human_reasoning"],
             },

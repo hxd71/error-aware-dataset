@@ -1,0 +1,13 @@
+{
+  "status": "audited_trace",
+  "execution_returncode": 0,
+  "task_id": "geobenchx_task_932053",
+  "source_task_id": "TASK_250309_135125_932053",
+  "model": "claude-3-5-haiku-20241022",
+  "provider": "Anthropic",
+  "method_family": "spatial statistical thresholding and point-in-polygon selection",
+  "difficulty": "hard",
+  "human_score": 0,
+  "human_reasoning": "The candidate solution does not match any of the reference solutions. It loads correct datasets. However, the tools called are different. Both reference solutions contain 'select_features_by_spatial_relationship' on 'Power stations in Africa' dataset to get answer to the task. No such tool is used in the candidate solution.",
+  "missing_required_outputs": []
+}

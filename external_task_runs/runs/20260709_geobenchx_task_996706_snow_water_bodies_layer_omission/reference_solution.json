@@ -1,0 +1,79 @@
+{
+  "steps": [
+    {
+      "function_name": "get_raster_path",
+      "arguments": {
+        "rasterdataset": "Accumulated snow cover season 2024-2025, USA, inches"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "get_raster_description",
+      "arguments": {
+        "raster_path": "data_source/GeoData/sfav2_CONUS_2024093012_to_2025052012_processed.tif"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "generate_contours_display",
+      "arguments": {
+        "raster_path": "data_source/GeoData/sfav2_CONUS_2024093012_to_2025052012_processed.tif",
+        "output_filename": "snow_contours",
+        "contour_interval": 5,
+        "column_title": "snow_depth",
+        "nodataval": -9999,
+        "output_geodataframe_name": "snow_contours",
+        "plot_title": "Snow Accumulation Contours (inches) - February 3, 2025"
+      },
+      "comment": "More arguments can be provided: min_value= 0, max_value=520."
+    },
+    {
+      "function_name": "load_geodata",
+      "arguments": {
+        "geodataset": "Lakes in North America",
+        "output_geodataframe_name": "lakes"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "load_geodata",
+      "arguments": {
+        "geodataset": "Rivers in North America",
+        "output_geodataframe_name": "rivers"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "visualize_geographies",
+      "arguments": {
+        "geodataframe_names": [
+          "snow_contours",
+          "rivers",
+          "lakes"
+        ],
+        "layer_styles": [
+          {
+            "color": "gray",
+            "alpha": 0.7,
+            "linewidth": 1,
+            "label": "Snow Depth Contours (5 inch intervals)"
+          },
+          {
+            "color": "blue",
+            "alpha": 1,
+            "linewidth": 1,
+            "label": "rivers"
+          },
+          {
+            "color": "blue",
+            "alpha": 1,
+            "linewidth": 0,
+            "label": "lakes"
+          }
+        ],
+        "title": "Snow Accumulation Contours with Major Water Bodies - February 3, 2025"
+      },
+      "comment": null
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "task_type": "required map-layer composition for contextual water bodies",
+  "reference_required_geodata_layers": [
+    "Lakes in North America",
+    "Rivers in North America"
+  ],
+  "generated_loaded_geodata_layers": [
+    "Lakes in North America"
+  ],
+  "missing_required_geodata_layers": [
+    "Rivers in North America"
+  ],
+  "reference_visual_layers": [
+    "snow_contours",
+    "rivers",
+    "lakes"
+  ],
+  "generated_visual_layers": [
+    "snow_contours",
+    "lakes"
+  ],
+  "missing_visual_layers": [
+    "rivers"
+  ],
+  "reference_contour_interval": 5,
+  "generated_contour_interval": 10,
+  "human_score": 0,
+  "human_reasoning": "The candidate solution does not match the reference solution, because, it loads only 2 of the 3 datasets that are needed. Rivers dataset is missing from the candidate solution."
+}

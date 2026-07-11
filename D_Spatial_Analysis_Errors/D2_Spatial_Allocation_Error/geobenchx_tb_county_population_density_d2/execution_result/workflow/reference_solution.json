@@ -1,0 +1,9 @@
+{
+  "steps": [
+    {
+      "function_name": "reject_task",
+      "arguments": {},
+      "comment": null
+    }
+  ]
+}

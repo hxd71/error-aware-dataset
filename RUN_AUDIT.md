@@ -9,7 +9,7 @@
 
 - 原始实验记录：882（完成 680，失败 160，缺少运行材料 42），见 `extraction_audit.csv/json`。
 - 自建定向记录：28，见 `targeted_run_audit.csv/json`。
-- 外部论文复现记录：12（LLM-Geo 3 条，GeoNatureAgent/GeoBenchX 7 条，GeoBenchX 官方调参集任务轨迹 2 条），其中 7 条经 GIS 审计进入主样本；GeoNature/GeoBenchX 审计见 `external_task_runs/geonature_audit_summary.json` 与 GeoBenchX 样本运行目录。
+- 外部论文复现记录：15（LLM-Geo 3 条，GeoNatureAgent/GeoBenchX 7 条，GeoBenchX 官方调参集任务轨迹 5 条），其中 10 条经 GIS 审计进入主样本；GeoNature/GeoBenchX 审计见 `external_task_runs/geonature_audit_summary.json` 与 GeoBenchX 样本运行目录。
 - 下表为可恢复运行清单的模式统计，不等同于原始实验记录总数。
 
 | Mode / variant | Run records |
@@ -29,7 +29,7 @@
 
 - Total run records: 525
 - Records without a recoverable benchmark task: 60
-- observed_run 样本：65
+- observed_run 样本：68
 - research_supplement 样本：2
 - observed_run taxonomy 覆盖：14/15
 - 尚无 observed_run 的类别：A1. Coordinate Axis Misinterpretation
@@ -102,14 +102,17 @@
 | GeoAgent Task 2 | D2. Spatial Allocation Error | thinking 已关闭 |
 | GeoAgent Task 75 | D2. Spatial Allocation Error | thinking 已开启 |
 | GeoBenchX Earthquake Population Heatmap | D2. Spatial Allocation Error | published tool-call trace; temperature 0 |
+| GeoBenchX TB County Population Density Heatmap | D2. Spatial Allocation Error | published tool-call trace; temperature 0 |
 | GeoAgent Task 84 | D2. Spatial Allocation Error | thinking 开关未单列记录 |
 | GeoAgent Task 104 | D3. Spatial Statistical Misinterpretation | thinking 开关未单列记录 |
 | GeoAgent Task 119 | D3. Spatial Statistical Misinterpretation | thinking 开关未单列记录 |
 | GeoNatureAgent CO2 Candidate Pool Comparison | D3. Spatial Statistical Misinterpretation | direct request；thinking 开关未单列记录 |
 | GeoBenchX Rural Population Percentages | D3. Spatial Statistical Misinterpretation | published tool-call trace; temperature 0 |
+| GeoBenchX Power Stations Forest Loss Threshold | D3. Spatial Statistical Misinterpretation | published tool-call trace; temperature 0 |
 | LLM-Geo Population_equal_interval_NC | E1. Classification Scheme Misuse | direct request；thinking 开关未单列记录 |
 | GeoAgent Task 79 | E2. Symbolization Error | thinking 已开启 |
 | GeoAgent Task 102 | E3. Map Composition Defect | thinking 开关未单列记录 |
+| GeoBenchX Snow Water Bodies Layer Omission | E3. Map Composition Defect | published tool-call trace; temperature 0 |
 | GeoAgent Task 78 | E3. Map Composition Defect | thinking 开关未单列记录 |
 | GeoAgent Task 79 | E3. Map Composition Defect | thinking 开关未单列记录 |
 

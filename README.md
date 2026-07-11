@@ -4,10 +4,10 @@
 `GeoAgent Task N`，自建定向基准来源写为 `Self-built GIS Task X-YY`，外部论文复现来源写为
 `LLM-Geo ...`、`GeoNatureAgent ...` 或 `GeoBenchX/GeoNature ...`。
 
-本版包含 **67** 个 GIS 错误样本，A1–E3 十五个二级类别均有覆盖。运行审计记录
+本版包含 **70** 个 GIS 错误样本，A1–E3 十五个二级类别均有覆盖。运行审计记录
 680 次已完成运行和 160 次失败运行，其中 60 次同任务同机制的重复错误已合并，
 618 条记录因结果正确、结论不确定、证据不足或没有实际执行而不进入主样本集。另有
-LLM-Geo、GeoNatureAgent 与 GeoBenchX 定向外部论文复现/任务轨迹审计 12 次，其中 7 次进入主样本；2 个 taxonomy 补齐样本来自论文研究与 GIS 专业经验。
+LLM-Geo、GeoNatureAgent 与 GeoBenchX 定向外部论文复现/任务轨迹审计 15 次，其中 10 次进入主样本；2 个 taxonomy 补齐样本来自论文研究与 GIS 专业经验。
 
 十五个类别的目录与标签均已覆盖；其中 observed_run 覆盖 14/15。尚无真实错误运行的
 类别为：A1. Coordinate Axis Misinterpretation。E1 已由 LLM-Geo 外部论文复现运行补齐为 observed_run。研究补充样本不计入真实运行覆盖率。

@@ -1,0 +1,12 @@
+{
+  "source": "GeoBenchX evaluator tuning set",
+  "model": "claude-3-5-haiku-20241022",
+  "temperature": 0,
+  "task_ID": "TASK_250309_135125_419069",
+  "task_text": "Generate a heatmap of USA population density in counties with reported tuberculosis cases",
+  "task_labels": [
+    "Heatmaps, Contour Lines",
+    "Task Set 04"
+  ],
+  "note": "The original benchmark stores the generated tool-call solution and human evaluation, not a full chat transcript. This package materializes that trace and re-audits it against local GeoBenchX data."
+}

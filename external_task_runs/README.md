@@ -15,6 +15,19 @@ GIS error dataset from other open-source GIS agent papers in `GIS Agent.xlsx`.
 | GeoBenchX | `<LOCAL_REPO_ROOT>\GeoBenchX` | Has 202 benchmark tasks, 50 evaluator-tuning generated traces, and official data archive now downloaded under `external_task_runs/data/geobenchx`. | Strong source for audited tool-call GIS method errors. |
 | MapReader | `<LOCAL_REPO_ROOT>\MapReader` | Full clone with sample historical map images and metadata; no LLM-agent task trace found yet. | Candidate only if a clear map-reading/georeference task can be audited. |
 
+## Low-count Subclass Audit Notes
+
+The July 2026 low-count pass prioritized A1, C3, E2, A2, E1, C2, B3, D2,
+and E3. No new high-confidence paper trace was promoted for A1, C3, or E2:
+LLM-Find contains a coordinate/bounding-box code sample but not a complete
+LLM run trace, CartoAgent has no local dialogue/run logs, and GeoBenchX map
+style differences did not provide a clean visual-variable semantics error.
+
+The promoted GeoBenchX TB county population-density trace was selected for
+D2 because it contains an auditable GIS proxy error: the generated workflow
+uses county centroids and `ALAND` area instead of county-level population
+density in counties with reported TB cases.
+
 ## LLM Configuration Used
 
 Text GIS tasks use the DeepSeek OpenAI-compatible endpoint:
@@ -94,7 +107,7 @@ Excluded from the main GIS taxonomy:
 ## GeoBenchX Evaluator Tuning Trace Audits
 
 The official GeoBenchX data archive (`Data.zip`, 484M) was downloaded and
-extracted to `external_task_runs/data/geobenchx`. Two human-scored generated
+extracted to `external_task_runs/data/geobenchx`. Five human-scored generated
 tool-call traces from `benchmark_set/evaluator_tuning_set.json` were
 materialized and audited against local data.
 
@@ -103,10 +116,13 @@ Promoted GIS-error cases:
 | Run | Outcome | Dataset sample |
 | --- | --- | --- |
 | `20260709_geobenchx_task_367674_earthquake_population_heatmap` | Generated workflow mapped earthquake magnitude and skipped raster-to-point population extraction. | `D_Spatial_Analysis_Errors\D2_Spatial_Allocation_Error\geobenchx_earthquake_population_heatmap_d2` |
+| `20260709_geobenchx_task_419069_tb_county_population_density` | Generated workflow used county centroids and `ALAND` area as the heatmap weight instead of county-level population density in counties with reported TB cases. | `D_Spatial_Analysis_Errors\D2_Spatial_Allocation_Error\geobenchx_tb_county_population_density_d2` |
 | `20260709_geobenchx_task_748943_rural_population_percentage` | Generated workflow mapped raw rural population counts while labeling them as percentages. | `D_Spatial_Analysis_Errors\D3_Spatial_Statistical_Misinterpretation\geobenchx_rural_population_percentage_d3` |
+| `20260709_geobenchx_task_932053_power_stations_forest_loss_threshold` | Generated workflow skipped the statistical threshold and spatial station selection required to count stations in significant forest-loss countries. | `D_Spatial_Analysis_Errors\D3_Spatial_Statistical_Misinterpretation\geobenchx_power_stations_forest_loss_threshold_d3` |
+| `20260709_geobenchx_task_996706_snow_water_bodies_layer_omission` | Generated workflow omitted the rivers layer from a required snow-contour water-bodies map. | `E_Cartographic_Errors\E3_Map_Composition_Defect\geobenchx_snow_water_bodies_layer_omission_e3` |
 
 Excluded despite being present in GeoBenchX tuning data:
 
 - one-year map year mismatches: weak or partial temporal selection errors, not typical GIS taxonomy cases.
-- unsolvable-task rejection failures: useful for agent calibration but not GIS domain-result errors.
+- pure unsolvable-task rejection failures without an auditable GIS proxy error: useful for agent calibration but not GIS domain-result errors.
 - regional-definition mismatches: often geographic knowledge ambiguity rather than spatial method failure.

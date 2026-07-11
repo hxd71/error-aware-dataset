@@ -1,0 +1,5 @@
+GeoBenchX task trace materialization
+Task ID: TASK_250309_135125_996706
+Task: Create contour lines of snow accumulation near major water bodies
+Labels: Vague, Heatmaps, Contour Lines, Task Set 04
+Expected output: GeoBenchX tool-call sequence solving the task.

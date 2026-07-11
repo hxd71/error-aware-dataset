@@ -1,0 +1,68 @@
+{
+  "reference_threshold_metric": "forest_change_ratio = 2021 / 1990",
+  "reference_threshold_value": 0.79,
+  "computed_first_quartile": 0.7914654482710257,
+  "reference_high_loss_country_count": 12,
+  "reference_selected_power_station_count": 451,
+  "generated_metric": "forest_loss = 2000 - 2021",
+  "generated_final_tool": "make_choropleth_map",
+  "generated_has_statistical_threshold_step": false,
+  "generated_has_power_station_spatial_selection": false,
+  "missing_reference_steps": [
+    "calculate_column_statistics",
+    "filter_numerical",
+    "select_features_by_spatial_relationship"
+  ],
+  "top_reference_high_loss_countries": [
+    {
+      "NAME_EN": "Cote d'Ivoire",
+      "1990": 78508.6,
+      "2021": 27238.267,
+      "forest_change_ratio": 0.34694628359186125
+    },
+    {
+      "NAME_EN": "Niger",
+      "1990": 19450.0,
+      "2021": 10672.8,
+      "forest_change_ratio": 0.5487300771208226
+    },
+    {
+      "NAME_EN": "Sudan",
+      "1990": 307273.1,
+      "2021": 181873.9,
+      "forest_change_ratio": 0.5918965897112374
+    },
+    {
+      "NAME_EN": "Chad",
+      "1990": 67300.0,
+      "2021": 42013.333,
+      "forest_change_ratio": 0.6242694353640416
+    },
+    {
+      "NAME_EN": "Malawi",
+      "1990": 35017.0,
+      "2021": 21997.0,
+      "forest_change_ratio": 0.6281805979952595
+    },
+    {
+      "NAME_EN": "Benin",
+      "1990": 48351.5,
+      "2021": 30851.5,
+      "forest_change_ratio": 0.6380670713421507
+    },
+    {
+      "NAME_EN": "Uganda",
+      "1990": 35754.7,
+      "2021": 22966.433,
+      "forest_change_ratio": 0.6423332596833424
+    },
+    {
+      "NAME_EN": "Mauritania",
+      "1990": 4760.4,
+      "2021": 3073.667,
+      "forest_change_ratio": 0.6456741030165533
+    }
+  ],
+  "human_score": 0,
+  "human_reasoning": "The candidate solution does not match any of the reference solutions. It loads correct datasets. However, the tools called are different. Both reference solutions contain 'select_features_by_spatial_relationship' on 'Power stations in Africa' dataset to get answer to the task. No such tool is used in the candidate solution."
+}

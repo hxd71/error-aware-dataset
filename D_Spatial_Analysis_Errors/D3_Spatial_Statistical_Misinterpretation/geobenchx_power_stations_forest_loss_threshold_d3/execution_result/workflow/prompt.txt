@@ -1,0 +1,5 @@
+GeoBenchX task trace materialization
+Task ID: TASK_250309_135125_932053
+Task: How many African power stations are located in countries with significant forest loss?
+Labels: Spatial operations, Task Set 03
+Expected output: GeoBenchX tool-call sequence solving the task.

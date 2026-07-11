@@ -1,0 +1,16 @@
+County,Number of Cases,"TB Case Rate[1] 2023(cases per 100,000)"
+Barnstable,2,0.9
+Berkshire,0,0
+Bristol,18,3.1
+Dukes,0,0
+Essex,27,3.3
+Franklin,0,0
+Hampden,6,1.3
+Hampshire,0,0
+Middlesex,58,3.6
+Nantucket,2,14
+Norfolk,28,3.9
+Plymouth,16,3
+Suffolk,46,5.8
+Worcester,21,2.4
+"[1] As of 9/9/2020 BIDLS calculates rates per 100,000 population using denominators estimated by the University of Massachusetts Donahue Institute using a modified Hamilton-Perry model (UMDI Oct 2016). Note that rates and trends calculated using previous methods cannot be compared to these.",,

@@ -1,0 +1,1 @@
+Since there is only one reference solution and it is 'reject_task', the candidate solution should end with 'reject_task' to be considered a match. There is no 'reject_task' in candidate solution, so it is not a match. Taking values from population raster will give only the population density at the centroid. It will not give the population density in the whole county.

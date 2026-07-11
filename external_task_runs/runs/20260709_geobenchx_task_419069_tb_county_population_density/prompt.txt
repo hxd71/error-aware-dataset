@@ -1,0 +1,5 @@
+GeoBenchX task trace materialization
+Task ID: TASK_250309_135125_419069
+Task: Generate a heatmap of USA population density in counties with reported tuberculosis cases
+Labels: Heatmaps, Contour Lines, Task Set 04
+Expected output: GeoBenchX tool-call sequence solving the task.

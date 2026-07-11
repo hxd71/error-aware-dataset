@@ -1,0 +1,79 @@
+{
+  "steps": [
+    {
+      "function_name": "load_data",
+      "arguments": {
+        "dataset": "Incidence of Tuberculosis Disease, 2023, Massachusetts Counties",
+        "output_dataframe_name": "ma_tb"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "load_data",
+      "arguments": {
+        "dataset": "Incidence of Tuberculosis Disease, 2023, New York State Counties",
+        "output_dataframe_name": "ny_tb"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "get_raster_path",
+      "arguments": {
+        "rasterdataset": "USA population 2020, people, resolution 1 km"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "load_geodata",
+      "arguments": {
+        "geodataset": "USA counties borders",
+        "output_geodataframe_name": "counties"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "filter_categorical",
+      "arguments": {
+        "dataframe_name": "counties",
+        "filters": {
+          "STATEFP": [
+            "25",
+            "36"
+          ]
+        },
+        "output_dataframe_name": "ma_ny_counties"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "get_centroids",
+      "arguments": {
+        "geodataframe_name": "ma_ny_counties",
+        "output_geodataframe_name": "ma_ny_centroids"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "get_values_from_raster_with_geometries",
+      "arguments": {
+        "raster_path": "data_source/GeoData/usa_ppp_2020_1km_Aggregated_UNadj.tif",
+        "geodataframe_name": "ma_ny_counties",
+        "output_variable_name": "population_density"
+      },
+      "comment": null
+    },
+    {
+      "function_name": "make_heatmap",
+      "arguments": {
+        "geodataframe_name": "ma_ny_centroids",
+        "value_column": "ALAND",
+        "output_geodataframe_name": "population_heatmap",
+        "plot_title": "Population Density Heatmap in MA and NY Counties with TB Cases (2023)",
+        "column_title": "Population Density",
+        "radius": 30,
+        "map_style": "carto-positron"
+      },
+      "comment": null
+    }
+  ]
+}
