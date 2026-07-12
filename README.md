@@ -25,6 +25,9 @@ LLM-Geo、GeoNatureAgent 与 GeoBenchX 定向外部论文复现/任务轨迹审�
 数值结果和日志用于记录具体错误；图片仅用于展示几何、统计或制图层面的可视化差异。
 作为错误证据的 Shapefile 缺失组件不会被补写。
 
+新增运行错误的归类应遵循 [GIS_WORKFLOW_ERROR_ANNOTATION_GUIDE.md](GIS_WORKFLOW_ERROR_ANNOTATION_GUIDE.md)：先识别被破坏的
+GIS 不变量和根因机制，再选择 A1-E3 标签；不要仅按函数名、日志关键词或单个既有案例匹配。
+
 数据集同时收录 MiniMax 2.7 与 Qwen 3.6 的 text-only、visual-one 和 visual-all 六种配置。
 同一 Task 中具有相同错误机制的配置合并为一个样本，代表运行和重复运行记录在
 `annotation.json` 中。
