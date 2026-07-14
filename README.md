@@ -27,6 +27,14 @@ LLM-Geo、GeoNatureAgent 与 GeoBenchX 定向外部论文复现/任务轨迹审�
 
 新增运行错误的归类应遵循 [GIS_WORKFLOW_ERROR_ANNOTATION_GUIDE.md](GIS_WORKFLOW_ERROR_ANNOTATION_GUIDE.md)：先识别被破坏的
 GIS 不变量和根因机制，再选择 A1-E3 标签；不要仅按函数名、日志关键词或单个既有案例匹配。
+初筛阶段可先使用 [knowledge_base/rule_cards.json](knowledge_base/rule_cards.json) 的概念解释与语义诊断轴生成候选错误假设；
+规则未命中只表示证据不足或语义探针未覆盖，不能据此判定结果正确。
+候选类别确定后，可按 A-E 大类检索 [knowledge_base/cases/by_category](knowledge_base/cases/by_category)
+或回退到 [knowledge_base/cases/all_cases.jsonl](knowledge_base/cases/all_cases.jsonl) 获取相似案例、
+证据补强路径和修复 playbook；该案例库由 [tools/build_case_kb.py](tools/build_case_kb.py) 从样本目录再生成，
+不作为新的真相源。新任务回馈先写入 `knowledge_base/cases/candidates.jsonl`，经运行证据或人工审核后
+再晋升主案例库；案例库更新不应自动改写规则卡。案例库目录说明见
+[knowledge_base/README.md](knowledge_base/README.md)。
 
 数据集同时收录 MiniMax 2.7 与 Qwen 3.6 的 text-only、visual-one 和 visual-all 六种配置。
 同一 Task 中具有相同错误机制的配置合并为一个样本，代表运行和重复运行记录在
@@ -34,7 +42,7 @@ GIS 不变量和根因机制，再选择 A1-E3 标签；不要仅按函数名、
 
 `auxiliary_failures/` 是独立的失败运行索引，只记录系统、依赖、Provider、超时、输出契约或
 工作流失败。它们没有形成可判定的 GIS 最终成果，不属于 A–E GIS 专业错误 taxonomy，
-不计入 60 个主样本，不进入根目录 `manifest.csv/json`，也不应与主样本数量合并统计。
+不计入 70 个主样本，不进入根目录 `manifest.csv/json`，也不应与主样本数量合并统计。
 该目录仅用于复现实验审计完整性和失败运行追踪。
 
 每个 `annotation.json` 仅使用 `sample_origin` 区分样本来源：`observed_run` 表示实际运行样本，

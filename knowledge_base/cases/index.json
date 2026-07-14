@@ -1,0 +1,73 @@
+{
+  "schema_version": "0.1.0",
+  "source_of_truth": "sample directories and manifest.json",
+  "generated_by": "tools/build_case_kb.py",
+  "rule_cards": "knowledge_base/rule_cards.json",
+  "annotation_guide": "GIS_WORKFLOW_ERROR_ANNOTATION_GUIDE.md",
+  "all_cases": "knowledge_base/cases/all_cases.jsonl",
+  "candidate_cases": "knowledge_base/cases/candidates.jsonl",
+  "total_cases": 70,
+  "by_category": {
+    "A": {
+      "name": "A. Spatial Reference Errors",
+      "description": "CRS, axis, coordinate frame, and spatial measurement semantics.",
+      "path": "knowledge_base/cases/by_category/A_spatial_reference.jsonl",
+      "count": 12,
+      "labels": [
+        "A1. Coordinate Axis Misinterpretation",
+        "A2. CRS Inconsistency",
+        "A3. Unit Misinterpretation"
+      ]
+    },
+    "B": {
+      "name": "B. Spatial Data Errors",
+      "description": "GIS file, attribute, raster, NoData, and data model representation semantics.",
+      "path": "knowledge_base/cases/by_category/B_spatial_data.jsonl",
+      "count": 21,
+      "labels": [
+        "B1. Dataset Integrity Violation",
+        "B2. Raster Alignment Failure",
+        "B3. Missing Data Misinterpretation"
+      ]
+    },
+    "C": {
+      "name": "C. Spatial Reasoning Errors",
+      "description": "Topological, geometry validity, and network connectivity semantics.",
+      "path": "knowledge_base/cases/by_category/C_spatial_reasoning.jsonl",
+      "count": 12,
+      "labels": [
+        "C1. Topological Predicate Confusion",
+        "C2. Invalid Geometry Handling",
+        "C3. Network Connectivity Misinterpretation"
+      ]
+    },
+    "D": {
+      "name": "D. Spatial Analysis Errors",
+      "description": "Aggregation scope, allocation, and spatial statistical analysis semantics.",
+      "path": "knowledge_base/cases/by_category/D_spatial_analysis.jsonl",
+      "count": 18,
+      "labels": [
+        "D1. Aggregation Scope Confusion",
+        "D2. Spatial Allocation Error",
+        "D3. Spatial Statistical Misinterpretation"
+      ]
+    },
+    "E": {
+      "name": "E. Cartographic Errors",
+      "description": "Classification, symbolization, and map composition semantics.",
+      "path": "knowledge_base/cases/by_category/E_cartographic.jsonl",
+      "count": 7,
+      "labels": [
+        "E1. Classification Scheme Misuse",
+        "E2. Symbolization Error",
+        "E3. Map Composition Defect"
+      ]
+    }
+  },
+  "retrieval_policy": [
+    "Use rule cards and the annotation guide to generate candidate labels first.",
+    "Filter by the candidate label's A-E major category before searching retrieval_text.",
+    "Fallback to all_cases.jsonl only when the major category is uncertain.",
+    "Do not include candidates.jsonl in verified retrieval unless unverified feedback is explicitly allowed."
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "schema_version": "0.3.0",
+  "rule_set_version": "0.3.0",
+  "title": "GIS Error Semantic Diagnostic Axis Cards",
+  "purpose": "initial_screening_only",
+  "description": "These cards generate high-recall GIS error hypotheses through semantic diagnostic axes. Concrete GIS concepts are used to explain abstract terms, but the cards do not replace GIS_WORKFLOW_ERROR_ANNOTATION_GUIDE.md.",
+  "decision_logic": [
+    "Use these cards to generate top-k candidate labels, not to finalize classification.",
+    "Use concept_glossary and concept_definition to understand each abstract term before applying diagnostic_axes.",
+    "For each candidate, reason along the diagnostic_axes and mark unresolved axes as insufficient_evidence.",
+    "If no card matches but the task output is abnormal, return unclassified_or_insufficient_evidence instead of correct.",
+    "Finalize labels only after applying the boundary rules in GIS_WORKFLOW_ERROR_ANNOTATION_GUIDE.md."
+  ],
+  "no_match_output": {
+    "status": "unclassified_or_insufficient_evidence",
+    "message": "现有简短规则未覆盖该错误形态，不能据此判定结果正确。"
+  },
+  "constraints": [
+    "Concrete GIS concepts may be used to explain terms.",
+    "The cards must not include sample IDs, named dataset samples, implementation recipes, or long code answer keys.",
+    "Each rule card is a semantic probe for a violated GIS invariant, not a definitive classifier.",
+    "Non-match means insufficient evidence or uncovered shape, not absence of error."
+  ],
+  "concept_glossary": {
+    "空间维度身份": "空间坐标或数组维度各自代表的含义，例如 x/y、lon/lat、easting/northing、row/col。经度或 east 通常对应水平 x 方向，纬度或 north 通常对应垂直 y 方向；栅格 row/col 是数组维度，不自动等同于地图 x/y。",
+    "参考框架语义": "空间对象的位置解释规则，包括 CRS、EPSG、投影坐标域、坐标轴方向、单位和对象之间是否能直接空间比较。",
+    "空间度量语义": "距离、面积、长度、缓冲半径、分辨率、密度等空间量的单位和量纲含义，例如 degree、meter、square kilometer、people per square kilometer。",
+    "空间数据表示约束": "让 GIS 数据保持可解释所需的数据组织关系，例如 Shapefile 组件、GeoJSON geometry/properties、栅格元数据、字段含义、图层元数据和空间对象属性关系。",
+    "空间采样框架": "栅格或采样数据的像元格网、索引空间、分辨率、空间范围和空间变换共同定义的采样位置体系。",
+    "有效性边界": "有效观测与 NoData、mask、背景值、云、海洋、缺失记录、不可观测区域等非有效状态之间的语义边界。",
+    "空间关系模型": "描述对象之间空间关系的规则，例如包含、相交、接触、穿越、邻接、覆盖、排除等关系语义。",
+    "几何有效性前提": "几何对象能参与空间运算所需的结构条件，例如 polygon ring 合法、无自相交、非空几何、面和洞的拓扑结构可解释。",
+    "连通关系模型": "由节点、边、方向、阻抗、可达性、路径和连通组件共同定义的网络语义；它不同于线或点在图上看起来接近。",
+    "分析范围语义": "任务要求分析在哪个空间范围、分组、行政单元、时间片、条件集合或局部上下文中成立。",
+    "空间支持": "变量实际依附和代表的空间承载单元，例如点、像元、polygon、行政区、路段、流域或网格单元。",
+    "空间统计语义": "统计结论所依赖的指标定义、派生关系、分母、阈值、显著性、局部/全局解释和空间依赖假设。",
+    "数值概化语义": "专题地图把连续或有序数值转换成类别区间的含义，例如分类方法、类别数量、区间边界和跨图比较目的。",
+    "视觉编码语义": "颜色、大小、形状、线型、透明度等视觉变量与数据类型、类别身份、顺序、强度或数量之间的对应关系。",
+    "地图解释链": "读者理解地图主题所需的完整表达关系，包括主题图层、空间上下文、图例、标签、比例尺、布局和输出交付物。"
+  },
+  "rules": [
+    {
+      "label": "A1. Coordinate Axis Misinterpretation",
+      "concept_definition": "空间维度身份指 lon/lat、x/y、easting/northing、row/col 等维度分别代表什么；A1 关注这些身份在转换中被交换或错置。",
+      "invariant": "空间维度身份在输入、处理、接口转换和输出中必须保持一致。",
+      "hypothesis_trigger": "若错误结果可由空间维度身份或顺序在某个转换环节被错置解释，将 A1 放入候选。",
+      "generic_examples": [
+        "经纬度表转点时，lon 应作为 x，lat 应作为 y；反过来会把点放到错误位置。",
+        "栅格 row/col 是数组索引维度，不应直接当成地图 x/y 坐标含义。"
+      ],
+      "diagnostic_axes": [
+        "semantic_precondition: 识别该任务中哪些空间维度身份必须被保留。",
+        "process_contract: 判断工作流在数据读取、转换、分析和输出之间是否保持这些维度身份。",
+        "outcome_consistency: 判断结果空间语义是否与任务预期的维度身份一致。",
+        "neighbor_disambiguation: 若更像参考框架不可比或度量单位不成立，转向 A2/A3。"
+      ],
+      "non_match_policy": "未命中本规则不代表结果正确，只代表当前证据不足以确认 A1。"
+    },
+    {
+      "label": "A2. CRS Inconsistency",
+      "concept_definition": "参考框架语义指 CRS、EPSG、投影坐标域、轴方向和坐标单位如何共同定义空间位置；A2 关注对象在不可比较参考框架下被空间比较。",
+      "invariant": "空间对象在发生空间比较或组合前必须共享可比较的参考框架语义。",
+      "hypothesis_trigger": "若错误结果可由空间对象的参考框架身份、定义或转换路径不一致解释，将 A2 放入候选。",
+      "generic_examples": [
+        "EPSG:4326 与 EPSG:3857 的几何对象不能在未统一参考框架时直接做空间叠加。",
+        "缺失 CRS 元数据的图层不能被默认为与另一图层处在同一空间参考框架。"
+      ],
+      "diagnostic_axes": [
+        "semantic_precondition: 识别该任务中哪些对象需要处在同一可比较空间参考框架内。",
+        "process_contract: 判断工作流是否在空间运算前维持、声明或转换了参考框架语义。",
+        "outcome_consistency: 判断结果中的空间关系是否符合这些对象在同一参考框架下应有的关系。",
+        "neighbor_disambiguation: 若更像维度身份错置或度量单位不成立，转向 A1/A3。"
+      ],
+      "non_match_policy": "未命中本规则不代表结果正确，只代表当前证据不足以确认 A2。"
+    },
+    {
+      "label": "A3. Unit Misinterpretation",
+      "concept_definition": "空间度量语义指距离、面积、长度、分辨率、密度等空间量的单位和量纲含义；A3 关注单位含义被错误解释。",
+      "invariant": "空间度量语义必须在任务要求、计算过程和结果解释之间保持一致。",
+      "hypothesis_trigger": "若错误结果可由度量单位、尺度含义或量纲解释不成立造成，将 A3 放入候选。",
+      "generic_examples": [
+        "degree 坐标中的数值距离不能直接当作 meter 距离解释。",
+        "面积单位从 square meter 转成 square kilometer 时，数值含义必须同步变化。"
+      ],
+      "diagnostic_axes": [
+        "semantic_precondition: 识别该任务中哪些空间量需要明确单位、尺度或量纲。",
+        "process_contract: 判断工作流是否在计算和解释中保持这些空间量的单位语义。",
+        "outcome_consistency: 判断结果的空间量级和任务声称的度量含义是否一致。",
+        "neighbor_disambiguation: 若更像参考框架不可比或空间支持分配错误，转向 A2/D2。"
+      ],
+      "non_match_policy": "未命中本规则不代表结果正确，只代表当前证据不足以确认 A3。"
+    },
+    {
+      "label": "B1. Dataset Integrity Violation",
+      "concept_definition": "空间数据表示约束指 GIS 文件组件、几何、属性、元数据和 schema 共同维持的数据模型；B1 关注这些结构关系被破坏或误读。",
+      "invariant": "GIS 数据表示必须保留空间对象、属性语义、元数据和数据结构之间的完整约束。",
+      "hypothesis_trigger": "若错误结果可由空间数据表示约束被破坏、遗漏或误读解释，将 B1 放入候选。",
+      "generic_examples": [
+        "Shapefile 的几何、索引、属性和投影组件共同构成一个可解释的数据集。",
+        "GeoJSON 的 geometry 和 properties 含义不同，不能把嵌套属性结构当作任意平面字段。"
+      ],
+      "diagnostic_axes": [
+        "semantic_precondition: 识别该任务依赖哪些数据表示约束才能保持空间语义。",
+        "process_contract: 判断工作流是否在读取、转换、保存和解释中保持这些表示约束。",
+        "outcome_consistency: 判断结果是否仍携带任务所需的空间对象和属性语义。",
+        "neighbor_disambiguation: 若更像几何有效性问题或参考框架问题，转向 C2/A2。"
+      ],
+      "non_match_policy": "未命中本规则不代表结果正确，只代表当前证据不足以确认 B1。"
+    },
+    {
+      "label": "B2. Raster Alignment Failure",
+      "concept_definition": "空间采样框架指栅格像元格网、分辨率、空间范围、索引空间和空间变换如何共同决定每个像元的位置；B2 关注这些框架不一致。",
+      "invariant": "栅格语义必须保持空间采样格网、索引空间和空间支持之间的一致关系。",
+      "hypothesis_trigger": "若错误结果可由栅格采样框架或栅格与其他空间对象的对齐语义失效解释，将 B2 放入候选。",
+      "generic_examples": [
+        "两个覆盖同一区域但像元大小或格网原点不同的栅格，不能被当作逐像元一一对应。",
+        "矢量区域和栅格统计之间必须共享可解释的空间采样关系。"
+      ],
+      "diagnostic_axes": [
+        "semantic_precondition: 识别该任务中哪些空间采样框架需要被共同解释。",
+        "process_contract: 判断工作流是否在组合、比较或派生过程中保持采样框架一致。",
+        "outcome_consistency: 判断结果空间模式是否符合共同采样框架下应有的对应关系。",
+        "neighbor_disambiguation: 若更像无效值语义误用或参考框架不可比，转向 B3/A2。"
+      ],
+      "non_match_policy": "未命中本规则不代表结果正确，只代表当前证据不足以确认 B2。"
+    },
+    {
+      "label": "B3. Missing Data Misinterpretation",
+      "concept_definition": "有效性边界指有效观测与 NoData、mask、背景值、云、缺失记录或不可观测区域之间的区别；B3 关注这些状态被混用。",
+      "invariant": "有效观测与缺失、背景、屏蔽或不可观测状态之间的语义边界必须被保留。",
+      "hypothesis_trigger": "若错误结果可由无效状态被当作有效观测或有效状态被错误排除解释，将 B3 放入候选。",
+      "generic_examples": [
+        "NoData=-9999 表示非观测值，不应像真实温度或海拔一样参与统计。",
+        "被 mask 掉的云覆盖区域不应被解释为真实地表类别。"
+      ],
+      "diagnostic_axes": [
+        "semantic_precondition: 识别该任务中哪些数据状态代表有效观测，哪些代表不可用或未观测。",
+        "process_contract: 判断工作流在计算、聚合和表达中是否保持有效性边界。",
+        "outcome_consistency: 判断结果是否被无效状态或错误排除策略改变了空间语义。",
+        "neighbor_disambiguation: 若更像统计定义错误或地图概化错误，转向 D3/E1。"
+      ],
+      "non_match_policy": "未命中本规则不代表结果正确，只代表当前证据不足以确认 B3。"
+    },
+    {
+      "label": "C1. Topological Predicate Confusion",
+      "concept_definition": "空间关系模型指对象之间应满足的关系含义，例如 within、contains、intersects、touches、crosses 或 disjoint；C1 关注关系语义被不等价替代。",
+      "invariant": "空间关系模型必须与任务所表达的拓扑或几何关系语义一致。",
+      "hypothesis_trigger": "若错误结果可由任务关系语义被替换为不等价的空间关系模型解释，将 C1 放入候选。",
+      "generic_examples": [
+        "within 强调对象位于另一个对象内部，intersects 只要求有任意共同部分。",
+        "touches、crosses 和 overlaps 表达不同关系，不能只因为对象有接触就视为同一类关系。"
+      ],
+      "diagnostic_axes": [
+        "semantic_precondition: 识别该任务要求对象之间满足哪种空间关系语义。",
+        "process_contract: 判断工作流是否使用与该关系语义等价的空间关系模型。",
+        "outcome_consistency: 判断结果集合是否符合任务要求的关系边界和包含/排除语义。",
+        "neighbor_disambiguation: 若更像几何有效性问题或连通关系模型问题，转向 C2/C3。"
+      ],
+      "non_match_policy": "未命中本规则不代表结果正确，只代表当前证据不足以确认 C1。"
+    },
+    {
+      "label": "C2. Invalid Geometry Handling",
+      "concept_definition": "几何有效性前提指几何对象在空间运算中必须满足的结构条件，例如非空、面环合法、无自相交、洞和外环关系可解释。",
+      "invariant": "几何对象必须满足其后续空间关系和空间运算所需的有效性前提。",
+      "hypothesis_trigger": "若错误结果可由几何有效性前提被违反且未被适当处理解释，将 C2 放入候选。",
+      "generic_examples": [
+        "自相交 polygon 的内部和外部可能无法被稳定解释。",
+        "空几何或退化 ring 不能像正常面对象一样参与叠加、裁剪或面积计算。"
+      ],
+      "diagnostic_axes": [
+        "semantic_precondition: 识别该任务中的空间运算要求几何对象满足哪些有效性前提。",
+        "process_contract: 判断工作流是否在运算前后保持或处理这些几何有效性前提。",
+        "outcome_consistency: 判断结果的空间结构是否仍满足可解释的几何语义。",
+        "neighbor_disambiguation: 若几何有效但关系模型不等价，转向 C1；若数据表示约束先被破坏，转向 B1。"
+      ],
+      "non_match_policy": "未命中本规则不代表结果正确，只代表当前证据不足以确认 C2。"
+    },
+    {
+      "label": "C3. Network Connectivity Misinterpretation",
+      "concept_definition": "连通关系模型指用节点、边、方向、阻抗和可达性定义路径或流动；C3 关注可达语义被几何邻近或视觉相交替代。",
+      "invariant": "可达性、路径和流动语义必须由连通关系模型定义，而不能由非连通空间相似性替代。",
+      "hypothesis_trigger": "若错误结果可由任务所需的连通关系模型被非连通语义替代解释，将 C3 放入候选。",
+      "generic_examples": [
+        "两条路在地图上看起来相交，不一定代表它们在网络中可转向通行。",
+        "欧氏直线距离不能自动代表沿路网、河网或管网的可达距离。"
+      ],
+      "diagnostic_axes": [
+        "semantic_precondition: 识别该任务是否依赖可达、路径、流向、服务范围或连通组件语义。",
+        "process_contract: 判断工作流是否构造并使用了足以表达这些语义的连通关系模型。",
+        "outcome_consistency: 判断结果是否符合连通关系约束下应有的可达或路径语义。",
+        "neighbor_disambiguation: 若更像普通拓扑关系模型错误或度量单位错误，转向 C1/A3。"
+      ],
+      "non_match_policy": "未命中本规则不代表结果正确，只代表当前证据不足以确认 C3。"
+    },
+    {
+      "label": "D1. Aggregation Scope Confusion",
+      "concept_definition": "分析范围语义指结果应在哪个空间范围、分组、行政单元、时间片或条件上下文内成立；D1 关注范围边界被错误改变。",
+      "invariant": "空间分析必须保持任务指定的分析范围、分组边界、条件上下文和局部性语义。",
+      "hypothesis_trigger": "若错误结果可由应当局部或分组成立的分析被错误改写为其他范围解释，将 D1 放入候选。",
+      "generic_examples": [
+        "每个行政区各自的最高值，不等同于整个研究区的单一最高值。",
+        "按年份或类别分别统计，不等同于把所有记录混在一起统计。"
+      ],
+      "diagnostic_axes": [
+        "semantic_precondition: 识别该任务要求分析在哪些空间、条件或上下文范围内成立。",
+        "process_contract: 判断工作流是否在筛选、聚合和输出中保持这些范围边界。",
+        "outcome_consistency: 判断结果粒度和结论是否与任务要求的范围语义一致。",
+        "neighbor_disambiguation: 若更像空间支持分配错误或统计定义错误，转向 D2/D3。"
+      ],
+      "non_match_policy": "未命中本规则不代表结果正确，只代表当前证据不足以确认 D1。"
+    },
+    {
+      "label": "D2. Spatial Allocation Error",
+      "concept_definition": "空间支持指变量实际代表的承载单元，例如点、像元、polygon、行政区、路段或流域；D2 关注变量在不同支持之间转移时语义失真。",
+      "invariant": "变量在不同空间支持之间转移时必须保持变量类型、空间单元和权重语义一致。",
+      "hypothesis_trigger": "若错误结果可由变量在空间支持之间被错误分配、代表或汇总解释，将 D2 放入候选。",
+      "generic_examples": [
+        "点位置上的值不能自动代表整个 polygon 的平均状态。",
+        "人口总量、面积、比例和密度在跨行政区汇总时需要遵循不同的权重语义。"
+      ],
+      "diagnostic_axes": [
+        "semantic_precondition: 识别该任务中变量原本依附的空间支持和目标空间支持。",
+        "process_contract: 判断工作流是否使用与变量类型和空间支持相容的转移语义。",
+        "outcome_consistency: 判断结果变量是否仍代表任务声称的空间单元和空间支持。",
+        "neighbor_disambiguation: 若更像范围边界错误或统计定义错误，转向 D1/D3。"
+      ],
+      "non_match_policy": "未命中本规则不代表结果正确，只代表当前证据不足以确认 D2。"
+    },
+    {
+      "label": "D3. Spatial Statistical Misinterpretation",
+      "concept_definition": "空间统计语义指指标、分母、派生变量、阈值、显著性、局部/全局解释和空间依赖假设如何支撑结论；D3 关注这些统计含义被误构造或误解释。",
+      "invariant": "空间统计结论必须保持指标定义、派生关系、阈值语义、显著性语义和局部/全局解释一致。",
+      "hypothesis_trigger": "若错误结果可由统计变量或统计解释的语义约束被破坏解释，将 D3 放入候选。",
+      "generic_examples": [
+        "原始计数不等同于百分比或率，百分比需要明确分母。",
+        "显著变化、热点或相关性结论必须与其阈值和统计定义一致。"
+      ],
+      "diagnostic_axes": [
+        "semantic_precondition: 识别该任务中结论依赖哪些空间统计定义或解释前提。",
+        "process_contract: 判断工作流是否在变量构造、筛选和解释中保持这些统计语义。",
+        "outcome_consistency: 判断结果结论是否与任务声称的统计含义一致。",
+        "neighbor_disambiguation: 若更像空间支持分配错误或地图表达误导，转向 D2/E1/E2。"
+      ],
+      "non_match_policy": "未命中本规则不代表结果正确，只代表当前证据不足以确认 D3。"
+    },
+    {
+      "label": "E1. Classification Scheme Misuse",
+      "concept_definition": "数值概化语义指专题地图如何把连续或有序数值转换为类别区间，以支持比较、排序或解释；E1 关注这种概化不适配任务。",
+      "invariant": "专题地图的数值概化必须保持数据分布、比较目的和类别语义之间的一致关系。",
+      "hypothesis_trigger": "若错误地图解释可由数值到类别的概化语义不适配任务目的解释，将 E1 放入候选。",
+      "generic_examples": [
+        "重尾分布、均匀分布和有政策阈值的数据可能需要不同分级方式。",
+        "类别数量和区间边界会改变读者对空间差异的判断。"
+      ],
+      "diagnostic_axes": [
+        "semantic_precondition: 识别该地图任务要求数值如何被概化以支持比较或解释。",
+        "process_contract: 判断工作流是否使用与数据分布和任务目的相容的概化语义。",
+        "outcome_consistency: 判断地图类别是否支持任务要求的空间比较和读图判断。",
+        "neighbor_disambiguation: 若更像视觉编码语义错误或底层统计变量错误，转向 E2/D3。"
+      ],
+      "non_match_policy": "未命中本规则不代表结果正确，只代表当前证据不足以确认 E1。"
+    },
+    {
+      "label": "E2. Symbolization Error",
+      "concept_definition": "视觉编码语义指颜色、大小、形状、线型、透明度等视觉变量如何表达名义类别、序数、连续强度或数量差异；E2 关注视觉变量与数据语义不匹配。",
+      "invariant": "视觉编码必须保留数据类型、顺序、强度、类别身份和主题语义之间的一致关系。",
+      "hypothesis_trigger": "若错误地图解释可由视觉编码语义与数据语义错置解释，将 E2 放入候选。",
+      "generic_examples": [
+        "名义类别需要可区分的类别符号，不应被暗示为连续高低梯度。",
+        "连续强度通常需要能表达大小或强弱变化的视觉序列。"
+      ],
+      "diagnostic_axes": [
+        "semantic_precondition: 识别该地图任务需要视觉编码保留哪些数据语义。",
+        "process_contract: 判断工作流是否用与这些数据语义相容的视觉编码表达结果。",
+        "outcome_consistency: 判断读图者从视觉表达中获得的语义是否与数据和任务一致。",
+        "neighbor_disambiguation: 若更像数值概化问题或地图解释链缺失，转向 E1/E3。"
+      ],
+      "non_match_policy": "未命中本规则不代表结果正确，只代表当前证据不足以确认 E2。"
+    },
+    {
+      "label": "E3. Map Composition Defect",
+      "concept_definition": "地图解释链指读者理解主题所需的地图构成关系，包括主题内容、空间上下文、图例、标签、比例尺、布局和交付物。",
+      "invariant": "地图交付物必须保持任务主题、空间上下文、解释要素和读图目的之间的完整解释链。",
+      "hypothesis_trigger": "若错误地图解释可由必要解释链缺失、断裂或失效解释，将 E3 放入候选。",
+      "generic_examples": [
+        "没有图例时，读者可能无法知道颜色或符号代表什么类别或数值。",
+        "缺少必要空间上下文时，读者可能无法判断主题对象与周边地理对象的关系。"
+      ],
+      "diagnostic_axes": [
+        "semantic_precondition: 识别该地图任务需要哪些解释要素才能让读者理解主题。",
+        "process_contract: 判断工作流是否在最终交付物中保留这些解释要素之间的关系。",
+        "outcome_consistency: 判断最终地图是否能支持任务要求的空间理解和主题解释。",
+        "neighbor_disambiguation: 若地图忠实表达了错误分析变量，转向对应 D 类；若构成完整但视觉编码误导，转向 E2。"
+      ],
+      "non_match_policy": "未命中本规则不代表结果正确，只代表当前证据不足以确认 E3。"
+    }
+  ]
+}
