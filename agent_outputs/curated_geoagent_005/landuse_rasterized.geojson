@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "landuse_rasterized",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "landuse_id": 1, "landuse_ty": "residential", "area_ha": 120 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -122.44, 37.7 ], [ -122.5, 37.7 ], [ -122.5, 37.78 ], [ -122.44, 37.78 ], [ -122.44, 37.7 ] ] ] } },
+{ "type": "Feature", "properties": { "landuse_id": 2, "landuse_ty": "commercial", "area_ha": 80 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -122.38, 37.7 ], [ -122.44, 37.7 ], [ -122.44, 37.78 ], [ -122.38, 37.78 ], [ -122.38, 37.7 ] ] ] } },
+{ "type": "Feature", "properties": { "landuse_id": 3, "landuse_ty": "industrial", "area_ha": 60 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -122.3, 37.7 ], [ -122.38, 37.7 ], [ -122.38, 37.78 ], [ -122.3, 37.78 ], [ -122.3, 37.7 ] ] ] } },
+{ "type": "Feature", "properties": { "landuse_id": 4, "landuse_ty": "park", "area_ha": 45 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -122.44, 37.78 ], [ -122.5, 37.78 ], [ -122.5, 37.86 ], [ -122.44, 37.86 ], [ -122.44, 37.78 ] ] ] } },
+{ "type": "Feature", "properties": { "landuse_id": 5, "landuse_ty": "agriculture", "area_ha": 200 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -122.38, 37.78 ], [ -122.44, 37.78 ], [ -122.44, 37.86 ], [ -122.38, 37.86 ], [ -122.38, 37.78 ] ] ] } }
+]
+}

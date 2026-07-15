@@ -1,0 +1,93 @@
+{
+  "report_id": "eval_curated_geoagent_004_20260715T141747Z",
+  "case_id": "curated_geoagent_004",
+  "timestamp": "2026-07-15T14:17:47.019822+00:00",
+  "overall_result": "PARTIAL",
+  "vector_verification": {
+    "file_exists": true,
+    "crs_match": true,
+    "crs_agent": "EPSG:4326",
+    "crs_expected": "EPSG:4326",
+    "geometry_valid": true,
+    "invalid_geometry_count": 0,
+    "feature_count_match": false,
+    "feature_count_agent": 17,
+    "feature_count_expected": 3,
+    "area_error_pct": 0.0,
+    "length_error_pct": 1.8033204903636897e-07,
+    "area_within_tolerance": true,
+    "length_within_tolerance": true,
+    "attribute_fields_match": true,
+    "missing_fields": [],
+    "extra_fields": []
+  },
+  "raster_verification": {},
+  "table_verification": {
+    "file_exists": true,
+    "column_names_match": false,
+    "missing_columns": [
+      "metric",
+      "unit",
+      "value"
+    ],
+    "extra_columns": [
+      "count",
+      "road_class",
+      "total_length_km"
+    ],
+    "row_count_match": false,
+    "row_count_agent": 3,
+    "row_count_expected": 9,
+    "grouped_stats_match": true,
+    "numeric_diffs": []
+  },
+  "visual_verification": {},
+  "errors": [
+    {
+      "category": "C",
+      "subcategory": "C1",
+      "label_name": "字段缺失/不匹配",
+      "description": "输出属性表缺失必要字段或包含多余字段",
+      "details": {
+        "missing_columns": [
+          "metric",
+          "unit",
+          "value"
+        ],
+        "extra_columns": [
+          "count",
+          "road_class",
+          "total_length_km"
+        ]
+      }
+    },
+    {
+      "category": "C",
+      "subcategory": "C3",
+      "label_name": "统计量偏差",
+      "description": "分组统计或聚合数值超出允许误差范围",
+      "details": {
+        "row_count_agent": 3,
+        "row_count_expected": 9
+      }
+    }
+  ],
+  "requires_visual_check": false,
+  "summary": {
+    "total_checks": 11,
+    "passed_checks": 8,
+    "failed_checks": 3,
+    "error_categories": [
+      "C"
+    ],
+    "failure_reasons": [
+      "[C1] 字段缺失/不匹配: 输出属性表缺失必要字段或包含多余字段",
+      "[C3] 统计量偏差: 分组统计或聚合数值超出允许误差范围"
+    ],
+    "metric_deltas": {
+      "area_error_pct": 0.0,
+      "length_error_pct": 1.8033204903636897e-07,
+      "feature_count_delta": 14
+    }
+  }
+}

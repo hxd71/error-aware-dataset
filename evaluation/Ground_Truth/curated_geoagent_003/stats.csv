@@ -1,0 +1,20 @@
+metric,value,unit
+feature_count,33.0,count
+total_area,58762024.17,m²
+total_length,159953.09,m
+mean_area,1780667.4,m²
+block_id_sum,524.0,
+block_id_mean,15.8788,
+population_sum,89346.0,
+population_mean,2707.4545,
+index_right_sum,34.0,
+index_right_mean,1.0303,
+admin_name_left_South District,12.0,count
+admin_name_left_Central District,11.0,count
+admin_name_left_North District,10.0,count
+admin_name_right_Central District,12.0,count
+admin_name_right_South District,11.0,count
+admin_name_right_North District,10.0,count
+admin_code_ADM02,12.0,count
+admin_code_ADM03,11.0,count
+admin_code_ADM01,10.0,count

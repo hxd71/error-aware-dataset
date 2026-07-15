@@ -1,0 +1,68 @@
+{
+  "title": "GIS Agent 基准测试评测汇总报告",
+  "generated_at": "2026-07-15T14:17:47.036821+00:00",
+  "overall_stats": {
+    "total_tasks": 5,
+    "pass": 2,
+    "fail": 0,
+    "partial": 3,
+    "skip": 0,
+    "pass_rate": 40.0,
+    "requires_visual_check": 1
+  },
+  "error_summary": {
+    "total_errors": 8,
+    "by_category": {
+      "C": 6,
+      "E": 1,
+      "D": 1
+    },
+    "by_subcategory": {
+      "C1": 3,
+      "C3": 3,
+      "E3": 1,
+      "D3": 1
+    }
+  },
+  "pass_by_type": {
+    "all": {
+      "total": 5,
+      "pass": 2
+    }
+  },
+  "per_task": [
+    {
+      "case_id": "curated_geoagent_001",
+      "result": "PASS",
+      "errors": 0,
+      "visual_check": false
+    },
+    {
+      "case_id": "curated_geoagent_002",
+      "result": "PASS",
+      "errors": 0,
+      "visual_check": false
+    },
+    {
+      "case_id": "curated_geoagent_003",
+      "result": "PARTIAL",
+      "errors": 3,
+      "visual_check": true
+    },
+    {
+      "case_id": "curated_geoagent_004",
+      "result": "PARTIAL",
+      "errors": 2,
+      "visual_check": false
+    },
+    {
+      "case_id": "curated_geoagent_005",
+      "result": "PARTIAL",
+      "errors": 3,
+      "visual_check": false
+    }
+  ],
+  "visual_check_required": [
+    "curated_geoagent_003"
+  ]
+}

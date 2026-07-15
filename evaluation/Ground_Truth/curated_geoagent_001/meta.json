@@ -1,0 +1,9 @@
+{
+  "case_id": "curated_geoagent_001",
+  "generated_at": "2026-07-15T14:16:43.550711+00:00",
+  "task_type": "vector_single",
+  "is_trap": false,
+  "trap_type": null,
+  "source_id": 12,
+  "complexity": 1
+}

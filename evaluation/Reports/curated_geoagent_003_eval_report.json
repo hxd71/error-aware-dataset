@@ -1,0 +1,114 @@
+{
+  "report_id": "eval_curated_geoagent_003_20260715T141746Z",
+  "case_id": "curated_geoagent_003",
+  "timestamp": "2026-07-15T14:17:46.932205+00:00",
+  "overall_result": "PARTIAL",
+  "vector_verification": {
+    "file_exists": true,
+    "crs_match": true,
+    "crs_agent": "EPSG:4326",
+    "crs_expected": "EPSG:4326",
+    "geometry_valid": true,
+    "invalid_geometry_count": 0,
+    "feature_count_match": true,
+    "feature_count_agent": 33,
+    "feature_count_expected": 33,
+    "area_error_pct": 0.0,
+    "length_error_pct": 0.0,
+    "area_within_tolerance": true,
+    "length_within_tolerance": true,
+    "attribute_fields_match": false,
+    "missing_fields": [
+      "population"
+    ],
+    "extra_fields": []
+  },
+  "raster_verification": {},
+  "table_verification": {
+    "file_exists": true,
+    "column_names_match": false,
+    "missing_columns": [
+      "metric",
+      "unit",
+      "value"
+    ],
+    "extra_columns": [
+      "admin_name",
+      "block_count"
+    ],
+    "row_count_match": false,
+    "row_count_agent": 3,
+    "row_count_expected": 19,
+    "grouped_stats_match": true,
+    "numeric_diffs": []
+  },
+  "visual_verification": {
+    "file_exists": false,
+    "is_blank": false,
+    "layer_misalignment": false,
+    "legend_missing": false,
+    "scale_bar_missing": false,
+    "title_missing": false,
+    "symbolization_anomaly": false,
+    "north_arrow_missing": false,
+    "requires_visual_check": true,
+    "anomaly_symptoms": [
+      "地图输出文件缺失"
+    ]
+  },
+  "errors": [
+    {
+      "category": "C",
+      "subcategory": "C1",
+      "label_name": "字段缺失/不匹配",
+      "description": "输出属性表缺失必要字段或包含多余字段",
+      "details": {
+        "missing_fields": [
+          "population"
+        ],
+        "extra_fields": []
+      }
+    },
+    {
+      "category": "C",
+      "subcategory": "C3",
+      "label_name": "统计量偏差",
+      "description": "分组统计或聚合数值超出允许误差范围",
+      "details": {
+        "row_count_agent": 3,
+        "row_count_expected": 19
+      }
+    },
+    {
+      "category": "E",
+      "subcategory": "E3",
+      "label_name": "隐形逻辑错误",
+      "description": "输出表面正常但存在深层逻辑缺陷，需人工视觉审查确认",
+      "details": {
+        "anomaly_symptoms": [
+          "地图输出文件缺失"
+        ]
+      }
+    }
+  ],
+  "requires_visual_check": true,
+  "summary": {
+    "total_checks": 14,
+    "passed_checks": 10,
+    "failed_checks": 4,
+    "error_categories": [
+      "C",
+      "E"
+    ],
+    "failure_reasons": [
+      "[C1] 字段缺失/不匹配: 输出属性表缺失必要字段或包含多余字段",
+      "[C3] 统计量偏差: 分组统计或聚合数值超出允许误差范围",
+      "[E3] 隐形逻辑错误: 输出表面正常但存在深层逻辑缺陷，需人工视觉审查确认"
+    ],
+    "metric_deltas": {
+      "area_error_pct": 0.0,
+      "length_error_pct": 0.0,
+      "feature_count_delta": 0
+    }
+  }
+}

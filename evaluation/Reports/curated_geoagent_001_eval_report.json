@@ -1,0 +1,52 @@
+{
+  "report_id": "eval_curated_geoagent_001_20260715T141746Z",
+  "case_id": "curated_geoagent_001",
+  "timestamp": "2026-07-15T14:17:46.813695+00:00",
+  "overall_result": "PASS",
+  "vector_verification": {
+    "file_exists": true,
+    "crs_match": true,
+    "crs_agent": "EPSG:4326",
+    "crs_expected": "EPSG:4326",
+    "geometry_valid": true,
+    "invalid_geometry_count": 0,
+    "feature_count_match": true,
+    "feature_count_agent": 20,
+    "feature_count_expected": 20,
+    "area_error_pct": 0.0,
+    "length_error_pct": 0.0,
+    "area_within_tolerance": true,
+    "length_within_tolerance": true,
+    "attribute_fields_match": true,
+    "missing_fields": [],
+    "extra_fields": []
+  },
+  "raster_verification": {},
+  "table_verification": {},
+  "visual_verification": {
+    "file_exists": true,
+    "is_blank": false,
+    "layer_misalignment": false,
+    "legend_missing": false,
+    "scale_bar_missing": false,
+    "title_missing": false,
+    "symbolization_anomaly": false,
+    "north_arrow_missing": false,
+    "requires_visual_check": false,
+    "anomaly_symptoms": []
+  },
+  "errors": [],
+  "requires_visual_check": false,
+  "summary": {
+    "total_checks": 10,
+    "passed_checks": 10,
+    "failed_checks": 0,
+    "error_categories": [],
+    "failure_reasons": [],
+    "metric_deltas": {
+      "area_error_pct": 0.0,
+      "length_error_pct": 0.0,
+      "feature_count_delta": 0
+    }
+  }
+}

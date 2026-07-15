@@ -1,0 +1,14 @@
+metric,value,unit
+feature_count,5.0,count
+total_area,250160600.0,m²
+total_length,145128.26,m
+mean_area,50032120.0,m²
+landuse_id_sum,15.0,
+landuse_id_mean,3.0,
+area_ha_sum,505.0,
+area_ha_mean,101.0,
+landuse_ty_residential,1.0,count
+landuse_ty_commercial,1.0,count
+landuse_ty_industrial,1.0,count
+landuse_ty_park,1.0,count
+landuse_ty_agriculture,1.0,count

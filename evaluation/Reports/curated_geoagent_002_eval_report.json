@@ -1,0 +1,57 @@
+{
+  "report_id": "eval_curated_geoagent_002_20260715T141746Z",
+  "case_id": "curated_geoagent_002",
+  "timestamp": "2026-07-15T14:17:46.830695+00:00",
+  "overall_result": "PASS",
+  "vector_verification": {},
+  "raster_verification": {
+    "file_exists": true,
+    "band_count_match": true,
+    "band_count_agent": 1,
+    "band_count_expected": 1,
+    "resolution_match": true,
+    "resolution_agent": [
+      0.0010000000000000141,
+      0.0009999999999999788
+    ],
+    "resolution_expected": [
+      0.0010000000000000141,
+      0.0009999999999999788
+    ],
+    "spatial_extent_match": true,
+    "extent_bounds_agent": [
+      -122.5,
+      37.7,
+      -122.3,
+      37.9
+    ],
+    "extent_bounds_expected": [
+      -122.5,
+      37.7,
+      -122.3,
+      37.9
+    ],
+    "nodata_handling_correct": true,
+    "nodata_value_agent": -9999.0,
+    "nodata_value_expected": -9999.0,
+    "stats_rmse": 0.0,
+    "stats_mae": 0.0,
+    "stats_r2": 1.0,
+    "stats_within_tolerance": true
+  },
+  "table_verification": {},
+  "visual_verification": {},
+  "errors": [],
+  "requires_visual_check": false,
+  "summary": {
+    "total_checks": 6,
+    "passed_checks": 6,
+    "failed_checks": 0,
+    "error_categories": [],
+    "failure_reasons": [],
+    "metric_deltas": {
+      "raster_rmse": 0.0,
+      "raster_mae": 0.0
+    }
+  }
+}

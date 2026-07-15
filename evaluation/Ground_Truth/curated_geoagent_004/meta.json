@@ -1,0 +1,9 @@
+{
+  "case_id": "curated_geoagent_004",
+  "generated_at": "2026-07-15T14:16:44.314302+00:00",
+  "task_type": "trap",
+  "is_trap": true,
+  "trap_type": "invalid_geometry",
+  "source_id": 47,
+  "complexity": 3
+}
