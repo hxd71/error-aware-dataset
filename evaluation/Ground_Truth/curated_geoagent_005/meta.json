@@ -1,0 +1,9 @@
+{
+  "case_id": "curated_geoagent_005",
+  "generated_at": "2026-07-15T14:16:44.660225+00:00",
+  "task_type": "trap",
+  "is_trap": true,
+  "trap_type": "crs_mismatch",
+  "source_id": 55,
+  "complexity": 3
+}

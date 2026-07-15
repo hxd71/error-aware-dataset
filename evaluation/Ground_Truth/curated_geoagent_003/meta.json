@@ -1,0 +1,9 @@
+{
+  "case_id": "curated_geoagent_003",
+  "generated_at": "2026-07-15T14:16:44.066406+00:00",
+  "task_type": "composite_workflow",
+  "is_trap": false,
+  "trap_type": null,
+  "source_id": 38,
+  "complexity": 2
+}

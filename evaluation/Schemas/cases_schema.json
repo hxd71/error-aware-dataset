@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://geoagent-benchmark/cases_schema.json",
+  "title": "Benchmark Task Configuration Schema",
+  "description": "cases.json / Benchmark_Tasks.json 的结构定义",
+  "type": "object",
+  "required": ["cases"],
+  "properties": {
+    "description": { "type": "string" },
+    "version": { "type": "string" },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "total_cases": { "type": "integer" },
+        "categories": { "type": "object" },
+        "scenarios": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "complexity_levels": { "type": "object" }
+      }
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["case_id", "task", "output_types"],
+        "properties": {
+          "case_id": {
+            "type": "string",
+            "pattern": "^curated_geoagent_\\d{3}$"
+          },
+          "source_id": { "type": "integer" },
+          "task_type": {
+            "type": "string",
+            "enum": ["vector_single", "raster_single", "composite_workflow", "trap"]
+          },
+          "complexity_level": {
+            "type": "integer",
+            "enum": [1, 2, 3]
+          },
+          "scenario": { "type": "string" },
+          "trap_type": {
+            "type": "string",
+            "enum": ["crs_mismatch", "invalid_geometry", "nodata_anomaly",
+                     "attribute_null", "broken_network", null]
+          },
+          "task": { "type": "string" },
+          "output_requirements": { "type": "string" },
+          "inputs": {
+            "type": "object",
+            "additionalProperties": { "type": "string" }
+          },
+          "operations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": { "type": "string" },
+                "params": { "type": "object" }
+              }
+            }
+          },
+          "output_types": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["vector", "raster", "table", "map"]
+            }
+          },
+          "expected_files": { "type": "object" },
+          "validation_metrics": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "is_trap": { "type": "boolean" },
+          "expected_trap_error": { "type": "string" },
+          "thresholds": { "type": "object" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-07-15T14:16:44.660225+00:00",
+  "source_cases": "cases.json",
+  "total": 5,
+  "succeeded": 5,
+  "failed": 0,
+  "skipped": 0,
+  "details": [
+    {
+      "case_id": "curated_geoagent_001",
+      "status": "success"
+    },
+    {
+      "case_id": "curated_geoagent_002",
+      "status": "success"
+    },
+    {
+      "case_id": "curated_geoagent_003",
+      "status": "success"
+    },
+    {
+      "case_id": "curated_geoagent_004",
+      "status": "success"
+    },
+    {
+      "case_id": "curated_geoagent_005",
+      "status": "success"
+    }
+  ]
+}

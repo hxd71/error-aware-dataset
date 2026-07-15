@@ -1,0 +1,257 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://geoagent-benchmark/evaluation_schema.json",
+  "title": "GIS Agent Evaluation Report Schema",
+  "description": "标准化GIS智能体评测报告JSON结构，用于自动化核验模块输出。",
+
+  "definitions": {
+    "ErrorLabel": {
+      "type": "object",
+      "description": "GIS错误分类标签",
+      "properties": {
+        "category": {
+          "type": "string",
+          "enum": ["A", "B", "C", "D", "E"],
+          "description": "错误大类: A=空间参考系, B=几何完整性, C=属性/表格, D=栅格数据, E=可视化/逻辑"
+        },
+        "subcategory": {
+          "type": "string",
+          "enum": [
+            "A1", "A2", "A3",
+            "B1", "B2", "B3",
+            "C1", "C2", "C3",
+            "D1", "D2", "D3",
+            "E1", "E2", "E3"
+          ]
+        },
+        "label_name": {
+          "type": "string",
+          "description": "人类可读错误标签名"
+        },
+        "description": {
+          "type": "string",
+          "description": "错误详细描述"
+        }
+      },
+      "required": ["category", "subcategory", "label_name"]
+    },
+
+    "VectorVerification": {
+      "type": "object",
+      "description": "矢量数据核验结果",
+      "properties": {
+        "file_exists": { "type": "boolean" },
+        "crs_match": { "type": "boolean" },
+        "crs_agent": { "type": "string" },
+        "crs_expected": { "type": "string" },
+        "geometry_valid": { "type": "boolean" },
+        "invalid_geometry_count": { "type": "integer" },
+        "feature_count_match": { "type": "boolean" },
+        "feature_count_agent": { "type": "integer" },
+        "feature_count_expected": { "type": "integer" },
+        "area_error_pct": {
+          "type": "number",
+          "description": "面积相对误差百分比"
+        },
+        "length_error_pct": {
+          "type": "number",
+          "description": "长度相对误差百分比"
+        },
+        "area_within_tolerance": { "type": "boolean" },
+        "length_within_tolerance": { "type": "boolean" },
+        "attribute_fields_match": { "type": "boolean" },
+        "missing_fields": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "extra_fields": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "RasterVerification": {
+      "type": "object",
+      "description": "栅格数据核验结果",
+      "properties": {
+        "file_exists": { "type": "boolean" },
+        "band_count_match": { "type": "boolean" },
+        "band_count_agent": { "type": "integer" },
+        "band_count_expected": { "type": "integer" },
+        "resolution_match": { "type": "boolean" },
+        "resolution_agent": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "resolution_expected": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "spatial_extent_match": { "type": "boolean" },
+        "extent_bounds_agent": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "extent_bounds_expected": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "nodata_handling_correct": { "type": "boolean" },
+        "nodata_value_agent": { "type": "number" },
+        "nodata_value_expected": { "type": "number" },
+        "stats_rmse": { "type": "number" },
+        "stats_mae": { "type": "number" },
+        "stats_r2": { "type": "number" },
+        "stats_within_tolerance": { "type": "boolean" }
+      }
+    },
+
+    "TableVerification": {
+      "type": "object",
+      "description": "属性统计表核验结果",
+      "properties": {
+        "file_exists": { "type": "boolean" },
+        "column_names_match": { "type": "boolean" },
+        "missing_columns": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "extra_columns": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "row_count_match": { "type": "boolean" },
+        "row_count_agent": { "type": "integer" },
+        "row_count_expected": { "type": "integer" },
+        "grouped_stats_match": { "type": "boolean" },
+        "numeric_diffs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "column": { "type": "string" },
+              "agent_value": { "type": "number" },
+              "expected_value": { "type": "number" },
+              "diff_pct": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+
+    "VisualVerification": {
+      "type": "object",
+      "description": "可视化隐形错误核验结果",
+      "properties": {
+        "file_exists": { "type": "boolean" },
+        "is_blank": { "type": "boolean" },
+        "layer_misalignment": { "type": "boolean" },
+        "legend_missing": { "type": "boolean" },
+        "scale_bar_missing": { "type": "boolean" },
+        "title_missing": { "type": "boolean" },
+        "symbolization_anomaly": { "type": "boolean" },
+        "north_arrow_missing": { "type": "boolean" },
+        "requires_visual_check": {
+          "type": "boolean",
+          "description": "是否必须人工视觉审查"
+        },
+        "anomaly_symptoms": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "可视化异常症状列表"
+        }
+      }
+    }
+  },
+
+  "type": "object",
+  "required": [
+    "report_id",
+    "case_id",
+    "timestamp",
+    "overall_result",
+    "vector_verification",
+    "raster_verification",
+    "table_verification",
+    "visual_verification",
+    "errors",
+    "requires_visual_check",
+    "summary"
+  ],
+  "properties": {
+    "report_id": {
+      "type": "string",
+      "description": "评测报告唯一ID，格式: eval_{case_id}_{timestamp}"
+    },
+    "case_id": {
+      "type": "string",
+      "description": "任务编号，如 curated_geoagent_001",
+      "pattern": "^curated_geoagent_\\d{3}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "评测执行时间 ISO 8601"
+    },
+    "overall_result": {
+      "type": "string",
+      "enum": ["PASS", "FAIL", "PARTIAL", "SKIP"],
+      "description": "综合评测结果: PASS=全部通过, FAIL=存在错误, PARTIAL=部分通过, SKIP=跳过"
+    },
+    "vector_verification": {
+      "$ref": "#/definitions/VectorVerification"
+    },
+    "raster_verification": {
+      "$ref": "#/definitions/RasterVerification"
+    },
+    "table_verification": {
+      "$ref": "#/definitions/TableVerification"
+    },
+    "visual_verification": {
+      "$ref": "#/definitions/VisualVerification"
+    },
+    "errors": {
+      "type": "array",
+      "description": "所有检测到的GIS错误列表",
+      "items": {
+        "$ref": "#/definitions/ErrorLabel"
+      }
+    },
+    "requires_visual_check": {
+      "type": "boolean",
+      "description": "综合判断是否需要人工视觉审查"
+    },
+    "summary": {
+      "type": "object",
+      "description": "评测摘要",
+      "properties": {
+        "total_checks": { "type": "integer" },
+        "passed_checks": { "type": "integer" },
+        "failed_checks": { "type": "integer" },
+        "error_categories": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "涉及的错误大类"
+        },
+        "failure_reasons": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "失败原因摘要"
+        },
+        "metric_deltas": {
+          "type": "object",
+          "description": "关键指标偏差值"
+        }
+      }
+    }
+  }
+}

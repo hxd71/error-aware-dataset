@@ -1,0 +1,39 @@
+{
+  "description": "Curated GeoAgent Dataset — 全量数据溯源信息",
+  "version": "1.0.0",
+  "generated_at": "2026-07-15T00:00:00Z",
+  "source": {
+    "dataset": "GeoAgent-derived tasks",
+    "total_original": 200,
+    "curated_count": 140,
+    "excluded_reasons": [
+      "ambiguous_task_description",
+      "missing_input_data",
+      "unverifiable_output",
+      "duplicate_task"
+    ]
+  },
+  "files": {
+    "cases.json": {
+      "path": "cases.json",
+      "checksum_sha256": "placeholder",
+      "description": "Runtime task contracts, assets, and machine evaluation entry points"
+    },
+    "evaluation/evaluation_schema.json": {
+      "path": "evaluation/Schemas/evaluation_schema.json",
+      "checksum_sha256": "placeholder",
+      "description": "Standardized evaluation report JSON schema"
+    }
+  },
+  "evaluation_framework": {
+    "name": "GIS Error-aware Agent Evaluation Pipeline",
+    "version": "1.0.0",
+    "components": [
+      "gis_evaluator.py — 四层核验引擎",
+      "error_classifier.py — A-E 15类错误标签",
+      "generate_ground_truth.py — GT批量生成",
+      "batch_evaluate.py — 批量评测运行器",
+      "eval_curated_geoagent.py — 主入口"
+    ]
+  }
+}

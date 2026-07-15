@@ -1,0 +1,187 @@
+{
+  "$schema": "./evaluation/Schemas/cases_schema.json",
+  "description": "Benchmark_Tasks.json — GIS Error-aware Agent 基准测试任务集",
+  "version": "1.0.0",
+  "metadata": {
+    "total_cases": 50,
+    "categories": {
+      "single_step_basic": "单步基础任务 (15个, Level 1)",
+      "composite_workflow": "复合多步骤工作流 (20个, Level 2)",
+      "trap_induced": "错误诱导陷阱任务 (15个, Level 3)"
+    },
+    "scenarios": [
+      "交通空间分析",
+      "栅格处理",
+      "空间属性关联",
+      "网络拓扑",
+      "综合空间决策"
+    ],
+    "complexity_levels": {
+      "1": "单步操作",
+      "2": "多流程组合",
+      "3": "逻辑推理与陷阱识别"
+    }
+  },
+  "cases": [
+    {
+      "case_id": "curated_geoagent_001",
+      "source_id": 12,
+      "task_type": "vector_single",
+      "complexity_level": 1,
+      "scenario": "交通空间分析",
+      "task": "计算给定道路网络的缓冲区，缓冲区距离为500米，输出缓冲区多边形。",
+      "output_requirements": "输出GeoJSON格式的缓冲区多边形，CRS为EPSG:3857，包含area属性字段。",
+      "inputs": {
+        "roads": "roads.shp"
+      },
+      "operations": [
+        {
+          "type": "buffer",
+          "params": { "distance": 500 }
+        }
+      ],
+      "output_types": ["vector", "map"],
+      "expected_files": {
+        "vector": "buffered_roads.geojson",
+        "map": "buffered_roads_map.png"
+      },
+      "validation_metrics": ["feature_count", "area_sum", "geometry_validity"],
+      "thresholds": {
+        "area_tolerance_pct": 5.0,
+        "length_tolerance_pct": 5.0
+      }
+    },
+    {
+      "case_id": "curated_geoagent_002",
+      "source_id": 25,
+      "task_type": "raster_single",
+      "complexity_level": 1,
+      "scenario": "栅格处理",
+      "task": "对DEM栅格进行坡度计算，输出坡度栅格（度）。",
+      "output_requirements": "输出GeoTIFF格式的坡度栅格，保持与输入相同的分辨率和范围，NoData值设为-9999。",
+      "inputs": {
+        "dem": "dem.tif"
+      },
+      "operations": [
+        {
+          "type": "raster_calc",
+          "params": { "formula": "np.gradient(data)" }
+        }
+      ],
+      "output_types": ["raster"],
+      "expected_files": {
+        "raster": "slope.tif"
+      },
+      "validation_metrics": ["band_count", "resolution", "nodata", "rmse"],
+      "thresholds": {
+        "stats_tolerance": 0.05,
+        "extent_tolerance": 1e-6
+      }
+    },
+    {
+      "case_id": "curated_geoagent_003",
+      "source_id": 38,
+      "task_type": "composite_workflow",
+      "complexity_level": 2,
+      "scenario": "空间属性关联",
+      "task": "将人口普查区块数据与行政区划面做空间连接，计算每个行政区内的总人口和人口密度。",
+      "output_requirements": "输出GeoJSON，包含行政区名、总人口、人口密度（人/km²）字段。",
+      "inputs": {
+        "census_blocks": "census_blocks.shp",
+        "admin_boundaries": "admin_boundaries.shp"
+      },
+      "operations": [
+        {
+          "type": "spatial_join",
+          "params": { "other_layer": "admin_boundaries" }
+        },
+        {
+          "type": "dissolve",
+          "params": { "by": "admin_name" }
+        }
+      ],
+      "output_types": ["vector", "table", "map"],
+      "expected_files": {
+        "vector": "population_by_admin.geojson",
+        "table": "population_stats.csv",
+        "map": "population_map.png"
+      },
+      "validation_metrics": ["feature_count", "attribute_fields", "population_sum", "density_range"],
+      "thresholds": {
+        "numeric_tolerance_pct": 1.0,
+        "area_tolerance_pct": 5.0
+      }
+    },
+    {
+      "case_id": "curated_geoagent_004",
+      "source_id": 47,
+      "task_type": "trap",
+      "complexity_level": 3,
+      "scenario": "交通空间分析",
+      "trap_type": "invalid_geometry",
+      "task": "计算路网中所有道路的总长度，按道路等级分组统计。",
+      "output_requirements": "输出CSV统计表和GeoJSON。注意：输入数据中可能包含自相交等无效几何。",
+      "inputs": {
+        "roads": "roads_with_invalid_geom.shp"
+      },
+      "operations": [
+        {
+          "type": "fix_geometries",
+          "params": {}
+        },
+        {
+          "type": "dissolve",
+          "params": { "by": "road_class" }
+        }
+      ],
+      "output_types": ["vector", "table"],
+      "expected_files": {
+        "vector": "fixed_roads.geojson",
+        "table": "road_length_stats.csv"
+      },
+      "validation_metrics": ["geometry_validity", "length_sum", "grouped_stats"],
+      "is_trap": true,
+      "expected_trap_error": "B1",
+      "thresholds": {
+        "length_tolerance_pct": 5.0,
+        "numeric_tolerance_pct": 1.0
+      }
+    },
+    {
+      "case_id": "curated_geoagent_005",
+      "source_id": 55,
+      "task_type": "trap",
+      "complexity_level": 3,
+      "scenario": "栅格处理",
+      "trap_type": "crs_mismatch",
+      "task": "将土地利用矢量数据栅格化，与现有土地覆盖栅格做叠加分析，计算各类型面积。",
+      "output_requirements": "输出栅格和面积统计表。注意：矢量与栅格的CRS可能不一致。",
+      "inputs": {
+        "landuse_vector": "landuse_epsg4326.shp",
+        "landcover_raster": "landcover_epsg3857.tif"
+      },
+      "operations": [
+        {
+          "type": "reproject",
+          "params": { "crs": "EPSG:3857" }
+        },
+        {
+          "type": "rasterize",
+          "params": {}
+        }
+      ],
+      "output_types": ["raster", "table"],
+      "expected_files": {
+        "raster": "landuse_rasterized.tif",
+        "table": "landuse_area_stats.csv"
+      },
+      "validation_metrics": ["crs", "raster_extent", "area_sum"],
+      "is_trap": true,
+      "expected_trap_error": "A1",
+      "thresholds": {
+        "area_tolerance_pct": 5.0,
+        "extent_tolerance": 1e-6
+      }
+    }
+  ]
+}

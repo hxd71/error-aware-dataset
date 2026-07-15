@@ -1,0 +1,10 @@
+metric,value,unit
+feature_count,3.0,count
+total_area,0.0,m²
+total_length,148554.27,m
+mean_area,0.0,m²
+road_id_sum,14.0,
+road_id_mean,4.6667,
+name_Trap_Road_1,1.0,count
+name_Trap_Road_11,1.0,count
+name_Trap_Road_2,1.0,count

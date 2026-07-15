@@ -1,0 +1,129 @@
+{
+  "report_id": "eval_curated_geoagent_005_20260715T141747Z",
+  "case_id": "curated_geoagent_005",
+  "timestamp": "2026-07-15T14:17:47.035824+00:00",
+  "overall_result": "PARTIAL",
+  "vector_verification": {},
+  "raster_verification": {
+    "file_exists": true,
+    "band_count_match": true,
+    "band_count_agent": 1,
+    "band_count_expected": 1,
+    "resolution_match": true,
+    "resolution_agent": [
+      200.0,
+      133.33333333333334
+    ],
+    "resolution_expected": [
+      200.0,
+      133.33333333333334
+    ],
+    "spatial_extent_match": false,
+    "extent_bounds_agent": [
+      -13641000.0,
+      4541000.0,
+      -13611000.0,
+      4561000.0
+    ],
+    "extent_bounds_expected": [
+      -13640000.0,
+      4540000.0,
+      -13610000.0,
+      4560000.0
+    ],
+    "nodata_handling_correct": true,
+    "nodata_value_agent": 255.0,
+    "nodata_value_expected": 255.0,
+    "stats_rmse": 0.0,
+    "stats_mae": 0.0,
+    "stats_r2": 1.0,
+    "stats_within_tolerance": true
+  },
+  "table_verification": {
+    "file_exists": true,
+    "column_names_match": false,
+    "missing_columns": [
+      "metric",
+      "unit",
+      "value"
+    ],
+    "extra_columns": [
+      "area_ha",
+      "landuse_type"
+    ],
+    "row_count_match": false,
+    "row_count_agent": 5,
+    "row_count_expected": 13,
+    "grouped_stats_match": true,
+    "numeric_diffs": []
+  },
+  "visual_verification": {},
+  "errors": [
+    {
+      "category": "D",
+      "subcategory": "D3",
+      "label_name": "栅格范围偏差",
+      "description": "栅格空间范围、原点偏移超出允许阈值",
+      "details": {
+        "extent_agent": [
+          -13641000.0,
+          4541000.0,
+          -13611000.0,
+          4561000.0
+        ],
+        "extent_expected": [
+          -13640000.0,
+          4540000.0,
+          -13610000.0,
+          4560000.0
+        ]
+      }
+    },
+    {
+      "category": "C",
+      "subcategory": "C1",
+      "label_name": "字段缺失/不匹配",
+      "description": "输出属性表缺失必要字段或包含多余字段",
+      "details": {
+        "missing_columns": [
+          "metric",
+          "unit",
+          "value"
+        ],
+        "extra_columns": [
+          "area_ha",
+          "landuse_type"
+        ]
+      }
+    },
+    {
+      "category": "C",
+      "subcategory": "C3",
+      "label_name": "统计量偏差",
+      "description": "分组统计或聚合数值超出允许误差范围",
+      "details": {
+        "row_count_agent": 5,
+        "row_count_expected": 13
+      }
+    }
+  ],
+  "requires_visual_check": false,
+  "summary": {
+    "total_checks": 10,
+    "passed_checks": 7,
+    "failed_checks": 3,
+    "error_categories": [
+      "C",
+      "D"
+    ],
+    "failure_reasons": [
+      "[D3] 栅格范围偏差: 栅格空间范围、原点偏移超出允许阈值",
+      "[C1] 字段缺失/不匹配: 输出属性表缺失必要字段或包含多余字段",
+      "[C3] 统计量偏差: 分组统计或聚合数值超出允许误差范围"
+    ],
+    "metric_deltas": {
+      "raster_rmse": 0.0,
+      "raster_mae": 0.0
+    }
+  }
+}
