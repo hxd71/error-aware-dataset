@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1.0",
+  "benchmark_tasks": "experiments/comparison/mock/benchmark_tasks.json",
+  "evaluator_adapter": "mock",
+  "agent_groups": [
+    "baseline_multi_agent",
+    "self_debug_multi_agent",
+    "error_aware_multi_agent"
+  ],
+  "max_repair_attempts": 2,
+  "model_config": {
+    "provider": "mock",
+    "model": "mock-deterministic",
+    "temperature": 0
+  },
+  "knowledge_base": {
+    "rule_cards": "knowledge_base/rule_cards.json",
+    "annotation_guide": "GIS_WORKFLOW_ERROR_ANNOTATION_GUIDE.md",
+    "case_index": "knowledge_base/cases/index.json",
+    "verified_cases_only": true,
+    "candidate_pool_enabled": false
+  }
+}

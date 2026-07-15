@@ -1,0 +1,71 @@
+{
+  "schema_version": "0.1.0",
+  "description": "Mock tasks for validating the comparison framework only. These are not formal benchmark tasks.",
+  "tasks": [
+    {
+      "task_id": "mock_l1_basic_clip_pass",
+      "prompt": "Clip a small point layer to the provided study polygon and save the result.",
+      "input_paths": ["mock/input/points.geojson", "mock/input/study_area.geojson"],
+      "expected_outputs": ["outputs/clipped_points.geojson"],
+      "complexity": "L1",
+      "requires_visual_check": false,
+      "metadata": {"domain": "vector_overlay"},
+      "scoring": {"gold_labels": [], "leakage_risk": false},
+      "mock_behavior": {"initial_status": "PASS"}
+    },
+    {
+      "task_id": "mock_l2_degree_buffer_fail",
+      "prompt": "Create a 500 meter service area around clinics and count nearby housing blocks.",
+      "input_paths": ["mock/input/clinics_wgs84.geojson", "mock/input/blocks.geojson"],
+      "expected_outputs": ["outputs/clinic_service_blocks.csv"],
+      "complexity": "L2",
+      "requires_visual_check": false,
+      "metadata": {"domain": "buffer_overlay"},
+      "scoring": {"gold_labels": ["A3. Unit Misinterpretation"], "leakage_risk": false},
+      "mock_behavior": {
+        "initial_status": "FAIL",
+        "failure_kind": "silent_logic_error",
+        "failure_reasons": ["The buffer distance was interpreted in degree units instead of meters."],
+        "metrics_diff": {"buffer_area_ratio": "far larger than expected"},
+        "self_debug_can_fix": false,
+        "error_aware_can_fix": true
+      }
+    },
+    {
+      "task_id": "mock_l2_nodata_fail",
+      "prompt": "Compute the mean suitability score inside each management zone from the raster.",
+      "input_paths": ["mock/input/suitability.tif", "mock/input/zones.geojson"],
+      "expected_outputs": ["outputs/zone_suitability.csv"],
+      "complexity": "L2",
+      "requires_visual_check": false,
+      "metadata": {"domain": "raster_zonal_stats"},
+      "scoring": {"gold_labels": ["B3. Missing Data Misinterpretation"], "leakage_risk": false},
+      "mock_behavior": {
+        "initial_status": "FAIL",
+        "failure_kind": "silent_logic_error",
+        "failure_reasons": ["NoData background cells were included in the mean statistic."],
+        "metrics_diff": {"zone_mean": "systematically lower than reference"},
+        "self_debug_can_fix": false,
+        "error_aware_can_fix": true
+      }
+    },
+    {
+      "task_id": "mock_l3_map_composition_fail",
+      "prompt": "Produce a map showing risk zones with enough context for a reader to interpret the result.",
+      "input_paths": ["mock/input/risk_zones.geojson", "mock/input/roads.geojson"],
+      "expected_outputs": ["outputs/risk_map.png"],
+      "complexity": "L3",
+      "requires_visual_check": true,
+      "metadata": {"domain": "cartography"},
+      "scoring": {"gold_labels": ["E3. Map Composition Defect"], "leakage_risk": false},
+      "mock_behavior": {
+        "initial_status": "FAIL",
+        "failure_kind": "visual_check_required",
+        "failure_reasons": ["The final map lacks a legend and omits required context layers."],
+        "metrics_diff": {"map_elements": "legend=false; context_layer=false"},
+        "self_debug_can_fix": true,
+        "error_aware_can_fix": true
+      }
+    }
+  ]
+}

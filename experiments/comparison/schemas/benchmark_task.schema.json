@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BenchmarkTask",
+  "type": "object",
+  "required": ["task_id", "prompt", "input_paths", "expected_outputs", "complexity"],
+  "properties": {
+    "task_id": {"type": "string"},
+    "prompt": {"type": "string"},
+    "input_paths": {"type": "array", "items": {"type": "string"}},
+    "expected_outputs": {"type": "array", "items": {"type": "string"}},
+    "complexity": {"type": "string"},
+    "requires_visual_check": {"type": "boolean"},
+    "metadata": {"type": "object"},
+    "scoring": {"type": "object"},
+    "mock_behavior": {"type": "object"}
+  },
+  "additionalProperties": true
+}

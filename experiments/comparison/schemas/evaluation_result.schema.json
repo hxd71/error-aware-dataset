@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvaluationResult",
+  "type": "object",
+  "required": ["agent_visible_report", "scoring_report"],
+  "properties": {
+    "agent_visible_report": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["PASS", "FAIL"]},
+        "failure_kind": {"type": "string"},
+        "failure_reasons": {"type": "array", "items": {"type": "string"}},
+        "metrics_diff": {"type": "object"},
+        "requires_visual_check": {"type": "boolean"},
+        "output_path": {"type": "string"}
+      }
+    },
+    "scoring_report": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["PASS", "FAIL"]},
+        "gold_labels": {"type": "array", "items": {"type": "string"}},
+        "leakage_risk": {"type": "boolean"},
+        "notes": {"type": "string"}
+      }
+    }
+  }
+}

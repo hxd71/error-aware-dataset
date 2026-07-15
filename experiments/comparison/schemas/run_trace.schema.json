@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentRunTrace",
+  "type": "object",
+  "required": ["task", "agent_kind", "attempts", "final_status"],
+  "properties": {
+    "task": {"type": "object"},
+    "agent_kind": {"type": "string"},
+    "max_repair_attempts": {"type": "integer"},
+    "runtime": {"type": "object"},
+    "attempts": {"type": "array", "items": {"type": "object"}},
+    "final_status": {"enum": ["PASS", "FAIL"]},
+    "scoring_report": {"type": "object"}
+  }
+}

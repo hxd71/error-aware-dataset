@@ -6,3 +6,6 @@ __pycache__/
 external_task_runs/data/geobenchx/Data.zip
 external_task_runs/data/geobenchx/Data/
 external_task_runs/geobenchx_drive_probe.html
+
+# Local comparison experiment outputs.
+experiments/comparison/runs/

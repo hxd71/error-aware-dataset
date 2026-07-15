@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3d4b5c"/>
+    </marker>
+    <style>
+      .title { font: 700 34px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #1f2937; }
+      .subtitle { font: 400 22px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #4b5563; }
+      .section { font: 700 25px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #111827; }
+      .box-title { font: 700 22px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #111827; }
+      .box-text { font: 400 19px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #374151; }
+      .small { font: 400 17px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #4b5563; }
+      .arrow { stroke: #3d4b5c; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+      .host { fill: #e8f1ff; stroke: #4f83d1; stroke-width: 2; }
+      .baseline { fill: #f4f7fb; stroke: #9aa8bd; stroke-width: 2; }
+      .selfdebug { fill: #fff3df; stroke: #e2942f; stroke-width: 2.5; }
+      .aware { fill: #e8f8ef; stroke: #2fa76d; stroke-width: 2.5; }
+      .kb { fill: #f0fdf4; stroke: #22a05f; stroke-width: 2; }
+      .eval { fill: #f8fafc; stroke: #64748b; stroke-width: 2; }
+      .note { fill: #ffffff; stroke: #d1d5db; stroke-width: 1.8; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="1050" fill="#ffffff"/>
+  <text x="70" y="65" class="title">任务四对比实验框架：在同一多 Agent 宿主中验证 Error-aware 插件增益</text>
+  <text x="70" y="105" class="subtitle">蓝色：共享普通多 Agent 框架　橙色：普通自调试模块　绿色：Error-aware 插件与知识资产</text>
+
+  <rect x="70" y="140" rx="18" ry="18" width="300" height="90" class="eval"/>
+  <text x="110" y="177" class="box-title">Benchmark 任务</text>
+  <text x="110" y="207" class="box-text">同一任务输入与数据</text>
+
+  <rect x="1230" y="140" rx="18" ry="18" width="300" height="90" class="eval"/>
+  <text x="1270" y="177" class="box-title">统一 Evaluator</text>
+  <text x="1270" y="207" class="box-text">同一核验接口与报告</text>
+
+  <line x1="370" y1="185" x2="520" y2="185" class="arrow"/>
+  <line x1="1080" y1="185" x2="1230" y2="185" class="arrow"/>
+
+  <rect x="520" y="135" rx="18" ry="18" width="560" height="100" class="host"/>
+  <text x="585" y="174" class="section">共享多 Agent 宿主框架</text>
+  <text x="575" y="207" class="box-text">Planner → Executor → Verifier → Reporter</text>
+
+  <text x="70" y="295" class="section">三组对比系统</text>
+
+  <rect x="70" y="330" rx="18" ry="18" width="1460" height="155" class="baseline"/>
+  <text x="105" y="372" class="box-title">1. baseline multi-agent</text>
+  <rect x="420" y="350" rx="14" ry="14" width="170" height="70" class="host"/>
+  <text x="459" y="393" class="box-text">Planner</text>
+  <rect x="635" y="350" rx="14" ry="14" width="170" height="70" class="host"/>
+  <text x="668" y="393" class="box-text">Executor</text>
+  <rect x="850" y="350" rx="14" ry="14" width="170" height="70" class="host"/>
+  <text x="888" y="393" class="box-text">Verifier</text>
+  <rect x="1065" y="350" rx="14" ry="14" width="170" height="70" class="host"/>
+  <text x="1101" y="393" class="box-text">Reporter</text>
+  <line x1="590" y1="385" x2="635" y2="385" class="arrow"/>
+  <line x1="805" y1="385" x2="850" y2="385" class="arrow"/>
+  <line x1="1020" y1="385" x2="1065" y2="385" class="arrow"/>
+  <text x="105" y="445" class="small">只执行一次；不使用错误知识库；作为普通多 Agent GIS 任务执行能力参照。</text>
+
+  <rect x="70" y="520" rx="18" ry="18" width="1460" height="180" class="baseline"/>
+  <text x="105" y="562" class="box-title">2. self-debug multi-agent</text>
+  <rect x="380" y="545" rx="14" ry="14" width="150" height="64" class="host"/>
+  <text x="417" y="584" class="box-text">Planner</text>
+  <rect x="565" y="545" rx="14" ry="14" width="150" height="64" class="host"/>
+  <text x="594" y="584" class="box-text">Executor</text>
+  <rect x="750" y="545" rx="14" ry="14" width="150" height="64" class="host"/>
+  <text x="782" y="584" class="box-text">Verifier</text>
+  <rect x="935" y="545" rx="14" ry="14" width="230" height="64" class="selfdebug"/>
+  <text x="982" y="584" class="box-text">Self-debug 修复</text>
+  <rect x="1200" y="545" rx="14" ry="14" width="150" height="64" class="host"/>
+  <text x="1233" y="584" class="box-text">Reporter</text>
+  <line x1="530" y1="577" x2="565" y2="577" class="arrow"/>
+  <line x1="715" y1="577" x2="750" y2="577" class="arrow"/>
+  <line x1="900" y1="577" x2="935" y2="577" class="arrow"/>
+  <line x1="1165" y1="577" x2="1200" y2="577" class="arrow"/>
+  <text x="105" y="652" class="small">可读取 traceback、运行日志和 agent-visible evaluator 报告；不读取规则卡、分类指南和案例知识库。</text>
+
+  <rect x="70" y="735" rx="18" ry="18" width="1460" height="240" class="aware"/>
+  <text x="105" y="777" class="box-title">3. error-aware multi-agent</text>
+  <rect x="250" y="808" rx="14" ry="14" width="135" height="62" class="host"/>
+  <text x="282" y="846" class="box-text">Planner</text>
+  <rect x="420" y="808" rx="14" ry="14" width="135" height="62" class="host"/>
+  <text x="446" y="846" class="box-text">Executor</text>
+  <rect x="590" y="808" rx="14" ry="14" width="135" height="62" class="host"/>
+  <text x="618" y="846" class="box-text">Verifier</text>
+  <rect x="765" y="780" rx="18" ry="18" width="355" height="120" class="aware"/>
+  <text x="835" y="822" class="box-title">Error-aware 插件</text>
+  <text x="804" y="856" class="box-text">诊断错误机制 + 检索案例</text>
+  <text x="804" y="884" class="box-text">生成修复建议与验证检查</text>
+  <rect x="1160" y="808" rx="14" ry="14" width="145" height="62" class="host"/>
+  <text x="1192" y="846" class="box-text">Repairer</text>
+  <rect x="1340" y="808" rx="14" ry="14" width="135" height="62" class="host"/>
+  <text x="1369" y="846" class="box-text">Reporter</text>
+  <line x1="385" y1="839" x2="420" y2="839" class="arrow"/>
+  <line x1="555" y1="839" x2="590" y2="839" class="arrow"/>
+  <line x1="725" y1="839" x2="765" y2="839" class="arrow"/>
+  <line x1="1120" y1="839" x2="1160" y2="839" class="arrow"/>
+  <line x1="1305" y1="839" x2="1340" y2="839" class="arrow"/>
+
+  <rect x="760" y="920" rx="14" ry="14" width="360" height="40" class="kb"/>
+  <text x="790" y="946" class="small">规则卡 + 分类指南 + 案例知识库</text>
+  <line x1="940" y1="920" x2="940" y2="900" class="arrow"/>
+
+  <rect x="70" y="1000" rx="10" ry="10" width="1460" height="1" fill="#ffffff" stroke="none"/>
+  <text x="105" y="1018" class="small">核心比较：error-aware multi-agent 相对 self-debug multi-agent 的 final pass rate、repair success rate、silent error detection rate 是否提升。</text>
+</svg>

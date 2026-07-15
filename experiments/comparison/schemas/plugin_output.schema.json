@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ErrorAwarePluginOutput",
+  "type": "object",
+  "required": ["plugin", "knowledge_sources", "candidate_labels", "classification_basis", "retrieved_cases", "repair_advice"],
+  "properties": {
+    "plugin": {"type": "object"},
+    "knowledge_sources": {"type": "object"},
+    "signal_summary": {"type": "string"},
+    "candidate_labels": {"type": "array", "items": {"type": "string"}},
+    "classification_basis": {"type": "object"},
+    "retrieved_cases": {"type": "array", "items": {"type": "object"}},
+    "repair_advice": {"type": "object"}
+  }
+}
