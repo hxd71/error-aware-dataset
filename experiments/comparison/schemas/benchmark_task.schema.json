@@ -5,13 +5,30 @@
   "required": ["task_id", "prompt", "input_paths", "expected_outputs", "complexity"],
   "properties": {
     "task_id": {"type": "string"},
-    "prompt": {"type": "string"},
-    "input_paths": {"type": "array", "items": {"type": "string"}},
-    "expected_outputs": {"type": "array", "items": {"type": "string"}},
+    "prompt": {
+      "type": "string",
+      "description": "Agent-visible task instruction. Do not include GT, A1-E3 labels, intended error mechanisms, or standard answers."
+    },
+    "input_paths": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Agent-visible input data paths. These must point to task inputs, not reference answers."
+    },
+    "expected_outputs": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Agent-visible output artifact names or requirements, not reference output paths."
+    },
     "complexity": {"type": "string"},
     "requires_visual_check": {"type": "boolean"},
-    "metadata": {"type": "object"},
-    "scoring": {"type": "object"},
+    "metadata": {
+      "type": "object",
+      "description": "Agent-visible safe metadata such as dataset id, task level, asset types, and output requirements."
+    },
+    "scoring": {
+      "type": "object",
+      "description": "Offline-only scoring configuration. This must never be included in task.agent_view() or agent prompts."
+    },
     "mock_behavior": {"type": "object"}
   },
   "additionalProperties": true

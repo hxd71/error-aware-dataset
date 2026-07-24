@@ -49,6 +49,7 @@ class ScoringReport:
     gold_labels: list[str] = field(default_factory=list)
     leakage_risk: bool = False
     notes: str = ""
+    details: dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass(frozen=True)
@@ -64,6 +65,10 @@ class AttemptTrace:
     output_path: str
     execution_log: str
     evaluation: dict[str, Any]
+    token_usage: dict[str, int] = field(
+        default_factory=lambda: {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}
+    )
+    step_evaluation: dict[str, Any] = field(default_factory=dict)
     repair_instruction: dict[str, Any] | None = None
     plugin_diagnosis: dict[str, Any] | None = None
 

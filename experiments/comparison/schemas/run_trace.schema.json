@@ -8,7 +8,34 @@
     "agent_kind": {"type": "string"},
     "max_repair_attempts": {"type": "integer"},
     "runtime": {"type": "object"},
-    "attempts": {"type": "array", "items": {"type": "object"}},
+    "attempts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "attempt_index": {"type": "integer"},
+          "generated_code_path": {"type": "string"},
+          "output_path": {"type": "string"},
+          "execution_log": {"type": "string"},
+          "evaluation": {"type": "object"},
+          "token_usage": {
+            "type": "object",
+            "description": "LLM generation token usage for this attempt, as returned by the OpenAI-compatible API when available.",
+            "properties": {
+              "prompt_tokens": {"type": "integer", "minimum": 0},
+              "completion_tokens": {"type": "integer", "minimum": 0},
+              "total_tokens": {"type": "integer", "minimum": 0}
+            }
+          },
+          "step_evaluation": {
+            "type": "object",
+            "description": "Agent-visible workflow step self-check report, usually read from OUTPUT_DIR/workflow_steps.json."
+          },
+          "repair_instruction": {"type": ["object", "null"]},
+          "plugin_diagnosis": {"type": ["object", "null"]}
+        }
+      }
+    },
     "final_status": {"enum": ["PASS", "FAIL"]},
     "scoring_report": {"type": "object"}
   }

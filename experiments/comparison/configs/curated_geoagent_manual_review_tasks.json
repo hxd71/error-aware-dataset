@@ -1,0 +1,101 @@
+{
+  "schema_version": "0.1.0",
+  "benchmark": "CuratedGeoAgent",
+  "purpose": "Tasks that require offline human review after agent outputs are generated. This file is not part of any agent-visible prompt.",
+  "manual_review_policy": {
+    "agent_visible_during_run": false,
+    "review_stage": "after_task_run",
+    "scoring_source": "human review or hybrid evaluator plus human confirmation"
+  },
+  "tasks": [
+    {
+      "case_id": "curated_geoagent_002",
+      "source_id": 2,
+      "task_level": "basic",
+      "evaluation_mode": "manual"
+    },
+    {
+      "case_id": "curated_geoagent_010",
+      "source_id": 10,
+      "task_level": "basic",
+      "evaluation_mode": "manual"
+    },
+    {
+      "case_id": "curated_geoagent_011",
+      "source_id": 11,
+      "task_level": "basic",
+      "evaluation_mode": "manual"
+    },
+    {
+      "case_id": "curated_geoagent_012",
+      "source_id": 12,
+      "task_level": "basic",
+      "evaluation_mode": "manual"
+    },
+    {
+      "case_id": "curated_geoagent_013",
+      "source_id": 16,
+      "task_level": "basic",
+      "evaluation_mode": "manual"
+    },
+    {
+      "case_id": "curated_geoagent_054",
+      "source_id": 58,
+      "task_level": "basic",
+      "evaluation_mode": "manual"
+    },
+    {
+      "case_id": "curated_geoagent_057",
+      "source_id": 61,
+      "task_level": "intermediate",
+      "evaluation_mode": "hybrid"
+    },
+    {
+      "case_id": "curated_geoagent_058",
+      "source_id": 62,
+      "task_level": "intermediate",
+      "evaluation_mode": "manual"
+    },
+    {
+      "case_id": "curated_geoagent_074",
+      "source_id": 78,
+      "task_level": "intermediate",
+      "evaluation_mode": "hybrid"
+    },
+    {
+      "case_id": "curated_geoagent_075",
+      "source_id": 79,
+      "task_level": "intermediate",
+      "evaluation_mode": "manual"
+    },
+    {
+      "case_id": "curated_geoagent_076",
+      "source_id": 80,
+      "task_level": "intermediate",
+      "evaluation_mode": "manual"
+    },
+    {
+      "case_id": "curated_geoagent_093",
+      "source_id": 99,
+      "task_level": "advanced",
+      "evaluation_mode": "hybrid"
+    },
+    {
+      "case_id": "curated_geoagent_127",
+      "source_id": 134,
+      "task_level": "basic",
+      "evaluation_mode": "hybrid"
+    },
+    {
+      "case_id": "curated_geoagent_135",
+      "source_id": 142,
+      "task_level": "basic",
+      "evaluation_mode": "manual"
+    }
+  ],
+  "counts": {
+    "total": 14,
+    "manual": 10,
+    "hybrid": 4
+  }
+}

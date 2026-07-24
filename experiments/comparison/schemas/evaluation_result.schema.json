@@ -6,6 +6,7 @@
   "properties": {
     "agent_visible_report": {
       "type": "object",
+      "description": "Task-safe evaluator feedback that may be shown to self-debug and error-aware agents. It must not contain GT files, gold answers, scoring rubrics, or standard code.",
       "required": ["status"],
       "properties": {
         "status": {"enum": ["PASS", "FAIL"]},
@@ -18,12 +19,14 @@
     },
     "scoring_report": {
       "type": "object",
+      "description": "Offline-only evaluator output for aggregate scoring and audit. This object must not be inserted into any agent prompt.",
       "required": ["status"],
       "properties": {
         "status": {"enum": ["PASS", "FAIL"]},
         "gold_labels": {"type": "array", "items": {"type": "string"}},
         "leakage_risk": {"type": "boolean"},
-        "notes": {"type": "string"}
+        "notes": {"type": "string"},
+        "details": {"type": "object"}
       }
     }
   }
