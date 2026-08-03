@@ -134,22 +134,22 @@ curated_geoagent_dataset/
 ### 1. 环境准备
 
 ```powershell
-# 本项目使用 conda base 环境
-# 确认 Python 路径:
-F:/miniconda/python.exe --version
+# 本项目可使用任意已安装 GIS 依赖的 Python 环境
+# 确认 Python 版本:
+python --version
 
 # 安装依赖 (如未安装):
-F:/miniconda/python.exe -m pip install geopandas rasterio shapely pandas numpy matplotlib pillow
+python -m pip install geopandas rasterio shapely pandas numpy matplotlib pillow
 
 # 修复 PROJ 数据库冲突 (如有 PostgreSQL 安装):
-$env:PROJ_LIB = "C:\Users\print_li\AppData\Roaming\Python\Python39\site-packages\rasterio\proj_data"
+$env:PROJ_LIB = "<path-to-rasterio-proj-data>"
 ```
 
 ### 2. 生成合成测试数据
 
 ```powershell
-cd f:\short\curated_geoagent_dataset
-F:/miniconda/python.exe generate_sample_data.py
+cd path/to/curated_geoagent_dataset
+python generate_sample_data.py
 ```
 
 为 5 条模板任务创建可用的 GIS 测试数据：道路网络、DEM 栅格、普查区块、行政区划、陷阱数据(无效几何 + CRS 冲突)。
@@ -158,19 +158,19 @@ F:/miniconda/python.exe generate_sample_data.py
 
 ```powershell
 # 先导测试 (前 5 条)
-F:/miniconda/python.exe -m evaluation.generate_ground_truth --limit 5
+python -m evaluation.generate_ground_truth --limit 5
 
 # 全量生成
-F:/miniconda/python.exe -m evaluation.generate_ground_truth
+python -m evaluation.generate_ground_truth
 
 # 跳过已有 GT
-F:/miniconda/python.exe -m evaluation.generate_ground_truth --skip-existing
+python -m evaluation.generate_ground_truth --skip-existing
 ```
 
 ### 4. 生成模拟 Agent 输出
 
 ```powershell
-F:/miniconda/python.exe generate_agent_outputs.py
+python generate_agent_outputs.py
 ```
 
 创建 2 个正确输出 + 3 个含错误输出，用于验证评测流水线。
@@ -179,19 +179,19 @@ F:/miniconda/python.exe generate_agent_outputs.py
 
 ```powershell
 # Pilot Test 先导测试
-F:/miniconda/python.exe -m evaluation.eval_curated_geoagent --limit 5 --verbose
+python -m evaluation.eval_curated_geoagent --limit 5 --verbose
 
 # 完整运行
-F:/miniconda/python.exe -m evaluation.eval_curated_geoagent
+python -m evaluation.eval_curated_geoagent
 
 # 指定 Agent 输出目录
-F:/miniconda/python.exe -m evaluation.eval_curated_geoagent --agent-output path/to/outputs
+python -m evaluation.eval_curated_geoagent --agent-output path/to/outputs
 
 # 仅矢量 + 栅格核验
-F:/miniconda/python.exe -m evaluation.eval_curated_geoagent --output-types vector raster
+python -m evaluation.eval_curated_geoagent --output-types vector raster
 
 # 查看错误分类体系
-F:/miniconda/python.exe -m evaluation.eval_curated_geoagent --show-taxonomy
+python -m evaluation.eval_curated_geoagent --show-taxonomy
 ```
 
 ---

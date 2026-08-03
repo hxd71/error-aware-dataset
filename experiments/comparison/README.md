@@ -40,36 +40,42 @@ python experiments/comparison/run_pilot.py --tasks path/to/Benchmark_Tasks.json 
 当前已支持直接加载 CuratedGeoAgent 的 `cases.json` 格式，外部原始数据集保持只读，不会被框架改写：
 
 ```powershell
+$env:CURATED_GEOAGENT_CASES = "path\to\curated_geoagent_dataset\cases.json"
+$env:GEOAGENT_PYTHON = "path\to\python.exe"
+$env:LLM_CONFIG = "path\to\config.ini"
+```
+
+```powershell
 python experiments/comparison/run_pilot.py `
-  --tasks "F:\29145008\curated_geoagent_dataset (2)\curated_geoagent_dataset\curated_geoagent_dataset\cases.json" `
+  --tasks $env:CURATED_GEOAGENT_CASES `
   --evaluator curated `
   --agent all `
-  --curated-python "F:\29145008\GeoAgent\.venv\Scripts\python.exe"
+  --curated-python $env:GEOAGENT_PYTHON
 ```
 
 默认启用 `--skip-manual-review`，因此正式自动实验只运行 126 条可自动核验任务，并把 14 条 manual/hybrid 任务写入 `skipped_manual_review_tasks.json` 供汇报展示。若只是 smoke batch，先加 `--task-limit 10`：
 
 ```powershell
 python experiments/comparison/run_pilot.py `
-  --tasks "F:\29145008\curated_geoagent_dataset (2)\curated_geoagent_dataset\curated_geoagent_dataset\cases.json" `
+  --tasks $env:CURATED_GEOAGENT_CASES `
   --evaluator curated `
   --agent all `
   --task-limit 10 `
-  --curated-python "F:\29145008\GeoAgent\.venv\Scripts\python.exe"
+  --curated-python $env:GEOAGENT_PYTHON
 ```
 
 若要针对已知开发集问题定向验证，可用 `--task-ids` 只跑指定任务；例如验证 protected-road-length、line-vertex 和 bounded-Voronoi 三类修复：
 
 ```powershell
 python experiments/comparison/run_pilot.py `
-  --tasks "F:\29145008\curated_geoagent_dataset (2)\curated_geoagent_dataset\curated_geoagent_dataset\cases.json" `
+  --tasks $env:CURATED_GEOAGENT_CASES `
   --evaluator curated `
   --agent all `
   --task-ids curated_geoagent_085 curated_geoagent_102 curated_geoagent_119 `
   --executor llm `
-  --llm-config "F:\29145008\GeoAgent\config.ini" `
-  --executor-python "F:\29145008\GeoAgent\.venv\Scripts\python.exe" `
-  --curated-python "F:\29145008\GeoAgent\.venv\Scripts\python.exe" `
+  --llm-config $env:LLM_CONFIG `
+  --executor-python $env:GEOAGENT_PYTHON `
+  --curated-python $env:GEOAGENT_PYTHON `
   --execution-timeout 300 `
   --llm-request-timeout 180
 ```
@@ -132,41 +138,41 @@ python experiments/comparison/run_pilot.py --agent all
 
 ```powershell
 python experiments/comparison/run_pilot.py `
-  --tasks "F:\29145008\curated_geoagent_dataset (2)\curated_geoagent_dataset\curated_geoagent_dataset\cases.json" `
+  --tasks $env:CURATED_GEOAGENT_CASES `
   --evaluator curated `
   --agent all `
   --task-limit 1 `
   --executor template `
-  --executor-python "F:\29145008\GeoAgent\.venv\Scripts\python.exe" `
-  --curated-python "F:\29145008\GeoAgent\.venv\Scripts\python.exe"
+  --executor-python $env:GEOAGENT_PYTHON `
+  --curated-python $env:GEOAGENT_PYTHON
 ```
 
 运行真实 LLM 生成与修复闭环：
 
 ```powershell
 python experiments/comparison/run_pilot.py `
-  --tasks "F:\29145008\curated_geoagent_dataset (2)\curated_geoagent_dataset\curated_geoagent_dataset\cases.json" `
+  --tasks $env:CURATED_GEOAGENT_CASES `
   --evaluator curated `
   --agent all `
   --task-limit 10 `
   --executor llm `
-  --llm-config "F:\29145008\GeoAgent\config.ini" `
-  --executor-python "F:\29145008\GeoAgent\.venv\Scripts\python.exe" `
-  --curated-python "F:\29145008\GeoAgent\.venv\Scripts\python.exe"
+  --llm-config $env:LLM_CONFIG `
+  --executor-python $env:GEOAGENT_PYTHON `
+  --curated-python $env:GEOAGENT_PYTHON
 ```
 
 运行 CuratedGeoAgent 全量自动核验对比实验时，不传 `--task-limit`，并可用 `--concurrency 5` 在每个实验组内部并发 5 个任务。默认会跳过 5 个已确认 evaluator/source-data 异常任务（037、043、072、095、132），因此正式自动评分分母为 121；如需审计这些任务，可显式传入 `--no-skip-invalid-benchmark-tasks`。
 
 ```powershell
 python experiments/comparison/run_pilot.py `
-  --tasks "F:\29145008\curated_geoagent_dataset (2)\curated_geoagent_dataset\curated_geoagent_dataset\cases.json" `
+  --tasks $env:CURATED_GEOAGENT_CASES `
   --evaluator curated `
   --agent all `
   --run-id curated_llm_full_auto_shared_c5_20260720 `
   --executor llm `
-  --llm-config "F:\29145008\GeoAgent\config.ini" `
-  --executor-python "F:\29145008\GeoAgent\.venv\Scripts\python.exe" `
-  --curated-python "F:\29145008\GeoAgent\.venv\Scripts\python.exe" `
+  --llm-config $env:LLM_CONFIG `
+  --executor-python $env:GEOAGENT_PYTHON `
+  --curated-python $env:GEOAGENT_PYTHON `
   --execution-timeout 300 `
   --llm-request-timeout 180 `
   --concurrency 5
@@ -178,15 +184,15 @@ python experiments/comparison/run_pilot.py `
 
 ```powershell
 python experiments/comparison/run_pilot.py `
-  --tasks "F:\29145008\curated_geoagent_dataset (2)\curated_geoagent_dataset\curated_geoagent_dataset\cases.json" `
+  --tasks $env:CURATED_GEOAGENT_CASES `
   --evaluator curated `
   --agent all `
   --run-id curated_llm_full_auto_shared_c5_tuned_20260720 `
-  --reuse-shared-initial-from "F:\29145008\GeoAgent\gis_error_dataset\experiments\comparison\runs\curated_llm_full_auto_shared_c5_20260720" `
+  --reuse-shared-initial-from "experiments\comparison\runs\curated_llm_full_auto_shared_c5_20260720" `
   --executor llm `
-  --llm-config "F:\29145008\GeoAgent\config.ini" `
-  --executor-python "F:\29145008\GeoAgent\.venv\Scripts\python.exe" `
-  --curated-python "F:\29145008\GeoAgent\.venv\Scripts\python.exe" `
+  --llm-config $env:LLM_CONFIG `
+  --executor-python $env:GEOAGENT_PYTHON `
+  --curated-python $env:GEOAGENT_PYTHON `
   --execution-timeout 300 `
   --llm-request-timeout 180 `
   --concurrency 5

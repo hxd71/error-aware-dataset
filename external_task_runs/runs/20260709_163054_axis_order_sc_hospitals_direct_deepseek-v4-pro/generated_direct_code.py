@@ -8,7 +8,7 @@ def direct_solution():
     """
     Create a point layer for South Carolina hospitals and overlay it on the SC ZIP boundary map.
     - Inputs:
-        - SC ZIP boundary shapefile (WGS84, zipped): F:\\...\\sc_zip_boundary.zip
+        - SC ZIP boundary shapefile (WGS84, zipped): <EXTERNAL_DATA_DIR>\\sc_zip_boundary.zip
         - SC hospital CSV with columns 'lat_x' (latitude) and 'lon_y' (longitude)
     - Outputs:
         - axis_order_hospitals_map.png : map showing hospitals over ZIP boundaries

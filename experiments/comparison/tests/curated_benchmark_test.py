@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -22,10 +23,16 @@ from experiments.comparison.host_runtime.models import BenchmarkTask
 from experiments.comparison.plugins.error_aware.plugin import ErrorAwarePlugin
 
 
-CURATED_CASES_PATH = Path(
-    r"F:\29145008\curated_geoagent_dataset (2)\curated_geoagent_dataset"
-    r"\curated_geoagent_dataset\cases.json"
-)
+CURATED_CASES_ENV = "CURATED_GEOAGENT_CASES"
+GEOAGENT_PYTHON_ENV = "GEOAGENT_PYTHON"
+
+
+def _optional_env_path(name: str) -> Path | None:
+    value = os.environ.get(name, "").strip()
+    return Path(value).expanduser() if value else None
+
+
+CURATED_CASES_PATH = _optional_env_path(CURATED_CASES_ENV)
 
 MANUAL_REVIEW_TASKS = [
     "curated_geoagent_002",
@@ -67,8 +74,8 @@ PRIVATE_AGENT_VIEW_KEYS = {
 
 
 def main() -> None:
-    if not CURATED_CASES_PATH.is_file():
-        print(f"skip: CuratedGeoAgent cases.json not found at {CURATED_CASES_PATH}")
+    if CURATED_CASES_PATH is None or not CURATED_CASES_PATH.is_file():
+        print(f"skip: set {CURATED_CASES_ENV} to a CuratedGeoAgent cases.json file")
         return
 
     tasks = load_benchmark_tasks(CURATED_CASES_PATH)
@@ -757,7 +764,9 @@ def _assert_error_aware_polygon_difference_not_confused_with_voronoi() -> None:
 
 
 def _assert_evaluator_shapely_normalize_compatibility() -> None:
-    python_executable = Path(r"F:\29145008\GeoAgent\.venv\Scripts\python.exe")
+    python_executable = _optional_env_path(GEOAGENT_PYTHON_ENV)
+    if python_executable is None:
+        return
     if not python_executable.is_file():
         return
     dataset_root = REPO_ROOT / "experiments" / "comparison" / "runs" / "curated_shapely_compat_dataset"

@@ -21,8 +21,9 @@ AGENT_DIR = os.path.join(OUT_DIR, "agent_outputs")
 GT_DIR = os.path.join(OUT_DIR, "evaluation", "Ground_Truth")
 os.makedirs(AGENT_DIR, exist_ok=True)
 
-PROJ_LIB = "C:\\Users\\print_li\\AppData\\Roaming\\Python\\Python39\\site-packages\\rasterio\\proj_data"
-os.environ["PROJ_LIB"] = PROJ_LIB
+PROJ_LIB = os.environ.get("PROJ_LIB")
+if PROJ_LIB:
+    os.environ["PROJ_LIB"] = PROJ_LIB
 
 # ──────────────────────────────────────────────────────────
 # Task 001: 正确输出 — 复制 GT 文件
